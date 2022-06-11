@@ -20,3 +20,4 @@ System Design Hand written notes from Gaurav Sen | https://www.linkedin.com/post
 Java Synchronizer  | https://www.linkedin.com/feed/update/urn:li:activity:6915691423375708161/
 System Design Notes By Himanshu Sharma  | https://www.linkedin.com/posts/him431_system-design-basics-handbook-ugcPost-6881853381124636672-dAuW 
 JavaScript Cheat Sheet| https://learnersbucket.com/javascript-sde-cheat-sheet/
+Coding Question Patterns| https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed
