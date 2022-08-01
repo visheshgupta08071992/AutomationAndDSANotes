@@ -28,3 +28,8 @@ Each request from the client to the server must contain all of the necessary inf
 The application’s session state is therefore kept entirely on the client. The client is responsible for storing and handling the session related information on its own side.
 
 This also means that the client is responsible for sending any state information to the server whenever it is needed. There should not be any session affinity or sticky session between the client and the server.
+
+
+### PostMan Terminologies
+
+ **Collection(Folder)** - Collection is a folder which is a group of similar request
