@@ -33,3 +33,10 @@ This also means that the client is responsible for sending any state information
 ### PostMan Terminologies
 
  **Collection(Folder)** - Collection is a folder which is a group of similar request
+ 
+ **Query and Path Parameters** 
+ Query Parameter are used to find or filter the resources(Eg.Searching a specific product with name),It defines sort, pagination, or filter operations.These are appended to the end of the request URL, Query parameters are appended to the end of the request URL, following '?' and listed in key-value pairs, separated by '&' Syntax:
+
+**?id=1&type=new**  
+ 
+Path Parameter are used to identify specific resource.The path parameter defines the resource location.Path parameters are part of the endpoint and are required. For example, `/users/{id}`, `{id}` is the path parameter of the endpoint `/users`- it is pointing to a specific user's record. An endpoint can have multiple path parameters, like in the example `/organizations/{orgId}/members/{memberId}
