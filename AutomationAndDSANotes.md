@@ -21,3 +21,4 @@ Java Synchronizer  | https://www.linkedin.com/feed/update/urn:li:activity:691569
 System Design Notes By Himanshu Sharma  | https://www.linkedin.com/posts/him431_system-design-basics-handbook-ugcPost-6881853381124636672-dAuW 
 JavaScript Cheat Sheet| https://learnersbucket.com/javascript-sde-cheat-sheet/
 Coding Question Patterns| https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed
+Coding Question Patterns Jayanti| https://www.linkedin.com/posts/jayati-tiwari_data-strucutre-problem-solving-techniques-activity-6684391136074715137-z80V/
