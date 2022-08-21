@@ -62,7 +62,7 @@ We can import data in Postman through
 
 We can dynamically set the value of Key with postman.Postman uses the faker library to generate sample data, including random names, addresses, email addresses, and much more. You can use these pre-defined variables multiple times to return different values per request.
 
-You can use these variables like any other variable in Postman. Their values are generated at the time of execution and their names start with a $ symbol, for example $guid or $timestamp. We need to place these variables within {{}}
+You can use these variables like any other variable in Postman. Their values are generated at the time of execution and their names start with a $ symbol, for example $guid or $timestamp. We need to place these variables within **{{}}**
 
 **Syntax** - {{$randomFirstName	}}
 
