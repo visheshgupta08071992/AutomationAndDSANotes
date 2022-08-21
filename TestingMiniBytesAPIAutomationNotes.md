@@ -53,7 +53,7 @@ We can import data in Postman through
 4.Raw Text</br>
 5.Code Repository (Github)</br>
 
-![image](https://user-images.githubusercontent.com/52998083/185780654-9e1003a3-d43a-40ef-8f3d-3c06496fb401.png)
+![image](https://user-images.githubusercontent.com/52998083/185784425-a2c6a18c-4f31-4ea8-b091-d0dd754b8d5e.png)
 
 
 ### Dynamic Variables in Postman
