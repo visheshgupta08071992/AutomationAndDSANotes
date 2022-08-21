@@ -70,6 +70,8 @@ You can use these variables like any other variable in Postman. Their values are
 
 
 ### Building request workflows
+(https://www.youtube.com/watch?v=vPUbYpH59rg&list=PLnxpMuIcxn1T4CM48trVVKybEesQWzeHm&index=5)
+(https://learning.postman.com/docs/running-collections/building-workflows/)
 
 Typically when you start a [collection run](/docs/running-collections/intro-to-collection-runs/), Postman runs all requests in the same order they appear in your collection. Requests in folders are executed first, followed by any requests in the root of the collection.
 
