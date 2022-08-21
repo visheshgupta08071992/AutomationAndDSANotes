@@ -55,3 +55,19 @@ We can import data in Postman through
 
 ![image](https://user-images.githubusercontent.com/52998083/185780654-9e1003a3-d43a-40ef-8f3d-3c06496fb401.png)
 
+
+### Dynamic Variables in Postman
+(https://www.youtube.com/watch?v=5-FiYWbCbNM&list=PLnxpMuIcxn1T4CM48trVVKybEesQWzeHm&index=2)
+(https://learning.postman.com/docs/writing-scripts/script-references/variables-list/)
+
+We can dynamically set the value of Key with postman.Postman uses the faker library to generate sample data, including random names, addresses, email addresses, and much more. You can use these pre-defined variables multiple times to return different values per request.
+
+You can use these variables like any other variable in Postman. Their values are generated at the time of execution and their names start with a $ symbol, for example $guid or $timestamp. We need to place these variables within {{}}
+
+**Syntax** - {{$randomFirstName	}}
+
+![image](https://user-images.githubusercontent.com/52998083/185784309-6de4cea6-a9c7-4cb4-84b0-66bc9e45669a.png)
+
+
+
+
