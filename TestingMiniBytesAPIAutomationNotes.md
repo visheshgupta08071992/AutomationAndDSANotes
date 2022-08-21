@@ -40,3 +40,17 @@ This also means that the client is responsible for sending any state information
 **?id=1&type=new**  
  
 Path Parameter are used to identify specific resource.The path parameter defines the resource location.Path parameters are part of the endpoint and are required. For example, `/users/{id}`, `{id}` is the path parameter of the endpoint `/users`- it is pointing to a specific user's record. An endpoint can have multiple path parameters, like in the example `/organizations/{orgId}/members/{memberId}
+
+
+### Import Data in Postman (https://www.youtube.com/watch?v=BqmZNlAIZSI&list=PLnxpMuIcxn1T4CM48trVVKybEesQWzeHm&index=1)
+
+We can import data in Postman through
+
+1.File
+2.Folder
+3.Link (Can be a swagger URL)
+4.Raw Text
+5.Code Repository (Github)
+
+![image](https://user-images.githubusercontent.com/52998083/185780654-9e1003a3-d43a-40ef-8f3d-3c06496fb401.png)
+
