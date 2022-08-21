@@ -107,6 +107,11 @@ postman.setNextRequest(null);
 
 The collection run will stop after Postman completes the current request.
 
+## Executing the next request only when we have the desired response code else terminating the runner
+
+![image](https://user-images.githubusercontent.com/52998083/185802056-22f0afc9-e819-4b00-af0e-7f1fd0f08f6a.png)
+
+
 
 
 
