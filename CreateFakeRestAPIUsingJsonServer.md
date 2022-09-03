@@ -52,7 +52,7 @@ DELETE /employees/{id}
 1.By default Json-Server runs on port 3000, If you wish to run on different port use command **json-server -p 4000 db.json**
 
 ### References
-1.https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
-2.https://github.com/typicode/json-server
-3.https://www.youtube.com/watch?v=tvOiM_4zOzs
-4.https://www.youtube.com/watch?v=6194_vuMDxo&list=PL9ok7C7Yn9A-JaUtcMwevO_FfbFNRYLfU&index=5
+1.https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d </br>
+2.https://github.com/typicode/json-server </br>
+3.https://www.youtube.com/watch?v=tvOiM_4zOzs </br>
+4.https://www.youtube.com/watch?v=6194_vuMDxo&list=PL9ok7C7Yn9A-JaUtcMwevO_FfbFNRYLfU&index=5 </br>
