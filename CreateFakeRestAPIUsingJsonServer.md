@@ -35,4 +35,16 @@ The JSON structure consists of one employee object which has three data sets ass
 
 4. Run the Json server at location where your db.json file is present using command **json-server --watch db.json** . Watch parameter ensures that the server is started in watch mode which means that it watches for file changes and updates the exposed API accordingly.
 
+5.The following htttp end points are created by Json Server
+
+```js
+
+GET    /employees
+GET    /employees/{id}
+POST   /employees
+PUT    /employees/{id}
+PATCH  /employees/{id}
+DELETE /employees/{id}
+
+```
 
