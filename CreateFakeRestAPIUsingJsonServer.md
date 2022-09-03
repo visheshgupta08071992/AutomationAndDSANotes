@@ -50,6 +50,8 @@ DELETE /employees/{id}
 
 ### Note
 1.By default Json-Server runs on port 3000, If you wish to run on different port use command **json-server -p 4000 db.json**
+2.Attaching Postman collection created for the above endpoints [JsonServerUpdatedCollection.zip](https://github.com/visheshgupta08071992/AutomationAndDSANotes/files/9482286/JsonServerUpdatedCollection.zip)
+
 
 ### References
 1.https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d </br>
