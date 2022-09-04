@@ -56,6 +56,21 @@ If Jackson DataBind is not added then it would result in serialization error as 
 The given approach is not very useful when we have very large json files. Also in the given approach we need to mention the generic type. You can see we have created HashMap which is storing Object in order to ensure that it stores values of String,Integer and Boolean.
 
 
+* #### Creating  RequestBody using JsonObject and JsonArray
+
+To use this approach we need add json dependency in our project.
+
+![image](https://user-images.githubusercontent.com/52998083/188307984-f71d020e-0d98-45c1-82ca-5a4a9ba4e115.png)
+
+Ensure converting body to String as body is a JsonObject and RestAssured doesnot serialize JsonObject.
+
+
+* #### Creating  RequestBody by defining static methods within a class
+
+
+
+
+
 
 
 
