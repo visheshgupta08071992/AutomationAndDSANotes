@@ -44,7 +44,7 @@ We can create the request body using Map and List as shown in below image. Below
             "lunch":"rice",
             "dinner":["Chapati","Milk"]
         }
-      }
+}
 
 ```
 
