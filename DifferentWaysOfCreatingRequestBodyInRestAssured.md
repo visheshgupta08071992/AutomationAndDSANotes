@@ -65,7 +65,22 @@ To use this approach we need add json dependency in our project.
 Ensure converting body to String as body is a JsonObject and RestAssured doesnot serialize JsonObject.
 
 
-* #### Creating  RequestBody by defining static methods within a class
+* #### Creating  RequestBody by defining static methods returning String Body within a class
+
+As we can see in the below image we have created RequestBodies class which has method addEmployee returing the String Body
+
+![image](https://user-images.githubusercontent.com/52998083/188346280-2fe2c722-8c32-4954-b031-ce33c203af20.png)
+
+![image](https://user-images.githubusercontent.com/52998083/188346360-5d9f32e6-6712-432d-8046-81bf086e69e3.png)
+
+We are directly able to call addEmployee method of RequestBodies class as we have used Static import to import static methods of class RequestBodies. Static import is used to import static methods of a class
+
+![image](https://user-images.githubusercontent.com/52998083/188346487-0574f8ca-c870-4419-901a-1c6b566070d4.png)
+
+
+
+
+
 
 
 
