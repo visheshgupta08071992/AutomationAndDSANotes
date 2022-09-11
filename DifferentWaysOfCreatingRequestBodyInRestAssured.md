@@ -78,6 +78,49 @@ We are directly able to call addEmployee method of RequestBodies class as we hav
 ![image](https://user-images.githubusercontent.com/52998083/188346487-0574f8ca-c870-4419-901a-1c6b566070d4.png)
 
 
+* #### Creating  RequestBody using Pojo Classes
+
+One of the advantage of creating request bodies using Pojo is they can be used both for serialization as well as deserialization. Also Pojo bodies are used by 
+developers as well, So the same pojo body can be reused in Testing Frameworks, Please refer below screenshot for understanding creation of request bodies using Pojo. We have used Lombok for generating - Getters,Setter and Constructers of Pojo Classes.
+
+
+```js
+
+{
+        "id":{{$randomInt}},
+        "first_name": "{{$randomFirstName}}",
+        "last_name": "{{$randomLastName}}",
+        "email": "{{$randomEmail}}",
+        "jobs":["Tester","Trainer"],
+        "favFoods":{
+            "breakfast":"idly",
+            "lunch":"rice",
+            "dinner":["Chapati","Milk"]
+        }
+}
+
+```
+
+**Corresponding POJO Classes**
+
+![image](https://user-images.githubusercontent.com/52998083/189514244-e6597286-075e-4d08-a82e-8b8c83b9d6ff.png)
+
+
+![image](https://user-images.githubusercontent.com/52998083/189514241-26d11605-d736-4018-a1fb-80ce80453f28.png)
+
+![image](https://user-images.githubusercontent.com/52998083/189514251-d10b0c1e-5a9e-48a3-b0ff-f648ddde2946.png)
+
+
+**Corresponding RestAssured Code**
+
+![image](https://user-images.githubusercontent.com/52998083/189514284-22932e4b-e540-462a-b8fd-ba27680ff2a9.png)
+
+
+
+
+
+
+
 
 
 
