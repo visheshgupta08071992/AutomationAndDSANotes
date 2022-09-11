@@ -81,7 +81,7 @@ We are directly able to call addEmployee method of RequestBodies class as we hav
 * #### Creating  RequestBody using Pojo Classes
 
 One of the advantage of creating request bodies using Pojo is they can be used both for serialization as well as deserialization. Also Pojo bodies are used by 
-developers as well, So the same pojo body can be reused in Testing Frameworks, Please refer below screenshot for understanding creation of request bodies using Pojo. We have used Lombok for generating - Getters,Setter and Constructers of Pojo Classes.
+developers as well, So the same pojo body can be reused in Testing Frameworks. We have used Lombok for generating - Getters,Setter and Constructers of Pojo Classes. Also since we have jackson dependecy, it internally converts are java object into json while sending request body.  Please refer below screenshot for understanding creation of request bodies using Pojo.
 
 
 ```js
