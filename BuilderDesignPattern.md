@@ -19,7 +19,7 @@ we cannot ensure the object to be immuatable and anyone can update the different
 2.  **Using Constructors** - With the help of constructors and not providing setter methods we can ensure that the immutability condition of Object is maintained. But consider a scenario where a class object has around 50 fields and all the 50 fields are optional and the object should be created based on the user requirment. In this case we need to create many constructors so that the user requirement is met based on his different requirements. This can be really time consuming,And it would Also  make the code too clumsy.
 
 
-So to solve the above problem, we would be using **Builder Patter**.
+So to solve the above problem, we would be using **Builder Pattern**.
 
 
 
