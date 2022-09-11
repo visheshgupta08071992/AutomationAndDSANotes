@@ -8,3 +8,97 @@ To Validate Json Schema using Json Schema Validator, We need to add Json Schema 
 
 Once Json Schema Validator dependency is added within our project, we must get the schema of our json which need to be validated. We can get the schema of our json by 
 pasting the json here https://www.liquid-technologies.com/online-json-to-schema-converter. Finally we can have this schema stored in our resources folder.
+
+
+**Json**
+
+```js
+
+{
+    "id": 877251703,
+    "firstName": "Jude",
+    "lastName": "Hayes",
+    "email": "cletus.gottlieb@gmail.com",
+    "jobs": [
+        "Tester,Trainer"
+    ],
+    "favFoods": {
+        "breakfast": "idly",
+        "lunch": "rice",
+        "dinner": [
+            "Chapati",
+            "Milk"
+        ]
+    }
+}
+
+```
+
+
+**Corresponding Json Schema**
+
+```js
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "jobs": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "favFoods": {
+      "type": "object",
+      "properties": {
+        "breakfast": {
+          "type": "string"
+        },
+        "lunch": {
+          "type": "string"
+        },
+        "dinner": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "firstName",
+    "lastName",
+    "email",
+    "jobs",
+    "favFoods"
+  ]
+}
+
+```
