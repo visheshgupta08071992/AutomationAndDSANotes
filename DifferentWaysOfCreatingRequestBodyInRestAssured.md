@@ -6,7 +6,7 @@ we can directly send request body as a String as shown in the below image.
 
 ![image](https://user-images.githubusercontent.com/52998083/188301805-51fefd81-2df3-4dd1-bdea-90e9992a167c.png)
 
-The above approach is not recommended and should only be used when we need to quickly check the behavior. The given approach should not be used for long and dynamic json.
+The above approach is not recommended and should only be used when we need to quickly check the behavior. The given approach should not be used for long and dynamic json. Also if one uses the given approach then if the request body is updated the he would need to update request body in all the class where it is passed as string.
 
 
 * #### Passing the RequestBody from external file
