@@ -108,7 +108,7 @@ pasting the json here https://www.liquid-technologies.com/online-json-to-schema-
 ![image](https://user-images.githubusercontent.com/52998083/189519447-3fbbcfc8-13ad-4ec1-91c0-ae48bbee3607.png)
 
 
-**Code Validate the Json against the response body
+**Code Validate the Json against the response body**
 
 ```js
 
