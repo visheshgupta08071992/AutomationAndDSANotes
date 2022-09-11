@@ -119,6 +119,9 @@ respnose.then().body(JsonSchemaValidator.matchesJsonSchema(new File("./src/test/
 Json Schema validater would not only validate all the attributes within the schema but would also validate their type, If the validation fails then the assertion error is thrown.
 
 
+**Referance** - https://www.youtube.com/watch?v=PCtqZTO9Hac&list=PL9ok7C7Yn9A-JaUtcMwevO_FfbFNRYLfU&index=15
+
+
 
 
 
