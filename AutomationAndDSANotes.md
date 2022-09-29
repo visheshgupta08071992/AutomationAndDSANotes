@@ -22,3 +22,4 @@ System Design Notes By Himanshu Sharma  | https://www.linkedin.com/posts/him431_
 JavaScript Cheat Sheet| https://learnersbucket.com/javascript-sde-cheat-sheet/
 Coding Question Patterns| https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed
 Coding Question Patterns Jayanti| https://www.linkedin.com/posts/jayati-tiwari_data-strucutre-problem-solving-techniques-activity-6684391136074715137-z80V/
+Manas All Notes|https://github.com/manasiim/Documents
