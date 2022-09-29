@@ -114,6 +114,110 @@ The collection run will stop after Postman completes the current request.
 ![image](https://user-images.githubusercontent.com/52998083/185802056-22f0afc9-e819-4b00-af0e-7f1fd0f08f6a.png)
 
 
+### Postman Varibales (https://learning.postman.com/docs/sending-requests/variables/)
+
+In order from broadest to narrowest, Postman variable scopes are: global, collection, environment, data, and local.
+
+![image](https://user-images.githubusercontent.com/52998083/192996399-990e04d2-715f-4718-9aa6-a8c966be98a2.png)
+
+So Postman checks all the scopes, starting from outside to inside (so from global towards data). The last scope that has defined the variable Postman gives priority to the same. 
+
+
+**Global Variables**
+
+Global variables enable you to access data between collections, requests, test scripts, and environments. Global variables are available throughout a workspace. 
+
+Global variables can be defined from Environments -> Global
+
+![image](https://user-images.githubusercontent.com/52998083/192998049-d3a02f3e-f83e-40cc-b84c-fe863a8639f0.png)
+
+
+**Collection Variables**
+
+Collection variables are available throughout the requests in a collection and are independent of environments. Collection variables don't change based on the selected environment. Collection variables are suitable if you're using a single environment, for example for auth or URL details.
+
+Collection Variables are defined by clicking on the collection -> variables
+
+![image](https://user-images.githubusercontent.com/52998083/193001098-e4f58012-ce42-41a8-b306-1fce52e706a3.png)
+
+
+
+**Environment Variables**
+
+Environment variables enable you to scope your work to different environments, for example local development versus testing or production. One environment can be active at a time. If you have a single environment, using collection variables can be more efficient.
+
+
+Environment variables can be defined from Environments -> New Environment 
+
+![image](https://user-images.githubusercontent.com/52998083/192999059-d7b7e381-c821-4e4e-bbe2-1a2b6e36fefb.png)
+
+To use specific environment variable, Choose the environment from top right corner before running any collection
+
+![image](https://user-images.githubusercontent.com/52998083/193001476-4c951cf9-df34-4530-a22f-95df0668832e.png)
+
+
+**Local Variables**
+
+Local variables are temporary variables that are accessed in your request scripts. Local variable values are scoped to a single request or collection run, and are no longer available when the run is complete.
+
+```js
+pm.variables.set("test","local")
+```
+
+![image](https://user-images.githubusercontent.com/52998083/193001217-79ab1c2c-c6cf-407b-a223-bbcca5e8bc92.png)
+
+
+## Using variables
+
+You can use double curly braces to reference variables throughout Postman. For example, to reference a variable named "username" in your request authorization settings, you would use the following syntax with double curly braces around the name:
+
+```js
+{{username}}
+```
+
+When you run a request, Postman will resolve the variable and replace it with its current value.
+
+For example, you could have a request URL referencing a variable as follows:
+
+```js
+https://postman-echo.com/get?customer_id={{cust_id}}
+```
+
+
+### Using dynamic variables
+
+Postman provides dynamic variables you can use in your requests.
+
+Examples of dynamic variables include:
+
+* `{{$guid}}` : A v4-style GUID
+* `{{$timestamp}}`: The current Unix timestamp in seconds
+* `{{$randomInt}}`: A random integer between 0 and 1000
+
+See the [Dynamic Variables](/docs/writing-scripts/script-references/variables-list/) section for a full list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
