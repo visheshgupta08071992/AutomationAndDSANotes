@@ -167,7 +167,7 @@ pm.variables.set("test","local")
 ![image](https://user-images.githubusercontent.com/52998083/193001217-79ab1c2c-c6cf-407b-a223-bbcca5e8bc92.png)
 
 
-## Using variables
+**Using variables**
 
 You can use double curly braces to reference variables throughout Postman. For example, to reference a variable named "username" in your request authorization settings, you would use the following syntax with double curly braces around the name:
 
