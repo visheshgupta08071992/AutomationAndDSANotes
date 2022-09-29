@@ -166,6 +166,13 @@ pm.variables.set("test","local")
 
 ![image](https://user-images.githubusercontent.com/52998083/193001217-79ab1c2c-c6cf-407b-a223-bbcca5e8bc92.png)
 
+**Summarizing Variables**
+
+1. **Env Variable** - Used to manage different environments
+2. **Collection Variable** - Scope of variable is within collection
+3. **Global Variable** - Scope of variable is entire workspace
+4. **Local Variable** -
+
 
 **Using variables**
 
