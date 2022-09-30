@@ -166,6 +166,23 @@ pm.variables.set("test","local")
 
 ![image](https://user-images.githubusercontent.com/52998083/193001217-79ab1c2c-c6cf-407b-a223-bbcca5e8bc92.png)
 
+**Ways to create variables**
+
+1. Goto scope and create manually which is discussed above
+2. Create using code snippets
+
+**Syntax**
+```js
+pm.collectionVariables.set("variable_key", "variable_value")
+pm.environment.set("variable_key", "variable_value");
+pm.globals.set("variable_key", "variable_value");
+```
+
+**Example using Loadash _ library to set collection variable**
+
+![image](https://user-images.githubusercontent.com/52998083/193265882-d87c2faa-6a82-4008-8505-a8d65c5dab5d.png)
+
+
 **Summarizing Variables**
 
 1. **Env Variable** - Used to manage different environments
