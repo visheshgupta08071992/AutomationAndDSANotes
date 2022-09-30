@@ -188,7 +188,7 @@ pm.globals.set("variable_key", "variable_value");
 1. **Env Variable** - Used to manage different environments
 2. **Collection Variable** - Scope of variable is within collection
 3. **Global Variable** - Scope of variable is entire workspace
-4. **Local Variable** -
+4. **Local Variable** - applicable to particular request
 
 
 **Using variables**
