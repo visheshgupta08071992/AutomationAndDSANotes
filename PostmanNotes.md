@@ -174,7 +174,7 @@ pm.variables.set("test","local")
 **Syntax**
 ```js
 pm.collectionVariables.set("variable_key", "variable_value")
-pm.environment.set("variable_key", "variable_value");
+pm.environment.set("variable_key", "variable_value"); -- Given variable is set for an environment which is selected from Top right corner of Postman UI
 pm.globals.set("variable_key", "variable_value");
 ```
 
