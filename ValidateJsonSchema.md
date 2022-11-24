@@ -120,6 +120,19 @@ Json Schema validater would not only validate all the attributes within the sche
 
 **2. Validating Json Schema does not have addtional properties**
 
+It is important to Validate that response schema does not have additional attributes, This validation is important to ensure our API does not send additional
+attributes apart from the ones mentioned in the contract, If Additional attributes are received then the TC should fail. This scenario could have been
+covered within schema validation test but covering it within a separate test gives a clear picture with regards to Test Failure
+
+To validate test for additional properties, we must have additionalProperties Tag set to false within the json schema
+
+we can get schema of our json with additionalProperties set as false with below steps -
+
+1.Paste json here https://www.liquid-technologies.com/online-json-to-schema-converter.
+2.Click on Options button and uncheck defaultAdditionalProperties checkbox
+3.Click on generate Schema
+4.Ensure to remove attribute "$schema" attribute which is added in schema after converting json into schema
+
 
 **Referance** - https://www.youtube.com/watch?v=PCtqZTO9Hac&list=PL9ok7C7Yn9A-JaUtcMwevO_FfbFNRYLfU&index=15
 
