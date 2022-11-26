@@ -330,7 +330,7 @@ pm.test("Check breakfast " +breakfast, function () {
 
 pm.test("Check Jobs " +jobs, function () {
     /*
-    Here jsonData.jobs is an array while we were retrieve jobs as String from data file.
+    Here jsonData.jobs is an array while we  retrieve jobs as String from data file.
     Hence coverting  jsonData.jobs array into string with JSON.stringify function so that it can be compared with jobs field from data file.
     */
     pm.expect(JSON.stringify(jsonData.jobs)).to.eql(jobs);
@@ -340,7 +340,7 @@ pm.test("Check Jobs " +jobs, function () {
 
 pm.test("Check dinner " +dinner, function () {
      /*
-    Here jsonData.favFoods.dinner is an array while we were retrieve dinner as String from data file.
+    Here jsonData.favFoods.dinner is an array while we retrieve dinner as String from data file.
     Hence coverting  jsonData.favFoods.dinner array into string with JSON.stringify function so that it can be compared with dinner field from data file.
     */
 
