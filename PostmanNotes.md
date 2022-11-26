@@ -221,6 +221,81 @@ Examples of dynamic variables include:
 See the [Dynamic Variables](/docs/writing-scripts/script-references/variables-list/) section for a full list.
 
 
+### DataDriven Testing with Postman
+
+We can use CSV and JSON files to get data for our Postman test scripts. This is extremely useful when we need to execute a test with multiple set of Data. Also, modifying or adding any data fields will just need updating the data files which is easier than going to test script and updating test data.
+
+**How to create Sample Request and Data file**
+
+Consider below sample request where value for attributes **first_name,jobs,breakfast and dinner** is retrieved from external data file while **id** is generated dynamically using faker library. 
+
+
+```js
+{
+        "id":{{$randomInt}},
+        "first_name": "{{first_name}}",
+        "jobs":{{jobs}},
+        "favFoods":{
+            "breakfast":"{{breakfast}}",
+            "dinner":{{dinner}}
+        }
+}
+
+```
+
+Check below sample data file which would retrive data for attributes **first_name,jobs,breakfast and dinner**
+
+![image](https://user-images.githubusercontent.com/52998083/204076841-35f6f9ab-dc43-42df-be3b-4242eed5f640.png)
+[TestDataFile2.csv](https://github.com/visheshgupta08071992/AutomationAndDSANotes/files/10095825/TestDataFile2.csv)
+
+The above TestData File has total four set of differnt data, Hence would executed four agaisnt the given test data.
+
+**Request after data is retrieved from data file after 1st itertaion**
+
+```js
+
+{
+        "id":439,
+        "first_name": "Monu",
+        "jobs":["Tester1","Trainer1"],
+        "favFoods":{
+            "breakfast":"poha",
+            "dinner":["Chapati1","Milk1"]
+        }
+}
+
+```
+
+**How to upload data file**
+
+1.To read data file we need to upload it from Collection runner
+
+![image](https://user-images.githubusercontent.com/52998083/204077286-f380b6b3-e937-43b2-b170-9159eac947a6.png)
+
+2.Once the file is selected, we can clearly see no of iteration within the iterations textbox. Do ensusure to check save responses checkbox if you want
+responses to be saved during collection run.
+
+![image](https://user-images.githubusercontent.com/52998083/204077481-4e00cb7e-904a-4d2d-8fdb-5020d37ccebb.png)
+
+3.Click on Preview button to check the Test data which would be used during collection run.
+
+![image](https://user-images.githubusercontent.com/52998083/204077573-a3896022-f565-40f6-aca8-fb772452d521.png)
+
+4.Finally run the collection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
