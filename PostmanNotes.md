@@ -351,6 +351,12 @@ pm.test("Check dinner " +dinner, function () {
 ```
 
 
+**Automation Framework created through postman**
+
+1.https://github.com/visheshgupta08071992/APIAutomationUsingPostman </br>
+
+2.https://github.com/visheshgupta08071992/DataDrivenAPIAutomationUsingPostman
+
 
 
 
