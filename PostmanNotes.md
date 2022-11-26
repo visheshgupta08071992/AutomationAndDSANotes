@@ -284,6 +284,26 @@ responses to be saved during collection run.`
  * `Finally run the collection.`
 
 
+**How to Retrive data from data file to check for comparision with json response during Test run**
+
+we can retrieve the test data for respective iteration by passing the column name of test data file with get method of pm.variables.
+
+**Syntax**
+
+` pm.variables.get("columnName") `
+
+**Example to retreive above data of above TestData file**
+
+```js
+
+var first_name = pm.variables.get("first_name");
+var breakfast = pm.variables.get("breakfast");
+var jobs=pm.variables.get("jobs");
+var dinner=pm.variables.get("dinner");
+
+```
+
+
 
 
 
