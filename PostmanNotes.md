@@ -292,7 +292,7 @@ we can retrieve the test data for respective iteration by passing the column nam
 
 ` pm.variables.get("columnName") `
 
-**Example to retreive above data of above TestData file**
+**Example to retreive data from above TestData file**
 
 ```js
 
