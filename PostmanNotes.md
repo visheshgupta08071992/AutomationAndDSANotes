@@ -268,20 +268,20 @@ The above TestData File has total four set of differnt data, Hence would execute
 
 **How to upload data file**
 
-1.To read data file we need to upload it from Collection runner
+ * `To read data file we need to upload it from Collection runner`
 
 ![image](https://user-images.githubusercontent.com/52998083/204077286-f380b6b3-e937-43b2-b170-9159eac947a6.png)
 
-2.Once the file is selected, we can clearly see no of iteration within the iterations textbox. Do ensusure to check save responses checkbox if you want
-responses to be saved during collection run.
+ * `Once the file is selected, we can clearly see no of iteration within the iterations textbox. Do ensusure to check save responses checkbox if you want
+responses to be saved during collection run.`
 
 ![image](https://user-images.githubusercontent.com/52998083/204077481-4e00cb7e-904a-4d2d-8fdb-5020d37ccebb.png)
 
-3.Click on Preview button to check the Test data which would be used during collection run.
+ * `Click on Preview button to check the Test data which would be used during collection run.`
 
 ![image](https://user-images.githubusercontent.com/52998083/204077573-a3896022-f565-40f6-aca8-fb772452d521.png)
 
-4.Finally run the collection.
+ * `Finally run the collection.`
 
 
 
