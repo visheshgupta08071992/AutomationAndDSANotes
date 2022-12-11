@@ -98,6 +98,21 @@ docker pull {imagename}
 docker run {imagename}
 ```
 
+**Example**
+
+**To Pull Docker Image**
+
+```js
+docker pull visheshdocker/sdetspringprojects
+```
+
+**To Run Docker Image**
+
+```js
+docker run -p 9090:8080 visheshdocker/sdetspringprojects
+```
+
+In the above command port 9090 is the local machine port mapped to container port 8080.
 
 
 
