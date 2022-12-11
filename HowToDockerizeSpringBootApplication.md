@@ -86,13 +86,11 @@ docker push visheshdocker/sdetspringprojects
 
 6.Finally we should pull and run the image
 
-**To Pull Docker Image**
+**Syntax**
 
 ```js
 docker pull {imagename}
 ```
-
-**To Run Docker Image**
 
 ```js
 docker run {imagename}
