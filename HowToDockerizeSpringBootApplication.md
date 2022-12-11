@@ -116,6 +116,15 @@ In the above command port 9090 is the local machine port mapped to container por
 
 https://github.com/visheshgupta08071992/SDETSpring
 
+**To Dockerize SpringBoot Application with MySql refer below video**
+
+https://www.youtube.com/watch?v=6hMHziv0T2Y&list=PLA7e3zmT6XQUTHCBMgkM9qoOrLdaOO5Gi&index=7
+
+**To build and push docker image whenever new build is created we need to use Maven Plugin, Refer below video**
+
+https://www.youtube.com/watch?v=2v0-aIO_R08&list=PLVz2XdJiJQxzMiFDnwxUDxmuZQU3igcBb&index=4&t=414s
+
+
 
 
 
