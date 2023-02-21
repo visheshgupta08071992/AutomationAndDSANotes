@@ -1,6 +1,7 @@
 ## API Gateway
 
 An API Gateway is the single point of entry to the clients of an application. It sits between the clients and a collection of backend services for the application.
+We can use open source API Gateway Implementation known as zuul provided by Netflix in our system.
 
 ### Uses of API gateway
 
