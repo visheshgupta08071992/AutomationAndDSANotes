@@ -33,3 +33,11 @@ Load Balancer can also be added within API Gateway ensuring load is correctly ba
 ![image](https://user-images.githubusercontent.com/52998083/220307377-84c7dbcb-bf5f-4900-9fa8-669c73202e3e.png)
 
 
+### Worth a read
+
+https://hub.packtpub.com/api-gateway-and-its-need/
+
+https://www.itprotoday.com/cloud-computing-and-edge-computing/understanding-api-gateways-benefits-and-disadvantages
+
+
+
