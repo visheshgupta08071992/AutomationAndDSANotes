@@ -40,6 +40,8 @@ Load Balancer can also be added within API Gateway ensuring load is correctly ba
 
 https://hub.packtpub.com/api-gateway-and-its-need/
 
+https://medium.com/@rishabh171192/system-design-api-gateway-backend-for-frontend-bff-cache-stampede-circuit-breaker-9c77101e8d54
+
 https://www.itprotoday.com/cloud-computing-and-edge-computing/understanding-api-gateways-benefits-and-disadvantages
 
 
