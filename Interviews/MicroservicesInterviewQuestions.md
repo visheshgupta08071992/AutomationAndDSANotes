@@ -29,8 +29,27 @@ Microservices can communicate with help of API calls(Synchronous Communication) 
 
 ### What is Spring Cloud Config Server?
 
+Every micorservice would have its configuration defined within its yaml file. Microservice 1 would have its own configuration yml file similarly microservice 2 would have its separate configuration defined within yml. If the given configuration is hardcoded and if we want to change the configuration then in the given case we have to take down our deployment, change the configuration and deploy the new version of our microservice. This is not the best practise, The given problem can be solved with Spring Cloud Config Server which can read configuration from somewhere for example Git, We can checkin our configuration in our Git configuration repo and our Spring Cloud Config Server will read our configuration from Git Configuration Project and whenever we change the git config project, Spring Cloud Config server can read the latest configuration and hand it over to our microservices.
+
 
 ![image](https://user-images.githubusercontent.com/52998083/220596580-da4b11d9-b0ba-4df8-8199-1b1c72a66e2b.png)
+
+### What is the database strategy you follow for microservices?
+
+![image](https://user-images.githubusercontent.com/52998083/220604806-6f1df84b-7df5-4c00-ba62-d65b97481972.png)
+
+### How do you monitor your microservices?
+
+![image](https://user-images.githubusercontent.com/52998083/220605104-74a9347d-00ce-4bff-b7c6-600f5dffb314.png)
+
+
+## Referance
+
+https://www.youtube.com/watch?v=SZBJNKnOGTw&list=PLHurxyYY5q3Ha_Hs_u0uCh-UAkkyt4QPb&index=6
+
+
+
+
 
 
 
