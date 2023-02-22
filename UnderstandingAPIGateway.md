@@ -9,19 +9,22 @@ We can use open source API Gateway Implementation known as zuul provided by Netf
 
 SSL Certificate, Authetification and Authorization Logic can be added as part of API Gateway Class separating it from the Application business logic.
 
-**2.Routing Feature**</br>
+**2Adapter**
+There could be multiple calls from client, API Gateway can act as adapter by converting this multiple calls to a single call and then passing the calls to respective microservice, It again converts the response from Multiple mircroservices to a single response and sends it to client. For example consider an Amazon Cart page, The cart page has n number of details like Order Details, Customer Details, Product suggestion details which could be bought with the Product in cart. These all details would require call to multiple microservices, API Gateway converts this multiple call into single call and pass the request to appropriate microservice, It again converts the response from Multiple mircroservices to a single response and sends it to Amazon Cart Page.
+
+**3.Routing Feature**</br>
 If there are multiple Mirco services then using the routing system we could directly provide access to the requested api which is requested  by client.
 
-**3.Caching**</br>
+**4.Caching**</br>
 Caching can also be added within API gateway Class.
 
-**4.Protocol Adapter**</br>
+**5.Protocol Adapter**</br>
 It changes the protocol of the request and response if both protocol are different. Consider client is sending HTTP2 protocol request and our application accepts HTTP1 
 protocol request then Protocol Adaptor would help to resolve the issue.
 
-**5.Logging and Monitoring**
+**6.Logging and Monitoring**
 
-**6.Load Balancer**</br>
+**7.Load Balancer**</br>
 Load Balancer can also be added within API Gateway ensuring load is correctly balanced between PODs of different services.
 
 
