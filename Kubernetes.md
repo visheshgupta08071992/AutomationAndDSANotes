@@ -44,6 +44,16 @@ Worker Nodes are the Nodes where your microservices are actually run.
 
 **Replica Set** - Replica Set maps to different version of microservice.
 
+### Different ways to setup Kubernetes cluster
+
+1. With the help of MiniKube on your Local Machine. But your machine should be powerful enough to run that.
+2. With the help cloud -
+     AWS provides (EKS)Elastic Kubernetes Service. No free Tier.
+     Azure provides (AKS)Azure Kubernetes Service.No free Tier.
+     Google provide (GKE)Google Kubernetes Engine.Offers free tier.
+
+
+
 
 ### What features do Orchestration Tool Offer
 
