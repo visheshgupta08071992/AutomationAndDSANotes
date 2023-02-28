@@ -47,15 +47,10 @@ Worker Nodes are the Nodes where your microservices are actually run.
 ### Different ways to setup Kubernetes cluster
 
 1. With the help of MiniKube on your Local Machine. But your machine should be powerful enough to run that.
-2. With the help cloud -
-     AWS provides (EKS)Elastic Kubernetes Service. No free Tier.
-     Azure provides (AKS)Azure Kubernetes Service.No free Tier.
-     Google provide (GKE)Google Kubernetes Engine.Offers free tier.
+2. With the help cloud -</br>
+     AWS provides (EKS)Elastic Kubernetes Service. No free Tier.</br>
+     Azure provides (AKS)Azure Kubernetes Service.No free Tier.</br>
+     Google provide (GKE)Google Kubernetes Engine.Offers free tier.</br>
 
 
-
-
-### What features do Orchestration Tool Offer
-
-![image](https://user-images.githubusercontent.com/52998083/221558712-bb2acda3-9558-4e42-a8b3-4edf22f7c53e.png)
 
