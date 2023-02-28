@@ -51,6 +51,15 @@ Worker Nodes are the Nodes where your microservices are actually run.
      AWS provides (EKS)Elastic Kubernetes Service. No free Tier.</br>
      Azure provides (AKS)Azure Kubernetes Service.No free Tier.</br>
      Google provide (GKE)Google Kubernetes Engine.Offers free tier.</br>
+     
+### Understanding ConfigMap and Secrets
+
+**ConfigMap**
+
+
+
+     
+     
 
 
 
