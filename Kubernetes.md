@@ -120,6 +120,11 @@ There are four processes running on Master Node that control the Worker Nodes.
 ![image](https://user-images.githubusercontent.com/52998083/222133406-b0fa77e9-9c5e-46f9-8fe8-fbdbbb8d57ac.png)
 
 
+### Setting up Minikube on Local Machine for Testing purpose
+
+**MiniKube** MiniKube is a 1 node Kubernetes cluster having both Master and Worker on the same node. Minikube has a preinstalled docker container runtime and it creates a virtual box on your laptop. Node runs in the virtual box. 
+
+
 
 
 
