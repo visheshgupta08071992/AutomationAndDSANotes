@@ -85,7 +85,7 @@ Whenever our application is running, we want our data to be Persistent. Consider
 ![image](https://user-images.githubusercontent.com/52998083/222099429-bb84ca5a-c43e-4e5f-940a-18434996db5d.png)
 
 
-### Deployment and Stateful set
+### Kubernetes 
 
 
 
