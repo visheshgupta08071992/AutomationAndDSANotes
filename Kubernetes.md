@@ -110,7 +110,17 @@ There are four processes running on Master Node that control the Worker Nodes.
 
 **Controller Manager**  Controller Manager detects state changes like crashing of PODS for example when Pods die Controller Manager detects that and tries to recover cluster state as soon as possible. For recovering the cluster state, Control manager request Scheduler to reschedule the dead parts.
 
-**etcd**
+**etcd**  etcd is a key value store of a cluster state. You could think of it as a cluster brain which means that when a Pod is scheduled, when a POD dies all of these changes gets saved or updated into this key-value store of etcd. ETCD is known as cluster brain because Scheduler, Controller Manager all works based on etcd key value store data.
+
+![image](https://user-images.githubusercontent.com/52998083/222132608-813b95c1-22c7-4e10-a416-8aedbf387582.png)
+
+
+### How to setup Cluster
+
+![image](https://user-images.githubusercontent.com/52998083/222133406-b0fa77e9-9c5e-46f9-8fe8-fbdbbb8d57ac.png)
+
+
+
 
 
 
