@@ -40,7 +40,7 @@ Worker Nodes are the Nodes where your microservices are actually run.
 
 **Pod** - A pod is nothing but specific running version of a microservice.
 
-**Service** - Service is something which is used to expose the deployment to the outside world.
+**Service** - Pod communicate with each other with the help of service. Service is kind of an address to a POD.
 
 **Replica Set** - Replica Set maps to different version of microservice.
 
