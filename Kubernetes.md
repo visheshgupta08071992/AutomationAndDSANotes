@@ -44,6 +44,13 @@ Worker Nodes are the Nodes where your microservices are actually run.
 
 **Replica Set** - Replica Set maps to different version of microservice.
 
+**Ingress** - Ingress is an object that allows access to your Kubernetes services from outside the Kubernetes cluster
+
+![image](https://user-images.githubusercontent.com/52998083/222094137-dc1f070c-7c61-438c-90d7-f61189df8942.png)
+
+
+
+
 ### Different ways to setup Kubernetes cluster
 
 1. With the help of MiniKube on your Local Machine. But your machine should be powerful enough to run that.
