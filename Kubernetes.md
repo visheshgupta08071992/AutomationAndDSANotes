@@ -104,7 +104,7 @@ it avoids the network overhead to send request to another machine.
 
 There are four processes running on Master Node that control the Worker Nodes.
 
-**Api Server**  When we as a user wants to deploy new application in a kubernetes cluster, we need to interact with API server using some client it could be UI Or Kubernetes Dashboard or Kubernetes API. So API server is like a cluster gateway which gets the initial request of any updates into the cluster or even the queries from the cluster. It also acts as a gatekeeper for authentication to make sure that only authenticated and authorized request get through the cluster.
+**Api Server**  When we as a user wants to deploy new application in a kubernetes cluster, we need to interact with API server using some client it could be UI Or Kubernetes Dashboard or Kubernetes API or Command line tool. So API server is like a cluster gateway which gets the initial request of any updates into the cluster or even the queries from the cluster. It also acts as a gatekeeper for authentication to make sure that only authenticated and authorized request get through the cluster.
 
 **Scheduler**  Once the API server validates your request it would schedule/start the application POD on one of the worker nodes using scheduler process. Scheduler just decides on which Node new Pod should be scheduled, The process which actually starts the container is Kubelet present within node processes.Kublet gets request from scheduler and executes that request on that node.
 
@@ -123,6 +123,17 @@ There are four processes running on Master Node that control the Worker Nodes.
 ### Setting up Minikube on Local Machine for Testing purpose
 
 **MiniKube** MiniKube is a 1 node Kubernetes cluster having both Master and Worker on the same node. Minikube has a preinstalled docker container runtime and it creates a virtual box on your laptop. Node runs in the virtual box. 
+
+### Understanding Kubectl
+
+Kubectl is a kubernetes command line tool to interact with Kubernetes Cluster. Kubectl interacts with APIServer on Master Node to create pods, destroy pods, create ConfigMap and Secrets.
+
+![image](https://user-images.githubusercontent.com/52998083/222139519-0ad40824-d3ff-4ead-b2f8-456d608013f4.png)
+
+
+
+
+
 
 
 
