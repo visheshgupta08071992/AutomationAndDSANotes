@@ -85,7 +85,37 @@ Whenever our application is running, we want our data to be Persistent. Consider
 ![image](https://user-images.githubusercontent.com/52998083/222099429-bb84ca5a-c43e-4e5f-940a-18434996db5d.png)
 
 
-### Kubernetes 
+### Processes within Worker Node
+
+There are three processes which must be installed on every Node -</br>
+
+1.**Container Runtime** So the first process which need to be run on every Node is the Container Runtime(Docker). Because Application Pods has container running inside them, A container runtime needs to be installed on every node.
+
+2.**Kubelet** The Process that schedules the Pods and the containers underneath is Kubelet. Kubelet interacts with both the container and the node because at the end of the day Kubelet is responsible for running the POD and then assigning resources from the node to the Container like CPU,RAM and storage resources.
+
+3.**Kube Proxy** The third process which is required is KubeProxy. KubeProxy must be installed on every node.KubeProxy has intelligent forwarding logic inside that makes sure that the communication also works in a performant way with low overhead. For example an application myapp replica is making a request to database instead of randonly forwarding request to any replica it will actually forward the request to replica that is runningon the same node as the POD that initiated the request.Thus this way 
+it avoids the network overhead to send request to another machine.
+
+
+![image](https://user-images.githubusercontent.com/52998083/222113199-ac19bb8e-1d83-40ce-b029-671b5a77cff0.png)
+
+
+### Processes within Master Node
+
+There are four processes running on Master Node that control the Worker Nodes.
+
+**Api Server**  When we as a user wants to deploy new application in a kubernetes cluster, we need to interact with API server using some client it could be UI Or Kubernetes Dashboard or Kubernetes API. So API server is like a cluster gateway which gets the initial request of any updates into the cluster or even the queries from the cluster. It also acts as a gatekeeper for authentication to make sure that only authenticated and authorized request get through the cluster.
+
+**Scheduler**  Once the API server validates your request it would schedule/start the application POD on one of the worker nodes using scheduler process. Scheduler just decides on which Node new Pod should be scheduled, The process which actually starts the container is Kubelet present within node processes.Kublet gets request from scheduler and executes that request on that node.
+
+**Controller Manager**  Controller Manager detects state changes like crashing of PODS for example when Pods die Controller Manager detects that and tries to recover cluster state as soon as possible. For recovering the cluster state, Control manager request Scheduler to reschedule the dead parts.
+
+**etcd**
+
+
+
+
+
 
 
 
