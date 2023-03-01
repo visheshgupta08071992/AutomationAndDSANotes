@@ -49,8 +49,6 @@ Worker Nodes are the Nodes where your microservices are actually run.
 ![image](https://user-images.githubusercontent.com/52998083/222094137-dc1f070c-7c61-438c-90d7-f61189df8942.png)
 
 
-
-
 ### Different ways to setup Kubernetes cluster
 
 1. With the help of MiniKube on your Local Machine. But your machine should be powerful enough to run that.
@@ -61,7 +59,33 @@ Worker Nodes are the Nodes where your microservices are actually run.
      
 ### Understanding ConfigMap and Secrets
 
-**ConfigMap**
+**ConfigMap** </br>
+
+ConfigMap contains external configuration of your application like DataBaseURL. We just need to connect configMap to our POD and the POD starts reading configMap.
+
+**What is the use of ConfigMap when we could provide all the configuration within properties file**
+
+Consider an example where your Application POD is running on Kubernetes cluster, And the Database URL with which your Application communicates is changed, Then  in the given scenario, you might need to stop the application, update the configurtion with updated DB URL, build and push the updated version to the the repo and deploy the updated image of Application to Kubernetes cluster. The given problem is easily solved by Kubernetes ConfigMap as we can maintain all such external configuration within configMap, We could just update the configMap and the POD starts reading the updated configuration from configMap.
+
+
+**Secret**
+
+Secret is just like configMap but the difference is it is used to store secret data like credentials. It stores data in base64 encoded format. We just need to connect secret to our POD so that POD start reading data from secret.
+
+![image](https://user-images.githubusercontent.com/52998083/222098488-20a6f73c-9ddc-4bd2-bac3-683ddb508329.png)
+
+
+### Understanding Volumes
+
+Whenever our application is running, we want our data to be Persistent. Consider an example where our Database POD is restarted, We would not want the Database to loose data once it is restarted, To ensure that the POD does not loose data once it is restarted we need to attach it with Volumes(External Physical storage either on same machine or remote machine).
+
+![image](https://user-images.githubusercontent.com/52998083/222099429-bb84ca5a-c43e-4e5f-940a-18434996db5d.png)
+
+
+
+
+
+
 
 
 
