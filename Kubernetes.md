@@ -39,7 +39,7 @@ Worker Nodes are the Nodes where your microservices are actually run.
 **Deployment**  -  A deployment directly relates to application or microservice.In deployments you need to mention how many replicas you need to create for your application. 
 
 **StatefulSet** - You need to ensure that database replicas are created so that the load is accordingly balanced. But one of the issues with creating Database replicas is that the Data should be consistently maintained as multiple application POD would be reading or writing data to multiple database POD. To ensure state of 
-DB remains consistent we need to create DataBase replicas with Statefulset. StatefulSet ensures that database replicas are consistent.
+DB remains consistent we need to create DataBase replicas with Statefulset. StatefulSet ensures that database replicas are consistent. StatefulSet just like deployment would take care of replicating the PODS and scaling them up or scaling them down but making sure that the database reads and writes are synchronized so that no database inconsistencies are offered.However deploying database applications using stateful sets in kubernetes cluster is bit tedious, That's why it's also a common practise to host database applications outside of kubernetes cluster and just have stateless application that replciate and scale with no problem inside of the kubernetes cluster and communicate with external database.
 
 **Pod** - A pod is nothing but specific running version of a microservice.
 
