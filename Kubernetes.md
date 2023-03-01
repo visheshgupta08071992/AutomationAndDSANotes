@@ -36,7 +36,10 @@ Worker Nodes are the Nodes where your microservices are actually run.
 
 ### Terminolgies in Kubernetes
 
-**Deployment**  -  A deployment directly relates to application or microservice.
+**Deployment**  -  A deployment directly relates to application or microservice.In deployments you need to mention how many replicas you need to create for your application. 
+
+**StatefulSet** - You need to ensure that database replicas are created so that the load is accordingly balanced. But one of the issues with creating Database replicas is that the Data should be consistently maintained as multiple application POD would be reading or writing data to multiple database POD. To ensure state of 
+DB remains consistent we need to create DataBase replicas with Statefulset. StatefulSet ensures that database replicas are consistent.
 
 **Pod** - A pod is nothing but specific running version of a microservice.
 
@@ -80,6 +83,9 @@ Secret is just like configMap but the difference is it is used to store secret d
 Whenever our application is running, we want our data to be Persistent. Consider an example where our Database POD is restarted, We would not want the Database to loose data once it is restarted, To ensure that the POD does not loose data once it is restarted we need to attach it with Volumes(External Physical storage either on same machine or remote machine).
 
 ![image](https://user-images.githubusercontent.com/52998083/222099429-bb84ca5a-c43e-4e5f-940a-18434996db5d.png)
+
+
+### Deployment and Stateful set
 
 
 
