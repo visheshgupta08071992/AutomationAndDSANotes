@@ -124,6 +124,25 @@ There are four processes running on Master Node that control the Worker Nodes.
 
 **MiniKube** MiniKube is a 1 node Kubernetes cluster having both Master and Worker on the same node. Minikube has a preinstalled docker container runtime and it creates a virtual box on your laptop. Node runs in the virtual box. 
 
+Follow - https://minikube.sigs.k8s.io/docs/start/  to setup MiniKube.
+
+Once MiniKube is installed, Hit below commands in cmd.
+
+1.**minikube start** to start minikube </br>
+2.**minikube status** to check the status of Minikube</br>
+
+![image](https://user-images.githubusercontent.com/52998083/222897299-0d69b094-a80e-423e-9113-be8a77436ff5.png)
+
+3.**kubectl get nodes** to get the nodes of cluster
+
+![image](https://user-images.githubusercontent.com/52998083/222897338-8dfc8914-b442-42e0-932b-cfd8d7d2fc33.png)
+
+**Note** </br>
+If you are working on a machine where kubernetes Minikube Cluster was already created the ensure to delete cluster by using command **minikube delete --all**
+
+
+
+
 ### Understanding Kubectl
 
 Kubectl is a kubernetes command line tool to interact with Kubernetes Cluster. Kubectl interacts with APIServer on Master Node to create pods, destroy pods, create ConfigMap and Secrets.
