@@ -21,7 +21,6 @@ Kubernetes simplifies the use and deployment of microservices, because whenever 
 
 3.Run the image on the kubernetes cluster.
 
-
 The cluster creation is done only once and Once the Cluster is created we could run the images multiple times.
 
 ### Understanding Kubernetes Cluster.
@@ -141,14 +140,42 @@ Once MiniKube is installed, Hit below commands in cmd.
 If you are working on a machine where kubernetes Minikube Cluster was already created the ensure to delete cluster by using command **minikube delete --all**
 
 
-
-
 ### Understanding Kubectl
 
 Kubectl is a kubernetes command line tool to interact with Kubernetes Cluster. Kubectl interacts with APIServer on Master Node to create pods, destroy pods, create ConfigMap and Secrets.
 
-![image](https://user-images.githubusercontent.com/52998083/222139519-0ad40824-d3ff-4ead-b2f8-456d608013f4.png)
+![image](https://user-images.githubusercontent.com/52998083/222139519-0ad40824-d3ff-4ead-b2f8-456d608013f4.png)\
 
+
+### Kubectl Commands
+
+1.**kubectl get nodes** is used to get list of nodes </br>
+
+2.**kubectl create deployment {deploymentName} --image={imageName}**  is used to run deployment(microservice) and create a POD. In the below example we are running nginx deployment(microservice) which we have named as nginx-depl and creating a POD of nginx. 
+
+**Example** </br>
+kubectl create deployment nginx-depl --image=nginx
+
+![image](https://user-images.githubusercontent.com/52998083/222900698-5626afff-5ad7-4743-8c80-80114ef7d0a4.png)
+
+3.**kubectl get deployment** is used to get all the deployments.</br>
+
+![image](https://user-images.githubusercontent.com/52998083/222900762-1331bb22-e399-418c-9681-7ed1a65bc7f3.png)
+
+4.
+
+
+```js
+
+
+kubectl get pod
+kubectl get services
+kubectl create deployment nginx-depl --image=nginx
+kubectl get deployment
+kubectl get replicaset
+kubectl edit deployment nginx-depl
+
+```
 
 
 
