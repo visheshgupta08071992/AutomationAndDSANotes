@@ -189,6 +189,10 @@ kubectl create deployment nginx-depl --image=nginx
 
 ![image](https://user-images.githubusercontent.com/52998083/222945800-ec61af9d-de78-49e3-ab01-da9c5f1eb516.png)
 
+### Kubernetes Yaml Configuration File
+
+
+
 
 
 
