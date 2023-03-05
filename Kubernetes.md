@@ -191,6 +191,11 @@ kubectl create deployment nginx-depl --image=nginx
 
 ### Kubernetes Yaml Configuration File
 
+Must Read
+
+https://blog.devgenius.io/understanding-yaml-files-in-kubernetes-f0121b40abbc
+
+https://articles.wesionary.team/making-sense-of-kubernetes-configuration-files-yaml-f90b033d5ad1
 
 
 
