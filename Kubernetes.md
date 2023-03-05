@@ -183,6 +183,14 @@ kubectl create deployment nginx-depl --image=nginx
 
 10. **kubectl delete deployment {deploymentName}** is used to delete deployment. Deleting deployment also deletes associated PODs and replicaSets.</br>
 
+11.**kubectl apply -f {config.yaml}** is used to run deployment file and create deployment.
+
+![image](https://user-images.githubusercontent.com/52998083/222945785-edb159ac-691b-49f6-bda5-337172b0add9.png)
+
+![image](https://user-images.githubusercontent.com/52998083/222945800-ec61af9d-de78-49e3-ab01-da9c5f1eb516.png)
+
+
+
 
 
 
