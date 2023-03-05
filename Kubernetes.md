@@ -162,20 +162,16 @@ kubectl create deployment nginx-depl --image=nginx
 
 ![image](https://user-images.githubusercontent.com/52998083/222900762-1331bb22-e399-418c-9681-7ed1a65bc7f3.png)
 
-4.
+4.**kubectl get pod** - PODS are created once deployment is running.</br>
+
+5.**kubectl get replicaset** - To get replicaSet. ReplicaSet is created once deployment is running.</br>
+
+![image](https://user-images.githubusercontent.com/52998083/222943482-4111551a-e8e2-42c7-ad10-c974f8571736.png)
 
 
-```js
+6.**kubectl edit deployment {deploymentName}** is used to edit deployment(microservice)</br>
 
-
-kubectl get pod
-kubectl get services
-kubectl create deployment nginx-depl --image=nginx
-kubectl get deployment
-kubectl get replicaset
-kubectl edit deployment nginx-depl
-
-```
+**Example** - kubectl edit deployment nginx-depl
 
 
 
