@@ -175,6 +175,13 @@ kubectl create deployment nginx-depl --image=nginx
 
 7.**kubectl logs {podName}** is used to get the logs of POD and debug it.</br>
 
+8.**kubectl describe pod {podName}** is used to get complete details of Pod.</br>
+
+9.**kubectl exec -it {podName} -- bin/bash** is used to enter inside POD container.</br>
+
+![image](https://user-images.githubusercontent.com/52998083/222944784-2083283a-9804-4b07-8b0e-59a2a22f57e5.png)
+
+
 
 
 
