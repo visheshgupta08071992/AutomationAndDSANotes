@@ -173,6 +173,8 @@ kubectl create deployment nginx-depl --image=nginx
 
 **Example** - kubectl edit deployment nginx-depl
 
+7.**kubectl logs {podName}** is used to get the logs of POD and debug it.</br>
+
 
 
 
