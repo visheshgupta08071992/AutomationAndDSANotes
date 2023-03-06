@@ -31,7 +31,9 @@ As shown in the below image Consider we have four names and four different serve
 ![image](https://user-images.githubusercontent.com/52998083/223084485-a19d95ca-3c98-404e-8aa0-6d60658ba38e.png)
 
 
-The problem with hashing occurs when we increase or decrease the server based on the increase on decrease of load. Consider now the no of server has been decreased to three. The change in no of sever also results change in our hashing function from modulus 4 to modulus 3 which resulted in in reassinging of 3 names to different server. That is around 75% of our data has bee reassigned. This is the problem with normal hashing function that when you want to increase or decrease the no of server the you might need to move around a lot of data.
+The problem with hashing occurs when we increase or decrease the server based on the increase on decrease of load. Consider now the no of server has been decreased to three. The change in no of sever also results change in our hashing function from modulus 4 to modulus 3 which resulted in in reassinging of 3 names to different server. That is around 75% of our data has bee reassigned. This is the problem with normal hashing function that when you want to increase or decrease the no of server then you might need to move around a lot of data.
+
+Consistent Hashing is the solution to the given problem where we could minimize these movement of data.
 
 
 ![image](https://user-images.githubusercontent.com/52998083/223086327-2d2e8431-d2dc-4160-9849-3551a2948fc4.png)
