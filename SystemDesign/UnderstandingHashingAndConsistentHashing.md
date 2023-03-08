@@ -39,6 +39,17 @@ Consistent Hashing is the solution to the given problem where we could minimize 
 ![image](https://user-images.githubusercontent.com/52998083/223086327-2d2e8431-d2dc-4160-9849-3551a2948fc4.png)
 
 
+### What is Consitent Hashing
+
+The problem with simple modulo caching is when we add or remove a server, all our existing mappings will be broken. Hence, we are required to remap  most of our keys to a different server. 
+
+In Consitent Hashing all the Keys and Sevrers are hashed using the same hash function and are placed on the edge of the circle. To find out which server to ask for a given key or store a given key, we need to first locate the key on the circle and move in a clockwise direction until we find a server.Let’s use the above example and place them on the hash ring. In this case, the minimum value on the circle is 0 and the maximum value is 100.
+
+![image](https://user-images.githubusercontent.com/52998083/223719663-a805bb00-68a4-4c7a-82d4-22b545bcf5be.png)
+
+According to consistent hashing rule, bob@example.com and mark@example.com are on server S2, smith@example.com and adam@example.com are on server S3 and alex@example.com and john@example.com are on server S1.
+
+
 ### Referance
 
 Hashing - https://www.youtube.com/watch?v=cITtFpz3a3Y </br>
