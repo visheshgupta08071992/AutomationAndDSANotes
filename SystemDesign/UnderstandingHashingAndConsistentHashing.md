@@ -43,4 +43,9 @@ Consistent Hashing is the solution to the given problem where we could minimize 
 
 Hashing - https://www.youtube.com/watch?v=cITtFpz3a3Y </br>
 
+Conistent Hashing
+
+https://www.youtube.com/watch?v=oKAU6LaYFhw
+
+https://www.youtube.com/watch?v=jqUNbqfsnuw
 
