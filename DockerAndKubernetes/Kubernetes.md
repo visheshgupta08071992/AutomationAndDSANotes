@@ -185,6 +185,8 @@ kubectl create deployment nginx-depl --image=nginx
 
 11.**kubectl apply -f {config.yaml}** is used to run deployment file and create deployment.
 
+12.4.**kubectl get pod -o wide** is used to get additional information of POD.</br>
+
 ![image](https://user-images.githubusercontent.com/52998083/222945785-edb159ac-691b-49f6-bda5-337172b0add9.png)
 
 ![image](https://user-images.githubusercontent.com/52998083/222945800-ec61af9d-de78-49e3-ab01-da9c5f1eb516.png)
