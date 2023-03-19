@@ -191,6 +191,8 @@ kubectl create deployment nginx-depl --image=nginx
 
 14.**kubectl get deployment {deploymentName} -o yaml > {filename.yaml}** is used to get deployment file in yaml format and writes it into the file.<br>
 
+15.**kubectl get all** to all Kubernetes objects
+
 ![image](https://user-images.githubusercontent.com/52998083/222945785-edb159ac-691b-49f6-bda5-337172b0add9.png)
 
 ![image](https://user-images.githubusercontent.com/52998083/222945800-ec61af9d-de78-49e3-ab01-da9c5f1eb516.png)
