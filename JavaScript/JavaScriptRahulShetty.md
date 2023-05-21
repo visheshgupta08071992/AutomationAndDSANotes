@@ -47,6 +47,21 @@ Once Node.js is installed, Open command prompt and hit below commands to ensure 
 |   How to know dataType of variable in Javascript  | typeOf() method is used to determine the dataType of variable in JavaScript.</br></br> ![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/5c51b1b1-513d-4dd2-882f-fa3202b2b45d) |
 
 
+ **For Printing** 
+ 
+ ```js
+ console.log("Hello World") 
+ ```
+
+ **Declaring variables in Javascript**
+ 
+ In Javascript variables are very loosely type. It means variables can hold data of any type </br></br> eg. **var a =4, var b="Hello",var c =5.678,let z=67,let m="Test"** </br> </br> Uptill Javascript 5 we could declare variable only using var keyword but from ES6 i.e JavaScript 6 we could also declare varaibles using let and const keywords.</br></br> **Difference between var and let keyword** </br> 1. we cannot redeclare variable using let but we can do it using var keyword. </br> ![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/71e277a9-fd4f-4750-8448-1802eb80a28c) </br>![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/80fbeaf8-004c-4564-aa7b-e2b6f4a44fa7) </br> Reassigning is allowed by let but redeclaring is not allowed. </br></br> **Difference between let and const keyword** </br> Const keyword is used to define constant variables, We cannot changes the value of Const variable but we can change the value of variable declare with let
+ 
+ 
+ **How to know dataType of variable in Javascript**
+ 
+ typeOf() method is used to determine the dataType of variable in JavaScript.</br></br> ![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/5c51b1b1-513d-4dd2-882f-fa3202b2b45d)
+ 
 
 
 
