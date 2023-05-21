@@ -62,6 +62,28 @@ Once Node.js is installed, Open command prompt and hit below commands to ensure 
  
  typeOf() method is used to determine the dataType of variable in JavaScript.</br></br> ![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/5c51b1b1-513d-4dd2-882f-fa3202b2b45d)
  
+ **Differnet ways of Declaring Array**
+ 
+ ```js
+ //Declaring and initializing Array using 1st Way
+let a=new Array(6)
+for(let i=0;i<a.length;i++){
+    a[i] = i
+}
+console.log(a) // [ 0, 1, 2, 3, 4, 5 ]
+
+//Declaring and initializing Array 2nd way
+
+let b= new Array(1,2,3,4,5,6)
+console.log(b) // [ 1, 2, 3, 4, 5, 6 ]
+
+//Declaring and initializing Array 3rd way
+
+let c =[1,2,3,4,5,6]
+console.log(c) // [ 1, 2, 3, 4, 5, 6 ]
+
+ ```
+ 
 
 
 
