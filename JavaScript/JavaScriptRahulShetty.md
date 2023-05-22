@@ -65,7 +65,7 @@ console.log(c) // [ 1, 2, 3, 4, 5, 6 ]
  **Understanding Different methods in Arrays**
  
  ```js
- //Declaring and initializing Array using 1st Way
+//Declaring and initializing Array using 1st Way
 let a=new Array(6)
 for(let i=0;i<a.length;i++){
     a[i] = i
@@ -178,8 +178,125 @@ console.log(arr6) //[ 1, 2, 3, 4, 5, 6 ]
 arr6.sort((a,b) => b - a)
 console.log(arr6) //[ 6, 5, 4, 3, 2, 1 ]
 
+/*  
+  The forEach() method in JavaScript is used to loop over the elements of an array and perform a specific action for each element. 
+  It allows you to iterate through an array and execute a function on each element.
+
+  Syntax - array.forEach(callbackFunction)
+
+*/
+
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach((currentValue) => console.log(currentValue));
+
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
 
 
+
+/* 
+   
+  The reduce() method is a built-in method in JavaScript that allows you to calculate a single value from an array of values. 
+   You can use it to sum up all the elements in an array, find the maximum or minimum value, or perform any other kind of calculation that reduces an array to a single value.
+
+   Syntax - array.reduce(callbackFunction, initialValue)
+
+   Parameters:
+
+   callbackFunction: This is a function that you provide, which will be called for each element of the array. 
+   It takes four parameters: accumulator, currentValue, currentIndex, and array. The accumulator is the value that accumulates the results, 
+   and currentValue is the current element being processed. The currentIndex is the index of the current element, and array is the original array.
+   
+   initialValue: This is an optional parameter. It specifies the initial value of the accumulator. 
+   If you don't provide it, the first element of the array will be used as the initial value, and the reduction starts from the second element.
+
+ */
+
+
+ //Find sum of all elements of an array using reduce method
+ 
+ let marks=[1,2,3,4,5]
+
+ let sum = marks.reduce((accumulater,marks) => accumulater + marks,0)
+
+ console.log(sum) // 15
+
+ //Find Max of all elements using reduce
+
+ let max = marks.reduce((a,b) => a>b?a:b)
+
+ console.log(max) //5
+
+  //Find Min of all elements using reduce
+
+  let min = marks.reduce((a,b) => a>b?b:a)
+
+  console.log(min) // 1
+
+
+ /* 
+   The filter() method in JavaScript is used to create a new array that contains elements from an existing array that pass a certain condition. 
+
+   Syntax - array.filter(callbackFunction)
+
+ */ 
+
+ 
+ //Print all even nos from an array using filter method
+ 
+ let nos =[1,2,3,4,5,6]
+
+ nos.filter((a) => a%2==0).forEach(a => console.log(a)) // 2 4 6
+
+  //Print all odd nos from an array using filter method
+
+  let oddNos =  nos.filter((a) => a%2!=0)
+
+  console.log(oddNos) // 1,3,5
+
+
+ /* 
+    The map() method  is used  transform the elements of the array and create a new array based on the transformations.
+ 
+    Syntax - array.map(callbackFunction) 
+ 
+ */ 
+
+ // Find squares of No using Map method in Javascript
+ 
+ let no=[1,2,3,4,5]
+
+ let sqrNo = no.map((e) => e*2)
+
+ console.log(sqrNo) // [ 2, 4, 6, 8, 10 ]
+
+ /* 
+    The flatMap() method is used to transform a nested array into single array
+ 
+    Syntax - array.flatMap(callbackFunction)
+
+ */
+
+//Transform the below nested array into single array    
+
+let nestedArray = [[1,2],[3,4],[5,6]]
+
+let singleArray = nestedArray.flatMap((e) => e)
+
+console.log(singleArray) // [ 1, 2, 3, 4, 5, 6 ]
+
+//Split each word of an array into individual characters using flatMap
+
+const words = ["hello", "world", "javascript"];
+
+const characters = words.flatMap((currentValue) =>  currentValue.split(""));
+
+console.log(characters); // Output: ["h", "e", "l", "l", "o", "w", "o", "r", "l", "d", "j", "a", "v", "a", "s", "c", "r", "i", "p", "t"]
  
  ```
 
