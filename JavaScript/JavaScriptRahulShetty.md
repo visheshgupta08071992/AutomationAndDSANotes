@@ -330,6 +330,101 @@ console.log(sumOfNo) //10
  
  ```
 
+**Understanding Strings in JS**
+
+```js
+
+//Declaring String
+
+let day='tuesday'
+
+//Printing the length
+console.log(day.length) //7
+
+//Finding substring using slice method, Staring index is inclusive, End Index is exclusive
+
+let partialString=day.slice(1,4) 
+console.log(partialString) // ues
+
+//Finding substring using subString method, Staring index is inclusive, End Index is exclusive
+
+let partialString1=day.substring(1,4)
+console.log(partialString1) // ues
+
+/* Finding the character at specified index */
+
+console.log(day[0]) // t
+console.log(day.charAt(0)) // t
+
+
+/* 
+    split() - Splits a string into an array of substrings 
+    based on a specified separator and returns the array.
+
+*/
+
+let str='Hi are you listening'
+
+let strArr=str.split(" ")
+
+console.log(strArr) // [ 'Hi', 'are', 'you', 'listening' ]
+
+/* trim() - Removes whitespace from both ends of a string. */
+
+let str1 = "   Hello   "
+
+console.log(str1.length) // 11
+//After trimming
+
+console.log(str1.trim().length) // 5
+
+/* 
+   parseInt is used for converting String to a No 
+   toString is used for converting No to a String
+*/
+
+let a = '25'
+let b = '50'
+
+let c = parseInt(a) + parseInt(b)
+
+console.log(c) //75
+
+//Convert no to String
+let d = c.toString()
+console.log(d + " is " + typeof(d)) // 75 is String
+
+
+/*concat two string using either concat method or + operator  */
+
+let s1 = 'day'
+
+s2 = s1 + " is funday"
+
+console.log(s2) // day is funday
+
+let m1 = 'day'
+
+m2 = m1.concat(" is funday")
+
+console.log(m2) // day is funday
+
+```
+
+**Commonly used string methods in JavaScript along with their descriptions and examples:**
+
+| Method           | Description                                                                                       | Example                                                     |
+|------------------|---------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
+| `charAt()`       | Returns the character at the specified index of a string.                                        | `const str = "Hello"; console.log(str.charAt(1));`           |
+| `concat()`       | Concatenates two or more strings and returns a new string.                                        | `const str1 = "Hello"; const str2 = "World"; console.log(str1.concat(str2));` |
+| `indexOf()`      | Returns the index of the first occurrence of a specified value in a string.                       | `const str = "Hello World"; console.log(str.indexOf("World"));` |
+| `toLowerCase()`  | Converts a string to lowercase letters.                                                           | `const str = "HELLO"; console.log(str.toLowerCase());`        |
+| `toUpperCase()`  | Converts a string to uppercase letters.                                                           | `const str = "hello"; console.log(str.toUpperCase());`        |
+| `trim()`         | Removes whitespace from both ends of a string.                                                    | `const str = "  Hello  "; console.log(str.trim());`           |
+| `replace()`      | Replaces a specified value or regular expression in a string with another value.                   | `const str = "Hello World"; console.log(str.replace("World", "Universe"));` |
+| `split()`        | Splits a string into an array of substrings based on a specified separator and returns the array.  | `const str = "Hello,World"; console.log(str.split(","));`     |
+| `substring()`    | Returns the part of a string between two specified indices.                                       | `const str = "Hello World"; console.log(str.substring(6, 11));` |
+| `length`         | Returns the length of a string.                                                                   | `const str = "Hello"; console.log(str.length);`               |
 
 
 
