@@ -213,7 +213,8 @@ numbers.forEach((currentValue) => console.log(currentValue));
    and currentValue is the current element being processed. The currentIndex is the index of the current element, and array is the original array.
    
    initialValue: This is an optional parameter. It specifies the initial value of the accumulator. 
-   If you don't provide it, the first element of the array will be used as the initial value, and the reduction starts from the second element.
+   If you don't provide it, the first element of the array will be used as the initial value, and the reduction starts from 
+   the second element.
 
  */
 
