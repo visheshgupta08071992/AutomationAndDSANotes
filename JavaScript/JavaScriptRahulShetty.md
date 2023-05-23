@@ -603,6 +603,32 @@ city: New York
 
 ```
 
+**Understanding difference between == and === operators in Javascript**
+
+In JavaScript, the double equals operator (`==`) and the triple equals operator (`===`) are used for comparison between values. However, they differ in terms of their behavior and how they handle data types.
+
+The double equals operator (`==`) performs a loose comparison, where type coercion is allowed. It checks if the values on both sides are equal after converting them to a common type. This means that JavaScript will try to convert the values to the same type before making the comparison. Here's an example:
+
+```javascript
+console.log(5 == "5"); // true
+console.log(true == 1); // true
+console.log(null == undefined); // true
+```
+
+In the first example, the number `5` is converted to a string `"5"` before the comparison, resulting in equality. In the second example, the boolean `true` is converted to the number `1`, which is then compared to `1`. In the third example, `null` and `undefined` are considered equal in loose comparison.
+
+On the other hand, the triple equals operator (`===`) performs a strict comparison, where no type coercion takes place. It checks if the values on both sides are not only equal in value but also have the same type. Here's an example:
+
+```javascript
+console.log(5 === "5"); // false
+console.log(true === 1); // false
+console.log(null === undefined); // false
+```
+
+In this case, all the comparisons evaluate to `false` because the types of the values on both sides are different.
+
+In general, it is recommended to use the triple equals operator (`===`) for comparisons in JavaScript because it avoids unexpected type coercion. It provides a more precise and predictable way of comparing values.
+
 
 
 
