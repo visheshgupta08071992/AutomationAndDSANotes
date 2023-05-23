@@ -672,18 +672,55 @@ module.exports=class People
 
 ```
 
-**UsingPeople.js**
+**Student.js which inherits People.js**
 
 ```javascript
 
-//Catching Class People in People variable
 const People=require('./People')
+
+module.exports=class Student extends People{
+
+    /* 
+       If parent class has any constructor then your child class 
+       should also implement similar constructor
+    */ 
+    constructor(firstname,lastname){
+        
+        /* Another rule is you have to call your parent class constructor
+           as first step in child class constructor
+        */
+        super(firstname,lastname)
+    }
+
+    get location(){
+        return 'America'
+    }
+
+}
+
+```
+
+**UsingPeopleAndStudent.js**
+
+```js
+
+//Catching Class People and Student in People and Student variable respectively
+const People=require('./People')
+const Student=require('./Student')
 
 let people = new People('Rohit','Sharma')
 
 console.log(people.age)
 console.log(people.location)
 console.log(people.fullname())
+
+
+let student = new Student('Ishan','Sharma')
+
+console.log(student.age)
+console.log(student.location)
+console.log(student.fullname())
+
 
 ```
 
