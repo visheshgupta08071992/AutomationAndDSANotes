@@ -630,5 +630,64 @@ In this case, all the comparisons evaluate to `false` because the types of the v
 In general, it is recommended to use the triple equals operator (`===`) for comparisons in JavaScript because it avoids unexpected type coercion. It provides a more precise and predictable way of comparing values.
 
 
+**Understanding classes in Javascript**
+
+**People.js**
+
+```javascript
+
+/* 
+  Classes in Javascript are introduced in ES6 Engine 
+
+  Classes is preferred over objects as with help of one prototype of class 
+  we could create n different object
+
+*/
+
+// module.exports is used for exporting class so that it could be used in another files
+
+module.exports=class People
+{
+    //First way of defining property
+    age = 25
+
+    /*Defining property using getter method, if we add get infront of method 
+    then that is treated as property */
+    get location(){
+        return 'Canada'
+    }
+
+    //constructor
+    constructor(firstname,lastname){
+       this.firstname = firstname
+       this.lastname = lastname
+    }
+
+    //Class Method
+    fullname(){
+        return this.firstname + this.lastname
+    }
+}
+
+
+```
+
+**UsingPeople.js**
+
+```javascript
+
+//Catching Class People in People variable
+const People=require('./People')
+
+let people = new People('Rohit','Sharma')
+
+console.log(people.age)
+console.log(people.location)
+console.log(people.fullname())
+
+```
+
+
+
 
 
