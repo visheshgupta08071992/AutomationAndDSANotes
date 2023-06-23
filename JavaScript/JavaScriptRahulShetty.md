@@ -755,7 +755,9 @@ console.log(student.fullname())
 
 
 **Blog** - https://www.freecodecamp.org/news/javascript-async-await-tutorial-learn-callbacks-promises-async-await-by-making-icecream/ </br>
-**Corresponding Video** - https://www.youtube.com/watch?v=n5ZtTO1ArWg
+**Corresponding Video** - https://www.youtube.com/watch?v=n5ZtTO1ArWg </br>
+
+**Nice read for Promises after going through either the above video/blog** - https://kkirtigoel01.medium.com/promises-in-javascript-js-27baf0e506b5
 
 
 
