@@ -751,6 +751,11 @@ console.log(student.fullname())
 
 ```
 
+**Understanding Callbacks,Promises and Asysc Await in Javascript**
+
+
+**Blog** - https://www.freecodecamp.org/news/javascript-async-await-tutorial-learn-callbacks-promises-async-await-by-making-icecream/ </br>
+**Corresponding Video** - https://www.youtube.com/watch?v=n5ZtTO1ArWg
 
 
 
