@@ -760,8 +760,6 @@ console.log(student.fullname())
 **Nice read for Promises after going through either the above video/blog** - https://kkirtigoel01.medium.com/promises-in-javascript-js-27baf0e506b5
 
 
-Certainly! Here's the explanation of async/await in JavaScript, formatted in Markdown:
-
 # async/await
 
 async/await is a syntax introduced in JavaScript to make working with asynchronous code even easier. It allows you to write asynchronous code in a more sequential and readable way, similar to synchronous code.
