@@ -3,7 +3,7 @@
 1.NodeJs is runtime environment for Javacript on Server.</br>
 2.In NodeJs single thread can manage multiple connections, This is possible because of Non-blocking IO model which makes use of callbacks to do tasks asynchronously.
 
-**What is NPM** 
+## What is NPM
 
 NPM is node package manager which is used to manage packages(dependencies) for Node project. It is similar to Maven/Gradle in Java.
 
@@ -24,6 +24,15 @@ NPM is node package manager which is used to manage packages(dependencies) for N
 **npm uninstall {packageName}** - Used to uninstall a package.</br>
 
 **npm install --save-dev nodemon** - Used to install a package as dev dependency. Dev dependency package is used ony during development.</br>
+
+## Undestanding package.json and package-lock.json
+
+**package.json** - It consist of all the dependencies required by your project. It is similar to POM file in maven.</br>
+
+**package-lock.json** - It is a dependency tree. It specifies all the dependencies along with their version which the  dependencies in package.json file are using.</br>
+
+
+
 
 
 
