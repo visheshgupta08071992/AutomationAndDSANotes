@@ -17,7 +17,13 @@ NPM is node package manager which is used to manage packages(dependencies) for N
 
 **npm install {packageName} --save** - Used to install specific node package, Once the package is installed then the dependency gets added in package.json file. --save is required if your NPM version is less then 5 then -- save would be required.</br>
 
-**npm i {packageName}** - Can also be used to install specific node package.</br>
+**npm i {packageName}** - Can also be used to install specific node package. Once we install the package the dependency gets addedg within **package.json** and **node_modules** folder gets created which consist of dependency packages. We don't push node_modules folder to github as it is very heavy and anyone can install node_modules using npm</br>
+
+**npm i -g {packageName}** - Used to install package globally in system and use in any project.</br>
+
+**npm uninstall {packageName}** - Used to uninstall a package.</br>
+
+**npm install --save-dev nodemon** - Used to install a package as dev dependency. Dev dependency package is used ony during development.</br>
 
 
 
