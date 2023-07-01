@@ -32,6 +32,19 @@ NPM is node package manager which is used to manage packages(dependencies) for N
 **package-lock.json** - It is a dependency tree. It specifies all the dependencies along with their version which the  dependencies in package.json file are using.</br>
 
 
+## Reference
+
+**Why was Nodejs developed** - https://www.youtube.com/watch?v=WjzLVU-aFXI
+
+
+
+
+
+
+
+
+
+
 
 
 
