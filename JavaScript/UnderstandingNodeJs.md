@@ -39,6 +39,14 @@ NPM is node package manager which is used to manage packages(dependencies) for N
 
 **Explain how Nodejs is Single Threaded Non-Blocking EventDriven** - https://www.youtube.com/watch?v=mR1SQn5nDIA
 
+**Learn NodeJs** - 
+
+https://www.youtube.com/watch?v=BSO9C8Z-YV8
+
+https://www.youtube.com/watch?v=BLl32FvcdVM
+
+
+
 
 
 
