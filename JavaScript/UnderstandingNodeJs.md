@@ -132,9 +132,66 @@ fs.writeFile('./Test2', 'Hello Node.js', 'utf8',() =>{
 
 
 
-3.**ThirdParty** - </br>
+3.**ThirdParty** - Thirdparty Modules are the Modules which are developed by someone else, We need to explicitly download them. Some of the popular third-party modules are Mongoose, express, angular,loadash,underscore </br>
 
 
+### CommonJs and ECMAScript Modules
+
+In Node.js, there are two ways to handle modules: CommonJS and EcmaScript modules (ES modules). 
+
+1. CommonJS Modules:
+CommonJS is the default module system in Node.js. It uses `require()` to import modules and `module.exports` or `exports` to export variables, functions, or objects.
+
+Example:
+Consider a file named `math.js` that has some math-related functions:
+
+```javascript
+// math.js
+const sum = (a, b) => a + b;
+const multiply = (a, b) => a * b;
+
+module.exports = { sum, multiply };
+```
+
+To use the `math.js` module in another file, use `require()`:
+
+```javascript
+// index.js
+const math = require('./math');
+
+console.log(math.sum(2, 4)); // Output: 6
+console.log(math.multiply(3, 5)); // Output: 15
+```
+
+In the `index.js` file, we import the `math.js` module using `require('./math')` and store it in the `math` variable. We can then access the exported functions using the `math` object.
+
+2. EcmaScript Modules (ES Modules):
+ES modules were introduced as an experimental feature in Node.js version 12 and became stable in version 14. They are imported using the `import` statement and exported using the `export` keyword.
+
+Example:
+Consider the same `math.js` module using ES modules:
+
+```javascript
+// math.js
+const sum = (a, b) => a + b;
+const multiply = (a, b) => a * b;
+
+export { sum, multiply };
+```
+
+To use the ES module in another file, use the `import` statement:
+
+```javascript
+// index.js
+import { sum, multiply } from './math';
+
+console.log(sum(2, 4)); // Output: 6
+console.log(multiply(3, 5)); // Output: 15
+```
+
+In the `index.js` file, we use the `import { sum, multiply } from './math'` statement to import the specific functions directly. Then, we can use these functions without any need for an object or namespace.
+
+Note: To use ES modules in Node.js, ensure that the file extension is `.mjs` and the `"type"` field in `package.json` is set to `"module"`. Alternatively, you can use the `.cjs` file extension for CommonJS modules.
 
 
 ## Reference
