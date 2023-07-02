@@ -32,6 +32,70 @@ NPM is node package manager which is used to manage packages(dependencies) for N
 **package-lock.json** - It is a dependency tree. It specifies all the dependencies along with their version which the  dependencies in package.json file are using.</br>
 
 
+## Understanding modules in NodeJs
+
+There are mainly three types of module in nodejs -</br>
+
+1.**FileBased**  - FileBased Modules means module/code which we neeed to export from one file to another file.
+
+**File1**
+
+```js
+
+/*  FileBased Modules means module/code which we neeed to export from one file to another file. */
+
+
+let person = {
+    "name":"Ramesh",
+    "age":26,
+    "Hobby":["cricket","badminton"],
+    "message": (name) =>{console.log("Hey I am : ",name)}
+}
+
+let lunch = "poha"
+
+/*
+module.exports=person
+module.exports=lunch
+
+We cannot export each object separately,  Only the last assignment to 'module.exports' will be effective. 
+So the 'person' object will not be exported.
+
+*/
+
+/* To fix this we  need to create a new object that contains both the 'person' object and the 'lunch' variable, and then export that object */
+
+let exportObj = {
+    person: person,
+    lunch: lunch
+}
+
+module.exports = exportObj
+
+```
+
+**File2**
+
+```js
+
+//Used for Importing
+let File1 = require("./File1")
+
+
+console.log(File1.lunch)
+console.log(File1.person.Hobby[1])
+File1.person.message("Rahul")
+
+
+```
+
+
+2.**InBuilt**
+3.**ThirdParty**
+
+
+
+
 ## Reference
 
 **Why was Nodejs developed** - https://www.youtube.com/watch?v=WjzLVU-aFXI
