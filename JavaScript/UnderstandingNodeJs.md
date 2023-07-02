@@ -90,7 +90,48 @@ File1.person.message("Rahul")
 ```
 
 
-2.**InBuilt** </br>
+2.**InBuilt** - BuiltIn modules are the modules which are bydefault provided by node.js. We can check all the built in modules provided by node.js here - https://nodejs.org/api/ . Majorly used BuiltIn Modules are FS,Path,OS,Http,Url  https://betterprogramming.pub/4-very-useful-built-in-node-js-modules-b734e140174c</br> 
+
+```js
+/* 
+BuiltIn modules are the modules which are by default provided by node.js.
+
+We can check all the built in modules provided by node.js here - https://nodejs.org/api/
+
+Majorly used BuiltIn Modules are FS,Path,OS,Http,Url
+*/
+
+const fs=require("fs")
+
+fs.readFile('./Test', 'utf8', (err,data) =>{
+    if (err) throw err;
+    console.log(data);
+});
+
+console.log("I am out of ReadFile Function")
+
+/* 
+
+I am out of ReadFile Function
+Hello, This is Rakesh
+
+Note - ReadFile is Async FUnction,hence I am out of ReadFile Function is 
+executed before and then when the data is read then File Data is printed in Console
+
+We need to use readfileSync function so that operation executes sequentially
+
+*/
+
+fs.writeFile('./Test2', 'Hello Node.js', 'utf8',() =>{
+    console.log("Data has been written")
+})
+
+
+
+```
+
+
+
 3.**ThirdParty** - </br>
 
 
