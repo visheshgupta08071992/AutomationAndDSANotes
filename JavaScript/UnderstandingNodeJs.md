@@ -36,7 +36,7 @@ NPM is node package manager which is used to manage packages(dependencies) for N
 
 There are mainly three types of module in nodejs -</br>
 
-1.**FileBased**  - FileBased Modules means module/code which we neeed to export from one file to another file.
+1.**FileBased**  - FileBased Modules means module/code which we need to export from one file to another file.
 
 **File1**
 
@@ -90,8 +90,8 @@ File1.person.message("Rahul")
 ```
 
 
-2.**InBuilt**
-3.**ThirdParty**
+2.**InBuilt** </br>
+3.**ThirdParty** - </br>
 
 
 
