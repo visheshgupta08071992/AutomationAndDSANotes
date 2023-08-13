@@ -138,3 +138,156 @@ In GitHub Actions, triggers are events that initiate the execution of a workflow
 7. **External Triggers**: Some actions or events in GitHub, such as a new release being published, can indirectly trigger workflows. These are based on specific events within GitHub itself.
 
 These trigger types can be combined, customized, and configured to create workflows that fit your specific use case. You can define triggers in the `on` section of your workflow YAML file to specify when the workflow should run.
+
+
+## Contexts
+
+In GitHub Actions, **contexts** are predefined environment variables that provide information about the GitHub and workflow runtime environment. These variables are available for use within your workflow configuration file (YAML) and can be accessed as placeholders for specific information.
+
+Contexts are particularly useful when you need to access information about the repository, the workflow run, the current event, or the runner environment. They enable you to make dynamic decisions or customize the behavior of your workflows based on the context in which they run.
+
+Here are a few common contexts and their descriptions:
+
+1. **`github`**: Provides access to various GitHub-related properties and information.
+
+2. **`runner`**: Provides information about the runner (the machine or container running the workflow).
+
+3. **`job`**: Provides information about the current job within the workflow.
+
+4. **`steps`**: Provides information about the current step within a job.
+
+5. **`matrix`**: Provides information about the matrix configuration (used when defining matrix builds).
+
+**Example**:
+
+Let's say you want to create a workflow that automatically comments on a pull request with the name of the person who opened the pull request. You can use the `github` context to access the pull request information.
+
+```yaml
+name: Comment on Pull Request
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  comment-on-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Comment on pull request
+      uses: actions/github-script@v4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const pullRequestAuthor = github.context.payload.pull_request.user.login;
+          github.issues.createComment({
+            issue_number: github.context.payload.pull_request.number,
+            owner: github.context.repo.owner,
+            repo: github.context.repo.repo,
+            body: `Thanks, @${pullRequestAuthor}, for opening this pull request!`
+          });
+```
+
+In this example, the `github.context.payload.pull_request.user.login` expression accesses the login name of the user who opened the pull request. This context information is used to customize the comment message.
+
+Contexts allow you to make your workflows more dynamic and adaptable based on the runtime environment and the specific events triggering the workflow. They help you leverage essential information to automate tasks effectively.
+
+
+**Sample yaml file with comments explaining different contexts in Workflow**
+
+```yaml
+# Set the name of the workflow
+name: context demo
+
+# Define the events that trigger the workflow
+on:
+  # Manually trigger the workflow with a text input
+  workflow_dispatch:
+    inputs:
+      text:
+        description: 'enter the word you want to print'
+        default: 'Hello'
+        required: true
+        type: string
+
+# Define environment variables
+env:
+  # Define a variable 'firstName' with the value 'Amuthan'
+  firstName: 'Amuthan'
+  # Define a variable 'website' with the value 'testing mini bytes'
+  website: 'testing mini bytes'
+
+# Define jobs to be executed
+jobs:
+  # Job named 'contexts-demo'
+  contexts-demo:
+    timeout-minutes: 5
+    continue-on-error: false
+    # Use a Docker container as the job's environment
+    container:
+      image: alpine:latest
+    # Specify the operating system for the job to run on
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+      # Print the input text provided when manually triggering the workflow
+      - run: echo ${{ inputs.text }}
+      # Print the input text using GitHub event context
+      - run: echo ${{ github.event.inputs.text }}
+      # Print the GitHub actor (user who triggered the workflow)
+      - run: echo ${{ github.actor }}
+      # Print a message with the value of the 'firstName' environment variable
+      - run: echo 'Hi ${{ env.firstName }}'
+      # Print a message with the value of the 'website' environment variable
+      - run: echo 'website - ${{ env.website }}'
+      # Print the status of the current job
+      - run: echo ${{ job.status }}
+      # Print the operating system of the runner
+      - run: echo ${{ runner.os }}
+      # Print the value of a secret named 'PASSWORD' and the value of the 'firstName' environment variable (overridden)
+      - run: echo ${{ secrets.PASSWORD }} ${{ env.firstName }}
+        env:
+          # Override the 'firstName' environment variable for this step
+          firstName: 'Testing'
+
+  # Job named 'contexts-demo-2' that depends on the 'contexts-demo' job
+  contexts-demo-2:
+    needs: [contexts-demo]
+    runs-on: ubuntu-latest
+    steps:
+      # Print a message indicating that this job is running after the 'contexts-demo' job
+      - run: echo 'contexts-demo-2 running after contexts-demo'
+
+  # Job named 'job3'
+  job3:
+    runs-on: ubuntu-latest
+    # Condition to run this job always
+    if: ${{ always() }}
+    # This job depends on the 'contexts-demo' job
+    needs: [contexts-demo]
+    steps:
+      # Print a message indicating that this is 'job3'
+      - run: echo 'job3'
+
+  # Job named 'job4'
+  job4:
+    runs-on: ubuntu-latest
+    # Condition to run this job when the previous job (contexts-demo) fails
+    if: ${{ failure() }}
+    # This job depends on the 'contexts-demo' job
+    needs: [contexts-demo]
+    steps:
+      # Print a message indicating that this is 'job4'
+      - run: echo 'job4'
+
+```
+
+## Jobs and Steps
+
+A workflow run is made up of one or more jobs which run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the needs keyword.Jobs are composed of one or more number of steps.
