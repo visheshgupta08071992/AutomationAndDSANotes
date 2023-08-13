@@ -71,3 +71,70 @@ jobs:
 ```
 
 This example defines a simple GitHub Action named "My Custom Action" that echoes a message when a push event occurs. This action can be used as a building block within your larger workflows.
+
+
+## Triggers
+
+In GitHub Actions, triggers are events that initiate the execution of a workflow. When a trigger event occurs in your GitHub repository, such as a push, pull request, or a scheduled time, the associated workflow is automatically started. There are several types of triggers available in GitHub Actions:
+
+1. **Push Trigger**: This trigger runs the workflow when there is a push event to the repository. This includes pushes to any branch or tag.
+
+   Example:
+   ```yaml
+   on:
+     push:
+       branches:
+         - main
+   ```
+
+2. **Pull Request Trigger**: This trigger runs the workflow when a pull request is created or updated, including pushes to the branches associated with the pull request.
+
+   Example:
+   ```yaml
+   on:
+     pull_request:
+       branches:
+         - main
+   ```
+
+3. **Schedule Trigger**: This trigger allows you to schedule workflows to run at specific times or intervals, even if there are no code changes. It's useful for regular maintenance tasks.
+
+   Example:
+   ```yaml
+   on:
+     schedule:
+       - cron: '0 0 * * *' # Run every day at midnight
+   ```
+
+4. **Repository Dispatch Trigger**: This trigger lets you trigger workflows using a custom event from outside the repository. It's useful when you want to trigger a workflow from an external event.
+
+   Example:
+   ```yaml
+   on:
+     repository_dispatch:
+       types: [custom-event]
+   ```
+
+5. **Workflow Dispatch Trigger**: This trigger allows you to manually trigger a workflow run using the GitHub API. It's useful for running workflows on-demand.
+
+   Example:
+   ```yaml
+   on:
+     workflow_dispatch:
+   ```
+
+6. **Webhook Trigger**: This trigger runs the workflow when a specific webhook event occurs, which can be useful for integrating with other services or systems.
+
+   Example:
+   ```yaml
+   on:
+     push:
+       branches:
+         - main
+     issue_comment:
+       types: [created]
+   ```
+
+7. **External Triggers**: Some actions or events in GitHub, such as a new release being published, can indirectly trigger workflows. These are based on specific events within GitHub itself.
+
+These trigger types can be combined, customized, and configured to create workflows that fit your specific use case. You can define triggers in the `on` section of your workflow YAML file to specify when the workflow should run.
