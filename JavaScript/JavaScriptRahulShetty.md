@@ -325,6 +325,13 @@ const multiplied = Array.from(nums, (num) => num * 2);
 
 console.log(multiplied); // Output: [2, 4, 6, 8]
 
+//Check if Array contains specific value
+
+const language =['java','javascript','python']
+
+console.log(language.includes('ruby')) // false
+console.log(language.includes('python')) // true
+
  
  ```
  
@@ -514,6 +521,10 @@ console.log(person)
 
   console.log('gender' in person) //false
 
+// Checking if the Object has a given property
+
+console.log(person.hasOwnProperty('name')) //true
+console.log(person.hasOwnProperty('hobby')) //false
 
 /* Getting all the keys of Object using Object.keys() method */
 
