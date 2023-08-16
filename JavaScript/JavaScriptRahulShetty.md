@@ -698,7 +698,7 @@ const originalObject = { a: 1, b: 2 };
 const cloneObject = { ...originalObject };
 ```
 
-**2. Combining Arrays,Oject:**
+**2. Combining Arrays,Object:**
 
 
 ```javascript
