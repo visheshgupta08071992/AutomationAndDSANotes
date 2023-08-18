@@ -9,7 +9,8 @@ NPM is node package manager which is used to manage packages(dependencies) for N
 
 **Some of the useful npm command**
 
-**npm -v** - Used to check Node Version</br>
+**node -v** - To check node version </br>
+**npm -v** - To check Node Package Manager version. npm is similar to maven/gradle in Java </br>
 
 **npm --help** - Used to get all npm commands</br>
 
