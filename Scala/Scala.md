@@ -50,3 +50,71 @@ In Scala, you can define variables using the `val` and `var` keywords. However, 
    ```
 
 Remember that it's a best practice to prefer `val` over `var` whenever possible. Immutability is a key concept in functional programming and helps prevent many common programming errors related to mutable state. Use `var` only when you need to change the value of a variable, and use `val` when the value should remain constant.
+
+## Classes and Objects in Scala
+
+In Scala, classes and objects are fundamental building blocks for defining and organizing your code. They play a crucial role in object-oriented programming and provide a way to model real-world entities and encapsulate behavior.
+
+**Classes**:
+
+A class in Scala is a blueprint for creating objects. It defines the structure and behavior of objects of that class. Here's how you can define a class in Scala:
+
+```scala
+class MyClass {
+  // Fields (also known as member variables)
+  var variable1: Int = 0
+  val variable2: String = "Hello"
+
+  // Methods (functions defined within the class)
+  def myMethod(): Unit = {
+    println("This is a method in MyClass")
+  }
+}
+```
+
+In this example, `MyClass` is a class with two member variables (`variable1` and `variable2`) and a method (`myMethod`). The `var` keyword indicates that `variable1` is mutable, while `val` indicates that `variable2` is immutable.
+
+You can create objects (instances) of the class by using the `new` keyword:
+
+```scala
+val myObject = new MyClass()
+```
+
+Now, you can access the fields and call the methods of the object:
+
+```scala
+println(myObject.variable1) // Accessing a field
+println(myObject.variable2)
+myObject.myMethod() // Calling a method
+```
+
+**Objects**:
+
+In Scala, an object is a singleton instance of a class. It's a special type of class that has only one instance, and it's automatically instantiated when the program starts. Objects are often used to contain utility methods or to serve as entry points to an application.
+
+Here's how you can define an object in Scala:
+
+```scala
+object MySingletonObject {
+  // Fields (also known as member variables)
+  var variable3: Double = 3.14
+
+  // Methods (functions defined within the object)
+  def myUtilityMethod(): Unit = {
+    println("This is a utility method in MySingletonObject")
+  }
+}
+```
+
+In this example, `MySingletonObject` is an object with a member variable (`variable3`) and a method (`myUtilityMethod`).
+
+You can access the fields and call the methods of the object directly, without creating an instance:
+
+```scala
+println(MySingletonObject.variable3) // Accessing a field
+MySingletonObject.myUtilityMethod() // Calling a method
+```
+
+Objects are often used for creating singletons, managing application configurations, and organizing utility functions. They provide a convenient way to encapsulate functionality without the need for explicit instantiation.
+
+In summary, classes are used to define blueprints for creating multiple objects with shared characteristics and behaviors, while objects are used for defining single instances and encapsulating functionality. Together, they form the basis of object-oriented programming in Scala.
