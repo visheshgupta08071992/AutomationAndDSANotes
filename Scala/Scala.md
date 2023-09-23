@@ -209,6 +209,29 @@ val result = calculator.add(5, 3)
 println(result) // Output: 8
 ```
 
+## String Interpolation in Scala
+
+String interpolation in Scala is a feature that allows you to embed expressions and variables directly into string literals. 
+
+1. **`s` Interpolator**:
+
+   The `s` interpolator is used for simple string interpolation. You can embed expressions and variables within `${}` in a string.
+
+   ```scala
+   val name = "Alice"
+   val age = 30
+
+   val message = s"My name is $name and I am $age years old."
+   println(message)
+   ```
+
+   In this example, `${name}` and `${age}` are placeholders for the values of the `name` and `age` variables. When the string is created, these placeholders are replaced with their corresponding values, resulting in the following output:
+
+   ```
+   My name is Alice and I am 30 years old.
+   ```
+
+
 ## Collections in Scala
 
 ### List
@@ -418,4 +441,120 @@ These are some of the common methods for working with `Set` in Scala and a coupl
 
 ### Map
 
+In Scala, a `Map` is a collection of key-value pairs, where each key is associated with a value. Maps are defined in the `scala.collection.immutable` package and are implemented as a collection of pairs. Here, I'll explain some commonly used methods for working with `Map` in Scala and demonstrate how to iterate over a `Map`.
 
+**Common Map Methods**:
+
+1. **`+` (Add Key-Value Pair)**:
+   - Adds a key-value pair to the map, creating a new map.
+   - Example:
+     ```scala
+     val myMap = Map("one" -> 1, "two" -> 2)
+     val updatedMap = myMap + ("three" -> 3) // Map("one" -> 1, "two" -> 2, "three" -> 3)
+     ```
+
+2. **`++` (Concatenate Maps)**:
+   - Concatenates two maps, creating a new map.
+   - Example:
+     ```scala
+     val map1 = Map("one" -> 1, "two" -> 2)
+     val map2 = Map("three" -> 3, "four" -> 4)
+     val concatenatedMap = map1 ++ map2 // Map("one" -> 1, "two" -> 2, "three" -> 3, "four" -> 4)
+     ```
+
+3. **`-` (Remove Key)**:
+   - Removes a key and its associated value from the map, creating a new map.
+   - Example:
+     ```scala
+     val myMap = Map("one" -> 1, "two" -> 2)
+     val updatedMap = myMap - "two" // Map("one" -> 1)
+     ```
+
+4. **`contains`**:
+   - Checks if a key is present in the map.
+   - Example:
+     ```scala
+     val myMap = Map("one" -> 1, "two" -> 2)
+     val isPresent = myMap.contains("two") // true
+     ```
+
+5. **`isEmpty`**:
+   - Returns `true` if the map is empty; `false` otherwise.
+   - Example:
+     ```scala
+     val myMap = Map.empty[String, Int]
+     val isEmptyMap = myMap.isEmpty // true
+     ```
+
+6. **`size`**:
+   - Returns the number of key-value pairs in the map.
+   - Example:
+     ```scala
+     val myMap = Map("one" -> 1, "two" -> 2)
+     val mapSize = myMap.size // 2
+     ```
+
+**Iterating Over a Map**:
+
+You can iterate over a `Map` in Scala using various methods, such as `foreach`, `for`, or pattern matching. Here's an example using the `foreach` method to iterate over the key-value pairs of a map:
+
+```scala
+val myMap = Map("one" -> 1, "two" -> 2, "three" -> 3)
+
+// Using foreach to iterate over the map
+myMap.foreach { case (key, value) =>
+  println(s"Key: $key, Value: $value")
+}
+```
+
+This will print each key-value pair of the map:
+
+```
+Key: one, Value: 1
+Key: two, Value: 2
+Key: three, Value: 3
+```
+
+You can also use a `for` comprehension to iterate over a map:
+
+```scala
+val myMap = Map("one" -> 1, "two" -> 2, "three" -> 3)
+
+// Using a for comprehension to iterate over the map
+for ((key, value) <- myMap) {
+  println(s"Key: $key, Value: $value")
+}
+```
+
+Both approaches allow you to perform operations on each key-value pair of the map during iteration.
+
+To get the value of a specific key in a Scala `Map`, you can use the `apply` method or the `get` method. Here's how you can do it:
+
+1. **Using the `apply` Method**:
+
+   You can access the value associated with a key in a map using the `apply` method. If the key exists in the map, it returns the corresponding value; otherwise, it throws a `NoSuchElementException`. 
+
+   ```scala
+   val myMap = Map("one" -> 1, "two" -> 2, "three" -> 3)
+   val value = myMap("two") // Accessing the value associated with the key "two"
+   ```
+
+   In this example, `value` will be assigned the value `2` because "two" is in the map.
+
+2. **Using the `get` Method**:
+
+   The `get` method returns an `Option` representing the value associated with the key. If the key exists, it returns `Some(value)`; otherwise, it returns `None`, indicating that the key is not present in the map. Using `get` is safer than `apply` because it avoids throwing exceptions.
+
+   ```scala
+   val myMap = Map("one" -> 1, "two" -> 2, "three" -> 3)
+   val maybeValue = myMap.get("two") // Accessing the value associated with the key "two"
+
+   maybeValue match {
+     case Some(value) => println(s"Value: $value")
+     case None => println("Key not found")
+   }
+   ```
+
+   In this example, `maybeValue` will be `Some(2)` because "two" is in the map. You can use pattern matching to handle the presence or absence of the key.
+
+It's generally recommended to use the `get` method with pattern matching when accessing values in a map to handle cases where the key may not exist in the map. This approach is safer and more idiomatic in Scala.
