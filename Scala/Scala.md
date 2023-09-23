@@ -118,3 +118,49 @@ MySingletonObject.myUtilityMethod() // Calling a method
 Objects are often used for creating singletons, managing application configurations, and organizing utility functions. They provide a convenient way to encapsulate functionality without the need for explicit instantiation.
 
 In summary, classes are used to define blueprints for creating multiple objects with shared characteristics and behaviors, while objects are used for defining single instances and encapsulating functionality. Together, they form the basis of object-oriented programming in Scala.
+
+
+## How to define methods in Scala
+
+In Scala, methods are functions defined within classes, objects, or traits. Methods define the behavior or actions that objects of a class or instances of an object can perform. Here's how you can define methods in Scala:
+
+**Method Syntax**:
+
+```scala
+def methodName(parameter1: Type1, parameter2: Type2, ...): ReturnType = {
+  // Method body
+  // ...
+  // Optionally, return a value of ReturnType
+}
+```
+
+- `def`: This keyword is used to define a method.
+- `methodName`: Replace this with the desired name of your method.
+- `parameter1`, `parameter2`, ...: These are the method's parameters, which are input values that the method takes. You specify the name and type of each parameter.
+- `ReturnType`: This is the return type of the method, specifying the type of value the method will return.
+
+**Example**:
+
+Here's an example of defining a simple method in Scala:
+
+```scala
+class Calculator {
+  def add(x: Int, y: Int): Int = {
+    x + y
+  }
+}
+```
+
+In this example:
+
+- `add` is the name of the method.
+- `x` and `y` are the parameters of the method, both of type `Int`.
+- `Int` is the return type of the method.
+
+You can call this method on an instance of the `Calculator` class:
+
+```scala
+val calculator = new Calculator()
+val result = calculator.add(5, 3)
+println(result) // Output: 8
+```
