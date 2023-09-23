@@ -313,3 +313,109 @@ Both approaches allow you to perform operations on each element of the list duri
 
 These are some of the common methods for working with `List` in Scala and a couple of examples of how to iterate over a list. `List` provides many more methods for various operations, so you can choose the ones that suit your specific use case.
 
+### Set
+
+In Scala, a `Set` is an unordered collection of distinct elements. Sets are defined in the `scala.collection.immutable` package and are implemented in a way that ensures uniqueness of elements. Here, I'll explain some commonly used methods for working with `Set` in Scala and demonstrate how to iterate over a `Set`.
+
+**Common Set Methods**:
+
+1. **`+` (Add Element)**:
+   - Adds an element to the set, creating a new set.
+   - Example:
+     ```scala
+     val mySet = Set(1, 2, 3)
+     val updatedSet = mySet + 4 // Set(1, 2, 3, 4)
+     ```
+
+2. **`++` (Union)**:
+   - Performs a union operation with another set, creating a new set.
+   - Example:
+     ```scala
+     val set1 = Set(1, 2, 3)
+     val set2 = Set(3, 4, 5)
+     val unionSet = set1 ++ set2 // Set(1, 2, 3, 4, 5)
+     ```
+
+3. **`-` (Remove Element)**:
+   - Removes an element from the set, creating a new set.
+   - Example:
+     ```scala
+     val mySet = Set(1, 2, 3)
+     val updatedSet = mySet - 2 // Set(1, 3)
+     ```
+
+4. **`--` (Difference)**:
+   - Performs a difference operation with another set, creating a new set.
+   - Example:
+     ```scala
+     val set1 = Set(1, 2, 3)
+     val set2 = Set(3, 4, 5)
+     val diffSet = set1 -- set2 // Set(1, 2)
+     ```
+
+5. **`contains`**:
+   - Checks if an element is present in the set.
+   - Example:
+     ```scala
+     val mySet = Set(1, 2, 3)
+     val isPresent = mySet.contains(2) // true
+     ```
+
+6. **`isEmpty`**:
+   - Returns `true` if the set is empty; `false` otherwise.
+   - Example:
+     ```scala
+     val mySet = Set.empty[Int]
+     val isEmptySet = mySet.isEmpty // true
+     ```
+
+7. **`size`**:
+   - Returns the number of elements in the set.
+   - Example:
+     ```scala
+     val mySet = Set(1, 2, 3)
+     val setSize = mySet.size // 3
+     ```
+
+**Iterating Over a Set**:
+
+You can iterate over a `Set` in Scala using various methods, such as `foreach`, `for`, or pattern matching. Here's an example using the `foreach` method:
+
+```scala
+val mySet = Set(1, 2, 3, 4, 5)
+
+// Using foreach to iterate over the set
+mySet.foreach { element =>
+  println(element)
+}
+```
+
+This will print each element of the set:
+
+```
+1
+2
+3
+4
+5
+```
+
+You can also use a `for` comprehension to iterate over a set:
+
+```scala
+val mySet = Set(1, 2, 3, 4, 5)
+
+// Using a for comprehension to iterate over the set
+for (element <- mySet) {
+  println(element)
+}
+```
+
+Both approaches allow you to perform operations on each element of the set during iteration.
+
+These are some of the common methods for working with `Set` in Scala and a couple of examples of how to iterate over a set. `Set` provides many more methods for various operations, so you can choose the ones that suit your specific use case.
+
+
+### Map
+
+
