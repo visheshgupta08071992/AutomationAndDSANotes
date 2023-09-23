@@ -51,6 +51,50 @@ In Scala, you can define variables using the `val` and `var` keywords. However, 
 
 Remember that it's a best practice to prefer `val` over `var` whenever possible. Immutability is a key concept in functional programming and helps prevent many common programming errors related to mutable state. Use `var` only when you need to change the value of a variable, and use `val` when the value should remain constant.
 
+## DataTypes in Scala
+
+Scala is a statically typed language, which means that variable types are known at compile time. Scala provides a rich set of data types, including both basic types and more complex types. Here are some of the most common data types in Scala:
+
+1. **Numeric Types**:
+   - `Byte`: 8-bit signed integer.
+   - `Short`: 16-bit signed integer.
+   - `Int`: 32-bit signed integer.
+   - `Long`: 64-bit signed integer.
+   - `Float`: 32-bit floating-point number.
+   - `Double`: 64-bit floating-point number.
+
+   Example:
+   ```scala
+   val intValue: Int = 42
+   val floatValue: Float = 3.14f
+   ```
+
+2. **Boolean Type**:
+   - `Boolean`: Represents true or false values.
+
+   Example:
+   ```scala
+   val isTrue: Boolean = true
+   val isFalse: Boolean = false
+   ```
+
+3. **Character Type**:
+   - `Char`: Represents a single 16-bit Unicode character.
+
+   Example:
+   ```scala
+   val myChar: Char = 'A'
+   ```
+
+4. **String Type**:
+   - `String`: Represents a sequence of characters.
+
+   Example:
+   ```scala
+   val myString: String = "Hello, Scala!"
+   ```
+
+
 ## Classes and Objects in Scala
 
 In Scala, classes and objects are fundamental building blocks for defining and organizing your code. They play a crucial role in object-oriented programming and provide a way to model real-world entities and encapsulate behavior.
@@ -164,3 +208,108 @@ val calculator = new Calculator()
 val result = calculator.add(5, 3)
 println(result) // Output: 8
 ```
+
+## Collections in Scala
+
+### List
+
+In Scala, a `List` is an ordered, immutable collection of elements. Lists are defined in the `scala.collection.immutable` package and are implemented as linked lists, which means that elements are stored in a sequential order. Here, I'll explain some commonly used methods for working with `List` in Scala and demonstrate how to iterate over a `List`.
+
+**Common List Methods**:
+     ```
+
+1. **`+` (Concatenation)**:
+   - Concatenates two lists, creating a new list.
+   - Example:
+     ```scala
+     val list1 = List(1, 2, 3)
+     val list2 = List(4, 5)
+     val concatenatedList = list1 ++ list2 // List(1, 2, 3, 4, 5)
+     ```
+
+2. **`head`**:
+   - Returns the first element of the list.
+   - Example:
+     ```scala
+     val myList = List(1, 2, 3)
+     val firstElement = myList.head // 1
+     ```
+
+3. **`tail`**:
+   - Returns a new list containing all elements except the first one.
+   - Example:
+     ```scala
+     val myList = List(1, 2, 3)
+     val restOfTheList = myList.tail // List(2, 3)
+     ```
+
+4. **`isEmpty`**:
+   - Returns `true` if the list is empty; `false` otherwise.
+   - Example:
+     ```scala
+     val myList = List(1, 2, 3)
+     val isEmptyList = myList.isEmpty // false
+     ```
+
+5. **`length`**:
+   - Returns the number of elements in the list.
+   - Example:
+     ```scala
+     val myList = List(1, 2, 3)
+     val listLength = myList.length // 3
+     ```
+
+6. **`reverse`**:
+   - Returns a new list with the elements in reverse order.
+   - Example:
+     ```scala
+     val myList = List(1, 2, 3)
+     val reversedList = myList.reverse // List(3, 2, 1)
+     ```
+
+7. **`map`**:
+   - Applies a function to each element of the list, returning a new list with the results.
+   - Example:
+     ```scala
+     val myList = List(1, 2, 3)
+     val doubledList = myList.map(x => x * 2) // List(2, 4, 6)
+     ```
+
+**Iterating Over a List**:
+
+You can iterate over a `List` in Scala using various methods, such as `foreach`, `for`, or recursive functions. Here's an example using the `foreach` method:
+
+```scala
+val myList = List(1, 2, 3, 4, 5)
+
+// Using foreach to iterate over the list
+myList.foreach { element =>
+  println(element)
+}
+```
+
+This will print each element of the list:
+
+```
+1
+2
+3
+4
+5
+```
+
+You can also use a `for` comprehension to iterate over a list:
+
+```scala
+val myList = List(1, 2, 3, 4, 5)
+
+// Using a for comprehension to iterate over the list
+for (element <- myList) {
+  println(element)
+}
+```
+
+Both approaches allow you to perform operations on each element of the list during iteration.
+
+These are some of the common methods for working with `List` in Scala and a couple of examples of how to iterate over a list. `List` provides many more methods for various operations, so you can choose the ones that suit your specific use case.
+
