@@ -107,3 +107,57 @@ After sorting by the first column (ascending order):
 ```
 
 You can modify the comparator to sort by different columns or in descending order by changing the comparison logic inside the lambda expression. The same approach can be used for two-dimensional arrays of other data types or custom objects; you just need to adjust the comparator accordingly.
+
+## Commonly Used Regex
+
+Here are the commonly used regex patterns in Java along with examples of replacing characters in strings:
+
+- **`\s`** - Matches any whitespace character. Eg: space, tab, newline.
+  ```java
+  String str = "Hello world!";
+  str = str.replaceAll("\\s", "");
+  // str is now "Helloworld!"
+  ```
+
+- **`\S`** - Matches any non-whitespace character.
+  ```java
+  String str = "Hello   world!";
+  str = str.replaceAll("\\S", "");
+  // str is now "      "
+  ```
+
+- **`\w`** - Matches any word character (letter, number or underscore).
+  ```java
+  String str = "Hello123_world!";
+  str = str.replaceAll("\\w", "x");
+  // str is now "xxxxxxxxx!"
+  ```
+
+- **`\W`** - Matches any non-word character.
+  ```java
+  String str = "Hello123_world!";
+  str = str.replaceAll("\\W", "");
+  // str is now "Hello123_world"
+  ```
+
+- **`\d`** - Matches any digit (number from 0-9).
+  ```java
+  String str = "Hello123world!";
+  str = str.replaceAll("\\d", "0");
+  // str is now "Hello000world!"
+  ```
+
+- **`\D`** - Matches any non-digit character.
+  ```java
+  String str = "Hello123world!";
+  str = str.replaceAll("\\D", "");
+  // str is now "123"
+  ```
+
+- **`[^a-zA-Z0-9]`** - Matches any character that is not a letter or number.
+  ```java
+  String str = "Hello world!";
+  str = str.replaceAll("[^a-zA-Z0-9]", "");
+  // str is now "Helloworld"
+  ```
+
