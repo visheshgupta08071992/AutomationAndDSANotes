@@ -14,22 +14,45 @@ There are a few ways you can handle authorization token expiry in your API autom
    }
    ```
 
-2. **Refresh the token when it expires.** In your test, catch token expiry errors and refresh the token. Then retry the request.
+2. **Refresh the token when it expires using Try/Catch.** In your test, catch token expiry errors and refresh the token. Then retry the request.
 
    ```java
    try {
      api.get("/resource")  
-   } catch (TokenExpiredException e) {
+   } catch (UnauthorizedException  e) {
      AccessTokenResponse tokenResponse = api.refreshToken();  
      accessToken = tokenResponse.getAccessToken();
      api.get("/resource") 
    }
    ```
 
-3. **Generate a new token for each test.** In the setup of each test, call the authorization API to generate a new token. This ensures each test has a fresh token.
+3. **Refresh the token when it expires using If condition.** In your test, Within if condition check if you are retrievng 401 UnAuthorized statuscode,If yes refresh the Token
 
-4. **Increase the token expiry time.** If possible, extend the token expiry time to be longer than your test suites. This reduces the need to refresh tokens during testing.
+```
+ @Test
+    public void yourApiTestMethod() {
+        Response response = RestAssured.given()
+                .header("Authorization", "Bearer " + accessToken)
+                .when()
+                .get("your_api_endpoint");
 
-5. **Mock the authorization.** In your test base class, mock the authorization request to return a test token. This token can then be used for all test requests.
+        // Check if the response is 401 Unauthorized
+        if (response.getStatusCode() == 401) {
+            // Refresh the token
+            accessToken = refreshAccessToken();
+
+            // Retry the API request with the new token
+            response = RestAssured.given()
+                    .header("Authorization", "Bearer " + accessToken)
+                    .when()
+                    .get("your_api_endpoint");
+        }
+
+        // Perform your assertions and other test logic based on the response
+    }
+```
+
+5. **Increase the token expiry time.** If possible, extend the token expiry time to be longer than your test suites. This reduces the need to refresh tokens during testing.
+
 
 If a test fails due to token expiry, you can refresh the token and retry the request to see if the test passes. If it still fails after refreshing the token, then the failure was likely due to something else. Handling token expiry in a robust way helps make your API tests more stable and reliable.
