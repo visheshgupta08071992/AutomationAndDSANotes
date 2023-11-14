@@ -28,7 +28,7 @@ There are a few ways you can handle authorization token expiry in your API autom
 
 3. **Refresh the token when it expires using If condition.** In your test, Within if condition check if you are retrievng 401 UnAuthorized statuscode,If yes refresh the Token
 
-```
+```java
  @Test
     public void yourApiTestMethod() {
         Response response = RestAssured.given()
