@@ -52,7 +52,7 @@ There are a few ways you can handle authorization token expiry in your API autom
     }
 ```
 
-5. **Increase the token expiry time.** If possible, extend the token expiry time to be longer than your test suites. This reduces the need to refresh tokens during testing.
+4. **Increase the token expiry time.** If possible, extend the token expiry time to be longer than your test suites. This reduces the need to refresh tokens during testing.
 
 
 If a test fails due to token expiry, you can refresh the token and retry the request to see if the test passes. If it still fails after refreshing the token, then the failure was likely due to something else. Handling token expiry in a robust way helps make your API tests more stable and reliable.
