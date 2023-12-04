@@ -38,7 +38,7 @@
 
 **Basically Available**
 
-The term "Basically Available" signifies the high availability of data in a distributed manner. Unlike the vertical scaling approach of SQL databases, NoSQL databases grow horizontally by adding nodes. This horizontal scaling ensures that data is stored redundantly across multiple nodes, making it highly available. Even if one node fails, others can seamlessly handle requests, ensuring continuous service.
+The term "Basically Available" signifies the high availability of data . Unlike the vertical scaling approach of SQL databases, NoSQL databases grow horizontally storing data on multiple nodes, making it highly available. Even if one node fails, others can seamlessly handle requests, ensuring continuous service.
 
 **Soft State**
 
