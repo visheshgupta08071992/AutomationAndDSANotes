@@ -21,7 +21,7 @@
 
 2. **Consistency (C):**
    - **Definition:** Consistency ensures that, at any given point in time, the state of the database is always consistent.
-   - **Example:** In a scenario where two requests are trying to read the account balance simultaneously, consistency guarantees that both requests will receive the same value. It prevents situations where simultaneous reads result in different values. Consider an example where two requests are trying to read Account balance simultaneously
+   - **Example:** In a scenario where two requests are trying to read the account balance simultaneously, consistency guarantees that both requests will receive the same value. It prevents situations where simultaneous reads result in different values.
 
 3. **Isolation (I):**
    - **Definition:** Isolation ensures that two transactions do not interfere with each other.
