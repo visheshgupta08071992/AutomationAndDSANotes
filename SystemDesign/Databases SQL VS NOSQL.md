@@ -13,19 +13,15 @@
 | **When to Choose**               |        1.When your data is well-organized and fits into a structured, tabular format.</br>2.Scalability is not a concern and you are fine with vertical scaling with increased capacity.</br>3.When Data Integrity is Critical:  Applications like financial systems where consistency is paramount.              |     1.When your data is semi-structured or unstructured, and you need flexibility. in the data model.</br>2.Easily supports horizontal scaling by adding more servers to database cluster. </br>3. When Eventual consistency is acceptable. Applications like social networking sites.                 |
 
 
-Certainly! Below is an explanation of the ACID properties based on the provided YouTube transcript, along with additional information:
-
 ### ACID Properties in Databases
 
-ACID is an acronym representing four key properties that guarantee the reliability and consistency of transactions in a database. Let's break down each property:
-
 1. **Atomicity (A):**
-   - **Definition:** Atomicity ensures that a transaction in a database either happens completely or doesn't happen at all.
-   - **Example:** Consider a money transfer transaction between two accounts. Atomicity ensures that if money is deducted from one account, it must be added to the other account. It prevents scenarios where only one part of the transaction occurs, leaving the database in an inconsistent state.
+   - **Definition:** Atomicity ensures that a transaction in a database is either fully completed or does'nt happen at all.
+   - **Example:** Consider an Example where I am transfering some money to you, It should not happen that Money is  debited from my Account and it is'nt credited in your account, Atomicity would ensure that there is no Partial Transaction, The Transaction would either fully completed or would not happen at all. 
 
 2. **Consistency (C):**
-   - **Definition:** Consistency ensures that, at any given point in time, the state of the database is consistent.
-   - **Example:** In a scenario where two requests are trying to read the account balance simultaneously, consistency guarantees that both requests will receive the same value. It prevents situations where simultaneous reads result in different values.
+   - **Definition:** Consistency ensures that, at any given point in time, the state of the database is always consistent.
+   - **Example:** In a scenario where two requests are trying to read the account balance simultaneously, consistency guarantees that both requests will receive the same value. It prevents situations where simultaneous reads result in different values. Consider an example where two requests are trying to read Account balance simultaneously
 
 3. **Isolation (I):**
    - **Definition:** Isolation ensures that two transactions do not interfere with each other.
@@ -34,16 +30,6 @@ ACID is an acronym representing four key properties that guarantee the reliabili
 4. **Durability (D):**
    - **Definition:** Durability ensures that once a transaction is committed, the changes are permanent and will survive any subsequent failures.
    - **Example:** Durability is achieved through mechanisms like logging and persistence to disk storage. It ensures that the data and details of updates are securely stored, even in the event of a system failure.
-
-### When to Consider ACID Properties:
-
-- **Need for Transactions:**
-  - If your application involves critical transactions, such as financial transactions, where the integrity of the data is paramount, ACID properties are essential.
-
-- **Fixed Schema:**
-  - ACID properties are well-suited for databases with a fixed schema, where the structure of the data is known in advance, and consistency is crucial.
-
-In summary, ACID properties provide a strong foundation for ensuring data integrity and consistency in relational databases, particularly in scenarios where transactions play a vital role in maintaining the reliability of the system.
 
 
 ### Reference
