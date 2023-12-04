@@ -50,6 +50,26 @@ The concept of "Soft State" in BASE implies that the state of data can change wi
 
 It's essential to note that BASE properties represent a departure from the strict guarantees of ACID. NoSQL databases prioritize availability and partition tolerance over immediate consistency, making them suitable for scenarios where rapid and scalable data access is critical.
 
+### Types of NoSQL Databases
+1. **Key-Value Databases**
+   - Data stored as key-value pairs. Only queries on keys are supported. They are often used for Caching purpose.
+   - **Example:** Redis, DynamoDB
+
+2. **Document Databases**
+   - Stores data in key-value pairs but allows querying on values, typically stored as JSON or XML. Document-oriented databases store data in semi-structured documents, usually in JSON or BSON format. Each document contains key-value pairs or key-document pairs, making them flexible for storing and retrieving complex data structures.
+   - **Example:** MongoDB
+
+3. **Column-Wise Databases**
+   - Data is stored in columns rather than rows.
+   - Each key has a list of column-value pairs. Columns can be dynamic, Some keys can have more no of columns while some keys can have less no og columns.
+  
+     ![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/bf5e3e47-da5e-47bc-9104-7e6ae2cb1d23)
+
+   -  **Example:** Apache Cassandra, HBase
+
+4. **Graph Databases**
+   - Data stored in nodes and edges, representing relationships.
+   - Ideal for social networks and recommendation engines.
 
 
 ### Reference
