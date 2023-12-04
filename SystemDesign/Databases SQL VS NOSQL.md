@@ -30,6 +30,26 @@
 4. **Durability (D):**
    - **Definition:** Durability ensures that once a transaction is committed, the changes are permanent and will survive any subsequent failures.
    - **Example:** Durability is achieved through mechanisms like logging and persistence to disk storage. It ensures that the data and details of updates are securely stored, even in the event of a system failure.
+  
+
+### BASE Properties in NoSQL Databases
+
+**BASE:** Basically Available, Soft state, Eventual Consistency.
+
+**Basically Available**
+
+The term "Basically Available" signifies the high availability of data in a distributed manner. Unlike the vertical scaling approach of SQL databases, NoSQL databases grow horizontally by adding nodes. This horizontal scaling ensures that data is stored redundantly across multiple nodes, making it highly available. Even if one node fails, others can seamlessly handle requests, ensuring continuous service.
+
+**Soft State**
+
+The concept of "Soft State" in BASE implies that the state of data can change without requiring an explicit interaction from the user. In a distributed environment, where data is stored across various nodes or servers, each node maintains its version of the data. Through mechanisms like Vector Clocks, nodes automatically synchronize and update themselves. This enables the system to adapt and change data states without direct user interaction, contributing to a dynamic and flexible environment.
+
+**Eventual Consistency**
+
+"Eventual Consistency" acknowledges that, at any given moment, a query might yield stale data. However, over time, as the distributed nodes synchronize, the system strives to converge towards the most up-to-date information. Users may initially receive data that is not the latest, but with subsequent queries, the system aims to provide consistent and current results. This property allows for a balance between availability and consistency in a distributed NoSQL environment.
+
+It's essential to note that BASE properties represent a departure from the strict guarantees of ACID. NoSQL databases prioritize availability and partition tolerance over immediate consistency, making them suitable for scenarios where rapid and scalable data access is critical.
+
 
 
 ### Reference
