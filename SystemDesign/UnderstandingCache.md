@@ -55,6 +55,109 @@ Cache eviction is the process of removing items from the cache to make room for 
 
 4. **Lazy Loading (or Lazy Initialization):**
    - Data is only loaded into the cache when it is requested. It helps minimize the initial load on the system.
+  
+ # Different Caching Patterns
+
+There are several common caching patterns:
+
+## 1. Cache Aside
+
+With the cache aside pattern, the application first checks the cache for the data. If it's not found, it retrieves the data from the primary data source and then stores it in the cache for future requests.
+
+```
+if (data not found in cache) {
+  data = fetch from database;
+  cache.set(data);
+}
+return data;  
+```
+
+Advantages:
+
+- Simple to implement
+- Only caches data that is actually used
+
+Disadvantages:
+
+- Initial request has a cache miss, causing a performance hit 
+- Cache invalidation can be difficult
+
+Use when:
+
+- Data is read-heavy and infrequently updated
+
+## 2. Read Through
+
+The read through pattern is similar to cache aside. The difference is that when there is a cache miss, the cache itself retrieves the data from the database and stores it.
+
+```
+data = cache.get(key);
+if (data not found) {
+   data = cache.get_from_db(key);
+   cache.set(data); 
+}
+return data;
+```
+
+Advantages:
+
+- Same as cache aside
+
+Disadvantages:
+
+- Same as cache aside
+
+Use when:
+
+- Same as cache aside
+
+## 3. Write Through
+
+With write through caching, data is written both to the cache and the database simultaneously.
+
+```
+db.update(data);
+cache.set(data);
+```
+
+Advantages:
+
+- Consistent data between cache and database
+- Cache invalidation is not needed
+
+Disadvantages:
+
+- Higher latency for writes
+- More complex to implement
+
+Use when:
+
+- Data is write-heavy
+
+## 4. Write Back/Write Behind
+
+Data is written to the cache only, and then asynchronously written to the database.
+
+```
+cache.set(data);
+// Asynchronous write to DB 
+db.update_async(data);
+```
+
+Advantages: 
+
+- Faster initial write latency
+
+Disadvantages:
+
+- Potential for data loss if cache fails before write to DB completes
+- More complex
+
+Use when:
+
+- Writes can tolerate some data loss
+
+Hope this explanation of the most common caching patterns helps! Let me know if you have any other questions.
 
 **Referance**
 https://www.youtube.com/watch?v=Ez1GK2imrsY
