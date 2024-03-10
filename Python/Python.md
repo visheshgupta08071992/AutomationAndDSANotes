@@ -2,9 +2,13 @@
 
 ### Basics of Python
 
-1.**For Printing a statement** - `` print() ``
+Pycharm is IDE which is mostly used for coding in Python While PIP(Python Package Index) is used to download and use external packages in Python. It is similar to maven or gradle in Java.
 
-2.**Comments in Python**
+### For Printing a statement
+
+`` print() ``
+
+### Comments in Python
 
 ```python
 # This is a single-line comment  - SHortcut(ctrl + /)
@@ -21,7 +25,7 @@ spanning multiple lines.
 
 ```
 
-3. **DataTypes in Python**
+### DataTypes in Python
 
 ```python
 # Print Statement
@@ -54,7 +58,7 @@ print(e) #None
 
 ```
 
-4.**Typecasting in Python**
+### Typecasting in Python
 
 Certainly! Typecasting, also known as type conversion or type coercion, is the process of converting the data from one data type to another. In Python, you can perform typecasting using built-in functions or constructors provided by Python.
 
@@ -137,6 +141,123 @@ x = 10
 bool_x = bool(x)
 print(bool_x)  # Output: True
 ```
+
+### Functions in Python
+
+**Syntax**
+
+```python
+def function_name(parameters):
+    """docstring"""
+    # function body
+    # (statements to be executed)
+    return expression
+```
+
+**Example**
+
+```python
+def add_numbers(a, b):
+    """This function adds two numbers."""
+    sum = a + b
+    return sum
+
+result = add_numbers(10, 20)
+print("Sum:", result)  # Output: Sum: 30
+```
+
+
+### Modules in Python
+
+
+A module is a file containing Python definitions and statements. The file name is the module name with the suffix `.py`. Modules can contain functions, variables, and classes that can be imported and used in other Python scripts.
+
+#### Creating a Module:
+
+Here's an example of a simple module named `my_module.py`:
+
+```python
+# my_module.py
+
+def greeting(name):
+    print("Hello, " + name)
+```
+
+#### Using a Module:
+
+To use the functions defined in a module, you need to import the module into your Python script using the `import` statement.
+
+```python
+# main.py
+
+import my_module
+
+my_module.greeting("Alice")  # Output: Hello, Alice
+```
+
+You can also import specific functions or variables from a module using the `from` keyword.
+
+```python
+# main.py
+
+from my_module import greeting
+
+greeting("Bob")  # Output: Hello, Bob
+```
+
+### PIP (Python Package Index):
+
+PIP is a package manager for Python that allows you to install, uninstall, and manage Python packages (also known as libraries or modules) from the Python Package Index (PyPI). PyPI is a repository of software packages developed and maintained by the Python community.
+
+#### Installing Packages with PIP:
+
+To install a package using PIP, you can use the `pip install` command followed by the package name.
+
+```bash
+pip install package_name
+```
+
+For example, to install the `requests` package, you would run:
+
+```bash
+pip install requests
+```
+
+#### Listing Installed Packages:
+
+You can list all installed packages and their versions using the `pip list` command.
+
+```bash
+pip list
+```
+
+#### Uninstalling Packages:
+
+To uninstall a package, you can use the `pip uninstall` command followed by the package name.
+
+```bash
+pip uninstall package_name
+```
+
+#### Requirements File:
+
+You can also create a requirements file (`requirements.txt`) that lists all the packages required for your project along with their versions. This file can then be used to install all the dependencies at once.
+
+```text
+# requirements.txt
+
+requests==2.26.0
+numpy==1.21.2
+```
+
+To install the packages listed in the requirements file, you can use the `-r` flag with the `pip install` command.
+
+```bash
+pip install -r requirements.txt
+```
+
+
+
 
 
 
