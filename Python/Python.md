@@ -257,6 +257,186 @@ pip install -r requirements.txt
 ```
 
 
+### Strings in Python
+
+
+1. **`capitalize()`**
+
+   - This method returns a copy of the string with the first character capitalized and the rest of the characters in lowercase.
+
+   ```python
+   str = "hello world"
+   capitalized_str = str.capitalize()
+   print(capitalized_str)  # Output: Hello world
+   ```
+
+2. **`upper()`**
+
+   - This method returns a copy of the string with all characters converted to uppercase.
+
+   ```python
+   str = "hello world"
+   upper_str = str.upper()
+   print(upper_str)  # Output: HELLO WORLD
+   ```
+
+3. **`lower()`**
+
+   - This method returns a copy of the string with all characters converted to lowercase.
+
+   ```python
+   str = "HELLO WORLD"
+   lower_str = str.lower()
+   print(lower_str)  # Output: hello world
+   ```
+
+4. **`title()`**
+
+   - This method returns a copy of the string with the first character of each word capitalized and the rest of the characters in lowercase.
+
+   ```python
+   str = "hello world"
+   title_str = str.title()
+   print(title_str)  # Output: Hello World
+   ```
+
+5. **`strip()`**
+
+   - This method returns a copy of the string with leading and trailing whitespace removed.
+
+   ```python
+   str = "   hello world   "
+   stripped_str = str.strip()
+   print(stripped_str)  # Output: hello world
+   ```
+
+6. **`replace()`**
+
+   - This method returns a copy of the string with all occurrences of a substring replaced by another substring.
+
+   ```python
+   str = "hello world"
+   replaced_str = str.replace("world", "Python")
+   print(replaced_str)  # Output: hello Python
+   ```
+
+7. **`split()`**
+
+   - This method returns a list of substrings obtained by splitting the string at occurrences of a delimiter.
+
+   ```python
+   str = "hello,world,python"
+   split_str = str.split(",")
+   print(split_str)  # Output: ['hello', 'world', 'python']
+   ```
+
+8. **`join()`**
+
+   - This method concatenates the elements of an iterable with the string as a separator.
+
+   ```python
+   list = ['hello', 'world', 'python']
+   joined_str = ",".join(list)
+   print(joined_str)  # Output: hello,world,python
+   ```
+
+9. **`startswith()`**
+
+   - This method returns `True` if the string starts with the specified prefix; otherwise, it returns `False`.
+
+   ```python
+   str = "hello world"
+   starts_with_hello = str.startswith("hello")
+   print(starts_with_hello)  # Output: True
+   ```
+
+10. **`endswith()`**
+
+    - This method returns `True` if the string ends with the specified suffix; otherwise, it returns `False`.
+
+    ```python
+    str = "hello world"
+    ends_with_world = str.endswith("world")
+    print(ends_with_world)  # Output: True
+    ```
+
+11. **`find()`**
+
+    - This method returns the lowest index of the first occurrence of a substring within the string, or `-1` if the substring is not found.
+
+    ```python
+    str = "hello world"
+    index_of_world = str.find("world")
+    print(index_of_world)  # Output: 6
+    ```
+
+12. **`length of String`**
+
+     - In Python, you can calculate the length of a string using the `len()` function. The `len()` function returns the number of characters in a string.
+
+Here's an example:
+
+```python
+string = "Hello World"
+length = len(string)
+print(length)  # Output: 11
+```
+
+In this example, the length of the string "Hello World" is 11 characters, including spaces.
+
+13. **`Slicing a String`**
+
+    In Python, you can slice strings using the following syntax:
+
+```python
+string[start:end:step]
+```
+
+Where:
+- `start` is the starting index of the slice (inclusive).
+- `end` is the ending index of the slice (exclusive).
+- `step` is the step or increment value for the slice (optional).
+
+Here are some examples:
+
+1. **Basic slicing:**
+
+```python
+string = "Hello World"
+substring = string[3:8]  # Retrieves characters from index 3 to 7 (inclusive start, exclusive end)
+print(substring)  # Output: "lo Wo"
+```
+
+2. **Negative indices:**
+
+```python
+string = "Hello World"
+substring = string[-5:-2]  # Retrieves characters from the 5th character from the end to the 2nd character from the end
+print(substring)  # Output: "Wor"
+```
+
+3. **Omitting start or end indices:**
+
+```python
+string = "Hello World"
+substring = string[:5]  # Retrieves characters from the beginning to index 4 (exclusive end)
+print(substring)  # Output: "Hello"
+
+substring = string[6:]  # Retrieves characters from index 6 to the end
+print(substring)  # Output: "World"
+```
+
+4. **Reversing the String**
+
+```python
+str = "hello world"
+reversed_str = str[::-1]
+print(reversed_str)  # Output: "dlrow olleh"
+```
+
+
+
+
 
 
 
