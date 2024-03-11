@@ -259,6 +259,8 @@ pip install -r requirements.txt
 
 ### Strings in Python
 
+Strings are immutable i.e unmodifible. Whenever we a modify a String a new String is created.
+
 
 1. **`capitalize()`**
 
@@ -475,4 +477,95 @@ age = int(input("Enter your age: "))
 print(f"You are {age} years old.")
 ```
 
+### List in python
+
+1. **`append()`** - Adds an item to the end of the list.
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry']
+   fruits.append('orange')
+   print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange']
+   ```
+
+2. **`extend()`** - Adds all elements of a list (or any iterable) to the end of the current list.
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry']
+   more_fruits = ['orange', 'grape', 'pear']
+   fruits.extend(more_fruits)
+   print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange', 'grape', 'pear']
+   ```
+
+3. **`insert()`** - Inserts an item at a specified position.
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry']
+   fruits.insert(1, 'orange')
+   print(fruits)  # Output: ['apple', 'orange', 'banana', 'cherry']
+   ```
+
+4. **`remove()`** - Removes the first item from the list whose value is equal to x. Throws a ValueError if the item is not found.
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry', 'banana']
+   fruits.remove('banana')
+   print(fruits)  # Output: ['apple', 'cherry', 'banana']
+   ```
+
+5. **`pop()`** - Removes the item at the given position in the list and returns it. If no index is specified, `pop()` removes and returns the last item in the list.
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry']
+   fruit = fruits.pop()
+   print(fruit)  # Output: 'cherry'
+   print(fruits)  # Output: ['apple', 'banana']
+   ```
+
+6. **`clear()`** - Removes all items from the list.
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry']
+   fruits.clear()
+   print(fruits)  # Output: []
+   ```
+
+7. **`index()`** - Returns the index of the first item whose value is equal to x. Throws a ValueError if the item is not found.
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry']
+   index = fruits.index('banana')
+   print(index)  # Output: 1
+   ```
+
+8. **`count()`** - Returns the number of times x appears in the list.
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry', 'banana']
+   count = fruits.count('banana')
+   print(count)  # Output: 2
+   ```
+
+9. **`sort()`** - Sorts the items of the list in place (the arguments can be used for sort customization).
+
+   ```python
+   fruits = ['banana', 'apple', 'cherry']
+   fruits.sort()
+   print(fruits)  # Output: ['apple', 'banana', 'cherry']
+   ```
+
+10. **`reverse()`** - Reverses the elements of the list in place.
+
+    ```python
+    fruits = ['banana', 'apple', 'cherry']
+    fruits.reverse()
+    print(fruits)  # Output: ['cherry', 'apple', 'banana']
+    ```
+
+11. **`copy()`** - Returns a shallow copy of the list.
+
+    ```python
+    fruits = ['apple', 'banana', 'cherry']
+    fruits_copy = fruits.copy()
+    print(fruits_copy)  # Output: ['apple', 'banana', 'cherry']
+    ```
 
