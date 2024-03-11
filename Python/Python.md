@@ -555,7 +555,14 @@ List in python is mutable i.e when we modify a List, Changes get reflected in sa
    print(fruits)  # Output: ['apple', 'banana', 'cherry']
    ```
 
-10. **`reverse()`** - Reverses the elements of the list in place.
+11. **`sort(reverse=true)`** - Sort the list in descending order
+    ```python
+    fruits = ['banana', 'apple', 'cherry']
+    fruits.sort(reverse=True)
+    print(fruits)  # Output: ['cherry', 'banana', 'apple']
+    ```
+
+12. **`reverse()`** - Reverses the elements of the list in place.
 
     ```python
     fruits = ['banana', 'apple', 'cherry']
@@ -563,7 +570,7 @@ List in python is mutable i.e when we modify a List, Changes get reflected in sa
     print(fruits)  # Output: ['cherry', 'apple', 'banana']
     ```
 
-11. **`copy()`** - Returns a shallow copy of the list.
+13. **`copy()`** - Returns a shallow copy of the list.
 
     ```python
     fruits = ['apple', 'banana', 'cherry']
