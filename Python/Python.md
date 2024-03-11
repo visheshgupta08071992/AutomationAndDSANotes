@@ -577,4 +577,10 @@ List in python is mutable i.e when we modify a List, Changes get reflected in sa
     fruits_copy = fruits.copy()
     print(fruits_copy)  # Output: ['apple', 'banana', 'cherry']
     ```
+14. **`slicing a list`** - Is used to slice a list and return a new list
 
+    ```python
+    fruits = ['apple', 'banana', 'cherry']
+    newFruits = fruits[0:1]
+    print(newFruits) # Output: ['apple']
+    ```
