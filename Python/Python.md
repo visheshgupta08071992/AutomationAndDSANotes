@@ -479,6 +479,8 @@ print(f"You are {age} years old.")
 
 ### List in python
 
+List in python is mutable i.e when we modify a List, Changes get reflected in same list and new list is not created. 
+
 1. **`append()`** - Adds an item to the end of the list.
 
    ```python
