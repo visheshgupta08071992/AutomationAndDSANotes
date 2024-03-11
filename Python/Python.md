@@ -584,3 +584,70 @@ List in python is mutable i.e when we modify a List, Changes get reflected in sa
     newFruits = fruits[0:1]
     print(newFruits) # Output: ['apple']
     ```
+
+### Tuples in python
+
+Tuples are a fundamental data type in Python that are quite similar to lists with a crucial difference: tuples are immutable. This immutability means that once a tuple is created, the elements inside it cannot be changed, removed, or added. In contrast, lists are mutable, allowing for modification of their elements.
+
+### Tuple Definition and Usage
+
+A tuple is defined by enclosing its elements within parentheses `()`, whereas a list is defined with square brackets `[]`.
+
+**Tuple Example:**
+
+```python
+my_tuple = (1, 2, 3, 4)
+print(my_tuple)  # Output: (1, 2, 3, 4)
+```
+
+**List Example:**
+
+```python
+my_list = [1, 2, 3, 4]
+print(my_list)  # Output: [1, 2, 3, 4]
+```
+
+### Immutability of Tuples
+
+Due to their immutability, tuples do not support operations that alter them, such as `append()`, `remove()`, or `pop()`, which are available with lists. This immutability makes tuples a preferred choice for fixed data that should not change throughout the execution of a program, ensuring data integrity and potentially optimizing memory usage and performance.
+
+### When to Use Tuples
+
+- When the collection of items is not going to change.
+- To use as keys in dictionaries (because keys must be immutable in Python).
+- When passing a sequence of values to a function where you don't want those values to be altered.
+
+### Commonly Used Tuple Methods
+
+Tuples have fewer methods compared to lists, primarily because of their immutability. The two most commonly used tuple methods are:
+
+1. **`count()`** - Returns the number of times a specified value occurs in a tuple.
+
+   **Example:**
+
+   ```python
+   my_tuple = (1, 4, 3, 7, 4, 2, 4)
+   print(my_tuple.count(4))  # Output: 3
+   ```
+
+   Here, `my_tuple.count(4)` returns `3` because the value `4` appears three times in the tuple.
+
+2. **`index()`** - Searches the tuple for a specified value and returns the position of where it was found.
+
+   **Example:**
+
+   ```python
+   my_tuple = (1, 2, 3, 4, 5)
+   print(my_tuple.index(3))  # Output: 2
+   ```
+
+   `my_tuple.index(3)` returns `2`, indicating that the value `3` is located at index 2 in the tuple.
+
+### Difference from Lists
+
+- **Immutability**: The key difference is that tuples are immutable, while lists are mutable.
+- **Syntax**: Tuples use parentheses `()`; lists use square brackets `[]`.
+- **Performance**: Tuples can be slightly faster than lists for certain operations due to their immutability.
+- **Usage**: Tuples are used for data that should remain constant throughout the program, while lists are used for data that can change.
+
+
