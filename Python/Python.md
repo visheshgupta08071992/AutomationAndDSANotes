@@ -746,7 +746,7 @@ new_dict= {"name":"sachin","hobby":"sports"}
 print(new_dict)  # Output: {'name': 'sachin', 'hobby': 'sports'}
 ```
 
-### 2. `.get(key, default=None)`
+**`.get(key, default=None)`**
 Returns the value for a key if the key is in the dictionary, else `default`.
 
 Example:
@@ -757,7 +757,7 @@ print(my_dict.get('location', 'Unknown'))  # Output: Unknown
 print(my_dict['age']) # Output: 25
 ```
 
-### 3. `.keys()`
+**`.keys()`**
 Returns a view object that displays a list of all the keys.
 
 Example:
@@ -766,7 +766,7 @@ my_dict = {'name': 'Alice', 'age': 25}
 print(list(my_dict.keys()))  # Output: ['name', 'age']
 ```
 
-### 4. `.values()`
+**`.values()`**
 Returns a view object that displays a list of all the values.
 
 Example:
@@ -775,7 +775,7 @@ my_dict = {'name': 'Alice', 'age': 25}
 print(list(my_dict.values()))  # Output: ['Alice', 25]
 ```
 
-### 5. `.items()`
+**`.items()`**
 Returns a view object that displays a list of a dictionary's key-value tuple pairs.
 
 Example:
@@ -784,7 +784,7 @@ my_dict = {'name': 'Alice', 'age': 25}
 print(list(my_dict.items()))  # Output: [('name', 'Alice'), ('age', 25)]
 ```
 
-### 6. `.update([other])`
+**`.update([other])`**
 Updates the dictionary with the key/value pairs from `other`, overwriting existing keys.
 
 Example:
@@ -797,7 +797,7 @@ my_dict["age"]=25
 print(my_dict) # Output: {'name': 'Alice', 'age': 25, 'location': 'New York', 'Country': 'USA'}
 ```
 
-### 7. `.pop(key[, default])`
+**`.pop(key[, default])`**
 Removes the item with the specified key and returns its value. If the key does not exist and `default` is specified, it returns `default`, otherwise it raises a `KeyError`.
 
 Example:
@@ -807,7 +807,7 @@ print(my_dict.pop('age'))  # Output: 25
 print(my_dict)  # Output: {'name': 'Alice'}
 ```
 
-### 8. `.clear()`
+**`.clear()`**
 Removes all items from the dictionary.
 
 Example:
@@ -817,7 +817,7 @@ my_dict.clear()
 print(my_dict)  # Output: {}
 ```
 
-### 9. `.copy()`
+**`.copy()`**
 Returns a shallow copy of the dictionary.
 
 Example:
@@ -825,6 +825,70 @@ Example:
 original = {'name': 'Alice', 'age': 25}
 new_dict = original.copy()
 print(new_dict)  # Output: {'name': 'Alice', 'age': 25}
+```
+
+### If Else in Python
+Please find below basic if else program in python. In : represents indentation, It is similar to braces in Java.
+
+```python
+age = int(input("Please enter your age : "))
+
+if (age >= 18):
+    print("you can drive car")
+elif(age >=10):
+    print("you can drive cycle")
+else:
+    print("You need to walk")
+
+```
+
+### Iteration in python
+
+The general syntax of a for loop in Python is:
+
+```python
+
+for item in iterable:
+    # code block to execute for each item
+
+```
+
+**`Iterating List and set`**
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+
+my_set = {"apple", "banana", "cherry"}
+
+for item in my_set:
+    print(item)
+```
+
+**`Iterating dictionary`** 
+
+```python
+
+person = {"name": "John", "age": 30, "city": "New York"}
+
+for key, value in person.items():
+    print(key, ":", value)
+
+
+person = {"name": "John", "age": 30, "city": "New York"}
+
+for key in person.keys():
+    print(key, ":", person[key])
+
+
+person = {"name": "John", "age": 30, "city": "New York"}
+
+for value in person.values():
+    print(value)
+
+
 ```
 
 
