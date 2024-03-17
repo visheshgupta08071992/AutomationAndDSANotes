@@ -728,6 +728,106 @@ print(D)  # Output: {3}
 ```
 
 
+### Dictionary in Python
+
+In Python, a dictionary is a collection of items that are stored in a key-value pair. It is simialr to Map in Java
+
+Here are some of the commonly used dictionary methods in Python with examples:
+
+
+**`Creates a new dictionary.`**
+
+Example:
+```python
+new_dict = dict(name="rahul", hobby="playing")
+print(new_dict)  # Output: {'name': 'rahul', 'hobby': 'playing'}
+
+new_dict= {"name":"sachin","hobby":"sports"}
+print(new_dict)  # Output: {'name': 'sachin', 'hobby': 'sports'}
+```
+
+### 2. `.get(key, default=None)`
+Returns the value for a key if the key is in the dictionary, else `default`.
+
+Example:
+```python
+my_dict = {'name': 'Alice', 'age': 25}
+print(my_dict.get('name'))  # Output: Alice
+print(my_dict.get('location', 'Unknown'))  # Output: Unknown
+print(my_dict['age']) # Output: 25
+```
+
+### 3. `.keys()`
+Returns a view object that displays a list of all the keys.
+
+Example:
+```python
+my_dict = {'name': 'Alice', 'age': 25}
+print(list(my_dict.keys()))  # Output: ['name', 'age']
+```
+
+### 4. `.values()`
+Returns a view object that displays a list of all the values.
+
+Example:
+```python
+my_dict = {'name': 'Alice', 'age': 25}
+print(list(my_dict.values()))  # Output: ['Alice', 25]
+```
+
+### 5. `.items()`
+Returns a view object that displays a list of a dictionary's key-value tuple pairs.
+
+Example:
+```python
+my_dict = {'name': 'Alice', 'age': 25}
+print(list(my_dict.items()))  # Output: [('name', 'Alice'), ('age', 25)]
+```
+
+### 6. `.update([other])`
+Updates the dictionary with the key/value pairs from `other`, overwriting existing keys.
+
+Example:
+```python
+my_dict = {'name': 'Alice', 'age': 25}
+my_dict.update({'age': 26, 'location': 'New York'})
+print(my_dict)  # Output: {'name': 'Alice', 'age': 26, 'location': 'New York'}
+my_dict["Country"]="USA"
+my_dict["age"]=25
+print(my_dict) # Output: {'name': 'Alice', 'age': 25, 'location': 'New York', 'Country': 'USA'}
+```
+
+### 7. `.pop(key[, default])`
+Removes the item with the specified key and returns its value. If the key does not exist and `default` is specified, it returns `default`, otherwise it raises a `KeyError`.
+
+Example:
+```python
+my_dict = {'name': 'Alice', 'age': 25}
+print(my_dict.pop('age'))  # Output: 25
+print(my_dict)  # Output: {'name': 'Alice'}
+```
+
+### 8. `.clear()`
+Removes all items from the dictionary.
+
+Example:
+```python
+my_dict = {'name': 'Alice', 'age': 25}
+my_dict.clear()
+print(my_dict)  # Output: {}
+```
+
+### 9. `.copy()`
+Returns a shallow copy of the dictionary.
+
+Example:
+```python
+original = {'name': 'Alice', 'age': 25}
+new_dict = original.copy()
+print(new_dict)  # Output: {'name': 'Alice', 'age': 25}
+```
+
+
  
 
 
