@@ -956,7 +956,82 @@ except MyCustomError as e:
     print(e.message)
 ```
 
+### File I/O in python
 
+File I/O (Input/Output) in Python is quite straightforward and is primarily handled through the built-in `open()` function, which returns a file object. This object can then be used to read from or write to a file. The basic operations involve opening a file, reading or writing to it, and then closing it.
+
+**`Opening a File`**
+To open a file, you use the `open()` function. It requires the name of the file you want to open and also takes a mode as a second argument, determining the action (read, write, append, etc.) to be performed on the file:
+
+- `'r'`: Open for reading (default).
+- `'w'`: Open for writing, truncating the file first.
+- `'x'`: Open for exclusive creation, failing if the file already exists.
+- `'a'`: Open for writing, appending to the end of the file if it exists.
+- `'b'`: Binary mode.
+- `'t'`: Text mode (default).
+- `'+'`: Open for updating (reading and writing).
+
+**`Reading from a File`**
+To read the content of a file:
+
+```python
+# Open the file in read mode ('r' is default so it can be omitted)
+with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)
+```
+
+The `with` statement is used here to ensure that the file is properly closed after its suite finishes, even if an exception is raised. The `read()` method reads the entire file content.
+
+If you want to read the file line by line:
+
+```python
+with open('example.txt', 'r') as file:
+    for line in file:
+        print(line, end='')
+```
+
+**`Writing to a File`**
+To write to a file, you open it in write (`'w'`) or append (`'a'`) mode:
+
+```python
+# This will overwrite the file if it exists, or create it if it doesn't
+with open('example.txt', 'w') as file:
+    file.write("Hello, World!\n")
+    file.write("This is another line.\n")
+```
+
+To append to a file, change the mode to `'a'`:
+
+```python
+with open('example.txt', 'a') as file:
+    file.write("Appending a new line.\n")
+```
+
+**`Binary Mode`**
+For binary files, you should add `'b'` to the mode string. This is useful for non-text files like images or executables:
+
+```python
+# Reading a binary file
+with open('image.png', 'rb') as file:
+    content = file.read()
+
+# Writing to a binary file
+with open('copy_image.png', 'wb') as file:
+    file.write(content)
+```
+
+**`Closing Files`**
+When you’re done with a file, you need to close it to free up system resources. The `with` statement does this automatically for you. However, if you open a file without `with`, you should close it manually:
+
+```python
+file = open('example.txt', 'r')
+content = file.read()
+print(content)
+file.close()  # It's important to close the file
+```
+
+Remember, handling files properly is important to prevent data loss or corruption. Always make sure files are closed after their use is complete, preferably using the `with` statement for its automatic handling of resource management.
  
 
 
