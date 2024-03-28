@@ -17,3 +17,4 @@ https://www.javatpoint.com/methods-of-string-class
 | `toLowerCase()` | Returns a new string with all characters in lowercase.                                                       |
 | `toUpperCase()` | Returns a new string with all characters in uppercase.                                                       |
 | `trim()` | Returns a new string with whitespaces removed from the beginning and end of the current string.              |
+| `contains()` | It's used to check whether a specified sequence of characters is present within a string or not. The method returns a boolean value (true if the specified sequence of characters is found, false otherwise).              |
