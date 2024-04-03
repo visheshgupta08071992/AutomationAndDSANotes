@@ -118,8 +118,8 @@ Once you've created an array, you can access its attributes and use its methods 
 1. **Shape and Size**:
 
 ```python
-print(my_array.shape)  # Prints the shape of the array
-print(my_array.size)   # Prints the number of elements in the array
+print(my_array.shape)  # Prints the shape of the array (Output: (5,))
+print(my_array.size)   # Prints the number of elements in the array (Output: 5)
 ```
 
 2. **Reshaping**:
@@ -127,14 +127,24 @@ print(my_array.size)   # Prints the number of elements in the array
 ```python
 reshaped_array = my_array.reshape(5, 1)  # Reshapes the array to a 5x1 array
 print(reshaped_array)
+"""
+Output:
+[[1]
+ [2]
+ [3]
+ [4]
+ [5]]
+"""
 ```
 
 3. **Indexing and Slicing**:
 
 ```python
-print(my_array[0])      # Accesses the element at index 0
-print(my_array[:2])     # Accesses the first two elements
-print(my_array[2:])     # Accesses elements from index 2 to the end
+my_list = [1, 2, 3, 4, 5]
+my_array = np.array(my_list)
+print(my_array[0])     # Accesses the element at index 0 (Output: 1)
+print(my_array[:2])    # Accesses the first two elements (Output: [1 2])
+print(my_array[2:])    # Accesses elements from index 2 to the end (Output: [3 4 5])
 ```
 
 4. **Mathematical Operations**:
@@ -143,21 +153,16 @@ print(my_array[2:])     # Accesses elements from index 2 to the end
 array1 = np.array([1, 2, 3])
 array2 = np.array([4, 5, 6])
 
-print(array1 + array2)  # Element-wise addition
-print(array1 * array2)  # Element-wise multiplication
-print(np.dot(array1, array2))  # Dot product
+print(array1 + array2)  # Element-wise addition (Output: [5 7 9])
+print(array1 * array2)  # Element-wise multiplication (Output: [ 4 10 18])
+print(np.dot(array1, array2))  # Dot product (Output: 32)
 ```
 
 5. **Statistical Functions**:
 
 ```python
-print(np.mean(my_array))   # Computes the mean of the array
-print(np.median(my_array)) # Computes the median of the array
-print(np.std(my_array))    # Computes the standard deviation of the array
+print(np.mean(my_array))   # Computes the mean of the array (Output: 3.0)
+print(np.median(my_array)) # Computes the median of the array (Output: 3.0)
+print(np.std(my_array))    # Computes the standard deviation of the array (Output: 1.4142135623730951)
 ```
 
-These are just a few examples of what you can do with NumPy. There are many more functions and methods available for various mathematical operations, linear algebra, Fourier transforms, and more. NumPy's extensive documentation is an excellent resource for exploring all its capabilities.
-
-### Conclusion
-
-NumPy is an essential library for numerical computing in Python, offering powerful tools for working with arrays and performing mathematical operations efficiently. By understanding its basic concepts and commonly used methods, you'll be well-equipped to tackle a wide range of data science and scientific computing tasks.
