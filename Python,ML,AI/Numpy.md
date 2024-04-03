@@ -48,15 +48,116 @@ jupyter notebook
 ```
 import numpy as np
 ```
+By convention, NumPy is usually imported as `np`, making it easier to reference its functions and classes.
 
 ### Advantage of Using Numpy Arrays
 
 1. Numpy uses much less memory to store data. Numpy Arrays can only store data of same Type while Python list allows storing data of different types.
 2. Numpy makes it extremely easy to perform mathematical operations on it while mathematical operations are difficult to perform with List.
 3. Numpy Used for the creation of n-dimensional arrays.
-4. In python Lists one can have nested data with different size, while the same cannot be done in array
-   **eg**
-   
-   ```python
-   
-   ```
+
+
+### Creating NumPy Arrays
+
+The most fundamental object in NumPy is the `ndarray`, which is an n-dimensional array. You can create NumPy arrays in several ways:
+
+1. **From a Python list**:
+
+```python
+my_list = [1, 2, 3, 4, 5]
+my_array = np.array(my_list)
+print(my_array) # Output: [1 2 3 4 5]
+```
+
+2. **Using built-in functions**:
+
+```python
+# Create an array of zeros
+zeros_array = np.zeros((3, 4))  # Creates a 3x4 array filled with zeros
+print(zeros_array)
+
+"""
+Output:
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+"""
+
+# Create an array of ones
+ones_array = np.ones((2, 3))  # Creates a 2x3 array filled with ones
+print(ones_array)
+
+"""
+Output:
+[[1. 1. 1.]
+ [1. 1. 1.]]
+"""
+
+# Create an array with a range of values
+range_array = np.arange(10)  # Creates a 1D array with values from 0 to 9
+print(range_array)   # Output: [0 1 2 3 4 5 6 7 8 9]
+
+
+
+# Create an array of random values
+random_array = np.random.rand(2, 2)  # Creates a 2x2 array with random values
+print(random_array)
+
+"""
+Output:
+[[0.36651521 0.77502487]
+ [0.52115335 0.92239789]]
+"""
+
+```
+
+### Array Attributes and Methods
+
+Once you've created an array, you can access its attributes and use its methods to perform various operations. Some commonly used attributes and methods include:
+
+1. **Shape and Size**:
+
+```python
+print(my_array.shape)  # Prints the shape of the array
+print(my_array.size)   # Prints the number of elements in the array
+```
+
+2. **Reshaping**:
+
+```python
+reshaped_array = my_array.reshape(5, 1)  # Reshapes the array to a 5x1 array
+print(reshaped_array)
+```
+
+3. **Indexing and Slicing**:
+
+```python
+print(my_array[0])      # Accesses the element at index 0
+print(my_array[:2])     # Accesses the first two elements
+print(my_array[2:])     # Accesses elements from index 2 to the end
+```
+
+4. **Mathematical Operations**:
+
+```python
+array1 = np.array([1, 2, 3])
+array2 = np.array([4, 5, 6])
+
+print(array1 + array2)  # Element-wise addition
+print(array1 * array2)  # Element-wise multiplication
+print(np.dot(array1, array2))  # Dot product
+```
+
+5. **Statistical Functions**:
+
+```python
+print(np.mean(my_array))   # Computes the mean of the array
+print(np.median(my_array)) # Computes the median of the array
+print(np.std(my_array))    # Computes the standard deviation of the array
+```
+
+These are just a few examples of what you can do with NumPy. There are many more functions and methods available for various mathematical operations, linear algebra, Fourier transforms, and more. NumPy's extensive documentation is an excellent resource for exploring all its capabilities.
+
+### Conclusion
+
+NumPy is an essential library for numerical computing in Python, offering powerful tools for working with arrays and performing mathematical operations efficiently. By understanding its basic concepts and commonly used methods, you'll be well-equipped to tackle a wide range of data science and scientific computing tasks.
