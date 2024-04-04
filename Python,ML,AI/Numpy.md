@@ -69,7 +69,14 @@ my_array = np.array(my_list)
 print(my_array) # Output: [1 2 3 4 5]
 ```
 
-2. **Using built-in functions**:
+2. **Creating arrays with specific data types**:
+
+```python
+arr = np.array([1, 2, 3], dtype=float)
+print(arr)  # Output: [1. 2. 3.]
+```
+
+3. **Using built-in functions**:
 
 ```python
 # Create an array of zeros
@@ -143,7 +150,46 @@ Output:
 """
 ```
 
-3. **Indexing and Slicing**:
+3. **Ravel**
+
+The `ravel()` method in NumPy is used to flatten multi-dimensional arrays into a one-dimensional array. It returns a contiguous flattened array, meaning it returns a view of the original array, whenever possible, rather than a new array. This can be particularly useful when you need to perform operations that require a one-dimensional array or when you want to simplify the data structure for further processing.
+
+```python
+import numpy as np
+
+# Creating a 2D array
+arr_2d = np.array([[1, 2, 3],
+                   [4, 5, 6]])
+
+print("Original 2D array:")
+print(arr_2d)
+# Output:
+# [[1 2 3]
+#  [4 5 6]]
+
+# Using ravel() to flatten the array
+arr_1d = arr_2d.ravel()
+
+print("\nFlattened 1D array:")
+print(arr_1d)
+# Output:
+# [1 2 3 4 5 6]
+
+# Modifying the flattened array will also change the original array
+arr_1d[0] = 100
+print("\nModified 1D array:")
+print(arr_1d)
+# Output:
+# [100   2   3   4   5   6]
+
+print("\nOriginal 2D array after modification:")
+print(arr_2d)
+# Output:
+# [[100   2   3]
+#  [  4   5   6]]
+```
+
+5. **Indexing and Slicing**:
 
 ```python
 my_list = [1, 2, 3, 4, 5]
@@ -153,7 +199,7 @@ print(my_array[:2])    # Accesses the first two elements (Output: [1 2])
 print(my_array[2:])    # Accesses elements from index 2 to the end (Output: [3 4 5])
 ```
 
-4. **Mathematical Operations**:
+5. **Mathematical Operations**:
 
 ```python
 array1 = np.array([1, 2, 3])
@@ -164,11 +210,110 @@ print(array1 * array2)  # Element-wise multiplication (Output: [ 4 10 18])
 print(np.dot(array1, array2))  # Dot product (Output: 32)
 ```
 
-5. **Statistical Functions**:
+6. **Statistical Functions**:
 
 ```python
 print(np.mean(my_array))   # Computes the mean of the array (Output: 3.0)
 print(np.median(my_array)) # Computes the median of the array (Output: 3.0)
 print(np.std(my_array))    # Computes the standard deviation of the array (Output: 1.4142135623730951)
+
+arr = np.array([1, 2, 3, 4, 5])
+
+print(np.sqrt(arr))     # Output: [1.         1.41421356 1.73205081 2.         2.23606798]
+print(np.exp(arr))      # Output: [  2.71828183   7.3890561   20.08553692  54.59815003 148.4131591 ]
+print(np.sin(arr))      # Output: [ 0.84147098  0.90929743  0.14112001 -0.7568025  -0.95892427]
+
 ```
 
+7. **Transposing Arrays**
+
+```python
+
+arr = np.array([[1, 2], [3, 4]])
+print(arr.T)
+# Output:
+# [[1 3]
+#  [2 4]]
+
+```
+
+### Axis in Numpy
+
+In NumPy, the `axis` parameter is used in various functions to specify the axis along which an operation should be performed. It's a crucial concept for understanding how operations are applied to multi-dimensional arrays. The `axis` parameter is typically used in functions like `numpy.sum()`, `numpy.mean()`, `numpy.max()`, `numpy.min()`, and many others.
+
+The `axis` parameter can take values of `0`, `1`, `2`, and so on, or `-1`, `-2`, `-3`, etc., where `-1` represents the last axis, `-2` represents the second-to-last axis, and so forth. It can also take a tuple of axes to specify multiple axes.
+
+**Axis 0** runs vertically downward along the rows.
+**Axis 1** runs horizontally across the columns.
+
+Here's a breakdown of how `axis` works with some examples:
+
+### 1. `axis=0`
+
+When `axis=0`, the operation is performed along the first axis (rows for 2D arrays):
+
+```python
+import numpy as np
+
+arr = np.array([[1, 2, 3],
+                [4, 5, 6]])
+
+# Sum along the first axis (rows)
+print(np.sum(arr, axis=0))  # Output: [5 7 9]
+```
+
+In this example, the sum is calculated for each column separately, resulting in a 1D array where each element corresponds to the sum of the values in the respective column.
+
+### 2. `axis=1`
+
+When `axis=1`, the operation is performed along the second axis (columns for 2D arrays):
+
+```python
+import numpy as np
+
+arr = np.array([[1, 2, 3],
+                [4, 5, 6]])
+
+# Sum along the second axis (columns)
+print(np.sum(arr, axis=1))  # Output: [ 6 15]
+```
+
+Here, the sum is calculated for each row separately, resulting in a 1D array where each element corresponds to the sum of the values in the respective row.
+
+### 3. `axis=None`
+
+When `axis=None`, the operation is performed on the flattened array:
+
+```python
+import numpy as np
+
+arr = np.array([[1, 2, 3],
+                [4, 5, 6]])
+
+# Sum over all elements
+print(np.sum(arr, axis=None))  # Output: 21
+```
+
+### 4. Negative axis values
+
+Negative axis values count from the last axis backward. For example, `-1` represents the last axis, `-2` represents the second-to-last axis, and so on.
+
+### 5. Using a tuple of axes
+
+You can also specify multiple axes using a tuple:
+
+```python
+import numpy as np
+
+arr = np.array([[[1, 2, 3],
+                 [4, 5, 6]],
+                [[7, 8, 9],
+                 [10, 11, 12]]])
+
+# Sum along the first and second axes
+print(np.sum(arr, axis=(0, 1)))  # Output: [22 26 30]
+```
+
+In this example, the sum is calculated along both the first and second axes, resulting in a 1D array where each element corresponds to the sum of the values in the respective positions along these axes.
+
+Understanding the `axis` parameter is essential for performing operations correctly on multi-dimensional arrays in NumPy. It allows you to control the direction in which the operation is applied and is a fundamental aspect of array manipulation in NumPy.
