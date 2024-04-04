@@ -118,13 +118,19 @@ Once you've created an array, you can access its attributes and use its methods 
 1. **Shape and Size**:
 
 ```python
+my_list = [1, 2, 3, 4, 5]
+my_array = np.array(my_list)
 print(my_array.shape)  # Prints the shape of the array (Output: (5,))
 print(my_array.size)   # Prints the number of elements in the array (Output: 5)
+myarr2D=np.array([[2,3],[4,5]])
+print(myarr2D.shape)  # Prints the shape of the array Output -(2, 2) 
+print(myarr2D.size)   # Prints the number of elements in the array (Output: 4)
 ```
 
 2. **Reshaping**:
 
 ```python
+my_list = [1, 2, 3, 4, 5]
 reshaped_array = my_array.reshape(5, 1)  # Reshapes the array to a 5x1 array
 print(reshaped_array)
 """
