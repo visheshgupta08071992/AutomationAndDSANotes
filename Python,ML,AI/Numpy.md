@@ -99,6 +99,12 @@ Output:
 [[1. 1. 1.]
  [1. 1. 1.]]
 """
+arr3 = np.ones(5,dtype=int) # Create a 1D array of length 5 with one of int type
+print(arr3)
+
+Output:
+[1 1 1 1 1]
+
 
 # Create an array with a range of values
 range_array = np.arange(10)  # Creates a 1D array with values from 0 to 9
@@ -115,6 +121,12 @@ Output:
 [[0.36651521 0.77502487]
  [0.52115335 0.92239789]]
 """
+
+arr4 = np.random.rand(6)        # Creates a 1D array of length 6 with random values
+print(arr4)
+
+Output
+[0.79975981 0.29802622 0.55852868 0.57773801 0.97633689 0.2174943 ]
 
 ```
 
