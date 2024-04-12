@@ -26,14 +26,18 @@ data = {'Name': ['John', 'Anna', 'Peter'],
         'Age': [28, 35, 42],
         'City': ['New York', 'Paris', 'London']}
 df = pd.DataFrame(data)
+print(df)
 ```
+
+![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/5c2ada4c-db30-47e9-8ea8-7252c50af2d5)
+
 
 #### From a list of lists:
 ```python
-data = [['John', 28, 'New York'],
+data1 = [['John', 28, 'New York'],
         ['Anna', 35, 'Paris'],
         ['Peter', 42, 'London']]
-df = pd.DataFrame(data, columns=['Name', 'Age', 'City'])
+df1 = pd.DataFrame(data1, columns=['Name', 'Age', 'City'])
 ```
 
 ### 4. Viewing Data:
