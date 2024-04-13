@@ -58,3 +58,9 @@
 - GANs can generate realistic human faces that don't belong to any real individuals, useful in various applications such as video games and movies.
 
 These explanations are quite simplified, as each of these areas is rich with concepts, techniques, and variations. However, this should give you a good foundational understanding to explore more!
+
+![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/10c3a093-ac4f-4ac4-99cb-2684b21b68fd)
+
+
+
+
