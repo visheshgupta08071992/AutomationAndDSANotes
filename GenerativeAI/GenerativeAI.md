@@ -62,5 +62,10 @@ These explanations are quite simplified, as each of these areas is rich with con
 ![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/10c3a093-ac4f-4ac4-99cb-2684b21b68fd)
 
 
+### Open Source models
+
+we can download the open source models from Hugging face website - https://huggingface.co/models
+
+
 
 
