@@ -806,6 +806,8 @@ console.log(null === undefined); // false
 
 In this case, all the comparisons evaluate to `false` because the types of the values on both sides are different.
 
+== does content comparison without checking on type. === does strict comparison it checks on type as well.
+
 In general, it is recommended to use the triple equals operator (`===`) for comparisons in JavaScript because it avoids unexpected type coercion. It provides a more precise and predictable way of comparing values.
 
 
