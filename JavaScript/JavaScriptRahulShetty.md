@@ -1067,6 +1067,48 @@ if(typeof g === 'undefined'){
     console.log(g + ' is undefined')
 }
 
+//15.Iterating and Printing an Object
+
+let person = {
+    name: 'vishesh',
+    age: 32,
+    intrest: ['cricket', 'playstation', 'vollyboll'],
+    address: {
+        street: 'laxmi nagar',
+        city: 'Akola'
+    }
+}
+
+for (let key in person) {
+    if (typeof person[key] === 'object') {
+        console.log(key + " - " + JSON.stringify(person[key]));
+    } else {
+        console.log(key + " - " + person[key]);
+    }
+}
+
+/*
+
+name - vishesh
+age - 32
+intrest - ["cricket","playstation","vollyboll"]
+address - {"street":"laxmi nagar","city":"Akola"}
+
+
+*/
+
+//16. Understanding JSON.stringify method
+
+JSON.stringify is a method in JavaScript that converts a JavaScript object or value to a JSON string.
+
+let person = {
+    name: 'John',
+    age: 30,
+    city: 'New York'
+};
+
+let jsonString = JSON.stringify(person);
+console.log(jsonString); // {"name":"John","age":30,"city":"New York"}
 
 ```
 
