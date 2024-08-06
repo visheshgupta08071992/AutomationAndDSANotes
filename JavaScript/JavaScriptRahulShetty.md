@@ -31,7 +31,7 @@ Once Node.js is installed, Open command prompt and hit below commands to ensure 
  
  **How to know dataType of variable in Javascript**
  
- typeOf() method is used to determine the dataType of variable in JavaScript.</br></br> ![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/5c51b1b1-513d-4dd2-882f-fa3202b2b45d)
+ typeof() method is used to determine the dataType of variable in JavaScript.</br></br> ![image](https://github.com/visheshgupta08071992/AutomationAndDSANotes/assets/52998083/5c51b1b1-513d-4dd2-882f-fa3202b2b45d)
 
  ```js
 let a=4
@@ -182,7 +182,8 @@ let arr5=[ 'banana', 'cherry', 'apple', 'watermelon','orange']
 arr5.sort()
 console.log(arr5) // [ 'apple', 'banana', 'cherry', 'orange', 'watermelon' ]
 
-//Sort in descending order
+//Sort in descending order - First sort the array is ascending order and then reverse it.
+arr5.sort()
 arr5.reverse()
 console.log(arr5) // [ 'watermelon', 'orange', 'cherry', 'banana', 'apple' ]
 
