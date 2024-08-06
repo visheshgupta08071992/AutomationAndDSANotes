@@ -681,6 +681,34 @@ city: New York
 
 */
 
+let person = {
+    name: 'vishesh',
+    age: 32,
+    intrest: ['cricket', 'playstation', 'vollyboll'],
+    address: {
+        street: 'laxmi nagar',
+        city: 'Akola'
+    }
+}
+
+for (let key in person) {
+    if (typeof person[key] === 'object') {
+        console.log(key + " - " + JSON.stringify(person[key]));
+    } else {
+        console.log(key + " - " + person[key]);
+    }
+}
+
+/* 
+name - vishesh
+age - 32
+intrest - ["cricket","playstation","vollyboll"]
+address - {"street":"laxmi nagar","city":"Akola"}
+
+*/
+
+To print the correct value of the address, we  need to convert the object to a string representation. we can achieve this using JSON.stringify.
+
 ```
 
 ## Understanding Spread Operator in Javascript
