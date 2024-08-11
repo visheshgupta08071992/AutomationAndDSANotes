@@ -137,6 +137,62 @@ we can get schema of our json with additionalProperties set as false with below 
 **Referance** - https://www.youtube.com/watch?v=PCtqZTO9Hac&list=PL9ok7C7Yn9A-JaUtcMwevO_FfbFNRYLfU&index=15
 
 
+## NOTE
+
+1.When using `JsonSchemaValidator` in RestAssured, if there are multiple mismatches in the JSON response compared to the schema, the `SchemaValidationException` typically reports all of them. The exception message will list all the fields that do not match the schema, rather than stopping at the first mismatch.
+
+This means that if multiple fields have type mismatches, are missing, or have other issues, the exception will include details about each of these problems in a single exception message.
+
+For example, if the JSON response has several fields that do not conform to the schema, the exception might look like this:
+
+```
+SchemaValidationException: json does not match the expected JSON schema.
+Expected: A valid JSON schema for the response
+Actual: A JSON document that does not match the schema
+
+Validation errors:
+- [field1]: expected type: String, found: Number
+- [field2]: expected type: Boolean, found: String
+- [field3]: missing but it is required
+```
+
+In summary, RestAssured's JsonSchemaValidator is designed to report all validation errors in a single exception, making it easier to identify and correct multiple issues in the JSON response.
+
+
+
+2.When additional fields are present in a JSON response that are not defined in the schema, the error message thrown during validation will typically indicate that the response contains properties that are not allowed. This is controlled by the `additionalProperties` keyword in the JSON schema.
+
+**Example Error Message**
+
+If your schema has `additionalProperties: false`, and the response contains an extra field, the error message might look like this:
+
+```
+io.restassured.internal.validation.JsonSchemaValidationException: 
+Schema validation failed for the response body.
+Validation errors:
+- Additional properties not allowed: extrafield
+```
+
+**Implementation in Schema**
+
+To ensure that additional fields are not allowed, you need to include `additionalProperties: false` in your schema definition. Here’s an example of how to structure your schema:
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "email": { "type": "string" }
+  },
+  "required": ["name", "email"],
+  "additionalProperties": false
+}
+```
+
+In summary, if there are additional fields in the JSON response that are not defined in the schema, the validation will fail, and the error message will clearly indicate which additional properties are not allowed. This feature is crucial for maintaining strict adherence to the expected data structure.
+
+
 
 
 
