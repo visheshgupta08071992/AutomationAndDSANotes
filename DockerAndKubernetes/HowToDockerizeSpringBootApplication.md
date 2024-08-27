@@ -32,8 +32,37 @@ ENTRYPOINT ["java","-jar","SDETSpring-0.0.1-SNAPSHOT.jar"]
 
 ![image](https://user-images.githubusercontent.com/52998083/206895676-cb28f4be-c6b3-4f8e-84e2-9e3d21ccb8c5.png)
 
+This Dockerfile is used to create a Docker image that runs a Java application. Here's a breakdown of each line:
+
+1. **Base Image:**
+   ```dockerfile
+   FROM openjdk:8
+   ```
+   - This line specifies the base image for your Docker image. The `openjdk:8` image is an official Docker image that contains a Java 8 runtime environment, allowing your Java application to run.
+
+2. **Expose Port:**
+   ```dockerfile
+   EXPOSE 8080
+   ```
+   - This line makes port 8080 available for use by processes outside the container. In other words, it tells Docker that your application inside the container will be listening on port 8080, which is commonly used for web applications.
+
+3. **Add JAR File:**
+   ```dockerfile
+   ADD target/SDETSpring-0.0.1-SNAPSHOT.jar SDETSpring-0.0.1-SNAPSHOT.jar
+   ```
+   - This line copies the `SDETSpring-0.0.1-SNAPSHOT.jar` file from the `target` directory on your host machine into the container. The JAR file is the packaged Java application that the container will run.
+
+4. **Set Entry Point:**
+   ```dockerfile
+   ENTRYPOINT ["java","-jar","SDETSpring-0.0.1-SNAPSHOT.jar"]
+   ```
+   - This line sets the command that will be executed when the container starts. In this case, it runs the Java application by executing the `java -jar SDETSpring-0.0.1-SNAPSHOT.jar` command.
+
+
 
 3.Once the docker file is created we need to build it to create an image using below syntax
+
+When you build and run this Dockerfile, it creates a container that starts your Spring application and makes it accessible on port 8080.
 
 **syntax**
 
