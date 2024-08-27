@@ -141,6 +141,128 @@ docker run -p 9090:8080 visheshdocker/sdetspringprojects
 
 In the above command port 9090 is the local machine port mapped to container port 8080.
 
+
+###  Dockerize the Spring Boot Application with MySql 
+
+1. **Create a Dockerfile for the Spring Boot application:**
+
+   Here's an example Dockerfile:
+
+   ```dockerfile
+   # Start with a base image containing Java runtime
+   FROM openjdk:17-jdk-slim
+
+   # Set the working directory in the container
+   WORKDIR /app
+
+   # Copy the Spring Boot jar file into the container
+   COPY target/myapp-0.0.1-SNAPSHOT.jar app.jar
+
+   # Expose the port that the application will run on
+   EXPOSE 8080
+
+   # Run the jar file
+   ENTRYPOINT ["java", "-jar", "app.jar"]
+   ```
+
+   - **Base Image**: Uses an official OpenJDK image.
+   - **WORKDIR**: Sets the working directory inside the container.
+   - **COPY**: Copies the Spring Boot JAR file from the target directory of your build to the container.
+   - **EXPOSE**: Exposes port 8080, where the Spring Boot application will listen.
+   - **ENTRYPOINT**: Defines the command to run the application when the container starts.
+
+2. **Build the Docker image:**
+
+   Run the following command from the directory containing your Dockerfile:
+
+   ```bash
+   docker build -t myapp .
+   ```
+
+### Step 2: Create a Docker Compose File
+
+A `docker-compose.yml` file is used to define and manage multi-container Docker applications. For a Spring Boot application with MySQL, the file might look like this:
+
+```yaml
+version: '3.8'
+
+services:
+  # Spring Boot application
+  app:
+    image: myapp
+    container_name: springboot_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/mydb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootpassword
+    depends_on:
+      - db
+
+  # MySQL database
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      - MYSQL_DATABASE=mydb
+      - MYSQL_ROOT_PASSWORD=rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+# Volumes
+volumes:
+  db_data:
+```
+
+### Explanation of the `docker-compose.yml` File:
+
+- **version:** Specifies the version of Docker Compose syntax.
+
+- **services:** Defines the services (containers) that make up your application.
+
+  1. **app (Spring Boot Application):**
+     - **image:** Specifies the Docker image to use. In this case, `myapp` refers to the image we built earlier.
+     - **container_name:** The name of the container.
+     - **build:** Specifies the context and Dockerfile to build the image if it doesn't exist.
+     - **ports:** Maps the container's port 8080 to the host's port 8080, making the application accessible via `localhost:8080`.
+     - **environment:** Sets environment variables for the Spring Boot application. This is where you configure the database connection.
+     - **depends_on:** Ensures the MySQL container (`db`) starts before the Spring Boot application.
+
+  2. **db (MySQL Database):**
+     - **image:** Specifies the MySQL Docker image.
+     - **container_name:** The name of the MySQL container.
+     - **environment:** Sets environment variables for the MySQL container, such as the database name and root password.
+     - **ports:** Maps the container's port 3306 to the host's port 3306, allowing access to the MySQL database.
+     - **volumes:** Mounts a Docker volume to persist the database data, so it's not lost when the container stops.
+
+- **volumes:** Defines named volumes to persist data. In this case, `db_data` stores MySQL data.
+
+### Step 3: Running the Application
+
+1. **Run Docker Compose:**
+
+   In the directory containing your `docker-compose.yml` file, run:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+   This command builds the Docker images (if needed) and starts the containers.
+
+2. **Access the Application:**
+
+   - **Spring Boot Application:** Access the Spring Boot application at `http://localhost:8080`.
+   - **MySQL Database:** The database is accessible on `localhost:3306` using the credentials defined in the `docker-compose.yml` file.
+
+This setup creates a fully Dockerized environment for your Spring Boot application with a MySQL database, enabling easy deployment and testing.
+
+
 **Referance Project**
 
 https://github.com/visheshgupta08071992/SDETSpring
