@@ -74,4 +74,4 @@ public class HashMapExample {
    - The key `"Apple"` is hashed to index 2.
    - The `HashMap` finds `"Apple"` in the list/tree at index 2 and returns `1`.
 
-This is a simplified explanation of how `HashMap` works internally. The actual implementation is more complex, especially when handling collisions and resizing.
+
