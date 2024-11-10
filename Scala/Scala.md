@@ -209,6 +209,21 @@ val result = calculator.add(5, 3)
 println(result) // Output: 8
 ```
 
+In Scala, you can define a function that does not return anything (i.e., has no meaningful return value) by specifying the return type as `Unit`. `Unit` in Scala is similar to `void` in languages like Java, meaning the function is intended for side effects rather than returning a value.
+
+Here's an example of defining a function in Scala that doesn't return anything:
+
+```scala
+def myFunction(): Unit = {
+  println("This function does not return anything.")
+}
+```
+
+In this example:
+- `myFunction` takes no arguments.
+- The return type is `Unit`, indicating it doesn't return a value.
+- Inside the function, we perform a side effect (printing to the console) instead of returning a result.
+
 ## String Interpolation in Scala
 
 String interpolation in Scala is a feature that allows you to embed expressions and variables directly into string literals. 
