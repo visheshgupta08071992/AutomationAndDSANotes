@@ -145,6 +145,56 @@ def addListOfPortfolios(portfolioId: String, positionId: String, instrumentId: S
 
 
 
+### Understanding check
+
+check is used for assertions as well as for extracting data from API response. check uses jsonpath to extract data from API response.
+
+**Diffrent ways of checking status**
+
+```scala
+1.status is 201
+2.status.is(200)
+3.status.not(400)
+```
+
+
+**Syntax for extracting and validating data using check**
+
+```js
+val scn = scenario("Check Correlation and extract data")
+    //First Call -Get All Users
+    .exec(http("Get all Users Request").get("public-api/users")
+      .check(jsonPath("$.data[0].id").saveAs("userId"))   // extracts id and saves it as userId
+      .check(status is 200))
+    .pause(3)
+
+    //Second API - Get a specific user on the basis of id
+    .exec(http("Get Specific User Request").get("public-api/users/${userId}") //  Saved userId is passed
+    .check(jsonPath("$.data.id").is("5298"))  // validiting id
+    .check(jsonPath("$.data.name").is("Amish Bhattacharya"))) // validating name
+```
+
+**Syntax for extracting complete response and using the response in following request**
+
+```js
+val scn = scenario("Add User and Then Get users")
+    .exec(http("Add User Request 1").post("/api/users")
+      .body(RawFileBody("./src/test/resources/bodies/AddUser.json")).asJson
+      .header("content-type",value="application/json")
+      .check(bodyString.saveAs("ResponseBody"))) // Saving complete response in ResponseBody Variable
+      .pause(3)
+
+    .exec(http("Add User Request 2")
+      .post("/api/users")
+      .body(StringBody("${ResponseBody}"))  // Sending Response saved in ResponseBody Variable
+      .check(jsonPath("$.job").is("leader"))
+      .check(status is 201))
+
+```
+
+
+
+
 
 
 
