@@ -1,10 +1,9 @@
 ## Gatling in Detailed Github MD links
 
-**Scala** - https://github.com/visheshgupta08071992/AutomationAndDSANotes/blob/master/Scala%20and%20Gatling/Scala.md
+- **[Scala Basics](https://github.com/visheshgupta08071992/AutomationAndDSANotes/blob/master/Scala%20and%20Gatling/Scala.md)** - A primer on Scala, essential for understanding Gatling scripting.
+- **[Gatling Overview](https://github.com/visheshgupta08071992/Gatling/blob/master/Understanding%20Gatling.md)** - Core Gatling concepts and a deeper understanding.
+- **[Gatling Framework Example](https://github.com/visheshgupta08071992/GatlingTestPerformanceFramework-Advance/tree/master/src/test/scala/com/GatlingPerformanceFramework)** - Practical framework example in Scala.
 
-**Gatling** - https://github.com/visheshgupta08071992/Gatling/blob/master/Understanding%20Gatling.md
-
-**Gatling Framework** - https://github.com/visheshgupta08071992/GatlingTestPerformanceFramework-Advance/tree/master/src/test/scala/com/GatlingPerformanceFramework
 
 
 ## Gatling quick revison along with framework structure
