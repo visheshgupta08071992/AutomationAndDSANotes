@@ -33,3 +33,5 @@ Each application pod will maintain a minimum of 10 connections to each database.
 7(Number of Pods)×3(Databases)×10(Min Idle Connections)=210 active connections
 ```
 
+
+ It’s generally best practice to set an appropriate maximum connection count alongside a moderate minimum idle setting. Setting the minimum idle connection count too high can lead to wasted resources(CPU and Memory) on both the database and application servers, longer restart/failover times, connection leaks and potentially increased costs. Using a lower minimum idle count with an appropriate maximum connection cap allows the system to allocate resources more efficiently and only use what’s necessary
