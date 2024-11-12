@@ -6,15 +6,17 @@ Connection Pooling is a technique for reusing existing database connections by m
 
 ### Prior to Connection Pooling
 
-Consider a scenario where a user requests some information from an application. The application server would internally call the database server, which requires opening a new connection to the database, executing the query, and then closing the connection.
+Suppose an user has requested some information to the Application, The Application server would internally call Database Server, To perform operation on Database, The Application need to open a new connection to database, execute the query and then close the connection.
 
-If there are numerous requests, and each application request needs to interact with the database, the application server would open, execute, and close a connection each time. This repeated opening and closing of connections is an expensive process that can significantly impact the query response time and, ultimately, the response time of the API endpoint.
+Suppose if there are n no of requests and everytime each Application request needs to interact with Database then each time the Application server would Open the Connection, Execute the query and close the connection.
+
+These Opening and closing of connections is an expensive process and drastically impact the query response time and in turn response time of the API endpoint.
 
 ### With Connection Pooling
 
-1. When the application server starts, a certain number of connections are established to the database. This minimum number of connections is configurable.
-2. When the application server needs to interact with the database, it borrows a connection from the connection pool instead of opening a new one. Once the application is done with its database operation, it returns the connection back to the pool.
-3. If an application requires a connection but all connections in the pool are in use, the pool can either create a new connection up to the configured maximum number or make the application wait until a connection is released back to the pool.
+1. As soon as the Application Server start, Certain number of connection are established to Database. These Minimum no of connections are configurable.
+2. When an Application server needs to interact with Database then instead of Opening a new connection, It would borrow a connection from Connection Pool, Once the Application is done with its Database operation, It would return the connection back to Connection Pool.
+3. If an Application requires a connection and all the connection from pool are in use then the pool may create a new connection upto configured maximumn no of connection or make the application wait until a connection is released back to pool. 
 
 ### Example Configuration
 
