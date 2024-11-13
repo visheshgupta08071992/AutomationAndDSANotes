@@ -93,3 +93,26 @@ Modified Local Copy Attributes: {Department=Finance, Location=New York, Role=Man
 Employee Attributes After Modification Attempt: {Department=Finance, Location=New York}
 
 ```
+
+### Let's dive deeper into the protection mechanisms for deep copies:
+
+**Constructor Protection:**
+
+```java
+this.attributes = new HashMap<>(attributes);
+```
+
+1.Creates a new HashMap with all entries from the input map </br>
+2.Breaks the reference to the original map </br>
+3.Any subsequent changes to the original map won't affect the Employee object </br>
+
+**Getter Protection:**
+
+```java
+return new HashMap<>(attributes);
+```
+
+1.Returns a completely new HashMap with the same entries </br>
+2.Prevents direct modification of the internal map </br>
+3.Any changes to the returned map won't affect the original Employee object </br>
+
