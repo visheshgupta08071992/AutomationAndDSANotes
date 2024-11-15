@@ -1,6 +1,6 @@
 ### What is Hashing
 
-Hashing is nothing but converting some kind of data be it a String or a Object or so on into an integer with the help of Hash Function.
+Hashing is nothing but converting some kind of data be it a String or a Object to a fixed size value called as HashCode.
 
 ![image](https://user-images.githubusercontent.com/52998083/223074500-050cc8a9-3fd7-48c5-ae0f-023ea3911a41.png)
 
