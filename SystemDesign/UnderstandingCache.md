@@ -1,4 +1,4 @@
-Cache is an inmemory database which could be used to store all the commonly used data.
+Cache is an inmemory database which is used to store all the commonly used data.
 
 ### Caching:
 
