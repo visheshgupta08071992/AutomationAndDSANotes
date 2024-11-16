@@ -2,17 +2,17 @@
 
 # CAP Theorem in Distributed Computing
 
-The **CAP theorem** is a concept in distributed computing that highlights the trade-offs between three desirable properties in a distributed system: **Consistency**, **Availability**, and **Partition Tolerance**.
+The **CAP theorem** is a concept in distributed computing that highlights the trade-offs between three desirable properties in a distributed system: **Consistency**, **Availability**, and **Partition Tolerance**. The CAP theorem states that in a distributed system, it's impossible to achieve all three properties simultaneously. 
 
 Here's a brief explanation of each term:
 
-- **Consistency (C):** All nodes in a distributed system have the same data at the same time. In other words, when a write operation is completed, all subsequent read operations will return the updated data.
+- **Consistency (C):** All nodes in a distributed system have the same data at the same time. In other words, when a write operation is completed, all subsequent read operations will return the updated data.That is every rrad receives the most recent write.
 
-- **Availability (A):** Every request to the system receives a response, without a guarantee that it contains the most recent version of the information. Availability, in this context, means that every node (or server) in the system is responsive.
+- **Availability (A):** Every request to the system receives a response, without a guarantee that it contains the most recent version of the information. Availability, in this context, means that every node (or server) in the system is responsive. Every request (read or write) receives a response, even if it might not be the latest.
 
 - **Partition Tolerance (P):** The system continues to operate even when network partitions occur, meaning communication between nodes is unreliable or delayed. Partition tolerance is crucial for systems that need to withstand network failures.
 
-The CAP theorem posits that in a distributed system, it's impossible to achieve all three properties simultaneously. According to the theorem, a distributed system can prioritize at most two out of the three: Consistency, Availability, and Partition Tolerance. The actual choice depends on the specific requirements and goals of the system.
+According to the theorem, a distributed system can prioritize at most two out of the three: Consistency, Availability, and Partition Tolerance. Partition tolerance is typically non-negotiable (distributed systems must handle network partitions). The trade-off is usually between consistency and availability, based on application needs.
 
 ### Examples:
 
