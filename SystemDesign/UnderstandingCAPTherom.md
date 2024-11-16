@@ -10,7 +10,7 @@ Here's a brief explanation of each term:
 
 - **Availability (A):** Every request to the system receives a response, without a guarantee that it contains the most recent version of the information. Availability, in this context, means that every node (or server) in the system is responsive. Every request (read or write) receives a response, even if it might not be the latest.
 
-- **Partition Tolerance (P):** The system continues to operate even when network partitions occur, meaning communication between nodes is unreliable or delayed. Partition tolerance is crucial for systems that need to withstand network failures.
+- **Partition Tolerance (P):** The system continues to operate even when network partitions occur, meaning communication between nodes is unreliable or delayed. Partition tolerance is crucial for systems that need to withstand network failures. To ensure partition tolerance, the system has to make trade-offs between consistency and availability. That during Partition Tolerance System can either be Consistent or Avaiable.
 
 According to the theorem, a distributed system can prioritize at most two out of the three: Consistency, Availability, and Partition Tolerance. Partition tolerance is typically non-negotiable (distributed systems must handle network partitions). The trade-off is usually between consistency and availability, based on application needs.
 
