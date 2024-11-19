@@ -148,6 +148,55 @@ public class Main {
 }
 ```
 
+**Overloading Rules**:
+   - Methods can be overloaded by changing:
+     - The number of parameters.
+     - The types of parameters.
+     - The order of parameters.
+   - Methods cannot be overloaded by changing only the return type.
+
+**Example**:
+   Here’s an example to illustrate that you cannot overload methods based solely on different return types:
+
+   ```java
+   class Example {
+       public int calculate(int a, int b) {
+           return a + b; // Returns an integer
+       }
+
+       // This would cause a compile-time error
+       // public double calculate(int a, int b) {
+       //     return (double)(a + b);
+       // }
+   }
+   ```
+
+   In this code, attempting to define a second `calculate` method with the same parameter types but a different return type will result in a compile-time error because both methods have the same signature.
+
+ **Valid Overloading Example**:
+   Here’s how you can correctly overload methods:
+
+   ```java
+   class Calculator {
+       public int add(int a, int b) {
+           return a + b; // Adds two integers
+       }
+
+       public double add(double a, double b) {
+           return a + b; // Adds two doubles
+       }
+
+       public int add(int a, int b, int c) {
+           return a + b + c; // Adds three integers
+       }
+   }
+   ```
+
+In this valid example, the `add` method is overloaded with different parameter types and numbers, which is permissible in Java.
+
+
+
+
 ---
 
 
