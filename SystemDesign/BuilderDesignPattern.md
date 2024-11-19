@@ -22,6 +22,120 @@ we cannot ensure the object to be immuatable and anyone can update the different
 So to solve the above problem, we would be using **Builder Pattern**.
 
 
+# How to Create a Builder Class
+
+### Explanation (Step-by-Step with Points)
+
+1. **Define the Outer Class with Fields:**
+   - Identify fields as **mandatory** or **optional**.
+   - Make the constructor private to restrict direct instantiation.
+
+2. **Create a Static Nested Builder Class:**
+   - Include Fields identical to the Outer class.
+   - Include a constructor for **mandatory attributes**.
+
+3. **Set Mandatory Attributes in Builder Constructor:**
+   - Validate them (e.g., null checks) inside the builder.
+
+4. **Add Setter Methods for Optional Attributes in Builder class:**
+   - Each setter method should return the builder itself for chaining.
+   - Use the same field names but assign them within the builder class.
+
+5. **Add a `build()` Method:**
+   - This method creates an instance of the outer class and passes the builder object to the private constructor.
+
+6. **Use Builder Class to Create Objects:**
+   - Pass mandatory attributes via the builder constructor.
+   - Use chained methods to set optional attributes.
+
+
+---
+
+### Complete Code:
+```java
+public class Car {
+    // Fields of the Car class
+    private final String make;  // Mandatory
+    private final String model; // Mandatory
+    private final int year;     // Optional
+    private final String color; // Optional
+
+    // Private constructor to enforce object creation through the builder
+    private Car(CarBuilder builder) {
+        this.make = builder.make;
+        this.model = builder.model;
+        this.year = builder.year;
+        this.color = builder.color;
+    }
+
+    // Static nested Builder class
+    public static class CarBuilder {
+        // Fields of the builder (same as outer class)
+        private final String make;  // Mandatory
+        private final String model; // Mandatory
+        private int year;           // Optional
+        private String color;       // Optional
+
+        // Constructor to initialize mandatory attributes
+        public CarBuilder(String make, String model) {
+            if (make == null || model == null) {
+                throw new IllegalArgumentException("Make and Model are mandatory");
+            }
+            this.make = make;
+            this.model = model;
+        }
+
+        // Setter methods for optional attributes
+        public CarBuilder setYear(int year) {
+            this.year = year;
+            return this;
+        }
+
+        public CarBuilder setColor(String color) {
+            this.color = color;
+            return this;
+        }
+
+        // Build method to create the final object
+        public Car build() {
+            return new Car(this);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                ", color='" + color + '\'' +
+                '}';
+    }
+}
+
+// Example usage
+public class Main {
+    public static void main(String[] args) {
+        // Create a car with mandatory attributes only
+        Car car1 = new Car.CarBuilder("Toyota", "Camry")
+                .build();
+
+        // Create a car with both mandatory and optional attributes
+        Car car2 = new Car.CarBuilder("Tesla", "Model 3")
+                .setYear(2023)
+                .setColor("Blue")
+                .build();
+
+        System.out.println(car1);
+        System.out.println(car2);
+    }
+}
+```
+
+---
+
+
+
 
 
 
