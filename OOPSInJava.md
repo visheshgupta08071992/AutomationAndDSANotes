@@ -6,8 +6,8 @@
 |---------------|-----------------------------------------------------------------------------|
 | Abstraction   | Hiding implementation details and showing only the essential features of an object                |
 | Encapsulation | Wrapping data (variables) and methods (functions) together in a single unit (class) and restricting direct access to some of the object's components.       |
-| Inheritance   | Mechanism for creating new classes based on existing ones                  |
-| Polymorphism  | Ability to process objects differently based on their data type            |
+| Inheritance   | Inheritance is a mechanism in Java where one class(subclass) can inherit the properties and methods of another class(superclass)               |
+| Polymorphism  | Same name different implementation. This can be achieved through method overloading (compile-time polymorphism) and method overriding (runtime polymorphism).</br> </br> **Method Overloading:** Same method name with different parameters.</br>**Method Overriding:** A subclass provides a specific implementation of a method that is already defined in its superclass.   |
 
 
 ---
@@ -66,4 +66,88 @@ Instead, if we have them as private variables, then in the setter method we can 
 The same gets applied for getter methods. You have the control to return a default value if some variable is null or not in the desired state.
 
 ---
+
+### **3. Inheritance**
+Inheritance is a mechanism in Java where one class(subclass) can inherit the properties and methods of another class(superclass).
+
+- **Why?** To promote code reuse.
+- **How?** By using the `extends` keyword.
+
+**Example:**
+
+```java
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle is starting...");
+    }
+}
+
+class Car extends Vehicle {
+    void drive() {
+        System.out.println("Car is driving...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start(); // Inherited from Vehicle
+        car.drive();
+    }
+}
+```
+
+---
+
+### **4. Polymorphism**
+Same name different implementation. This can be achieved through method overloading (compile-time polymorphism) and method overriding (runtime polymorphism).</br> </br> **Method Overloading:** Same method name with different parameters.</br>**Method Overriding:** A subclass provides a specific implementation of a method that is already defined in its superclass.
+
+**Example of Method Overloading (Compile-time Polymorphism):**
+
+```java
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println("Sum of 2 numbers: " + calc.add(5, 10));
+        System.out.println("Sum of 3 numbers: " + calc.add(5, 10, 15));
+    }
+}
+```
+
+**Example of Method Overriding (Run-time Polymorphism):**
+
+```java
+class Animal {
+    void makeSound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal = new Cat();
+        animal.makeSound(); // Calls the overridden method in Cat
+    }
+}
+```
+
+---
+
 
