@@ -60,7 +60,7 @@ class Person {
     }
 }
 ```
-Here, the `name` attribute is private, meaning it cannot be accessed directly from outside the `Person` class. Instead, public methods are provided to get and set its value. When we try to operate on public variables, one can set any values to them. For example, firstName can be set with null, a string with special characters or numbers.
+Here, the `firstName` attribute is private, meaning it cannot be accessed directly from outside the `Person` class. Instead, public methods are provided to get and set its value. When we try to operate on public variables, one can set any values to them. For example, firstName can be set with null, a string with special characters or numbers.
 Instead, if we have them as private variables, then in the setter method we can do initial business checks before setting the values to the variables.
 
 The same gets applied for getter methods. You have the control to return a default value if some variable is null or not in the desired state.
