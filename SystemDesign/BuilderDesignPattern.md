@@ -132,13 +132,53 @@ public class Main {
 }
 ```
 
+
+# Using Lombok to Create a Builder Class
+
+Using Lombok, you can significantly simplify the implementation of the Builder Pattern by leveraging its annotations. Here's how to implement the same example with **Lombok**:
+
+
+### Complete Code with Lombok:
+```java
+import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
+
+@Getter
+@Builder
+@ToString
+public class Car {
+    // Define fields with mandatory and optional attributes
+    private final String make;  // Mandatory
+    private final String model; // Mandatory
+    private final int year;     // Optional
+    private final String color; // Optional
+}
+
+// Example usage
+public class Main {
+    public static void main(String[] args) {
+        // Create a car with mandatory attributes only
+        Car car1 = Car.builder()
+                .make("Toyota")
+                .model("Camry")
+                .build();
+
+        // Create a car with both mandatory and optional attributes
+        Car car2 = Car.builder()
+                .make("Tesla")
+                .model("Model 3")
+                .year(2023)
+                .color("Blue")
+                .build();
+
+        System.out.println(car1);
+        System.out.println(car2);
+    }
+}
+```
+
 ---
-
-
-
-
-
-
 
 **Referance** - https://www.youtube.com/watch?v=ILvWj9ZLkqY&list=PL9ok7C7Yn9A-JaUtcMwevO_FfbFNRYLfU&index=15
 
