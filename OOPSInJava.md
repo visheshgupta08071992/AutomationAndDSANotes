@@ -100,7 +100,7 @@ public class Main {
 ---
 
 ### **4. Polymorphism** (https://www.javatpoint.com/runtime-polymorphism-in-java)
-Same name different implementation. This can be achieved through method overloading (compile-time polymorphism) and method overriding (runtime polymorphism).</br> </br> **Method Overloading:** Same method name with different parameters.Metho Overloading represents Compile Time Polymorphism. A class can have multiple methods with same name but differnt no or Type of Paramters, A Compiler knows which method would be called based on the passed paramter . This choice is made during compilation, which is why it's called "compile-time polymorphism."</br> </br> **Method Overriding:** A subclass provides a specific implementation of a method that is already defined in its superclass.
+Same name different implementation. This can be achieved through method overloading (compile-time polymorphism) and method overriding (runtime polymorphism).</br> </br> **Method Overloading:** Same method name with different parameters.Method Overloading represents Compile Time Polymorphism. A class can have multiple methods with same name but differnt no or Type of Paramters, A Compiler knows which method would be called based on the passed paramter . This choice is made during compilation, which is why it's called "compile-time polymorphism."</br> </br> **Method Overriding:** A subclass provides a specific implementation of a method that is already defined in its superclass i.e Two Methods having exactly same name,same no and type of parameters but different implementation.Method Overriding represents Run Time Polymorphism. In runtime polymorphism, Compiler is not able to decide the invoked method instead the determination of the method to be called is based on the object being referred to by the reference variable.
 
 **Example of Method Overloading (Compile-time Polymorphism):**
 
@@ -154,6 +154,54 @@ public class Main {
 }
 ```
 
+```java
+
+class Bank {  
+    float getRateOfInterest() {  
+        return 0;  
+    }  
+}  
+
+class SBI extends Bank {  
+    float getRateOfInterest() {  
+        return 8.4f;  
+    }  
+}  
+
+class ICICI extends Bank {  
+    float getRateOfInterest() {  
+        return 7.3f;  
+    }  
+}  
+
+class AXIS extends Bank {  
+    float getRateOfInterest() {  
+        return 9.7f;  
+    }  
+}  
+
+class TestPolymorphism {  
+    public static void main(String args[]) {  
+        Bank b;  
+
+        b = new SBI();  
+        System.out.println("SBI Rate of Interest: " + b.getRateOfInterest());  
+
+        b = new ICICI();  
+        System.out.println("ICICI Rate of Interest: " + b.getRateOfInterest());  
+
+        b = new AXIS();  
+        System.out.println("AXIS Rate of Interest: " + b.getRateOfInterest());  
+    }  
+}  
+/* Output
+SBI Rate of Interest: 8.4
+ICICI Rate of Interest: 7.3
+AXIS Rate of Interest: 9.7
+*/
+
+```
+
 **Overloading Rules**:
    - Methods can be overloaded by changing:
      - The number of parameters.
@@ -175,7 +223,10 @@ public class Main {
        //     return (double)(a + b);
        // }
    }
-   ```
+
+
+
+ ```
 
    In this code, attempting to define a second `calculate` method with the same parameter types but a different return type will result in a compile-time error because both methods have the same signature.
 
@@ -198,8 +249,7 @@ public class Main {
     }  
    }
 
-
-   ```
+ ```
 
 In this valid example, the `add` method is overloaded with different parameter types and numbers, which is permissible in Java.
 
