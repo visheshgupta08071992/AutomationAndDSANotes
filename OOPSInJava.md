@@ -44,7 +44,7 @@ public class Main {
 ---
 
 ### **2. Encapsulation**
-Encapsulation is the process of wrapping data (variables) and methods (functions) together in a single unit (class) and restricting direct access to some of the object's components.
+Encapsulation is the process of wrapping data (variables) and methods (functions) together in a single unit (class) and restricting direct access to some of the object's components. As part of Encapsulation we make all the Data Variable as Private and all the Methods as Public which would perform operations on Private Variables. If anyone wants to access the Private variable, They can access through public methods.
 
 **Example:**
 ```java
