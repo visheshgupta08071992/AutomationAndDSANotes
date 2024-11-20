@@ -100,7 +100,7 @@ public class Main {
 ---
 
 ### **4. Polymorphism**
-Same name different implementation. This can be achieved through method overloading (compile-time polymorphism) and method overriding (runtime polymorphism).</br> </br> **Method Overloading:** Same method name with different parameters.Metho Overloading represent Compile Time Polymorphism.A class can have numerous methods with the same name but distinct parameter lists thanks to method overloading. The compiler uses the amount and kind of parameters provided to it during compilation to decide which method to call. This choice is made during compilation, which is why it's called "compile-time polymorphism."</br> </br> **Method Overriding:** A subclass provides a specific implementation of a method that is already defined in its superclass.
+Same name different implementation. This can be achieved through method overloading (compile-time polymorphism) and method overriding (runtime polymorphism).</br> </br> **Method Overloading:** Same method name with different parameters.Metho Overloading represents Compile Time Polymorphism. A class can have multiple methods with same name but differnt no or Type of Paramters, A Compiler knows which method would be called based on the passed paramter . This choice is made during compilation, which is why it's called "compile-time polymorphism."</br> </br> **Method Overriding:** A subclass provides a specific implementation of a method that is already defined in its superclass.
 
 **Example of Method Overloading (Compile-time Polymorphism):**
 
