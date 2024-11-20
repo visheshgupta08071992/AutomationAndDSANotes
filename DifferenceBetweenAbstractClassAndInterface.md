@@ -25,3 +25,108 @@ In Java, both **abstract classes** and **interfaces** are used to achieve abstra
 
 Simply, abstract class achieves partial abstraction (0 to 100%) whereas interface achieves fully abstraction (100%).
 
+---
+
+### **Examples**
+
+#### **1. Abstract Class Example**
+
+```java
+abstract class Animal {
+    String name; // Instance variable
+
+    // Abstract method
+    abstract void makeSound();
+
+    // Concrete method
+    void eat() {
+        System.out.println(name + " is eating.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.name = "Buddy";
+        dog.makeSound();
+        dog.eat();
+    }
+}
+```
+
+---
+
+#### **2. Interface Example**
+
+```java
+interface Vehicle {
+    // Abstract method
+    void start();
+
+    // Default method (introduced in Java 8)
+    default void fuel() {
+        System.out.println("Vehicle is being fueled.");
+    }
+}
+
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car is starting.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start();
+        car.fuel();
+    }
+}
+```
+
+---
+
+#### **3. Multiple Inheritance with Interface**
+
+One of the key advantages of interfaces is the ability to implement multiple interfaces, which is not possible with abstract classes.
+
+```java
+interface Flyable {
+    void fly();
+}
+
+interface Swimmable {
+    void swim();
+}
+
+class Bird implements Flyable, Swimmable {
+    @Override
+    public void fly() {
+        System.out.println("Bird is flying.");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Bird is swimming.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Bird bird = new Bird();
+        bird.fly();
+        bird.swim();
+    }
+}
+```
+
+---
+
