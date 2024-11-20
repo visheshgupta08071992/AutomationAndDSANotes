@@ -6,14 +6,22 @@ In Java, both **abstract classes** and **interfaces** are used to achieve abstra
 
 ### **Differences Between Abstract Class and Interface**
 
+
 | **Abstract Class**                                                                                 | **Interface**                                                                                   |
 |----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| A class that can have abstract methods (methods without a body) and non-abstract methods (methods with a body). | Interface can have only abstract methods. Since Java 8, it can have default and static methods also. |
-| Used when you want to define a base class that can have partial implementation.                    | Used to define a contract that a class must follow (complete abstraction).                     |
-| Defined using the `abstract` keyword.                                                             | Defined using the `interface` keyword.                                                        |
-| A class can inherit only one abstract class.                                                      | A class can implement multiple interfaces.                                                    |
-| Can have instance variables (state) with any access modifier.                                      | Can only have `public static final` (constant) fields.                                         |
-| Can have abstract, non-abstract (concrete), static, or final methods.                              | Can have abstract methods (default in Java 7) and default/static methods (from Java 8 onward). |
-| Can have constructors.                                                                             | Cannot have constructors.                                                                     |
-| Abstract methods can be `protected` or `public`.                                                  | All methods are `public` by default.                                                          |
-| Suitable when classes share behavior or state.                                                    | Suitable when unrelated classes share a contract or behavior.                                 |
+| Abstract class can have abstract and non-abstract methods.                                         | Interface can have only abstract methods. Since Java 8, it can have default and static methods also. |
+| Abstract class doesn't support multiple inheritance.                                               | Interface supports multiple inheritance.                                                       |
+| Abstract class can have final, non-final, static, and non-static variables.                        | Interface has only static and final variables.                                                 |
+| Abstract class can provide the implementation of an interface.                                     | Interface can't provide the implementation of an abstract class.                               |
+| The `abstract` keyword is used to declare an abstract class.                                       | The `interface` keyword is used to declare an interface.                                       |
+| An abstract class can extend another Java class and implement multiple Java interfaces.            | An interface can extend another Java interface only.                                           |
+| An abstract class can be extended using the keyword `extends`.                                     | An interface can be implemented using the keyword `implements`.                                |
+| A Java abstract class can have class members like `private`, `protected`, etc.                    | Members of a Java interface are `public` by default.                                           |
+| An abstract class should be used when SuperClass and SubClass shares some relationship, For Car is a supr class and we can have multiple subclasses like BMW,Audi,Maruti each have all functionalities of Car while their specififc functionalities          | An interface should be used to share a common behavior between unrelated classes. For example, Good Speaking quality which a Lecturer,A Politician,An Actor all might have but they are completely unrelated, We can create an Interface GoodSpeaking and share these common quality in all the unrelated classes                                         |
+| **Example:**                                                                                      | **Example:**                                                                                  |
+| `public abstract class Shape { public abstract void draw(); }`                                     | `public interface Drawable { void draw(); }`                                                  |
+
+
+
+Simply, abstract class achieves partial abstraction (0 to 100%) whereas interface achieves fully abstraction (100%).
+
