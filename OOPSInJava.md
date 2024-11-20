@@ -113,13 +113,19 @@ class Calculator {
     int add(int a, int b, int c) {
         return a + b + c;
     }
+    double add(double a, double b) {
+           return a + b; // Adds two doubles
+       }
 }
 
 public class Main {
     public static void main(String[] args) {
         Calculator calc = new Calculator();
+        // Compile-time polymorphism: selecting the appropriate add method based on parameter types  
+
         System.out.println("Sum of 2 numbers: " + calc.add(5, 10));
         System.out.println("Sum of 3 numbers: " + calc.add(5, 10, 15));
+        System.out.println("Sum of doubles: " + calc.add(2.5, 3.7));  
     }
 }
 ```
@@ -188,8 +194,11 @@ public class Main {
 
        public int add(int a, int b, int c) {
            return a + b + c; // Adds three integers
-       }
+       } 
+    }  
    }
+
+
    ```
 
 In this valid example, the `add` method is overloaded with different parameter types and numbers, which is permissible in Java.
