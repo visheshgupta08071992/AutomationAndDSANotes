@@ -65,6 +65,18 @@ Cache eviction is the process of removing items from the cache to make room for 
 4. **Lazy Loading (or Lazy Initialization):**
    - Data is only loaded into the cache when it is requested. It helps minimize the initial load on the system.
   
+
+### How to verify Cache feature if it has been newly implemented within the Project?
+
+1. Ask What is the cache eviction and invalidation policies?
+2. Ask what is the Log when data is retrieved from Cache.
+3. Ask what is the Log when there is Cache Miss and Data is retrieved from Database.
+4. Check the performance of system with and without cache.
+5. Check whether the cache is correctly getting invalidated based on the set mechanism. Also ask if there is any log when cache is invalidated.
+6. What is the size of cache,Check whether the cache is correctly getting evicted based on the set policy. Also ask if there is any log when cache is Evicted.
+7. Adding logs for cache evicts will help you find the rate of cache evicts and size requirements
+
+  
  # Different Caching Patterns
 
 There are several common caching patterns:
