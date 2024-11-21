@@ -6,7 +6,7 @@ Immutable means unmodifiable, An immutable class is a class whose Object state c
 
 1. **Declare the class as `final`**: This would avid inheritance and ensure that no other classes are extending the given class.
 2. **Make all fields as `final`**: This would ensure that fields can only be assigned once and are final and constant.
-3. **Make all fields `final`**: This would ensure that fields cannot be accessed directly from outside the class.
+3. **Make all fields `private`**: This would ensure that fields cannot be accessed directly from outside the class.
 4. **No setter methods**: This wound ensure that class fields cannot be modified after object creation.
 5. **Initialize all fields in the constructor**
 6. **Return copies of mutable objects**: If the class contains fields that reference mutable objects (like arrays/collections/maps),
