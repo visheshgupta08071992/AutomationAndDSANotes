@@ -18,8 +18,12 @@ Cache invalidation is the process of updating or deleting cache data when cache 
    - This approach is simple but may result in serving stale data if the expiration time is too long.
 
 2. **Event-Based Invalidation:**
-   - The cache is invalidated based on specific events or changes in the underlying data. When the data changes, the corresponding cache entries are marked as invalid.
+   - The cache is invalidated based on specific events or changes in the underlying data. Cache should be automatically invalidated when data is updated at source. 
    - This approach requires a mechanism to detect and propagate changes to the cache.
+  
+2. **Manual Invalidation:**
+   - we can Explicitly remove or update the cache when data is updated with the help of API endpoint.
+   .
 
 ### Cache Eviction:
 
