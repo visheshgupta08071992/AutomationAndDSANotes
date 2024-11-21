@@ -1,4 +1,6 @@
-Cache is an inmemory database which is used to store all the commonly used data.
+Cache is InMemory Database used to store frequently accessed data temporarily thus reducing frequent Database Operation and improving overall performance .
+
+Consider an example where the user is frequentlys retreive the same details, It does not make sense for the application to perform same Database operation again and again for retrieving the same data. Instead we can bring cache which can store these frequently accessed data and thus reduce database operation and improve overall performance of the system.
 
 ### Caching:
 
@@ -13,7 +15,7 @@ Cache is an inmemory database which is used to store all the commonly used data.
 
 ### Cache Invalidation:
 
-Cache invalidation is the process of removing or updating cached data to ensure that the cached information remains accurate and up-to-date. There are different strategies for cache invalidation:
+Cache invalidation is the process of updating or deleting cache data when cache becomes outdated or invalid.
 
 1. **Time-Based Invalidation(ttl: Time to leave):**
    - Cached data is considered valid for a specific time period, after which it is automatically invalidated, and the next request triggers a refresh.
