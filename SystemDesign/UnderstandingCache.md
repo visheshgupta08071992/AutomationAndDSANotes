@@ -1,6 +1,6 @@
 Cache is InMemory Database used to store frequently accessed data temporarily thus reducing frequent Database Operation and improving overall performance .
 
-Consider an example where the user is frequentlys retreive the same details, It does not make sense for the application to perform same Database operation again and again for retrieving the same data. Instead we can bring cache which can store these frequently accessed data and thus reduce database operation and improve overall performance of the system.
+Consider an example where the user is frequently retreives the same details, It does not make sense for the application to perform same Database operation again and again for retrieving the same data. Instead we can bring cache which can store these frequently accessed data and thus reduce database operation and improve overall performance of the system.
 
 ### Caching:
 
