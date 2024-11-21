@@ -9,10 +9,6 @@ Consider an example where the user is frequentlys retreive the same details, It 
    - If the data is found in the cache (cache hit), it is returned to the requester without accessing the original data source, which is typically more time-consuming.
    - If the data is not found in the cache (cache miss), the system retrieves it from the original source, stores it in the cache, and then serves it to the requester.
 
-2. **Benefits:**
-   - Improved performance: Frequently accessed data is readily available, reducing the need to repeatedly fetch it from slower sources.
-   - Reduced latency: Caching helps minimize the time it takes to retrieve data, leading to faster response times.
-
 ### Cache Invalidation:
 
 Cache invalidation is the process of updating or deleting cache data when cache becomes outdated or invalid.
