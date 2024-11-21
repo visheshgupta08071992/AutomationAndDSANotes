@@ -32,6 +32,7 @@ Cache eviction is the process of removing items from the cache to make room for 
 1. **Least Recently Used (LRU):**
    - Evicts the least recently accessed items first.
    - Keeps track of the order in which items are accessed and removes the least recently accessed ones.
+   -  A web application caching user profiles might use LRU, as users are more likely to view profiles they recently visited.
 
 2. **Most Recently Used (MRU):**
    - Evicts the most recently accessed items first.
@@ -40,9 +41,15 @@ Cache eviction is the process of removing items from the cache to make room for 
 3. **First-In-First-Out (FIFO):**
    - Evicts the oldest items first.
    - Maintains a queue of items and removes the ones that have been in the cache the longest.
+   - A caching system for logging events where old logs are removed as new logs come in.
   
 4. **Least Frequently Used (LFU):**
    - Evicts the least Frequently accessed items first.
+   - A recommendation engine might use LFU to keep popular items in the cache.
+  
+5. **Time-to-Live (TTL) Expiration**
+   - Each cache entry is assigned a time-to-live (TTL), and entries are evicted once they expire.
+   -  In a news application, articles might be cached with a TTL, allowing them to expire when they’re no longer current. 
 
 ### Caching Patterns:
 
