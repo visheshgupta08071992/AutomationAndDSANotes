@@ -6,7 +6,7 @@ The **CAP theorem** is a concept in distributed computing that highlights the tr
 
 Here's a brief explanation of each term:
 
-- **Consistency (C):** All nodes in a distributed system have the same data at the same time. In other words, when a write operation is completed, all subsequent read operations will return the updated data.That is every rrad receives the most recent write.
+- **Consistency (C):** All nodes in a distributed system have the same data at the same time. In other words, when a write operation is completed, all subsequent read operations will return the updated data.That is every read receives the most recent write.
 
 - **Availability (A):** Every request to the system receives a response, without a guarantee that it contains the most recent version of the information. Availability, in this context, means that every node (or server) in the system is responsive. Every request (read or write) receives a response, even if it might not be the latest.
 
