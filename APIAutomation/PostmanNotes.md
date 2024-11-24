@@ -29,6 +29,8 @@ The application’s session state is therefore kept entirely on the client. The 
 
 This also means that the client is responsible for sending any state information to the server whenever it is needed. There should not be any session affinity or sticky session between the client and the server.
 
+One of the major benefit of statelessness is scalability, Since Servers does not store the client session state,Request can be easily distributed over multiple servers. Also since each request is independent and contains all the necessary details, Sevrer is able to handle concurrent request without any confusion, Storing client request session state might have created confusion during high concurrency. 
+
 
 ### PostMan Terminologies
 
