@@ -56,6 +56,14 @@ Half/Partially Open (Making few calls to check whether service is up or not)
 One of most famous Circuit Breaker used by most of bug organisations is Hystrix (available for almost all the languages).
 
 
+**Circuit breaker my understanding in short**
+
+
+Circuit breaker is a mechanism which avoids repetated and unnecessary calls to a failing service(Service which is down) with fallback response thus avoiding unnecessary consumption of resource.
+
+Suppose all our services are working correctly , In the given state the ciruit is currently closed, Now after some time one of the service within our Application starts to Fail and when the failure crosses the predefined threashold then the Circuit would be Open meaning we would avoid calls to the failing service and instead send a fall back response, After a cooldown period we would try to partially open the circuit meaning we would allow certain number of request to hit the service which was failing initially and if the service response correctly then we would close the circuit else we would open the circuit.
+
+
 
 ### API Gateway Workflow
 
