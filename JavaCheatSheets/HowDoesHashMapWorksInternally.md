@@ -5,6 +5,17 @@ A `HashMap` in Java is a widely used data structure that stores key-value pairs.
 ![image](https://github.com/user-attachments/assets/7429b7db-d930-4619-93e8-79cc4c5d58f7)
 
 
+**My Understanding**
+
+HashMap is used to store Key-Value Pair Entries, Whenever a HashMap is declared, An array of bucket is created where each bucket act as a node storing key, value and address of the next node.
+
+While Storing Key-Value pair entry within HashMap, First the key is hashed using hashcode function which then gives the index of bucket where the Key and value would be stored.
+
+There can be a possibility where two keys might result in same hashcode, Such condition is known HashCode Collision. During Hashcode Collision the key would stored in the same bucket but in different linked list node.
+
+
+While retrieving a Key, Again the hashcode is generated using the hashcode function, which then returns the the index of bucket where the key is stored. Once we have the index of the bucket the map then traverses the bucket linked list to find the entry with matching key using equals function.
+
 
 ### 1. **Hashing:**
    - When you put a key-value pair in a `HashMap`, the key is first hashed using its `hashCode()` method.
