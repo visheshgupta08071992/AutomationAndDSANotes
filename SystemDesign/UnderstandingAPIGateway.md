@@ -30,6 +30,8 @@ Load Balancer can also be added within API Gateway ensuring load is correctly ba
 
 **8.Circuit Breaker**</br>
 
+Circuit Breaker is a Design Pattern which is used to avoid repeated and unnecessary calls to a Failing Service(Service which is down) by a fallback mechanism thus reducing unnecesary resource consumption.
+
 Circuit Breaking Capabilities at API Gateway helps us in eliminating unnecessary calls when services is down due to some problems. This helps in reducing unnecessary resources consumption by fallback mechanisms.
 
 Take a scenario of hotel booking website, to get latest information of all hotels (+availability) , their corresponding rooms and other meta info, we need to exchange/access data(information) from hotel system. For exchanging information we need to make external service calls(HTTP Calls) between applications(or systems). We can consider external services calls as third party calls as it is outside our system or internal calls if we are hitting some internal service.
