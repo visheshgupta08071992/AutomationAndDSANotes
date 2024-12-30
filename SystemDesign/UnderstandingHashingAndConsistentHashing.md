@@ -8,7 +8,7 @@ Hashing is the process of converting data be it a String or a Object to a fixed 
 **But what is the actual purpose of Hashing or how converting some kind of data into integer is useful**
 
 Think about a real world example where you have a list of names and you want to search the name. If the names are sorted in alphabetical order then the complexity
-is nlogn(Binary Search), And if the names are not sorted in alphabetical order then the complexity becomes o(n) (Linear search).  Can Hashing improve the complexity? Yes with the help of hashFunction we can convert these names into an integer which acts as indices of an array where the names get stored, Making the search easier with help of indices having o(1) complexity.
+is nlogn(Binary Search), And if the names are not sorted in alphabetical order then the complexity becomes o(n) (Linear search).  Can Hashing improve the complexity? Yes with the help of Modulus hashFunction where mod value is the size of array we can convert these names into an integer which acts as indices of an array where the names get stored, Making the search easier with help of indices having o(1) complexity.
 
 
 ![image](https://user-images.githubusercontent.com/52998083/223075669-b9bc0b3e-bdcf-401a-8f78-6b712423774c.png)
@@ -42,6 +42,39 @@ Consistent Hashing is the solution to the given problem where we could minimize 
 ### What is Consitent Hashing
 
 The problem with simple modulo caching is when we add or remove a server, all our existing mappings will be broken. Hence, we are required to remap  most of our keys to a different server. 
+
+Traditional modulo hashing maps data to servers using a simple formula like `hash(key) % number_of_servers`. While this approach is straightforward and easy to implement, it suffers from a major drawback when the number of servers changes.
+
+## Example: Original Mapping
+
+| Server  | Data        |
+|---------|-------------|
+| Server1 | 1, 5, 9     |
+| Server2 | 2, 6, 10    |
+| Server3 | 3, 7        |
+| Server4 | 4, 8        |
+
+In this setup, keys are distributed evenly among the four servers.
+
+---
+
+## Issue: Adding or Removing a Server
+
+When we **add** or **remove** a server, the `number_of_servers` in the formula changes. This causes most of the existing mappings to break, requiring a large portion of the keys to be **remapped** to different servers.
+
+### Example: After Adding/Removing a Server
+
+| Server  | Data        |
+|---------|-------------|
+| Server1 | 1, 4, 7, 10 |
+| Server2 | 2, 5, 8     |
+| Server3 | 3, 6, 9     |
+
+
+## Conclusion
+
+While modulo hashing is simple, its inefficiency during server changes makes it unsuitable for dynamic environments where servers are frequently added or removed. **Consistent Hashing** is a better alternative in such scenarios, as it minimizes the number of keys that need to be remapped, improving system stability and performance.
+
 
 In Consitent Hashing all the Keys and Sevrers are hashed using the same hash function and are placed on the edge of the circle. To find out which server to ask for a given key or store a given key, we need to first locate the key on the circle and move in a clockwise direction until we find a server.Let’s use the above example and place them on the hash ring. In this case, the minimum value on the circle is 0 and the maximum value is 100.
 
