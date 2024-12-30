@@ -45,7 +45,7 @@ The problem with simple modulo caching is when we add or remove a server, all ou
 
 Traditional modulo hashing maps data to servers using a simple formula like `hash(key) % number_of_servers`. While this approach is straightforward and easy to implement, it suffers from a major drawback when the number of servers changes.
 
-## Example: Original Mapping
+**Example: Original Mapping**
 
 | Server  | Data        |
 |---------|-------------|
@@ -56,13 +56,12 @@ Traditional modulo hashing maps data to servers using a simple formula like `has
 
 In this setup, keys are distributed evenly among the four servers.
 
----
 
-## Issue: Adding or Removing a Server
+**Issue: Adding or Removing a Server**
 
 When we **add** or **remove** a server, the `number_of_servers` in the formula changes. This causes most of the existing mappings to break, requiring a large portion of the keys to be **remapped** to different servers.
 
-### Example: After Adding/Removing a Server
+**Example: After Adding/Removing a Server**
 
 | Server  | Data        |
 |---------|-------------|
@@ -71,7 +70,6 @@ When we **add** or **remove** a server, the `number_of_servers` in the formula c
 | Server3 | 3, 6, 9     |
 
 
-## Conclusion
 
 While modulo hashing is simple, its inefficiency during server changes makes it unsuitable for dynamic environments where servers are frequently added or removed. **Consistent Hashing** is a better alternative in such scenarios, as it minimizes the number of keys that need to be remapped, improving system stability and performance.
 
