@@ -262,6 +262,60 @@ volumes:
 
 This setup creates a fully Dockerized environment for your Spring Boot application with a MySQL database, enabling easy deployment and testing.
 
+---
+
+### To build and push docker image whenever new build is created we need to use Maven Plugin
+
+`dockerfile-maven-plugin` is used to build and push docker image whenever new build is created
+
+The `dockerfile-maven-plugin` does **not** automatically generate a `Dockerfile`. You must provide your own `Dockerfile` when using this plugin because it relies on your specific instructions for building the Docker image.
+
+
+### **Workflow**
+1. **You Create a `Dockerfile`:**
+   You provide the `Dockerfile` with the specific instructions for building the image, such as the base image, copying files, installing dependencies, and defining the entry point.
+
+   Example:
+   ```dockerfile
+   FROM openjdk:11-jre-slim
+   ARG JAR_FILE
+   COPY target/${JAR_FILE} app.jar
+   ENTRYPOINT ["java", "-jar", "/app.jar"]
+   ```
+
+2. **`dockerfile-maven-plugin` Executes the Build:**
+   The plugin executes the `docker build` command using the `Dockerfile` and any optional build arguments or configurations you specify in your Maven `pom.xml`.
+
+```xml
+   <build>
+    <plugins>
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>dockerfile-maven-plugin</artifactId>
+            <version>1.4.13</version>
+            <executions>
+                <execution>
+                    <id>build-image</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>build</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <repository>your-docker-repository/your-image-name</repository>
+                <tag>${project.version}</tag>
+                <buildArgs>
+                    <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                </buildArgs>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+```
+
+
 
 **Referance Project**
 
@@ -271,7 +325,7 @@ https://github.com/visheshgupta08071992/SDETSpring
 
 https://www.youtube.com/watch?v=6hMHziv0T2Y&list=PLA7e3zmT6XQUTHCBMgkM9qoOrLdaOO5Gi&index=7
 
-**To build and push docker image whenever new build is created we need to use Maven Plugin, Refer below video**
+**To build and push docker image whenever new build is created we need to use Maven Plugin, Refer below video, Plugin used dockerfile-maven-plugin**
 
 https://www.youtube.com/watch?v=2v0-aIO_R08&list=PLVz2XdJiJQxzMiFDnwxUDxmuZQU3igcBb&index=4&t=414s
 
