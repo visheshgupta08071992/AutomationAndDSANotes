@@ -101,3 +101,99 @@ https://www.youtube.com/watch?v=oKAU6LaYFhw
 
 https://www.youtube.com/watch?v=jqUNbqfsnuw
 
+
+## Consistent Hashing MyUnderstanding
+
+The problem with simple modulo hashing is when we add or remove a server, most of our existing mappings are broken and we need to move most of our keys to new server whenever we add or remove a server. The given problem is solved by consistent hashing.
+
+With Consistent Hashing, Both Server and keys are hashed using the same hashing function and are placed on a HashRing. In Order to find which Server to ask for a given key or store a given Key we need to locate the key on HashRing and move in clockwise direction until we fnd a Server.
+
+
+Lets consider an Example, Where we have three servers A, B and C. Server A, Server B and Server C are Hashed to value 100, 200 and 300 respectively and are placed on the hashring.
+
+```     
+          100
+           .
+           A
+
+
+  300 . C           B . 200
+
+ ```
+ 
+ Now Suppose Key K1,K2,K3,K4,K5,K6 are hashed to values  50,150,250,60,120,220, So
+ 
+ K1,K4 having values 50 and 60 would be stored on Server A(0 to 100).
+ K2,K5 having values 150 and 120 would be stored on Server B(101 to 200).
+ K3,K6 having values 250 and 220 would be stored on Server C (201 to 300).
+ 
+ 
+ 
+ 
+ 
+ Now suppose if we remove server B, So only keys K2 and K5 would be moved to the Server C, The mapping of rest of the key would be intact.
+ 
+ ```
+              100
+               .
+            A(K1, K4)
+
+
+  300.C(K3, K6)         B.200(K2, K5)
+
+```
+
+			
+			
+As we can see above only keys from one server are remapped but rest of the kesy mapping are intact, One of the drawback which we could see in above approach is there can be a possibility of succeding server might get heavily loaded when one its preceding server is removed casuing in in appropriate load balancing.			
+ 
+
+The given problem can be solved with Virtual Nodes i.e Instead of hashing a server to a single value, Its hashed to multiple values spreading its responsibility across the ring.
+
+
+Server A is hashed to values - 100,150,250
+Server B is hashed to values - 70,200,270
+Server C is hashed to values - 30,130,300
+
+
+```
+         
+               100
+                .
+                A
+     B.(70)           C.(130)
+     
+ C.(30)                 A.(150)
+
+       300.C         B.200 
+
+           B.(270)
+           
+           A.(250)
+
+```
+
+		
+
+Suppose Key K1,K2,K3,K4,K5,K6 are hashed to values  50,150,250,60,120,220, So
+ 
+ K1,K4 having values 50 and 60 would be stored on Server B(41 to 70)
+ K2,K5 having values 150 and 120 would be stored on Server A and Server C.
+ K3,K6 having values 190 and 220 would be stored on Server B and Server A.		
+ 
+ 
+ ```
+       
+	            100
+                 .
+                 A
+ B.(70)(K1,K4)          C.(130)    (K5)
+ C.(30)                 A.(150)   (K2)  
+ 
+ 300.C         B.200 (K3)
+ 
+               B.(270)  
+		
+		       A.(250) (K6)
+
+```
