@@ -106,7 +106,8 @@ The typical workflow involves several steps:
 | `docker run --name <name> -d -it <imageName>` | Runs an image with a specific container name.                                                  |
 | `docker run -P <hostPort>:<containerPort>`    | Maps a host port to a container port.                                                          |
 | `docker run -v <hostDir>:<containerDir>`      | Maps a volume between the host machine and the container.                                       |
-| `docker build -t <imageName> .`               | Builds an image from a Dockerfile. The `.` indicates that the Dockerfile is in the current directory. |
+| `docker build -t <imageName>`               | Builds an image from a Dockerfile. The `.` indicates that the Dockerfile is in the current directory. |
+| `docker commit <container-id> my-image-name:latest`               | Used to create an image from containerID, Replace <container-id> with the actual container ID and my-image-name:latest with your desired image name and tag. |
 
 ---
 
