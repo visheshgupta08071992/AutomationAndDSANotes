@@ -56,3 +56,13 @@ Ex:
  // Smoke test logic
  }
 20) Test Priority: Set priority for test methods, works in alphabetical order or smallest number.
+
+
+
+##CICD
+
+Continuous Integration is the practise of Automatically integrating code from multiple developers into shared repository several times a day.
+
+As part of Continuous integration every code commit or pull request is verifyied by Automated build which inludes running of your unit and integration tests, If the unit and intergation tests passes then the build passes else if the unit and integration tests fails then the build fails, Thus continuous integration gives continuous feedback to developers.
+
+Continuous Deployment is the practice of automatically deploying every code change that passes the CI process to a production environment. In our project Regression Test pipeline is triggered when the build is deployed on QA environment and Sanity TestPipeline is triggered when the build is deployed on UAT environment.
