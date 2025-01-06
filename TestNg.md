@@ -1,3 +1,5 @@
+The testng.xml file in TestNG is a configuration file that helps to manage and customize the execution of TestNG test cases.
+
 Let's jump right in understanding all important annotations & configurations of TestNG
 
 1) @Test: Marks a method as a test method
