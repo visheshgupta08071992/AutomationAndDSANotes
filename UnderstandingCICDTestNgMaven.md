@@ -36,11 +36,11 @@ In our company, we do not have a fully automated continuous deployment process. 
 
 3. **Deployment to Dev Environment**  
    - Once changes are merged into the `master` branch, an **automated pipeline** is triggered to deploy the code to the **Dev environment**.  
-   - After deployment, an **Automated Regression Pipeline** is triggered. This is configured to automatically run whenever the **release pipeline for QA** is completed.
+   - After deployment, an **Automated Regression Pipeline** is triggered. This is configured to automatically run whenever the **release pipeline for DEV** is completed.
 
 4. **Manual Testing and Higher Environment Deployment**  
    - After manual feature testing in the Dev environment, the code is **manually deployed** to higher environments such as **UAT** or **Prod**.  
-   - On UAT, a **Sanity Regression Pipeline** is auto-triggered once the build is deployed. This is achieved by configuring a trigger to run the regression pipeline whenever the **release pipeline for QA** is completed.
+   - On UAT, a **Sanity Regression Pipeline** is auto-triggered once the build is deployed. This is achieved by configuring a trigger to run the regression pipeline whenever the **release pipeline for UAT** is completed.
 
 ---
 
