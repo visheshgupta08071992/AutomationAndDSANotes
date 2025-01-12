@@ -1,7 +1,7 @@
 # Understanding Continuous Integration, Continuous Deployment, TestNG and Maven
 
 ## Continuous Integration
-Continuous Integration (CI) is a practice of continuously integrating code from multiple developers into a shared centralized repository. With CI, every code check-in or pull request is verified by an automated build process, which includes running unit and integration tests. 
+Continuous Integration (CI) is a practice of continuously integrating code from multiple developers into a shared centralized repository. With CI, every code check-in or pull request is verified by an automated build process, which includes running Sonar Code Analysis,unit and integration tests. 
 
 - **If the tests pass**, the build succeeds.
 - **If the tests fail**, the build fails, providing continuous feedback to developers on their code changes.
