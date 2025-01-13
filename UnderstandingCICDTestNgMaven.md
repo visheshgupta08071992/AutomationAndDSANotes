@@ -335,6 +335,42 @@ public class GroupingExample {
 
 ```
 
+- `priority` - priority attribute is used to define the sequence of test methods, works in alphabetical order or smallest number(https://toolsqa.com/testng/testng-test-priority/)
+
+ ```java
+
+   @Test (priority = 1)
+	public void CloseBrowser() {
+		driver.close();
+		System.out.println("Closing Google Chrome browser");
+	}
+
+	@Test (priority = 0)
+	public void OpenBrowser() {
+		driver.get("https://www.demoqa.com");
+		System.out.println("Launching Google Chrome browser"); 
+	}
+
+	@Test (priority = 1)
+	public void AccountTest(){
+		System.out.println("Some tests for Customer Account");
+	}
+
+  ```
+
+- `dependsOnMethods` - dependsOnMethods attribute is used to specify that a test method should run only after certain other methods have been executed successfully.
+
+  ```java
+
+  @Test(dependsOnMethods = {"method1", "method2"})
+  public void dependentMethod() {
+    // Test logic here
+  }
+  ```
+
+- `invocationCount` - specifies the number of times a test method should be invoked
+- `threadPoolSize` - controls how many threads TestNG will use to execute the invocations of a test method Ex: @Test(threadPoolSize = 3, invocationCount = 6) public void testMethod() { // Test logic }
+
   
 ---
 
