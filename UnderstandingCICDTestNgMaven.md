@@ -192,7 +192,71 @@ A **test method** is a method annotated with `@Test` within a class.
 - `@AfterClass`: Method annotated with AfterClass would be executed after all the test methods of current invoked class
 - `@BeforeMethod`: Executes before each test method.
 - `@AfterMethod`: Executes after each test method.
-- `@Parameters`: The @Parameters tag in TestNG allows us to pass values from the test configuration file (testng.xml) into oour test methods. This is particularly useful for passing external values such as environment configurations, credentials, or other data needed during test execution.
+- `@Parameters`:</br>
+   The @Parameters tag in TestNG allows us to pass values from the test configuration file (testng.xml) into oour test methods. Generally browser name,Environment name, User credentials which are required during execution are passed as parameters.
+
+ ```xml
+    <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Parameter Suite">
+    <test name="Test with Parameters">
+        <parameter name="env" value="qa" />
+        <parameter name="browser" value="chrome" />   
+        <parameter name="username" value="testuser" />
+        <parameter name="password" value="testpass" />
+        <classes>
+            <class name="com.example.ParameterizedTest" />
+        </classes>
+    </test>
+</suite>
+  
+```
+
+```java
+
+package com.example;
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class ParameterizedTest {
+
+   @BeforeMethod
+   @Parameters({"env","browser" })
+   public void setUp(String env, String browser)
+   {
+      // Setup logic using parameters
+   }
+
+    @Test
+    @Parameters({"username", "password"})
+    public void testLogin(String username, String password) {
+        System.out.println("Username: " + username);
+        System.out.println("Password: " + password);
+        // Add login logic or assertions here
+    }
+}
+
+
+```
+
+We can also provide parameter values dynamically using command line. In TestNG, when we provide parameters both in the testng.xml file and dynamically via the command line using the -D option, the command line parameters will take precedence over those defined in the testng.xml file.
+
+
+**Running our TestNg Test with Maven when there is no Surefire Plugin**
+
+```bash
+
+mvn test -DsuiteXmlFile=testng.xml -Denv=uat -Dbrowser=firefox -Dusername=dynamicUser -Dpassword=dynamicPass
+
+```
+
+**Running our TestNg Test with Maven when there is no Surefire Plugin**
+
+```bash
+
+mvn test -Denv=uat -Dbrowser=firefox -Dusername=dynamicUser -Dpassword=dynamicPass
+
+```
 
 ---
 
