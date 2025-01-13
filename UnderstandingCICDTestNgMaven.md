@@ -258,5 +258,83 @@ mvn test -Denv=uat -Dbrowser=firefox -Dusername=dynamicUser -Dpassword=dynamicPa
 
 ```
 
+- `@groups`: https://toolsqa.com/testng/groups-in-testng/ </br>  
+  groups in TestNg is used for grouping different tests together into a straightforward group and running these tests together by just running the group in a single command. We can group our tests based on smoke and sanity tests.
+
+```java
+
+import org.testng.annotations.Test;
+
+public class GroupingExample {
+
+    @Test(groups = {"Smoke"})
+    public void testLogin() {
+        System.out.println("Executing Smoke Test: Login");
+        // Smoke test logic for login
+    }
+
+    @Test(groups = {"Smoke", "Regression"})
+    public void testDashboard() {
+        System.out.println("Executing Smoke and Regression Test: Dashboard");
+        // Test logic for dashboard
+    }
+
+    @Test(groups = {"Regression"})
+    public void testProfileUpdate() {
+        System.out.println("Executing Regression Test: Profile Update");
+        // Regression test logic for profile update
+    }
+
+    @Test(groups = {"Regression"})
+    public void testLogout() {
+        System.out.println("Executing Regression Test: Logout");
+        // Regression test logic for logout
+    }
+}
+```
+
+**Smoke.xml**
+
+```xml
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite with Groups">
+    <!-- Run only Smoke tests -->
+    <test name="Smoke Tests">
+        <groups>
+            <run>
+                <include name="Smoke" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.GroupingExample" />
+        </classes>
+    </test>
+
+```
+
+**Regression.xml**
+
+```xml
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite with Groups">
+
+    <!-- Run only Regression tests -->
+    <test name="Regression Tests">
+        <groups>
+            <run>
+                <include name="Regression" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.GroupingExample" />
+        </classes>
+    </test>
+</suite>
+
+```
+
+  
 ---
 
