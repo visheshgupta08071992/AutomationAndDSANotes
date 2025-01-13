@@ -192,6 +192,7 @@ A **test method** is a method annotated with `@Test` within a class.
 - `@AfterClass`: Method annotated with AfterClass would be executed after all the test methods of current invoked class
 - `@BeforeMethod`: Executes before each test method.
 - `@AfterMethod`: Executes after each test method.
+- `@Parameters`: The @Parameters tag in TestNG allows us to pass values from the test configuration file (testng.xml) into oour test methods. This is particularly useful for passing external values such as environment configurations, credentials, or other data needed during test execution.
 
 ---
 
