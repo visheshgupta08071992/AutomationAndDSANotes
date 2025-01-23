@@ -4,6 +4,13 @@
 
 Pycharm is IDE which is mostly used for coding in Python While PIP(Python Package Index) is used to download and use external packages in Python. It is similar to maven or gradle in Java.
 
+
+### To check which version of python is installed on your machine
+
+Type below command within command prompt
+
+```python --version```
+
 ### For Printing a statement
 
 `` print() ``
