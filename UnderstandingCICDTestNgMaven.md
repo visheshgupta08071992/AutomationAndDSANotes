@@ -186,8 +186,8 @@ A **test method** is a method annotated with `@Test` within a class.
 - `@Test`: Marks a method as a test method.
 - `@BeforeSuite`: Method annotated with BeforeSuite would be executed before all the Tests within the suite.
 - `@AfterSuite`: Method annotated with AfterSuite would be executed after all the Tests within the suite.
-- `@BeforeTest`: Method annotated with BeforeTest would be executed before all the Tests belonging to classes defined in the <test> tag of the xml file.
-- `@AfterTest`: Method annotated with AfterTest would be executed after all the Tests belonging to classes defined in the <test> tag of the xml file.
+- `@BeforeTest`: Method annotated with BeforeTest would be executed before all the Tests belonging to classes defined under **Test** tag of the xml file.
+- `@AfterTest`: Method annotated with AfterTest would be executed after all the Tests belonging to classes defined under **Test**  tag of the xml file.
 - `@BeforeClass`: Method annotated with BeforeClass would be executed before all the test methods of current invoked class.
 - `@AfterClass`: Method annotated with AfterClass would be executed after all the test methods of current invoked class
 - `@BeforeMethod`: Executes before each test method.
