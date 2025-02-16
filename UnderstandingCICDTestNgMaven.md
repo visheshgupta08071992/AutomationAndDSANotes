@@ -250,7 +250,7 @@ mvn test -DsuiteXmlFile=testng.xml -Denv=uat -Dbrowser=firefox -Dusername=dynami
 
 ```
 
-**Running our TestNg Test with Maven when there is no Surefire Plugin**
+**Running our TestNg Test with Maven when there is Surefire Plugin**
 
 ```bash
 
