@@ -15,6 +15,46 @@ Type below command within command prompt
 
 ```where python```
 
+### **Steps to Ensure While Setting or Creating a Project in PyCharm**
+
+#### **1. Create a New Project**
+- Open PyCharm.
+- Click on **File** → **New Project**.
+
+![image](https://github.com/user-attachments/assets/61ed7dbc-9fa6-40cc-a02e-50e72be93021)
+
+---
+
+#### **2. Configure Project Name, Location, and Python Interpreter**
+- **Project Name:** Provide a meaningful name for your project.
+- **Location:** Specifies where PyCharm will store your project files.
+- **Interpreter Type:** Choose the Python interpreter that PyCharm will use.
+
+##### **Choosing the Right Interpreter:**
+- You can either create a **new virtual environment** or use an **existing one**.
+- **Recommended:** Use an **existing** Python which you have installed on your machine for better control over dependencies.
+  - Select **custom environment**
+  - Select **Existing Interpreter**.
+  - Provide the path to your Python executable.  
+  - You can find the Python executable path by running the following command in the terminal:
+    ```
+    where python
+    ```
+  - Providing a custom interpreter ensures that when you install Python packages via the command line (`pip install <package_name>`), they will be available in your PyCharm project.
+
+![image](https://github.com/user-attachments/assets/4b16aecc-fada-4ce1-9378-64c244786ee3)
+
+---
+
+#### **3. Verify the Python Interpreter Configuration**
+After creating the project, verify that the selected interpreter is correctly set:
+- **Go to** `File` → `Settings` → `Project` → `Python Interpreter`
+- Ensure that the Python path points to the desired environment (custom or system-wide).
+- You can also see the installed packages here.
+
+---
+
+
 ### For Printing a statement
 
 `` print() ``
