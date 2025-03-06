@@ -11,6 +11,10 @@ Type below command within command prompt
 
 ```python --version```
 
+### To check where python exe file is stored after installation
+
+```where python```
+
 ### For Printing a statement
 
 `` print() ``
