@@ -599,7 +599,29 @@ print(f"You are {age} years old.")
 
 ### List in python
 
-List in python is mutable i.e when we modify a List, Changes get reflected in same list and new list is not created. 
+List in python is mutable i.e when we modify a List, Changes get reflected in same list and new list is not created. List allows values of different dataType.
+
+```python
+
+a = [1,"Hello",3,4.5]
+print(a)  # [1, 'Hello', 3, 4.5]
+
+# Providing -1 Returns value of last index
+print(a[-1]) # 4.5
+
+# Returns value of last index
+print(a[3]) # 4.5
+
+#Updating value
+a[1] ="Hi"
+print(a) # [1, 'Hi', 3, 4.5]
+
+#Deleting a value
+
+del a[2]
+print(a) # [1, 'Hi', 4.5]
+
+```
 
 1. **`append()`** - Adds an item to the end of the list.
 
