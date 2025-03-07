@@ -15,3 +15,7 @@ Playwright is a powerful automation tool for web testing and browser automation.
 5. **Inbuilt Logging and Screenshots:** It provides built-in logs and screenshot capabilities, aiding in debugging and capturing detailed trace data for failures.
 
 
+
+In the Python ecosystem,pytest serves as a testing framework that allows us to execute Playwright tests using the playwright-pytest plugin.
+
+
