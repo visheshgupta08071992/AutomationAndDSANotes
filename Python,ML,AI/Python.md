@@ -1257,6 +1257,31 @@ file.close()  # It's important to close the file
 ```
 
 Remember, handling files properly is important to prevent data loss or corruption. Always make sure files are closed after their use is complete, preferably using the `with` statement for its automatic handling of resource management.
- 
+
+
+ ### Understanding class and constructor in python
+
+ A constructor in python always has name **__init__()**. It is automatically executed when an object of the class is created. self parameter is similar to this in java and it is mandatory parameter within constructor and all methods within the class.
+
+ ```python
+
+class Person:
+    country = "India"
+    def __init__(self, name, age):  # Constructor
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print(f"Name: {self.name}, Age: {self.age} , Country : {Person.country}")
+
+# Creating an object of the class
+person1 = Person("Alice", 25)
+person2 = Person("Bob", 30)
+
+# Calling the method
+person1.display()  # Name: Alice, Age: 25 , Country : India
+person2.display()  # Name: Bob, Age: 30 , Country : India
+
+```
 
 
