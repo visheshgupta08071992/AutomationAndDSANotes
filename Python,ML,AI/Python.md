@@ -109,6 +109,22 @@ print(e) #None
 
 ```
 
+### Undestanding what dataType value our variable is storing
+we can use type function to get the dataType of value which variable is storing
+
+```python
+a=1
+b=2.2
+c=False
+d="Hello"
+
+print(type(a)) # <class 'int'>
+print(type(b)) # <class 'float'>
+print(type(c)) # <class 'bool'>
+print(type(d)) # <class 'str'>
+
+```
+
 ### Typecasting in Python
 
 Certainly! Typecasting, also known as type conversion or type coercion, is the process of converting the data from one data type to another. In Python, you can perform typecasting using built-in functions or constructors provided by Python.
