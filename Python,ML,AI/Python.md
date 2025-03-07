@@ -506,7 +506,16 @@ print(length)  # Output: 11
 
 In this example, the length of the string "Hello World" is 11 characters, including spaces.
 
-13. **`Slicing a String`**
+13.**`Checking whether one string is present in another`**
+
+```python
+  str = "Hello Hi"
+  str1 = "Hi"
+
+ print(str1 in str) # True
+```
+
+14. **`Slicing a String`**
 
     In Python, you can slice strings using the following syntax:
 
