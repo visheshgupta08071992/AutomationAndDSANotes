@@ -1313,4 +1313,215 @@ person2.display()  # Name: Bob, Age: 30 , Country : India
 
 ```
 
+### **Inheritance in Python**
+Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows a class (child class) to inherit attributes and methods from another class (parent class). This promotes code reusability and modularity.
+
+---
+
+## **1. Types of Inheritance in Python**
+Python supports several types of inheritance:
+1. **Single Inheritance** (One parent → One child)
+2. **Multiple Inheritance** (Multiple parents → One child)
+3. **Multilevel Inheritance** (Parent → Child → Grandchild)
+4. **Hierarchical Inheritance** (One parent → Multiple children)
+5. **Hybrid Inheritance** (Combination of multiple types)
+
+---
+
+## **2. Syntax of Inheritance**
+```python
+class ParentClass:
+    # Parent class attributes and methods
+    pass
+
+class ChildClass(ParentClass):
+    # Child class inherits from ParentClass
+    pass
+```
+
+---
+
+## **3. Example of Single Inheritance**
+```python
+# Parent Class
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} makes a sound.")
+
+# Child Class (Inheriting from Animal)
+class Dog(Animal):
+    def speak(self):  # Method Overriding
+        print(f"{self.name} barks.")
+
+# Creating an object of the child class
+dog = Dog("Buddy")
+dog.speak()
+```
+### **Output:**
+```
+Buddy barks.
+```
+### **Explanation:**
+1. The `Animal` class has an `__init__()` constructor and a `speak()` method.
+2. The `Dog` class inherits from `Animal` and overrides the `speak()` method.
+3. When calling `dog.speak()`, the overridden method in `Dog` is executed.
+
+---
+
+## **4. Example of Multiple Inheritance**
+In **multiple inheritance**, a child class can inherit from multiple parent classes.
+```python
+# Parent Class 1
+class Father:
+    def skills(self):
+        print("Father: Good at Math.")
+
+# Parent Class 2
+class Mother:
+    def skills(self):
+        print("Mother: Good at Cooking.")
+
+# Child Class (Inheriting from both Father and Mother)
+class Child(Father, Mother):
+    def own_skill(self):
+        print("Child: Good at Painting.")
+
+# Creating an object of Child class
+c = Child()
+c.skills()  # Calls the first inherited class's method (Father)
+c.own_skill()
+```
+### **Output:**
+```
+Father: Good at Math.
+Child: Good at Painting.
+```
+**Note:** Python follows the **Method Resolution Order (MRO)**, where it looks for methods in the first inherited class (`Father`) before the second (`Mother`). If you want to access both parent methods, you can call them explicitly.
+
+```python
+class Child(Father, Mother):
+    def skills(self):
+        Father.skills(self)
+        Mother.skills(self)
+        print("Child: Good at Painting.")
+```
+
+---
+
+## **5. Example of Multilevel Inheritance**
+In **multilevel inheritance**, a child class inherits from another child class.
+```python
+# Grandparent Class
+class Grandparent:
+    def grandparent_method(self):
+        print("This is Grandparent's method.")
+
+# Parent Class (Inheriting from Grandparent)
+class Parent(Grandparent):
+    def parent_method(self):
+        print("This is Parent's method.")
+
+# Child Class (Inheriting from Parent)
+class Child(Parent):
+    def child_method(self):
+        print("This is Child's method.")
+
+# Creating an object of Child class
+c = Child()
+c.grandparent_method()
+c.parent_method()
+c.child_method()
+```
+### **Output:**
+```
+This is Grandparent's method.
+This is Parent's method.
+This is Child's method.
+```
+
+---
+
+## **6. Example of Hierarchical Inheritance**
+In **hierarchical inheritance**, multiple child classes inherit from the same parent class.
+```python
+# Parent Class
+class Vehicle:
+    def vehicle_info(self):
+        print("This is a vehicle.")
+
+# Child Class 1
+class Car(Vehicle):
+    def car_info(self):
+        print("This is a car.")
+
+# Child Class 2
+class Bike(Vehicle):
+    def bike_info(self):
+        print("This is a bike.")
+
+# Creating objects
+car = Car()
+bike = Bike()
+
+car.vehicle_info()
+car.car_info()
+
+bike.vehicle_info()
+bike.bike_info()
+```
+### **Output:**
+```
+This is a vehicle.
+This is a car.
+This is a vehicle.
+This is a bike.
+```
+
+---
+
+## **7. Using `super()` to Call Parent Methods**
+The `super()` function is used to call methods from the parent class.
+
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} makes a sound.")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)  # Calling Parent Constructor
+        self.breed = breed
+
+    def speak(self):
+        super().speak()  # Calling Parent Method
+        print(f"{self.name} is a {self.breed} and barks.")
+
+# Creating object
+dog = Dog("Buddy", "Labrador")
+dog.speak()
+```
+### **Output:**
+```
+Buddy makes a sound.
+Buddy is a Labrador and barks.
+```
+
+---
+
+## **Summary**
+| Inheritance Type       | Description |
+|------------------------|-------------|
+| **Single Inheritance** | One child class inherits from one parent class. |
+| **Multiple Inheritance** | A child class inherits from multiple parent classes. |
+| **Multilevel Inheritance** | A child class inherits from a parent class, which in turn inherits from another class. |
+| **Hierarchical Inheritance** | One parent class has multiple child classes. |
+| **Hybrid Inheritance** | A mix of two or more inheritance types. |
+
+---
 
