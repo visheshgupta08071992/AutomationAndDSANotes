@@ -19,3 +19,11 @@ Playwright is a powerful automation tool for web testing and browser automation.
 In the Python ecosystem,pytest serves as a testing framework that allows us to execute Playwright tests using the playwright-pytest plugin. It is similar to TestNg in Java.
 
 
+**Steps to Install Playwright**
+
+1.Install Pytest - **pip install pytest** </br>
+2.Install Pytest playwright plugin - **pip install pytest-playwright** </br>
+3.Install required browsers supported by playwright - **playwright install** </br>
+
+
+
