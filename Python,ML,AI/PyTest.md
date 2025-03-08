@@ -108,7 +108,7 @@ This way, all assertions will run, and you can see **all failures** in one test 
 
 
 ## Fixtures
-Fixtures are used to set up some context before a test runs. They can be defined using the `@pytest.fixture` decorator.
+Fixtures are used to set up some context before a test runs. They help manage test setup and teardown just like @Before and @After in TestNg .They can be defined using the `@pytest.fixture` decorator.
 ```python
 import pytest
 
