@@ -216,6 +216,29 @@ def test_expected_failure():
 
 ## Fixtures with Scope
 Fixtures can have different scopes such as `function`, `class`, `module`, and `session`.
+
+
+**function** : A fixture with scope function would be executed before each test method and if yield is also provided then it would be executed after each test method.<\br>
+
+**class** : A fixture with scope class would be executed before all test method defined in class and if yield is also provided then it would be executed after all test method defined within class.<\br>
+
+**module** : A fixture with module function would be executed before all test method defined in module and if yield is also provided then it would be executed after all test method defined within method.<\br>
+
+**session** : A fixture with session function would be executed before all test method running in session and if yield is also provided then it would be executed after all test method running in session.<\br>
+
+
+
+```
+
+Syntax
+@pytest.fixture(scope="function")
+@pytest.fixture(scope="module")
+@pytest.fixture(scope="class")
+@pytest.fixture(scope="session")
+
+```
+
+
 ```python
 import pytest
 
@@ -226,67 +249,137 @@ def db_connection():
     connection.close()
 ```
 
-## Temporary Directories
-Pytest provides a built-in fixture `tmpdir` to create temporary directories for tests.
-```python
-def test_temp_file(tmpdir):
-    temp_file = tmpdir.join("test.txt")
-    temp_file.write("Hello, World!")
-    assert temp_file.read() == "Hello, World!"
-```
 
-## Capturing Output
-Pytest can capture output from print statements and log messages.
-```python
-def test_output(capsys):
-    print("Hello, Pytest!")
-    captured = capsys.readouterr()
-    assert captured.out == "Hello, Pytest!\n"
-```
+## Understanding conftest.py file :
+we can define the fixture in conftest.py file and then the fixture defined in conftest.py file can be chained to any test within any testfile. It is beneficial to keep a fixture in conftest file when you think that a particular fixture would be shared by tests in multiple files.
+The workflow is that first the test tries to find a fixture in its own local file if it is not found in its own local file then it checks the given fixture in conftest file
 
-## Plugins
-Pytest has a rich ecosystem of plugins that extend its functionality. Some popular plugins include:
-- `pytest-cov`: For measuring test coverage.
-- `pytest-mock`: For mocking objects in tests.
-- `pytest-django`: For testing Django applications.
 
-Install plugins using pip:
-```bash
-pip install pytest-cov pytest-mock pytest-django
-```
+## Understanding Paramterized fixtures
 
-## Running Tests with Coverage
-Use the `pytest-cov` plugin to measure test coverage.
-```bash
-pytest --cov=my_project
-```
+Parameterized fixtures in pytest, useful for running the same test with multiple values.
 
-## Mocking
-Use the `pytest-mock` plugin to mock objects in your tests.
-```python
-def test_mocking(mocker):
-    mock = mocker.patch('my_module.my_function')
-    mock.return_value = "mocked value"
-    assert my_module.my_function() == "mocked value"
-```
+The provided code demonstrates **parameterized fixtures** in pytest, useful for running the same test with multiple values.
 
-## Testing Django Applications
-Use the `pytest-django` plugin to test Django applications.
+### **Understanding the Code**
+
+#### **1. Fixture with Parameterization**
 ```python
 import pytest
-from django.urls import reverse
 
-@pytest.mark.django_db
-def test_view(client):
-    response = client.get(reverse('my_view'))
-    assert response.status_code == 200
+@pytest.fixture(params=["chrome", "Firefox", "IE"])
+def crossBrowser(request):
+    return request.param
 ```
+- The `params` argument in `@pytest.fixture` allows the test to run multiple times with different values.
+- Here, the test will execute **three times**, once for each browser (`"chrome"`, `"Firefox"`, `"IE"`).
+- `request.param` provides the current parameter value.
 
-## Debugging Tests
-You can use the `--pdb` option to drop into the Python debugger on test failure.
+#### **2. Test Function Using the Fixture**
+```python
+def test_crossBrowser(crossBrowser):
+    print(crossBrowser)
+```
+- This test function takes the `crossBrowser` fixture as an argument.
+- The fixture injects one of the browser names into the test.
+- It will print the browser name for each execution.
+
+### **How the Tests Run**
+Executing:
 ```bash
-pytest --pdb
+pytest -s
+```
+will output:
+```
+chrome
+Firefox
+IE
+```
+(`-s` ensures print statements are shown in the console.)
+
+
+## Understanding @pytest.mark.usefixtures("fixtureName")
+
+@pytest.mark.usefixtures("fixtureName"): The given annotation is used applied over a class to apply a fixture to all methods within the class
+
+
+```python
+import pytest
+
+@pytest.mark.usefixtures("setup")
+class TestExample:
+
+    def test_fixtureDemo(self):
+        print("I will execute steps in fixtureDemo method")
+
+    def test_fixtureDemo1(self):
+        print("I will execute steps in fixtureDemo1 method")
+
+    def test_fixtureDemo2(self):
+        print("I will execute steps in fixtureDemo2 method")
+
+    def test_fixtureDemo3(self):
+        print("I will execute steps in fixtureDemo3 method")
 ```
 
-## Summary
-Pytest is a versatile and powerful testing framework for Python. With its simple syntax, powerful fixtures, and rich ecosystem of plugins, it makes testing easier and more enjoyable. These notes cover the basics, but pytest has many more features to explore. Happy testing!
+### Explanation:
+
+1. **`@pytest.mark.usefixtures("setup")`**:
+   - This applies the `"setup"` fixture to all methods in the `TestExample` class.
+   - This means the `setup` fixture will run before each test method.
+
+2. **Class-Based Test Approach**:
+   - The class `TestExample` contains multiple test methods.
+   - Each test method (`test_fixtureDemo`, `test_fixtureDemo1`, etc.) prints a message.
+
+3. **Fixture Execution**:
+   - The `"setup"` fixture (defined separately, but assumed to be available) will run **before each** test method in the class.
+   - If `setup` contains a `yield` statement, the code after `yield` will execute **after each** test.
+
+### Expected Output (if using a `setup` fixture like before):
+
+```plaintext
+I will be executing first
+I will execute steps in fixtureDemo method
+I will execute last
+
+I will be executing first
+I will execute steps in fixtureDemo1 method
+I will execute last
+
+I will be executing first
+I will execute steps in fixtureDemo2 method
+I will execute last
+
+I will be executing first
+I will execute steps in fixtureDemo3 method
+I will execute last
+```
+
+
+## General Summary
+
+
+1.Run all the tests : pytest
+
+2.Run specific test : pytest testFileName
+
+3.Run specific function of specific test : pytest testFileName:functionName
+
+4.Run all Test with matching keyword: pytest -k "addition"    (Note:Here matching keyword is addition,So it would run all tests which has addition in its name)
+
+5.Run test such that it prints metadata and logs of test : pytest -v -s  (Note -v is used add more data about test and -s is used to print log specifically print statement)
+
+6.You can mark(tag) tests with @pytest.mark.markName eg  @pytest.mark.smoke and then run with commnand pytest -m smoke. It would run all tests which are marked as smoke.
+
+7.When a test is annotated with @pytest.mark.skip it would skip the test.
+
+8.You can mark a test as an expected failure using the @pytest.mark.xfail decorator.
+
+9.fixtures are used as setup and teardown method for testcases. Fixtures can have different scopes such as function, class, module, and session.
+
+
+
+
+
+
