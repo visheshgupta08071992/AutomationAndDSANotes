@@ -146,6 +146,36 @@ import pytest
 ])
 def test_addition(a, b, expected):
     assert a + b == expected
+
+
+@pytest.mark.parametrize("x, y, expected", [
+    (1, 2, 3),  
+    (0, 5, 5),  
+    (-1, 1, 0),  
+    (10, 20, 30)
+])
+def test_add(x, y, expected):
+    assert add(x, y) == expected
+
+@pytest.mark.parametrize("input_string, expected", [
+    ("hello", "olleh"),
+    ("pytest", "tsetyp"),
+    ("12345", "54321"),
+    ("", "")  # Edge case: empty string
+])
+def test_reverse_string(input_string, expected):
+    assert reverse_string(input_string) == expected
+
+
+@pytest.mark.parametrize("a, b, expected", [
+    (10, 2, True),  
+    (10, 3, False),  
+    (15, 5, True),  
+    (17, 4, False)
+])
+def test_is_divisible(a, b, expected):
+    assert is_divisible(a, b) == expected
+
 ```
 
 ## 6. Using `conftest.py` for Shared Fixtures
