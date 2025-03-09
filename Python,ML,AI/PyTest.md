@@ -250,7 +250,7 @@ class TestExample:
 ## 10. Summary of Pytest Commands
 1. Run all tests: `pytest`
 2. Run a specific test file: `pytest testFileName`
-3. Run a specific function in a test file: `pytest testFileName::functionName`
+3. Run a specific function in a test file: `pytest testFileName.py::functionName`
 4. Run tests matching a keyword: `pytest -k "keyword"`
 5. Run tests with detailed logs: `pytest -v -s`
 6. Run tests with a specific marker: `pytest -m markerName`
