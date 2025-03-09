@@ -120,6 +120,42 @@ def test_sample_list_length(sample_list):
     assert len(sample_list) == 5
 ```
 
+```python
+import pytest
+
+@pytest.fixture()
+def setup():
+    print("I will be executing first")  #setup
+    yield  # pauses the execution and allows the test to run
+    print("I will execute last") #TearDown
+
+def test_fixtureDemo(setup):
+    print("I will execute steps in fixtureDemo method")
+```
+
+### Explanation:
+1. **Fixture (`setup` function)**:
+   - The `@pytest.fixture()` decorator defines `setup` as a pytest fixture.
+   - The first `print` statement executes before the test.
+   - `yield` temporarily pauses execution and allows the test to run.
+   - After the test completes, the execution resumes after `yield`, running the second `print` statement.
+
+2. **Test Function (`test_fixtureDemo`)**:
+   - The function `test_fixtureDemo` takes `setup` as an argument, meaning it will execute the `setup` fixture before running.
+   - The test prints its statement while the fixture is active.
+
+### Expected Output:
+When running `pytest -s` (to allow print statements):
+```
+I will be executing first
+I will execute steps in fixtureDemo method
+I will execute last
+```
+
+Would you like me to explain more about pytest fixtures or add enhancements? 🚀
+
+
+
 ## Parameterized Tests
 You can use the `@pytest.mark.parametrize` decorator to run a test with different sets of data.
 ```python
