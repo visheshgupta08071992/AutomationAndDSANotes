@@ -91,7 +91,20 @@ for key,value in list:
 10. What is a lambda function in Python?
 11. How does a lambda function apply to `map()` & `filter()` functions?
 12. How do you sort a list in Python?
-13. Is Python asynchronous or synchronous by default? What is `asyncio`?
+**13. Is Python asynchronous or synchronous by default? What is `asyncio`?**
+
+```
+By Default Python is Synchronous
+
+- Python executes code **line by line** in a **blocking** manner.
+- Each operation must complete before the next one starts.
+- This is how Python **normally** works unless explicitly told to run asynchronously.
+
+**Python Supports Asynchronous Execution Using asyncio**  
+- Python can run **non-blocking tasks** using **asyncio**.  
+- Instead of waiting for one task to finish, multiple tasks **run concurrently**.  
+
+```    
 14. Why is the `self` convention used in Python? Explain with an example.
 15. How do you reverse the elements of a list?
 16. Explain the difference between `@classmethod` and instance methods.
@@ -99,4 +112,7 @@ for key,value in list:
 18. How do you execute only failed test cases in Pytest?
 19. How do you apply a custom marker to a test case in Pytest?
 20. What is the Python `with` statement designed for?
-21. How do you handle exceptions in Python? Where does the `finally` keyword come into play?
+
+    ![image](https://github.com/user-attachments/assets/0760356e-81c2-43f3-b667-44605bc7e5b0)
+
+22. How do you handle exceptions in Python? Where does the `finally` keyword come into play?
