@@ -87,7 +87,7 @@ pip install pytest-check
 ```
 
 ## 4. Fixtures
-Fixtures manage setup and teardown for tests. They are defined using `@pytest.fixture`.
+Fixtures are function that manage setup and teardown for tests. They are defined using `@pytest.fixture`.
 ```python
 import pytest
 
