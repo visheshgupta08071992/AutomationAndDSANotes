@@ -1180,6 +1180,82 @@ for key,value in list:
 
 ```
 
+### **Lambda Function in Python**
+A **lambda function** in Python is an **anonymous function** (a function without a name). It is defined using the `lambda` keyword and can have multiple arguments but only a single expression.
+
+Lambda functions are often used for **short, simple functions** that are used temporarily in a program, especially as arguments to higher-order functions like `map()`, `filter()`, and `sorted()`.
+
+---
+
+### **Syntax of Lambda Function**
+```python
+lambda arguments: expression
+```
+- `lambda` - keyword to define the lambda function.
+- `arguments` - input parameters (can be multiple, separated by commas).
+- `expression` - a single expression whose result is returned automatically.
+
+---
+
+### **Example 1: Basic Lambda Function**
+```python
+square = lambda x: x ** 2
+print(square(5))  # Output: 25
+```
+Here, `square` is a lambda function that takes `x` as an argument and returns `x ** 2`.
+
+---
+
+### **Example 2: Lambda with Multiple Arguments**
+```python
+add = lambda a, b: a + b
+print(add(3, 7))  # Output: 10
+```
+This lambda function takes two arguments and returns their sum.
+
+---
+
+### **Example 3: Using Lambda in `map()`**
+```python
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = list(map(lambda x: x ** 2, numbers))
+print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+```
+Here, `map()` applies the lambda function to each element of the list.
+
+---
+
+### **Example 4: Using Lambda in `filter()`**
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # Output: [2, 4, 6, 8]
+```
+Here, `filter()` selects only the even numbers from the list.
+
+---
+
+### **Example 5: Using Lambda in `sorted()`**
+```python
+students = [("Alice", 25), ("Bob", 20), ("Charlie", 22)]
+sorted_students = sorted(students, key=lambda x: x[1])
+print(sorted_students)
+# Output: [('Bob', 20), ('Charlie', 22), ('Alice', 25)]
+```
+Here, the list of tuples is sorted based on the second value (age).
+
+---
+
+### **When to Use Lambda Functions**
+- When you need a small function temporarily.
+- When passing a function as an argument to another function (`map()`, `filter()`, etc.).
+- When defining simple functions in a concise way.
+
+### **When NOT to Use Lambda Functions**
+- If the function is complex and needs multiple expressions/statements.
+- If the function needs to be reused multiple times (better to use `def` instead).
+  
+Would you like more advanced examples? 😊
 
 
 ### Exception handling in Python
