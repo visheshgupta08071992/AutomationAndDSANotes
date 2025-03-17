@@ -1241,6 +1241,11 @@ students = [("Alice", 25), ("Bob", 20), ("Charlie", 22)]
 sorted_students = sorted(students, key=lambda x: x[1])
 print(sorted_students)
 # Output: [('Bob', 20), ('Charlie', 22), ('Alice', 25)]
+
+num =[3,2,6,1]
+print(sorted(num))
+
+# Output: [1,2,3,6]
 ```
 Here, the list of tuples is sorted based on the second value (age).
 
