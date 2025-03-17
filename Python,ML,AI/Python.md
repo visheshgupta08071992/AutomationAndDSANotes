@@ -1430,7 +1430,7 @@ Remember, handling files properly is important to prevent data loss or corruptio
 
  ### Understanding class and constructor in python
 
- A constructor in python always has name **__init__()**. It is automatically executed when an object of the class is created. self parameter is similar to this in java and it is mandatory parameter within constructor and all methods within the class.It is not required to pass self parameter explicitly when calling methods.
+ A constructor in python always has name **__init__()**. It is automatically executed when an object of the class is created. self parameter is similar to this in java which refers to the current instance of a class and it is mandatory parameter within constructor and all methods within the class.self should always be the first parameter within constructor and instance methods.It is not required to pass self parameter explicitly when calling methods.
 
  ```python
 
