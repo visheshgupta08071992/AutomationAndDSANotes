@@ -1242,12 +1242,14 @@ sorted_students = sorted(students, key=lambda x: x[1])
 print(sorted_students)
 # Output: [('Bob', 20), ('Charlie', 22), ('Alice', 25)]
 
+Here, the list of tuples is sorted based on the second value (age).
+
 num =[3,2,6,1]
 print(sorted(num))
 
 # Output: [1,2,3,6]
 ```
-Here, the list of tuples is sorted based on the second value (age).
+List.sort() sorts the list itself while sorted function returns a new sorted list
 
 ---
 
