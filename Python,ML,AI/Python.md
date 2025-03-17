@@ -1124,6 +1124,63 @@ for i in range(5, 0, -1):  # Start at 5, decrement by 1 until 0 (exclusive)
 1
 ```
 
+**8. How do you create a list of dictionaries in Python?**
+
+```python
+list = [
+         {"name":"A","age":1},
+         {"name":"B","age":2},
+         {"name":"C","age":3},
+         {"name":"D","age":4}
+        ]
+
+
+print(list[1]['age']) # 2
+print(list[2].get('age')) # 3
+
+for item in list:
+    print(item)
+    print(f"Name: {item['name']}, Age: {item['age']}")
+
+#Output    
+#{'name': 'A', 'age': 1}
+#Name: A, Age: 1
+#{'name': 'B', 'age': 2}
+#Name: B, Age: 2
+#{'name': 'C', 'age': 3}
+#Name: C, Age: 3
+#{'name': 'D', 'age': 4}
+#Name: D, Age: 4
+
+```
+
+**9.How do you create a list of tuple in Python?**
+
+```python
+
+list = [
+         ("A",1),
+         ("B",2),
+         ("C",3),
+         ("D",4)
+        ]
+
+
+print(list[1]) # ('B',2)
+print(list[1][0]) # (B)
+
+for key,value in list:
+    print(f"Key: {key} and value : {value} ")
+
+#Output    
+#Key: A and value : 1 
+#Key: B and value : 2 
+#Key: C and value : 3 
+#Key: D and value : 4 
+
+```
+
+
 
 ### Exception handling in Python
 
