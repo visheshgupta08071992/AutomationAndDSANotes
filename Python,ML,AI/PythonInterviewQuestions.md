@@ -30,7 +30,8 @@ print(tuple) #Error would be thrown
 4. What is `__init__()` in Python?
 5. How do you read and write files in Python?
 6. What are Fixtures in Pytest? When are they used?
-7. How do you use `yield` for WebDriver setup and teardown in Pytest?
+7. How do you use `yield` for WebDriver setup and teardown in Pytest?</br>
+
 **8. How do you create a list of dictionaries in Python?**
 
 ```python
