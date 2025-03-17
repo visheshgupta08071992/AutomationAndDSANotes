@@ -247,7 +247,17 @@ class TestExample:
         print("Executing case 2")
 ```
 
-## 10. Summary of Pytest Commands
+## 10. How do you execute only failed test cases in pytest
+
+```bash
+
+pytest --last-failed
+
+```
+
+What the above commad does is it checks the pytest report of last run and reexecutes all the failed tests.
+
+## 11. Summary of Pytest Commands
 1. Run all tests: `pytest`
 2. Run a specific test file: `pytest testFileName`
 3. Run a specific function in a test file: `pytest testFileName.py::functionName`
@@ -257,3 +267,4 @@ class TestExample:
 7. Skip a test using `@pytest.mark.skip`
 8. Mark a test as expected failure using `@pytest.mark.xfail`
 9. Use fixtures for setup and teardown, with various scopes (`function`, `class`, `module`, `session`).
+10. Run only failed tests: `pytest --last-failed`
