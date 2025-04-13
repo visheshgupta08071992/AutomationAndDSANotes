@@ -649,7 +649,7 @@ src/test/resources/testng/Sanity.xml
 
 ### 🧠 Alternative: Use a Property Instead of Multiple Profiles
 
-<properties> tag is used to define custom configurations that can be reused throughout the POM file.If you prefer **one profile** and just pass the XML name dynamically:
+**properties** tag is used to define custom configurations that can be reused throughout the POM file.If you prefer **one profile** and just pass the XML name dynamically:
 
 #### In `pom.xml`
 
@@ -715,5 +715,5 @@ Another example of using porperties tag in POM
 
 
 ```
--
+
 
