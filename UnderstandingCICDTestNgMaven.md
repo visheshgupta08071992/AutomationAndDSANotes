@@ -381,3 +381,85 @@ public class GroupingExample {
   
 ---
 
+---
+
+## ✅ What is **Maven**?
+
+**Maven** is a **build automation tool** used primarily for **Java** projects. It helps manage:
+
+- **Project dependencies** (external libraries)
+- **Build lifecycle** (compile, test, package, deploy)
+- **Project structure** and configuration via `pom.xml`
+- **Plugins** and reusable tasks
+
+Think of Maven as a smart assistant that builds, tests, and packages your code into a JAR or WAR file, and can even deploy it for you.
+
+---
+
+## 🏗️ Maven Build Lifecycle (Phases)
+
+Maven has a **default build lifecycle** with several **phases**. Each phase represents a stage in the build process. Running a phase will automatically run all previous phases in order.
+
+Here are the most common Maven phases:
+
+| Phase         | Description |
+|---------------|-------------|
+| `validate`    | Validates the project structure and necessary info |
+| `compile`     | Compiles the source code |
+| `test`        | Runs unit tests using a framework like JUnit/TestNG |
+| `package`     | Packages the code into a JAR/WAR |
+| `verify`      | Runs checks on the results of integration tests |
+| `install`     | Installs the package into the local repository (`~/.m2`) |
+| `deploy`      | Copies the package to a remote repository (for sharing with others) |
+
+---
+
+## 📦 Maven Project Structure
+
+```
+my-app/
+├── src/
+│   ├── main/
+│   │   └── java/             # Application source code
+│   └── test/
+│       └── java/             # Test source code
+├── target/                   # Compiled classes and packaged artifacts
+└── pom.xml                   # Maven configuration file
+```
+
+
+## 🛠️ Running Maven Commands
+
+You can run different phases like this:
+
+```bash
+mvn validate       # Check project structure
+mvn compile        # Compile Java files
+mvn test           # Run unit tests
+mvn package        # Create JAR file in `target/`
+mvn install        # Store the JAR in your local Maven repo
+```
+
+Running `mvn package` will run all prior phases (`validate`, `compile`, `test`, etc.).
+
+---
+
+## 🔁 Bonus: Maven Lifecycle in Real Use
+
+If you run:
+
+```bash
+mvn install
+```
+
+Maven will:
+1. Validate your `pom.xml`
+2. Compile your code
+3. Run tests
+4. Package it (JAR/WAR)
+5. Install the package locally
+
+---
+
+
+
