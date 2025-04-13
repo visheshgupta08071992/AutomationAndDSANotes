@@ -466,7 +466,7 @@ Maven will:
 
 ## 🔧 1. Maven Compiler Plugin
 
-The **Maven Compiler Plugin** is used to **compile your Java source code**.
+The **Maven Compiler Plugin** is used to **compile our Java source code against the Java Version provided within the Configuration Tag**.
 
 ### 📌 Why it's needed:
 
@@ -542,88 +542,24 @@ When you run `mvn test`, Surefire kicks in to find and run your test classes.
 
 ---
 
-### ✅ Example test:
 
-```java
-package com.example;
-
-import org.junit.Test;
-import static org.junit.Assert.*;
-
-public class AppTest {
-    @Test
-    public void testSum() {
-        assertEquals(5, 2 + 3);
-    }
-}
-```
-
-Running:
-
-```bash
-mvn test
-```
-
-Will trigger Surefire, find `AppTest.java`, run it, and report results.
-
----
-
-## ✅ Combined Example `pom.xml`
+### Configure SureFire to use testng.xml
 
 ```xml
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>maven-demo</artifactId>
-    <version>1.0-SNAPSHOT</version>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.2.5</version>
+      <configuration>
+        <suiteXmlFiles>
+          <suiteXmlFile>testng.xml</suiteXmlFile>
+        </suiteXmlFiles>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
 
-    <dependencies>
-        <!-- JUnit dependency -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <!-- Compiler plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-                <configuration>
-                    <source>17</source>
-                    <target>17</target>
-                </configuration>
-            </plugin>
-
-            <!-- Surefire plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
-            </plugin>
-        </plugins>
-    </build>
-</project>
 ```
-
----
-
-### 🧪 Running
-
-```bash
-mvn compile         # Uses maven-compiler-plugin
-mvn test            # Uses maven-surefire-plugin
-mvn package         # Runs all and creates .jar/.war
-```
-
----
-
 
