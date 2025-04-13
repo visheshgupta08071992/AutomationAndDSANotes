@@ -461,5 +461,169 @@ Maven will:
 
 ---
 
+## Understanding Maven Compiler and Surefire Plugin
+
+
+## 🔧 1. Maven Compiler Plugin
+
+The **Maven Compiler Plugin** is used to **compile your Java source code**.
+
+### 📌 Why it's needed:
+
+By default, Maven uses **Java 1.5** to compile your project, unless you explicitly set the version.
+
+---
+
+### ✅ How to configure:
+
+In your `pom.xml`, add:
+
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.11.0</version> <!-- or latest -->
+            <configuration>
+                <source>17</source>     <!-- Java source version -->
+                <target>17</target>     <!-- Java bytecode version -->
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+
+You can change `17` to your Java version (e.g., `11`, `21`, etc.).
+
+---
+
+### ✅ Example:
+
+Let's say you use Java 17 features. Without this plugin, Maven might throw errors saying syntax is invalid. With it configured, Maven knows how to compile using the proper version.
+
+---
+
+## ✅ 2. Maven Surefire Plugin
+
+The **Maven Surefire Plugin** is used to **run unit tests** (those in `src/test/java`). It supports frameworks like **JUnit**, **TestNG**, etc.
+
+---
+
+### 📌 Why it's needed:
+
+When you run `mvn test`, Surefire kicks in to find and run your test classes.
+
+---
+
+### ✅ How to configure:
+
+```xml
+<build>
+    <plugins>
+        <!-- Compiler plugin here if needed -->
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version> <!-- or latest -->
+            <configuration>
+                <includes>
+                    <include>**/*Test.java</include>
+                    <include>**/*Tests.java</include>
+                </includes>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+
+> By default, it runs files that match: `**/Test*.java`, `**/*Test.java`, or `**/*TestCase.java`.
+
+---
+
+### ✅ Example test:
+
+```java
+package com.example;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class AppTest {
+    @Test
+    public void testSum() {
+        assertEquals(5, 2 + 3);
+    }
+}
+```
+
+Running:
+
+```bash
+mvn test
+```
+
+Will trigger Surefire, find `AppTest.java`, run it, and report results.
+
+---
+
+## ✅ Combined Example `pom.xml`
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>maven-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <!-- JUnit dependency -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Compiler plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+
+            <!-- Surefire plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+---
+
+### 🧪 Running
+
+```bash
+mvn compile         # Uses maven-compiler-plugin
+mvn test            # Uses maven-surefire-plugin
+mvn package         # Runs all and creates .jar/.war
+```
+
+---
 
 
