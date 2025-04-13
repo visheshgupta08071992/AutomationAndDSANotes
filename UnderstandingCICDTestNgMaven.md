@@ -239,7 +239,9 @@ public class ParameterizedTest {
 
 ```
 
-We can also provide parameter values dynamically using command line. In TestNG, when we provide parameters both in the testng.xml file and dynamically via the command line using the -D option, the command line parameters will take precedence over those defined in the testng.xml file.
+We can also provide parameter values dynamically using command line. In TestNG, when we provide parameters both in the testng.xml file and dynamically via the command line using the -D option, the command line parameters will take precedence over those defined in the testng.xml file.So the easiest way of changing the values of parameters at runtime is to pass them via the JVM argument (https://rationaleemotions.wordpress.com/2017/09/29/dynamic-parameterization-in-testng/).
+
+
 
 
 **Running our TestNg Test with Maven when there is no Surefire Plugin**
@@ -257,6 +259,11 @@ mvn test -DsuiteXmlFile=testng.xml -Denv=uat -Dbrowser=firefox -Dusername=dynami
 mvn test -Denv=uat -Dbrowser=firefox -Dusername=dynamicUser -Dpassword=dynamicPass
 
 ```
+
+**Configuration of VM arguments if running through IDE**
+
+![image](https://github.com/user-attachments/assets/6a8de11d-4306-4a41-8885-56225d3f7ec4)
+
 
 - `@groups`: https://toolsqa.com/testng/groups-in-testng/ </br>  
   groups in TestNg is used for grouping different tests together into a straightforward group and running these tests together by just running the group in a single command. We can group our tests based on smoke and sanity tests.
