@@ -563,3 +563,157 @@ When you run `mvn test`, Surefire kicks in to find and run your test classes.
 
 ```
 
+
+Absolutely! Let’s break this down clearly and then go into your specific use case with TestNG XML files like `Regression.xml` and `Sanity.xml`.
+
+---
+
+### 🔧 **What are Maven Profiles?**
+
+Maven **profiles** allow you to customize build configurations based on different use cases. Run specific test suites (like you want: Regression, Sanity, etc.)
+
+
+### 📦 **Basic Example of Maven Profiles in `pom.xml`**
+
+```xml
+<project>
+  ...
+  <profiles>
+    <profile>
+      <id>regression</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+              <suiteXmlFiles>
+                <suiteXmlFile>src/test/resources/testng/Regression.xml</suiteXmlFile>
+              </suiteXmlFiles>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>sanity</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+              <suiteXmlFiles>
+                <suiteXmlFile>src/test/resources/testng/Sanity.xml</suiteXmlFile>
+              </suiteXmlFiles>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>
+```
+
+---
+
+### 🚀 **How to Run These Profiles**
+
+You can now run tests with different suites using:
+
+```bash
+mvn clean test -P regression
+```
+
+Or for sanity:
+
+```bash
+mvn clean test -P sanity
+```
+
+---
+
+### 💡 **Tip: Keeping XMLs in One Place**
+
+Store your TestNG XMLs in a clear path, e.g.:
+
+```
+src/test/resources/testng/Regression.xml
+src/test/resources/testng/Sanity.xml
+```
+
+---
+
+### 🧠 Alternative: Use a Property Instead of Multiple Profiles
+
+<properties> tag is used to define custom configurations that can be reused throughout the POM file.If you prefer **one profile** and just pass the XML name dynamically:
+
+#### In `pom.xml`
+
+```xml
+<properties>
+  <testng.suite>src/test/resources/testng/Regression.xml</testng.suite>
+</properties>
+
+<build>
+  <plugins>
+    <plugin>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.0.0</version>
+      <configuration>
+        <suiteXmlFiles>
+          <suiteXmlFile>${testng.suite}</suiteXmlFile>
+        </suiteXmlFiles>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+```
+
+#### Then run with:
+
+```bash
+mvn clean test -Dtestng.suite=src/test/resources/testng/Sanity.xml
+```
+
+
+Another example of using porperties tag in POM
+
+```xml
+
+<project>
+  ...
+  <properties>
+    <java.version>1.8</java.version>
+    <spring.version>5.3.10</spring.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+
+
+```
+-
+
