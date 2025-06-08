@@ -1,4 +1,4 @@
-## Understanding MCP
+## Understanding MCP (Model Context Protocol)
 
 ![image](https://github.com/user-attachments/assets/c2e79f69-e4e8-479c-a2cb-73eda75b0f56)
 
