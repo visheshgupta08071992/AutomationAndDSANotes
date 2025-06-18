@@ -108,7 +108,7 @@ By Default Python is Synchronous
 14. Why is the `self` convention used in Python? Explain with an example.
 15. How do you reverse the elements of a list?
 16. Explain the difference between `@classmethod` and instance methods.
-17. What is the use of `conftest.py` in Python Pytest?
+17. What is the use of `conftest.py` in Python Pytest? - In Pytest, the conftest.py file is a special configuration file used to share fixtures, hooks, and configuration across multiple test files in a directory (and its subdirectories).
 18. How do you execute only failed test cases in Pytest?
 19. How do you apply a custom marker to a test case in Pytest?
 20. What is the Python `with` statement designed for?
