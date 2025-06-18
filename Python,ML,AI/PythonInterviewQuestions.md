@@ -111,7 +111,7 @@ By Default Python is Synchronous
 17. What is the use of `conftest.py` in Python Pytest? - In Pytest, the conftest.py file is a special configuration file used to share fixtures, hooks, and configuration across multiple test files in a directory (and its subdirectories).
 18. How do you execute only failed test cases in Pytest?
 19. How do you apply a custom marker to a test case in Pytest?
-20. What is the Python `with` statement designed for?
+20. What is the Python `with` statement designed for? The Python with statement is designed for resource management and exception handling. It simplifies the process of acquiring and releasing resources (like files, network connections, locks, etc.) by ensuring that clean-up code is executed automatically, even if an error occurs during the operation.
 
     ![image](https://github.com/user-attachments/assets/0760356e-81c2-43f3-b667-44605bc7e5b0)
 
