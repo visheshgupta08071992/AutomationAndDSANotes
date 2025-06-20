@@ -1,4 +1,4 @@
-# Pytest Comprehensive Notes
+![image](https://github.com/user-attachments/assets/c025f7b2-6243-4049-b4f2-4a6592812df7)# Pytest Comprehensive Notes
 
 ## 1. Introduction to Pytest
 Pytest is a powerful testing framework for Python that makes it easy to write simple and scalable test cases. It is widely used due to its simplicity, ease of use, and rich feature set.
@@ -257,6 +257,45 @@ pytest --last-failed
 
 What the above commad does is it checks the pytest report of last run and reexecutes all the failed tests.
 
+## 11. How to run test in parallel in pytest
+To run pytest tests in parallel you need to install package pytest-xdist
+
+**Installation Command**
+
+```bash
+
+pip install pytest-xdist
+
+```
+
+**Command to run test in parallel, Below Test uses three thread to run in parallel, n stands for no of workers**
+
+```bash
+pytest -n 3
+
+```
+
+## 12. How to generate html report in pytest
+Togenerate html report you need to install package pytest-html
+
+
+**Installation Command**
+
+```bash
+
+pip install pytest-html
+
+```
+
+**Command to generate report**
+
+```bash
+pytest --html=report.html
+
+```
+
+
+
 ## 11. Summary of Pytest Commands
 1. Run all tests: `pytest`
 2. Run a specific test file: `pytest testFileName`
@@ -268,3 +307,8 @@ What the above commad does is it checks the pytest report of last run and reexec
 8. Mark a test as expected failure using `@pytest.mark.xfail`
 9. Use fixtures for setup and teardown, with various scopes (`function`, `class`, `module`, `session`).
 10. Run only failed tests: `pytest --last-failed`
+11. Run Test in parallel : `pip install pytest-xdist` and then `pytest -n 3`
+12. To generate report : `pip install pytest-html` and then `pytest --html=report.html`
+13. ` pytest --browser_name chrome -n 3 --tracing on --html=report.html`
+
+     Above command is used to run chrome with three parallel workers and by tracing on playwright will store complete trace which includes complete logs and screenshots and html would generate a html report named report.
