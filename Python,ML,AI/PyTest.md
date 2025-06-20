@@ -311,4 +311,4 @@ pytest --html=report.html
 12. To generate report : `pip install pytest-html` and then `pytest --html=report.html`
 13. ` pytest --browser_name chrome -n 3 --tracing on --html=report.html`
 
-     Above command is used to run chrome with three parallel workers and by tracing on playwright will store complete trace which includes complete logs and screenshots and html would generate a html report named report.
+     Above command is used to run chrome with three parallel workers and by tracing on playwright will store complete trace which includes complete logs and screenshots and html would generate a html report named report.After running this command, complete logging and screenshots for each test would be generated in test-results folder. Open url trace.playwright.dev and open test-results folder to see complete logging and execution of tests.
