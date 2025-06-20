@@ -101,6 +101,20 @@ def test_playwrightShortCut(page: Page):            # page is the instrance of P
 - `page.click("text='Login'")`  **- Clicking directly by passing locater**
 - `page.fill('input[name="username"]', 'my_user')` **- filling directly by passing locater and value**
 
+---
+
+# Playwright Assertions - Quick Reference
+
+```
+ expect(page.get_by_text("Incorrect username/password.")).to_be_visible()
+ expect(page.get_by_placeholder("Hide/Show Example")).to_be_hidden()
+ expect(page.locator("//div[@class='media']")).to_have_count(2)
+ expect(pageFrame.locator("body")).to_contain_text("Happy Subscibers")
+ assert "mentor@rahulshettyacademy.com"  in text
+ assert email == "mentor@rahulshettyacademy.com"
+
+``python
+
 
 
 
