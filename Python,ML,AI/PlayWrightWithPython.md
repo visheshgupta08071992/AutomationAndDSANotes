@@ -287,4 +287,19 @@ def test_net2(page:Page):
 
 https://github.com/visheshgupta08071992/pythonPlaywrightExamples/tree/master/playwright
 
+---
+# Code Generation (Auto Script Recording)
+
+This opens a browser and generates code in real-time as you interact.
+
+
+
+```bash
+
+playwright codegen https://example.com
+
+
+```
+
+
 
