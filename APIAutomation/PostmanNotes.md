@@ -202,6 +202,19 @@ pm.globals.set("variable_key", "variable_value");
 4. **Local Variable** - applicable to particular request
 
 
+
+### 🔢 **Variable Precedence in Postman (Highest to Lowest)**
+
+1. **Local Variables** (Defined using `pm.variables.set`)
+2. **Data Variables** (Used during Collection Runner or Newman with data files like CSV/JSON)
+3. **Environment Variables**
+4. **Collection Variables**
+5. **Global Variables**
+
+
+
+
+
 **Using variables**
 
 You can use double curly braces to reference variables throughout Postman. For example, to reference a variable named "username" in your request authorization settings, you would use the following syntax with double curly braces around the name:
