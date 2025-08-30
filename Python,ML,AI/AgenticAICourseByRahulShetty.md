@@ -29,4 +29,14 @@ In short: **LLMs give you the knowledge, but AI Agents use that knowledge to get
 
 MCP is Model Context Protocol which is a Standardized way for AI agents to connect to and use external tools and services.
 
+![image](https://github.com/user-attachments/assets/c2e79f69-e4e8-479c-a2cb-73eda75b0f56)
+
+
+![image](https://github.com/user-attachments/assets/2aa84a5e-d9c2-4bbd-85a6-619f794e83e7)
+
+![image](https://github.com/user-attachments/assets/a75961a7-85f2-4c0e-81f8-286744ba6e3b)
+
+![image](https://github.com/user-attachments/assets/d171884b-ff10-4a4f-ae97-59bd2eb2da64)
+
+
 
