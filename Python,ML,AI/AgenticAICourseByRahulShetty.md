@@ -27,7 +27,7 @@ In short: **LLMs give you the knowledge, but AI Agents use that knowledge to get
 
 ## Understanding MCP
 
-MCP is Model Context Protocol which is a Standardized way for AI agents to connect to and use external tools and services.
+MCP is Model Context Protocol which is a Standardized way for AI agents to connect to and use external tools and services. IDEs like Cursor,VsCode,Claude Desktop are all MCP Clients through which we can connect to MCP Servers and then to respective tool.
 
 ![image](https://github.com/user-attachments/assets/c2e79f69-e4e8-479c-a2cb-73eda75b0f56)
 
@@ -37,6 +37,14 @@ MCP is Model Context Protocol which is a Standardized way for AI agents to conne
 ![image](https://github.com/user-attachments/assets/a75961a7-85f2-4c0e-81f8-286744ba6e3b)
 
 ![image](https://github.com/user-attachments/assets/d171884b-ff10-4a4f-ae97-59bd2eb2da64)
+
+
+**There are different types of MCP servers available for connecting to different tools like Playwright MCP,MySQL MCP , RestAPI MCP ,Excel MCP,FileSystem MCP**
+
+
+<img width="1442" height="863" alt="image" src="https://github.com/user-attachments/assets/9b201c4b-95fd-40e9-93a3-7aa2e6e38dbb" />
+
+
 
 
 
