@@ -56,6 +56,45 @@ MCP is Model Context Protocol which is a Standardized way for AI agents to conne
 
 <img width="1442" height="863" alt="image" src="https://github.com/user-attachments/assets/9b201c4b-95fd-40e9-93a3-7aa2e6e38dbb" />
 
+---
+
+## How to Configure Cursor to Use MCP Playwright
+
+**1. Get the Playwright MCP Config**
+- Search for **Playwright MCP** on Google and open the [official GitHub repository](https://github.com/microsoft/playwright-mcp).
+- Copy the configuration file required to set up the Playwright MCP server.
+
+![Playwright MCP Config](https://github.com/user-attachments/assets/70917d58-8fb6-40a5-ba38-9cecf10ee87f)
+
+
+**2. Explore MCP Tools**
+- Each MCP server exposes a set of **tools**.  
+- Tools are essentially functions that the MCP server can perform.  
+- Below is a snapshot of the tools exposed by the Playwright MCP server:
+
+![Playwright MCP Tools](https://github.com/user-attachments/assets/1b73bcc1-3a17-4bab-939f-ad05eb5ac987)
+
+
+**Add MCP Server in Cursor**
+1. Go to **Settings → MCP & Integrations → New MCP Server**.
+2. Paste the configuration JSON you copied earlier.
+3. Once added, you can view the different tools exposed by the Playwright MCP server.
+
+Example screenshots:
+
+![MCP Server Added](https://github.com/user-attachments/assets/f924536e-0702-4fe5-b01f-6d08380fbbfa)
+
+![Playwright MCP Tools in Cursor](https://github.com/user-attachments/assets/c3281ab0-0c3e-407c-9e64-a6dc4477b398)
+
+
+
+   
+
+
+   
+ 
+
+
 
 
 
