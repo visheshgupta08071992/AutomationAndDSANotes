@@ -29,6 +29,18 @@ In short: **LLMs give you the knowledge, but AI Agents use that knowledge to get
 
 MCP is Model Context Protocol which is a Standardized way for AI agents to connect to and use external tools and services. IDEs like Cursor,VsCode,Claude Desktop are all MCP Clients through which we can connect to MCP Servers and then to respective tool.
 
+ **How does MCP Client and Server works:**
+ 
+ 
+   1.There are different MCP Clients like Claude Code, Cursor , VS Code.</br>
+ 
+ 2. These MCP clients are configured to various MCP servers like Playwright,MYSQL , Excel by configuring respective MCP server json.</br>
+ 
+ 3. Once these MCP server json are configured within the MCP client , These MCP servers are started with help of config file.</br>
+ 
+ 4. Once the MCP server is starterd ,LLM uses MCP protocol to communicate with various tools</br>
+
+
 ![image](https://github.com/user-attachments/assets/c2e79f69-e4e8-479c-a2cb-73eda75b0f56)
 
 
