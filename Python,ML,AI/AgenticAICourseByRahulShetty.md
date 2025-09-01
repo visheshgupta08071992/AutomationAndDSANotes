@@ -244,6 +244,36 @@ Here, `args` contains the path where the file will be present or where the file 
 }
 ```
 
+## How to Configure Excel MCP Server
+
+
+**GitHub Repository**: [Excel MCP Server](https://github.com/negokaz/excel-mcp-server)
+
+**Purpose of Excel MCP Server**
+
+The Excel MCP server can be used for:
+
+* Read/Write text values
+* Read/Write formulas
+* Create new sheets
+* Capture screen image from a sheet
+* Live editing
+
+**Excel MCP server Json Configuration**
+
+```json
+
+ "excel": {
+            "command": "cmd",
+            "args": ["/c", "npx", "--yes", "@negokaz/excel-mcp-server"],
+            "env": {
+                "EXCEL_MCP_PAGING_CELLS_LIMIT": "4000"
+            }
+        }
+
+
+```
+
 
 
 
