@@ -58,7 +58,7 @@ MCP is Model Context Protocol which is a Standardized way for AI agents to conne
 
 ---
 
-## How to Configure Cursor to Use MCP Playwright
+# How to Configure Cursor to Use MCP Playwright
 
 **1. Get the Playwright MCP Config**
 - Search for **Playwright MCP** on Google and open the [official GitHub repository](https://github.com/microsoft/playwright-mcp).
@@ -86,15 +86,132 @@ Example screenshots:
 
 ![Playwright MCP Tools in Cursor](https://github.com/user-attachments/assets/c3281ab0-0c3e-407c-9e64-a6dc4477b398)
 
+---
 
+# How to Configure MSSQL MCP
 
-   
+## 📑 Reference Documents
 
+* [Unlocking AI-powered database interactions](https://medium.com/@Daradev/unlocking-ai-powered-database-interactions-a-complete-guide-to-mssql-mcp-server-integration-134998978d4b)
+* [Introducing MSSQL MCP Server (Microsoft Blog)](https://devblogs.microsoft.com/azure-sql/introducing-mssql-mcp-server/)
 
-   
- 
+---
 
+### ⚙️ Steps to Follow
 
+1. **Clone repository**
+
+   ```bash
+   git clone https://github.com/Azure-Samples/SQL-AI-samples.git
+   ```
+
+2. **Navigate to the Node.js project directory**
+
+   ```bash
+   cd SQL-AI-samples/MssqlMcp/Node
+   ```
+
+3. **Install dependencies and build the project**
+
+   ```bash
+   npm install
+   ```
+
+4. **Configure SQL Authentication**
+
+   * Open the file:
+     `SQL-AI-samples\MssqlMcp\Node\src\index.ts`
+   * Search for the function `createSqlConfig`.
+   * Replace the existing implementation with the following enhanced version (supports **dual authentication modes**):
+
+   ```js
+   // Function to create SQL config with fresh access token, returns token and expiry
+   export async function createSqlConfig(): Promise<{ config: sql.config, token: string, expiresOn: Date }> {
+     const trustServerCertificate = process.env.TRUST_SERVER_CERTIFICATE?.toLowerCase() === 'true';
+     const encrypt = process.env.ENCRYPT?.toLowerCase() !== 'false'; // Default to true unless explicitly set to false
+     const connectionTimeout = process.env.CONNECTION_TIMEOUT ? parseInt(process.env.CONNECTION_TIMEOUT, 10) : 30;
+
+     // Check if USERNAME and PASSWORD are provided for SQL Server authentication
+     const username = process.env.USERNAME;
+     const password = process.env.PASSWORD;
+
+     if (username && password) {
+       // Use SQL Server authentication
+       return {
+         config: {
+           server: process.env.SERVER_NAME!,
+           database: process.env.DATABASE_NAME!,
+           user: username,
+           password: password,
+           options: {
+             encrypt,
+             trustServerCertificate
+           },
+           connectionTimeout: connectionTimeout * 1000, // convert seconds to milliseconds
+         },
+         token: 'sql-auth', // placeholder token for SQL auth
+         expiresOn: new Date(Date.now() + 24 * 60 * 60 * 1000) // 24 hours from now
+       };
+     } else {
+       // Use Azure AD authentication
+       const credential = new InteractiveBrowserCredential({
+         redirectUri: 'http://localhost'
+         // disableAutomaticAuthentication : true
+       });
+       const accessToken = await credential.getToken('https://database.windows.net/.default');
+
+       return {
+         config: {
+           server: process.env.SERVER_NAME!,
+           database: process.env.DATABASE_NAME!,
+           options: {
+             encrypt,
+             trustServerCertificate
+           },
+           authentication: {
+             type: 'azure-active-directory-access-token',
+             options: {
+               token: accessToken?.token!,
+             },
+           },
+           connectionTimeout: connectionTimeout * 1000, // convert seconds to milliseconds
+         },
+         token: accessToken?.token!,
+         expiresOn: accessToken?.expiresOnTimestamp ? new Date(accessToken.expiresOnTimestamp) : new Date(Date.now() + 30 * 60 * 1000)
+       };
+     }
+   }
+   ```
+
+5. **Rebuild the project**
+   After implementing the code changes, rebuild to regenerate `dist/index.js`:
+
+   ```bash
+   npm run build
+   ```
+
+6. **Add MCP Config File (inside Cursor)**
+   Add the following configuration to allow MCP to connect to the database:
+
+   ```json
+   "mssql": {
+     "command": "node",
+     "args": [
+       "C:\\Users\\guptvis\\OneDrive\\OneDrive - MSCI Office 365\\Desktop\\VisheshProjects\\AI-MCPProjects\\SQL-AI-samples\\MssqlMcp\\Node\\dist\\index.js"
+     ],
+     "env": {
+       "SERVER_NAME": "{serverName}",
+       "DATABASE_NAME": "{databaseName}",
+       "USERNAME": "{userName}",
+       "PASSWORD": "{password}",
+       "ENCRYPT": "false",
+       "TRUST_SERVER_CERTIFICATE": "true",
+       "READONLY": "true"
+     }
+   }
+   ```
+
+---
 
 
 
