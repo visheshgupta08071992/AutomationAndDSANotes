@@ -214,5 +214,37 @@ Example screenshots:
 ---
 
 
+## How to Configure FileSystem MCP Server
+
+**GitHub Repository**: [FileSystem MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem)
+
+**Purpose of FileSystem MCP Server**
+
+The FileSystem MCP server can be used for:
+
+* Read/write files
+* Create/list/delete directories
+* Move files/directories
+* Search files
+* Get file metadata
+* Dynamic directory access control via **Roots**
+
+**File System MCP JSON Configuration**
+
+Here, `args` contains the path where the file will be present or where the file needs to be written.
+
+```json
+"filesystem": {
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-filesystem",
+    "C:\\Users\\guptvis\\OneDrive\\OneDrive - MSCI Office 365\\Desktop\\VisheshProjects\\AI-MCPProjects"
+  ]
+}
+```
+
+
+
 
 
