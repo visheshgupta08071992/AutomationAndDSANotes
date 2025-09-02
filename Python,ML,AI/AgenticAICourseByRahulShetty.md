@@ -274,6 +274,31 @@ The Excel MCP server can be used for:
 
 ```
 
+---
+
+# Understanding Microsoft Autogen Framework
+
+**Autogen** is an open-source multi-agent orchestration framework that helps you build applications where multiple AI agents collaborate with each other (and optionally humans) to solve tasks.  
+
+It provides abstractions to:
+
+- **Create agents with roles**
+- **Enable structured conversations between agents**
+- **Integrate external tools and APIs**
+- **Manage multi-step workflows**
+
+# Setting up Autogen
+
+**Documentation Link** - https://microsoft.github.io/autogen/stable//user-guide/agentchat-user-guide/installation.html
+
+Autogen suggests  using a virtual environment for the installation. This will ensure that the dependencies for AgentChat are isolated from the rest of your system.
+
+
+
+
+
+
+
 
 
 
