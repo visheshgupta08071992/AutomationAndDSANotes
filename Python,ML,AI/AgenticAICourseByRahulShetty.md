@@ -293,6 +293,28 @@ It provides abstractions to:
 
 Autogen suggests  using a virtual environment for the installation. This will ensure that the dependencies for AgentChat are isolated from the rest of your system.
 
+<img width="1503" height="606" alt="image" src="https://github.com/user-attachments/assets/5db7d649-f18a-4a02-aedb-6e2f03c5a9fe" />
+
+
+Once Project is setup within the IDE, You need to install all the packages required for setting up AutoGen Framework
+
+Install Below packages:
+
+**pip install -U "autogen-agentchat"**  - For installing autogen Agent-Chat
+
+**pip install "autogen-ext[openai]"** - To use OpenAI models
+
+**pip install "autogen-ext[azure]"** - To use Azure OpenAI models
+
+**pip install -U "autogen-ext[mcp]"** - To use MCP within Agent
+
+
+You can check the installed packages by going to **settings -> project -> Python Interpreter**
+
+<img width="1217" height="897" alt="image" src="https://github.com/user-attachments/assets/152fdf27-4a71-4a63-8b5d-f895b2128390" />
+
+
+
 
 
 
