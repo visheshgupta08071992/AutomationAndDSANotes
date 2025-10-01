@@ -44,7 +44,13 @@ DB remains consistent we need to create DataBase replicas with Statefulset. Stat
 
 **Service** - Pod communicate with each other with the help of service. Service is kind of an address to a POD.
 
-**Replica Set** - Replica Set maps to different version of microservice.
+**Replica Set** - A ReplicaSet is a Kubernetes resource that ensures a specified number of pod replicas are always running.
+
+If a pod crashes → ReplicaSet creates a new one.
+
+If you have extra pods → ReplicaSet deletes them.
+
+If you scale up/down → ReplicaSet adjusts the number of pods accordingly.
 
 **Ingress** - Ingress is an object that allows access to your Kubernetes services from outside the Kubernetes cluster
 
