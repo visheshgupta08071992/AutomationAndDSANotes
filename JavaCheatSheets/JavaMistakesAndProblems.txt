@@ -1,0 +1,736 @@
+Mistakes:
+
+1.Armostrong mai need to initalize product to before every unit NoSQL
+2.If key of map is chaarcter then char c: map.keySet()
+3.Arrays.sort(arr) -- Sorts the Array
+4.Arrays.equals(arr1,arr2) - Compares two arrays.
+5 To remove whitespaces from String
+
+ //Using Regex
+        String input="a b c";
+        System.out.println(input.replaceAll("\\s","")); // Remeber we need to use \\ for replacement
+
+       //Without regex,just mentioning space
+        String s ="a b c d e f";
+        System.out.println(s.replace(" ",""));
+
+        String m ="a b c d e f   h     l";
+        System.out.println(s.replaceAll("\\s",""));
+        //Replace does not support regex
+      //  System.out.println(s.replace("\\s",""));
+
+        System.out.println(s.replace(" ",""));
+
+        //Using Character Array
+        char[] charArray = input.toCharArray();     //Here we need to char and not Character
+        String outputWithoutSpace="";
+        for(int i=0;i<charArray.length;i++){
+            if(charArray[i] != ' ' && charArray[i] != '\t'){          //Here we need to compare space and tab in
+                // single inverted commas
+                outputWithoutSpace=outputWithoutSpace + charArray[i];
+            }
+
+        }
+        System.out.println(outputWithoutSpace);
+		
+6.You cant replace a charater with nothing -
+
+eg String s = "vishesh"	
+ s.replace('v','') => This would not work as you can't replace character with  nothing, Instead you need to do  s.replace("v","") , SO character cannot be replaced by nothing.
+ 
+ 
+ Below would work where character is replaced by another character
+ 
+ s.replace('v','m')
+ 
+
+7. s.split("\\s+") ,\\s+ splits across 1 or more space, + incidcates one or ore
+
+
+String s ="a good   example";
+
+String s ="a good   example";
+        String [] sArray = s.split(" ");
+        System.out.println(Arrays.toString(sArray));
+        String [] sArray1 = s.split("\\s+");
+        System.out.println(Arrays.toString(sArray1));
+ 
+ 
+ 
+//Output
+[a, good, , , example]
+[a, good, example]
+ 
+
+
+
+---------------------------------------------------------------------------------------
+
+Problems -
+
+1.continuous sub array of the given array whose sum is equal to given number, Given the staring and ending index building sum or print the list building sum (https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1)
+int [] arr={12, 5, 31, 9, 21, 8};
+int inputNumber=45;
+
+o(n2) approach
+
+
+class Solution {
+    static ArrayList<Integer> subarraySum(int[] arr, int target) {
+        // code here
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        int sum;
+        
+        for(int i=0;i<arr.length;i++){
+            sum=0;
+            for(int j=i;j<arr.length;j++){
+                sum = sum + arr[j];
+                if(sum==target){
+                    list.add(i+1);
+                    list.add(j+1);
+                    return list;
+                }
+                if(sum>target){
+                    break;
+                }
+            }
+        }
+        list.add(-1);
+        return list;
+    }
+}
+
+
+o(n) approach
+
+
+class Solution {
+    static ArrayList<Integer> subarraySum(int[] arr, int target) {
+        // code here
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        int sum=0;
+        int j=0;
+        
+        for(int i=0;i<arr.length;i++){
+            
+            sum = sum + arr[i];
+            
+            while(sum >target && j<=i){
+                
+                sum = sum - arr[j];
+                j++;
+            }
+            if(sum==target){
+                list.add(j+1);
+                list.add(i+1);
+                return list;
+                
+            }
+        }
+        list.add(-1);
+        return list;
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+2 https://www.geeksforgeeks.org/problems/demonitisation0013/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
+
+Given 3 Strings S, M and N. Your task is to remove occurences of M and N completely from the given string S.
+ After removing every occurence of M and N from the string S, if S becomes empty, then return -1.
+
+*Input:
+S = abc
+m = ab
+n = bc
+Output:
+-1
+Explanation: When we remove the two strings,
+we get an empty string and thus the Output -1.
+
+Input:
+S =  abbbccab
+m = ab
+n = bcc
+Output:
+b
+
+Approach
+
+// User function Template for Java
+
+class Solution {
+    static String demonitize(String S, String m, String n) {
+        // code here
+        S=replace(S,m);
+        S=replace(S,n);
+        S=replace(S,n);
+        if(S.equals("")){
+            return "-1";
+        }
+        else{
+            return S;
+        }
+    }
+    
+    static String replace(String s,String r){
+        if(s.contains(r)){
+            s=s.replace(r,"");
+        }
+        else if(r.contains(s)){
+            s=s.replace(s,"");
+        }
+        return s;
+    }
+};
+
+
+----------------------------------------------------------------------------------------------------------------
+
+3. Return second largest element https://www.geeksforgeeks.org/problems/second-largest3735/1
+
+// User function Template for Java
+
+class Solution {
+    public int print2largest(int[] arr) {
+        int secondMax = Integer.MIN_VALUE;
+        int max = arr[0];
+        
+        for(int i=1;i<arr.length;i++){
+            if(arr[i] > max){
+                secondMax = max;
+                max= arr[i];
+            }
+            else if(arr[i] > secondMax && arr[i]!=max){
+                secondMax = arr[i];
+            }
+        }
+        
+        if(secondMax==Integer.MIN_VALUE){
+            return -1;
+        }
+        
+        return secondMax;
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------
+4.Intersection of Array 1 - https://leetcode.com/problems/intersection-of-two-arrays/description/
+
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2]
+
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+
+        for(int i:nums1){
+            set1.add(i);
+        }
+
+        for(int i:nums2){
+            set2.add(i);
+        }
+
+        set1.retainAll(set2);
+
+        List<Integer> list = new ArrayList<>(set1);
+        return list.stream().mapToInt(e -> e).toArray();
+
+    }
+}
+
+
+
+4.Intersection of Array 2 - https://leetcode.com/problems/intersection-of-two-arrays-ii/
+
+
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2,2]
+
+
+class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        Map<Integer,Integer> map = new HashMap<>();
+        List<Integer> list = new ArrayList<>();
+
+        for(int i:nums1){
+           if(map.containsKey(i)){
+              map.put(i,map.get(i) + 1);
+           }
+           else{
+             map.put(i,1);
+           }
+        }
+
+        for(int i:nums2){
+            if(map.containsKey(i)){
+               if(map.get(i) > 0){
+
+                list.add(i);
+                map.put(i,map.get(i) - 1);
+               }
+            }
+
+        }
+        return list.stream().mapToInt(e->e).toArray();
+    }
+}
+
+------------------
+
+5. Reverse String using recursion
+
+class ReverseString {
+    
+    // Recursive method to reverse a string
+    static String reverse(String str) {
+        // Base condition — stop recursion
+        if (str.isEmpty()) {
+            return str;
+        }
+
+        // Recursive step:
+        // reverse the substring (everything except first character)
+        // then add the first character at the end
+        return reverse(str.substring(1)) + str.charAt(0);
+    }
+
+    public static void main(String[] args) {
+        String input = "hello";
+        String reversed = reverse(input);
+        System.out.println("Reversed string: " + reversed);
+    }
+}
+
+
+--------------------------------
+6. Remove all Characters of string2 from string1 - https://www.geeksforgeeks.org/problems/remove-character3815/1
+
+Input: str1 = "computer", str2= "cat"
+Output: "ompuer"
+
+// User function Template for Java
+class Solution {
+    static String removeChars(String str1, String str2) {
+        // code here
+        Map<Character,Character> map = new HashMap<>();
+        
+        char [] cArr = str2.toCharArray();
+        
+        for(char c:cArr){
+                map.put(c,c);
+            }
+            
+        for(char c:map.keySet()){
+            str1 = str1.replace(String.valueOf(c),"");
+        }    
+        
+        return str1;
+            
+        }
+        
+    }
+
+-------------------------
+
+7./*	Write a java program to reverse a string with preserving the position of spaces. For example, if “I Am Not String” is the given string then the reverse of this string with preserving the position of spaces is “g ni rtS toNmAI”. Notice that the position of spaces in the original string are maintained in the reversed string also. That means, if the given string has a space at index 3, then there should be also a space in the reversed string at index 3.*/
+
+
+public class ReverseStringWithPreservingSpaces {
+
+/*	Write a java program to reverse a string with preserving the position of spaces. For example, if “I Am Not String” is the given string then the reverse of this string with preserving the position of spaces is “g ni rtS toNmAI”. Notice that the position of spaces in the original string are maintained in the reversed string also. That means, if the given string has a space at index 3, then there should be also a space in the reversed string at index 3.*/
+
+
+	@Test
+	public void reverseStringWithPreservingSpace(){
+		String input="I Am Not String";
+		char [] inputArray=input.toCharArray();
+		int countNoOfSpaces=0;
+		List<Integer> spaceAtGivenIndex=new ArrayList<>();
+
+		//Finding total No of spaces and index at which space is present
+		for(int i=0;i<inputArray.length;i++){
+
+			if(inputArray[i]==' '){
+				countNoOfSpaces++;
+				spaceAtGivenIndex.add(i);
+			}
+		}
+		System.out.println(countNoOfSpaces);
+		System.out.println(spaceAtGivenIndex);
+
+        //Removing space from the String and reversing it
+		String inputWithoutSpaces=input.replaceAll("\\s","");
+		StringBuffer reverseWithoutSpaces=new StringBuffer();
+		for(int i=inputWithoutSpaces.length()-1;i>=0;i--){
+			reverseWithoutSpaces.append(inputWithoutSpaces.charAt(i));
+		}
+
+		System.out.println(reverseWithoutSpaces);
+
+		//Adding Spaces in the reversed String at index of original String
+		for(int i:spaceAtGivenIndex) {
+			reverseWithoutSpaces.insert(i, " ");
+		}
+		System.out.println(reverseWithoutSpaces);
+	}
+
+	@Test
+	public void reverseStringWithPreservingSpaceAnotherApproach(){
+		String inputString="I Am Not String";
+		//Converting inputString to char array 'inputStringArray'
+		char[] inputStringArray = inputString.toCharArray();
+
+		//Defining a new char array 'resultArray' with same size as inputStringArray
+
+		char[] resultArray = new char[inputStringArray.length];
+
+		//First for loop :
+		//For every space in the 'inputStringArray',
+		//we insert spaces in the 'resultArray' at the corresponding positions
+
+		for (int i = 0; i < inputStringArray.length; i++)
+		{
+			if (inputStringArray[i] == ' ')
+			{
+				resultArray[i] = ' ';
+			}
+		}
+
+		//Initializing 'j' with length of resultArray
+
+		int j = resultArray.length-1;
+
+		//Second for loop :
+		//we copy every non-space character of inputStringArray
+		//from first to last at 'j' position of resultArray
+
+		for (int i = 0; i < inputStringArray.length; i++)
+		{
+			if (inputStringArray[i] != ' ')
+			{
+				//If resultArray already has space at index j then decrementing 'j'
+
+				if(resultArray[j] == ' ')
+				{
+					j--;
+				}
+
+				resultArray[j] = inputStringArray[i];
+
+				j--;
+			}
+		}
+
+		System.out.println(inputString+" ---> "+String.valueOf(resultArray));
+		System.out.println(Arrays.toString(resultArray));
+	}
+}
+
+
+---------------------------------------------------------
+
+9.Separate Vowel and Consonents
+
+@Test
+    public void separateVowelAndConsonents() {
+        String s = "abcdeig";
+        StringBuilder s1= new StringBuilder();
+        StringBuilder s2= new StringBuilder();
+
+        char [] sArr= s.toCharArray();
+
+        for(int i=0;i<sArr.length;i++){
+            if(sArr[i]=='a'|| sArr[i]=='e' || sArr[i]=='i' || sArr[i]=='o' || sArr[i]=='u'){
+                s1.append(sArr[i]);
+            }
+            else{
+                s2.append(sArr[i]);
+            }
+        }
+       s1.append(s2);
+        System.out.println(s1.toString());
+    }
+	
+Two Pointer STrategy
+
+@Test
+    public void simpleCodeUsingTwoPointer1() {
+        String s = "abcdeig";
+        char [] sArr= s.toCharArray();
+        int i=0;
+        int j=sArr.length - 1;
+
+        while(i<=j){
+
+            if(!isVowel1(sArr[i]) && isVowel1(sArr[j])){
+                char c = sArr[i];
+                sArr[i] = sArr[j];
+                sArr[j] = c;
+                i++;
+                j--;
+            }
+            else if(isVowel1(sArr[i])){
+                i++;
+            }
+            else if(!isVowel1(sArr[j])){
+                j--;
+            }
+
+        }
+        System.out.println(String.valueOf(sArr));
+
+    }
+
+    public boolean isVowel1(char c){
+        if(c=='a'|| c=='e' || c=='i' || c=='o' || c=='u'){
+             return true;
+        }
+      return false;
+    }	
+
+
+------------------------------------------------------
+
+10.Sort the String in Descending Order - https://www.geeksforgeeks.org/problems/sort-the-string-in-descending-order3542/1
+
+Input: s = "geeks"
+Output: "skgee"
+
+// User function Template for Java
+class Solution {
+    String ReverseSort(String s) {
+        // code here
+        char [] sArr = s.toCharArray();
+        Arrays.sort(sArr);
+        
+        StringBuilder sb = new StringBuilder(String.valueOf(sArr));
+        return sb.reverse().toString();
+    }
+}
+
+--------------------------------------------------------
+
+11. Creating and retrieving from properties file
+
+@Test
+    public void createNewPropertyFile() throws IOException {
+
+        Properties p=new Properties();
+        p.setProperty("name","Sonoo Jaiswal123");
+        p.setProperty("email","sonoojaiswal@javatpoint.com");
+
+        p.store(new FileWriter("info.properties"),"Javatpoint Properties Example");
+
+    }
+
+
+
+   @Test
+    public void readValueUsingFileReader() throws IOException {
+        Properties prop=new Properties();
+        FileReader propfile=new FileReader("/Users/vishesh.gupta/Desktop/JavaPractise/src/main/java/credentials.properties");
+        prop.load(propfile);
+        System.out.println("Username is :" + prop.getProperty("user"));
+        System.out.println("Password is :" + prop.getProperty("password"));
+        prop.setProperty("URL","www.google.com");
+    }
+
+    @Test
+    public void readValueUsingFileInputStream() throws IOException {
+        Properties prop=new Properties();
+        FileInputStream propfile=new FileInputStream("/Users/vishesh.gupta/Desktop/JavaPractise/src/main/java/credentials.properties");
+        prop.load(propfile);
+        System.out.println("Username is :" + prop.getProperty("user"));
+        System.out.println("Password is :" + prop.getProperty("password"));
+    }
+
+---------------------------------------------------------------------
+
+12.Given a string s, return true if the s can be palindrome after deleting at most one character from it.(https://leetcode.com/problems/valid-palindrome-ii/description/)
+
+Input: s = "aba"
+Output: true
+
+Input: s = "abca"
+Output: true
+
+Input: s = "abc"
+Output: false
+
+class Solution {
+    public boolean validPalindrome(String s) {
+        int i=0;
+        int j=s.length() - 1;
+        while(i<=j){
+          if(s.charAt(i) == s.charAt(j)){
+             i++;
+             j--;
+          }
+          else if(isPalindrome(s,i,j-1)){
+            return true;
+          }
+          else if(isPalindrome(s,i+1,j)){
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+        return true;
+    }
+   public boolean isPalindrome(String s,int i,int j){
+      while(i<=j){
+           if(s.charAt(i) != s.charAt(j)){
+              return false;
+           }
+           i++;
+           j--;
+      }
+     return true;
+   }
+    
+} 
+
+------------------------------------------------------------------------------
+13.Longest Substring Without Repeating Characters (https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+
+Input: s = "abcabcbb"
+Output: 3
+
+Input: s = "bbbbb"
+Output: 1
+
+Input: s = "pwwkew"
+Output: 3
+
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        Set<Character> set = new HashSet<>();
+        int max=0;
+        int j=0;
+
+        for(int i=0;i<s.length();i++){
+
+            while(set.contains(s.charAt(i)) && j<i){
+               set.remove(s.charAt(j));
+               j++;
+            }
+
+            set.add(s.charAt(i));
+
+            if(set.size()>max){
+               max=set.size();
+            }
+
+        }
+      return max;
+        
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------
+14.Longest Common Prefix (https://leetcode.com/problems/longest-common-prefix/description/)
+
+Example 1:
+
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+
+Input: strs = ["dog","racecar","car"]
+Output: ""
+
+
+
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        Arrays.sort(strs);
+        StringBuilder result = new StringBuilder();
+        String s1= strs[0];
+        String s2 =strs[strs.length - 1];
+
+        for(int i=0;i<s1.length();i++){
+           if(s1.charAt(i) == s2.charAt(i)){
+              result.append(s1.charAt(i));
+           }
+           else{
+            break;
+           }
+        }
+        return result.toString();
+    }
+}
+
+-------------------------------------------------------------------------------------------------------
+15.Largest Number https://leetcode.com/problems/largest-number/description/
+
+Example 1:
+
+Input: nums = [10,2]
+Output: "210"
+Example 2:
+
+Input: nums = [3,30,34,5,9]
+Output: "9534330"
+
+
+class Solution {
+    public String largestNumber(int[] nums) {
+        String [] strArr = new String[nums.length];
+        StringBuilder result = new StringBuilder();
+
+        for(int i=0;i<nums.length;i++){
+              strArr[i] = String.valueOf(nums[i]);
+        }
+
+        Arrays.sort(strArr,(a,b) ->{
+            return (b+a).compareTo(a+b);
+        });
+
+        if(strArr[0].equals("0")){
+             return "0";
+        }
+
+        for(String str:strArr){
+            result.append(str);
+        }
+        return result.toString();
+    }
+}
+
+------------------------------------------------------------------------------------------------------------
+16. Group Anagrams https://leetcode.com/problems/group-anagrams/description/
+
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<String,List<String>> map = new HashMap<>();
+
+        for(String s:strs){
+            char [] cArr = s.toCharArray();
+            Arrays.sort(cArr);
+            String sSort = String.valueOf(cArr);
+
+            if(map.containsKey(sSort)){
+                List<String> list = map.get(sSort);
+                list.add(s);
+                map.put(sSort,list); 
+            }
+            else{
+               List<String> list1 = new ArrayList<>();
+               list1.add(s);
+               map.put(sSort,list1); 
+            }
+        }
+        return new ArrayList<>(map.values());
+    }
+}
