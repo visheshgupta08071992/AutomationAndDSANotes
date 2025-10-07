@@ -1,0 +1,44 @@
+Introduction -
+
+Hi Good Afternoon, This is Vishesh, Having around 12 years of experience and Currently working with Morgan Stanley Capital International as a Lead SDET QA Test Automation Engineer 
+
+Prior to MSCI, I have worked with multiple Product based firms like Fiserv, PTC, Appdirect.
+
+In my carrer of 12 years, I have worked on most of the Aspect of Automation as well Manual Testing.
+
+With regards to Automation, I have worked on both UI as well as API Automation. For UI Automation I have extensively used Selenium with TesTng.
+And for API Automation I have used RestAssured. 
+
+Apart from Automation, I also have an exposure to Performance Testing of APIs using Gatling.
+
+With regards to Manual Testing I am very comfortable with Requirement Gathering,TC Plan and TC creation, Defect Life cycle,Root cause analysis.
+
+Beyond Testing, I have an exposure to Devops Technologies like Docker,Kubernetes and Microsoft Azure.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+What Exposure do you have with Docker,Kubernetes and Microsoft Azure?
+
+Docker - So Docker is a Containerization Tool, We have extensively used Docker for Containerizing our application by creating its image and pushing to Docker Hub. Specific to Automation we created an image of our Automation Framework and pushed it to DockerHub. This helped our clients to setup and execute our TestAutomation at their end. Previously setting up setting up Test Automation Framework at clients end was really tough, Even if we set it up, There were instances where Client reported that the Framework did not work at their end probably because of different browser version, different selenium version. Also Docker simplified setting up Selenium Grid using Containers with Docker Compose file.
+
+
+Kubernetes - Our Application services are deployed on Kubernetes Cluster. So have exposure to Kubernetes especially for Monitoring POD logs, For manually scaling PODS, For restarting Deployments.
+
+Azure - All our Service Monitoring is on Azure AppInsights. So quite familiear with Azure AppInsight for Monitioring and checking logs of service on Azure AppInsights. Monitoring like - When was the availability DIP, What were Service Expections, What were the Dependency Expections, Performance percentil of APIs
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Do you have any experience on Managing a Team -
+
+
+
+
+
+
+Introduction
+Project Explanation
+Daily routine/Responsibilities
+Challenges solved by Automation as well as through Manual, Project Planning.
+Bugs found through Automation and Manually
+Issues found through Performance Tests
+General Gyan
+
