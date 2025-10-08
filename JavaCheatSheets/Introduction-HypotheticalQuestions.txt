@@ -15,20 +15,78 @@ With regards to Manual Testing I am very comfortable with Requirement Gathering,
 
 Beyond Testing, I have an exposure to Devops Technologies like Docker,Kubernetes and Microsoft Azure.
 
+Some of the Domains which I have worked on are Investment Banking, Payment Domain and Ecommerce Domain.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 What Exposure do you have with Docker,Kubernetes and Microsoft Azure?
 
 Docker - So Docker is a Containerization Tool, We have extensively used Docker for Containerizing our application by creating its image and pushing to Docker Hub. Specific to Automation we created an image of our Automation Framework and pushed it to DockerHub. This helped our clients to setup and execute our TestAutomation at their end. Previously setting up setting up Test Automation Framework at clients end was really tough, Even if we set it up, There were instances where Client reported that the Framework did not work at their end probably because of different browser version, different selenium version. Also Docker simplified setting up Selenium Grid using Containers with Docker Compose file.
 
 
-Kubernetes - Our Application services are deployed on Kubernetes Cluster. So have exposure to Kubernetes especially for Monitoring POD logs, For manually scaling PODS, For restarting Deployments.
+Kubernetes - Our Application services are deployed on Kubernetes Cluster. So have exposure to Kubernetes especially for Monitoring POD logs through rancher and through kubectlt tool, For manually scaling PODS, For restarting Deployments.
 
-Azure - All our Service Monitoring is on Azure AppInsights. So quite familiear with Azure AppInsight for Monitioring and checking logs of service on Azure AppInsights. Monitoring like - When was the availability DIP, What were Service Expections, What were the Dependency Expections, Performance percentil of APIs
+Azure - All our Service Monitoring is on Azure AppInsights. So quite familiear with Azure AppInsight for Monitioring and checking logs of service on Azure AppInsights. Monitoring like - When was the Analyzing service availability DIPs, What were Service Expections, What were the Dependency Expections,Analyzing percentile response times of our APIs
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-Do you have any experience on Managing a Team -
+Do you have any experience on Managing a Team,Leadership -
 
+Yes I do have experience with Team Management and Leadership. In my current role as VicePresident at MSCI, I  lead two members who directly report to me.And apart from that I actively mentor and guid several QA engineers from cross functional teams specially with regards to Testing Practices, Automation Strategies and Tooling improvements.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+TestStategies
+
+I always believe QA should start as early as possible and should be involved in all the phases,With this I mean -
+
+1.During Refinment and Story Planning session, QA should be involved and should be able to question the acceptance criteria,, Development Strategy so that risks are identified even before the code is written.
+
+2.Once the developers code is ready, He should review the developer PR and identify if there are any Test Coverage gap and if the coverage can be improved.
+
+3.Once the feature is up for QA for Testing, The Feature should be thoroughly Tested Manually before we Automate it.Also during feature testing one should ensure to always check the application logs just to ensure that the feature is not causing any kind of exceptions somewhere in the code.
+
+4.Automation - Even Automation  Testing involves the  word Testing, The root is from Testing. The main Objective of Automation is to find bug and to write a good Automation testcase you need to be very good with Product Knowledge and which is why Step 3 is Mandatory. If your Automation is not finding bugs then its just piece of Garbage Code then.
+
+An Automation Tester should think like a Tester and Code like a Developer. Its one of the rare skills set to have.
+
+If your Automation Suites are passing 100% every time you run it, your application is breaking somewhere!
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Daily routine/Responsibilities
+
+Dont have a daily routine fixed but my general routine involves Connection with Product Owners and Developers to understand the requirement and development strategy, Reviewing Developement PRs to check Test coverage, Reviewing Automation Code PRs, Building TestStratey and then testing the Feature. And then finally Automating the feature.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Project Explanation -
+
+MSCI's Barraone is a research-driven platform that helps asset managers identify and manage risk exposures and performance to make more informed investment decisions.Institutional Investors and Asset Manageres  manage large portfolios across many types of Assets(Equity,Bonds,Derivates).Barraone gives them the unified way to see the risks and performance across all asset classes. It helps you identify how risk is your Portfolio, Why did your portfolio make or lost Money over a consistent period.
+
+
+
+Barraone is a reasearch driver platform used by Asset Managers,Institutional Investors to identify risk exposure and performance returns of Portfolio across different Asset Class like Equity, FIxed Income Assets like Bond,Derivates ,,different currencies to make better investment decision.
+
+Different Reports -
+
+Factor decomposition -  You see which factors like intrest rates,Dollar price are driving risk, total portfolio risk, which positions are most “dangerous.”
+
+Stress Test - A sense of how your portfolio would behave in adverse condition or how much you might lose under adverse conditions. Adevrse conditions like Covid, War.
+
+Performance Attribution - See actual return of your portfolio against set benchmark and factors caused the given retrun.
+
+WhatIf reports - Checks if I increase the position or decrease the position or chnage the ratio of AssetType like icrease Fixed Income Assets instead of Equity then what would be the impact on Risk on the set WhatIf condition. In a nutshell it rebalances the Portfolio based on hypothetical conditions and check if the risks are mitigated or have increased.
+
+
+
+Funtional testing of  all features of barraone portal which included -
+
+1.Login/LogOut
+2.Supporting Portfolio Imports through UI as well as through BDT.
+3.Checking Portfolio  with differet Asset class like Equity,Bond,Derivatives, Composites.
+4.Checking Different Reports like Factor decomposition, StressTest,Performance Attribution
 
 
 
