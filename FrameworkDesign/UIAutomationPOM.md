@@ -104,4 +104,70 @@ baseURI=http://api.openweathermap.org/data/2.5/weather
 
 ```
 
+**pages** - page folder consist of all the page classes corresponding to pages within the application. Page classes are used to define WebElements(PageObjects) and perform operations on them. We have achieved encpasulation here by wrapping Private DataVariable(WebElements) and Public Methods performing operations on those Data Variables.
+
+```java
+
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import base.TestBase;
+
+public class WeatherPage extends TestBase {
+
+	@FindBy(xpath="//input[@id='indiceslist-search']")
+	private WebElement searchCityTextBox;
+
+	@FindBy(xpath="//li[@class='searched']//td[3][contains(.,'Bengaluru')]/b/text()")
+	private WebElement searchedCity;
+
+	@FindBy(xpath="//div[@class='noti_wrap']")
+	private WebElement notificationPopup;
+
+	@FindBy(xpath="//div[@class='noti_wrap']//a[@class='notnow']")
+	private WebElement notificationPopupNotNowButton;
+
+	public WeatherPage() {
+		PageFactory.initElements(driver,this);
+	}
+
+	public void searchCity(String city){
+		searchCityTextBox.click();
+		searchCityTextBox.sendKeys(city);
+	}
+
+	public boolean searchedCityIsDisplayed(String city) {
+		return driver.findElement(By.xpath("//b[text()='"+city+"']")).isDisplayed();
+	}
+
+	public String searchedCityTemprature(String city) {
+		return driver.findElement(By.xpath("//li[@class='searched']//td[3]")).getText();
+	}
+
+	public boolean isNotificationPopUpDisplayed(){
+		return notificationPopup.isDisplayed();
+	}
+
+	public void closeNotificationPopupButton(){
+		notificationPopupNotNowButton.click();
+	}
+}
+
+
+```
+
+
+The above page class is using PageFactory to achieve Page Object Model. PageFactory is one of the way to achieve PageObjectModel.With PageFactory we define the WebElements using @FindBy Annotation. PageFactory is used for Lazy Initialization that is it looks for Weblement every time a method is called on it. It does not stores the Webelement within cache. To avoid PageFactory to look for webelement everytime we can use @CacheLookUp.
+
+<img width="784" height="754" alt="image" src="https://github.com/user-attachments/assets/b7e22c22-b0d7-47d4-9585-0a1d36cc7d81" />
+
+<img width="930" height="580" alt="image" src="https://github.com/user-attachments/assets/0ee34d5e-1a78-43f0-bbd0-4e74b9413d75" />
+
+<img width="958" height="521" alt="image" src="https://github.com/user-attachments/assets/826792ba-2c55-4cd8-96ef-6303d8f2b0e1" />
+
+
 
