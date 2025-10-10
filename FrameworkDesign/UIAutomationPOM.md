@@ -169,5 +169,24 @@ The above page class is using PageFactory to achieve Page Object Model. PageFact
 
 <img width="958" height="521" alt="image" src="https://github.com/user-attachments/assets/826792ba-2c55-4cd8-96ef-6303d8f2b0e1" />
 
+PageFactory has not been decommissioned in Selenium 4, but its use is now discouraged by the Selenium team. The class is still available and functional, but Selenium contributors recommend alternatives that are more efficient and less prone to issues like the StaleElementReferenceException
+
+## Why PageFactory is no longer the recommended approach
+
+The reasons for moving away from `PageFactory` are related to performance and reliability issues.
+
+- **Lazy initialization can cause issues:** `PageFactory` uses "lazy initialization," where it only locates elements when they are first used. This can cause problems with dynamic web pages (AJAX-heavy pages) if the DOM changes after the page object is initialized but before the element is accessed.
+
+- **Performance overhead:** With `PageFactory`, the driver will locate the element every single time a method is called on it, which can cause performance degradation. While `@CacheLookup` was designed to solve this by caching a reference to the element, it is prone to the `StaleElementReferenceException` if the page's DOM changes.
+
+- **Less flexibility:** `PageFactory` does not provide an easy way to handle dynamic locators, which are common in modern web applications.
+
+|                             | **PageFactory Approach (Discouraged)**                                                                                                       | **Recommended POM Approach**                                                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| **Element declaration**     | Uses annotations like `@FindBy` for fields.<br>`@FindBy(id = "user-name") private WebElement usernameField;`                                    | Uses the `By` class to define locators.<br>`static final By usernameField = By.id("user-name");`                              |
+| **Element access**          | Accesses the element directly as a `WebElement`.<br>`usernameField.sendKeys("testuser");`                                                      | Locates the element at the time of action.<br>`driver.findElement(usernameField).sendKeys("testuser");`                       |
+| **Element initialization**  | The `PageFactory.initElements(driver, this);` method initializes the page object.                                                             | Locators are declared, but elements are fetched on demand using `driver.findElement()`.                                       |
+| **Best suited for**         | Small, simple projects with mostly static pages.                                                                                              | All projects, particularly complex ones.                                                                                      |
+
 
 
