@@ -12,7 +12,7 @@ With regards to UI Automation we have used Page Object Model Framework design pa
 <img width="838" height="855" alt="image" src="https://github.com/user-attachments/assets/8b88ddba-e818-4179-9dae-3f5151b407c8" />
 
 
-**Base** - base Folder consist of Base class which is inherited by all the Page Classes and the Test Classes. The main function of Base Class is to load config properties file, Define Webdriver driver,Launch the desired browser based on the parameter provided by test method, Set implicit wait times.
+**Base** - base Folder consist of Base class which is inherited by all the Page Classes and the Test Classes. The main function of Base Class is to load config properties file, Define Webdriver driver,Launch the desired browser based on the parameter provided by test method, Set implicit wait times. As per feedback received on framework, The base class needs to be improved and test classses should send the browser on which they want to execute their test, So initialization method should have parameter browserName and test methods should call initialization method by passing browserName on which they want to run their test.
 
 ```java
 package base;
@@ -96,5 +96,12 @@ public class TestBase {
 ```
 
 **config** - config folder contains properties file which contains all configuration details like url,browser,baseUTL,JDBC Connection url. Note as perfeedback received the configuration prperties file shouls be in resource folder as per Industry standards.
+
+```
+url=https://www.ndtv.com/weather
+browser=chrome
+baseURI=http://api.openweathermap.org/data/2.5/weather
+
+```
 
 
