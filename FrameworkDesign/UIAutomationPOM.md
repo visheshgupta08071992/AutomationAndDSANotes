@@ -94,3 +94,7 @@ public class TestBase {
 }
 
 ```
+
+**config** - config folder contains properties file which contains all configuration details like url,browser,baseUTL,JDBC Connection url. Note as perfeedback received the configuration prperties file shouls be in resource folder as per Industry standards.
+
+
