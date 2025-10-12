@@ -202,4 +202,12 @@ The reasons for moving away from `PageFactory` are related to performance and re
 | **Best suited for**         | Small, simple projects with mostly static pages.                                                                                              | All projects, particularly complex ones.                                                                                      |
 
 
+----
+
+**utility** : Utility folder contains all the utility files like Listners for Extent Report,TestConstant File, Utlity code to retrieve Test Dta from Excel. Code for Taking Screenshot.
+
+----
+
+**test** : test folder consist of all the Test classes
+
 
