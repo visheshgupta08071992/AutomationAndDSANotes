@@ -7,7 +7,9 @@ Please ensure to check **FeedbackReceivedOnFramework** file, The file contains t
 
 ## Understanding Framework Structure
 
-With regards to UI Automation we have used Page Object Model Framework design pattern which is widely used in industry for Framework design. Lets look at the structure of the framework:
+With regards to UI Automation we have used Page Object Model Framework design pattern which is widely used in industry for Framework design. We have used maven for building our application and managing dependencies, We have used TestNg for Asseertion and managing execution of our Tests. The version control tool was GIT and the remote repository was Github.
+
+Lets look at the structure of the framework:
 
 <img width="838" height="855" alt="image" src="https://github.com/user-attachments/assets/8b88ddba-e818-4179-9dae-3f5151b407c8" />
 
