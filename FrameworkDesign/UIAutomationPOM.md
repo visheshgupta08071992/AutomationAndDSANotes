@@ -332,6 +332,8 @@ PR review Strategy -
 9. Verify locator strategy, Ensure absolute locater is not used.
 10. Do not write Assertions in Page classes, Assertion should only be written in Test classes.Test Classes should never use/call driver APIs(findelement,click,sendkeys)
 
+https://www.linkedin.com/pulse/interview-241-automation-what-your-checklist-zyjsc/
+
 
 
 
