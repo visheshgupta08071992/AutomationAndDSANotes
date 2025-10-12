@@ -317,6 +317,22 @@ public void verifyCheckoutSummary() {
 ```
 
 
+**PR Review Points**
+
+PR review Strategy -
+
+1. Whether the code is functioning as per the Jira requirement.
+2. Check Asertion are validating correct outcome
+3. Ensure that the given code is not dupicated.
+4. Check if the code is generic and can be converted into utility method so that the same can be used by other classes.
+6. Check that the data is not harcoded and is externalized via configuation files,csv,json,database.
+6. Does the code follow project convention(naming,identation,spacing)
+7. Commenting and Documentation - Is the code selfexplanatory? Where the logic is complex,Are there inline comment or javadoc
+8. Do we have proper waits before performing operations on a Weblement.
+9. Verify locator strategy, Ensure absolute locater is not used.
+10. Do not write Assertions in Page classes, Assertion should only be written in Test classes.Test Classes should never use/call driver APIs(findelement,click,sendkeys)
+
+
 
 
 
