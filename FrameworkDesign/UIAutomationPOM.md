@@ -117,7 +117,7 @@ headless=true
 
 ```
 
-**pages** - page folder consist of all the page classes corresponding to pages within the application. Page classes are used to define WebElements(PageObjects) and perform operations on them. We have achieved encpasulation here by wrapping Private DataVariable(WebElements) and Public Methods performing operations on those Data Variables.
+**pages** - page folder consist of all the page classes corresponding to pages within the application. Page classes are used to define WebElements(PageObjects) and perform operations on them. We have achieved encpasulation here by wrapping Private DataVariable(WebElements) and Public Methods performing operations on those Data Variables. Single Responsibility principal is maintained as Pages only defines Page Objects and performs operations on them.Page Linkage: Methods that navigate/submit should return the next Page object (e.g., HomePage login(...)), enabling readable flows.
 
 ```java
 
@@ -208,6 +208,113 @@ The reasons for moving away from `PageFactory` are related to performance and re
 
 ----
 
-**test** : test folder consist of all the Test classes
+**test** : test folder consist of all the Test classes. Single Responsibility Principal is maintained as Tests only  contain assertions & flows.
+
+
+```java
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import base.TestBase;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import pages.WeatherPage;
+import util.TestConstants;
+import util.Utility;
+
+public class WeatherPageTest extends TestBase {
+
+	public WeatherPage weatherPage;
+	public double temperatureInKelvinFromUI;
+	public double temperatureInKelvinfromAPI;
+	public double variance;
+
+	public WeatherPageTest() {
+		super();
+	}
+
+	@BeforeClass
+    @Parameters({"browser","headless"})
+	public void setUp(){
+		initialization();
+		weatherPage=new WeatherPage();
+		if(weatherPage.isNotificationPopUpDisplayed()){
+			weatherPage.closeNotificationPopupButton();
+		}
+	}
+
+	@Test(dataProvider = "cityData")
+	public void verifyVarianceInTemperatureFromUIAndAPI(String City){
+		weatherPage.searchCity(City);
+		Assert.assertTrue(weatherPage.searchedCityIsDisplayed(City));
+		String completeTempurature=weatherPage.searchedCityTemprature(City);
+		double temperatureInCelcius=Utility.getTemperatureInCelcius(completeTempurature);
+		temperatureInKelvinFromUI=Utility.getTemperatureInKelvin(temperatureInCelcius);
+		Response response=RestAssured.given().log().all()
+				.spec(TestBase.buildRequestSpec(City,TestConstants.API_KEY))
+				.when().post()
+				.then().log().all()
+				.spec(TestBase.buildResponseSpec())
+				.extract().response();
+		String temperature=response.jsonPath().getString("main.temp");
+		temperatureInKelvinfromAPI= Utility.convertStringtoNumeric(temperature);
+		variance=Math.abs(temperatureInKelvinfromAPI-temperatureInKelvinFromUI);
+		Assert.assertTrue(variance<=TestConstants.variance,
+				"\nTemperature Variance is more than 2 for city : " + City + "\nTemparture Through UI is : " +
+				temperatureInKelvinFromUI +
+						"  " +
+						"\nTemperature through API is : " + temperatureInKelvinfromAPI + "\nVariance is : " + variance);
+	}
+
+	@DataProvider(name="cityData")
+	Object[][] getCities() throws IOException {
+		String [][] cities={{"Pune"},{"Bengaluru"},{"Chennai"},{"Chandigarh"},{"Nagpur"},{"Indore"}};
+		return (cities);
+	}
+
+
+	@AfterClass
+	public void shutDown(){
+		driver.quit();
+	}
+}
+
+
+```
+
+**Understanding Soft and HardAsserts**
+
+| Type            | Behavior                                           | Use When                            |
+| --------------- | -------------------------------------------------- | ----------------------------------- |
+| **Hard Assert** | Stops execution immediately on failure             | Critical path / preconditions.Useful for **critical validations**, where there’s no point continuing if the check fails.       |
+| **Soft Assert** | Continues execution and reports all failures later | Multiple non-blocking verifications |
+
+
+
+```java
+@Test
+public void verifyCheckoutSummary() {
+    SoftAssert softAssert = new SoftAssert();
+
+    // Hard assert - critical login check
+    Assert.assertTrue(loginPage.isLoggedIn(), "Login failed!");
+
+    // Soft asserts for visual/UI validations
+    softAssert.assertEquals(cartPage.getItemCount(), 3, "Item count mismatch");
+    softAssert.assertEquals(cartPage.getTotalPrice(), "$250.00", "Total price incorrect");
+    softAssert.assertTrue(cartPage.isCheckoutButtonVisible(), "Checkout button missing");
+
+    // Collate and report all soft failures
+    softAssert.assertAll();
+}
+```
+
+
+
 
 
