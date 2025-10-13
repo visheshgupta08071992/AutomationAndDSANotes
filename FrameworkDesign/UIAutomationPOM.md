@@ -7,7 +7,18 @@ Please ensure to check **FeedbackReceivedOnFramework** file, The file contains t
 
 ## Understanding Framework Structure
 
-With regards to UI Automation we have used Page Object Model Framework design pattern which is widely used in industry for Framework design. We have used maven for building our application and managing dependencies, We have used TestNg for Asseertion and managing execution of our Tests. The version control tool was GIT and the remote repository was Github.
+With regards to UI Automation we have used Page Object Model Framework design pattern which is widely used in industry for Framework design. We have used maven for building our application and managing dependencies, We have used TestNg for Asseertion and managing execution of our Tests. The version control tool was GIT and the remote repository was Github. As a practise you should ensure to create a .gitIgnore file to tell git which files or directories git must ignore or not track. A folder in gitIgnore file is represented by folderName/
+
+```
+*.log
+*.war
+*.jar
+.idea/
+.vscode/
+target/
+```
+
+
 
 Lets look at the structure of the framework:
 
