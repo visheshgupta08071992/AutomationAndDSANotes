@@ -37,7 +37,8 @@ If Transaction 2 runs in the middle of Transaction 1, it might see the balance a
 
 4. **Durability (D):**
    - **Definition:** Durability ensures that once a transaction is committed, the changes are permanent and will survive any subsequent failures.
-   - **Example:** Durability is achieved through mechanisms like logging and persistence to disk storage. It ensures that the data and details of updates are securely stored, even in the event of a system failure.
+   - **Example:** If you transferred ₹100 and got a success message, that change is permanent.
+Even if the power goes out right after, when the system restarts, the database will remember that transaction (thanks to transaction logs).
   
 
 ### BASE Properties in NoSQL Databases
