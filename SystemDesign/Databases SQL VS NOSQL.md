@@ -24,8 +24,16 @@
    - **Example:** In a scenario where two requests are trying to read the account balance simultaneously, consistency guarantees that both requests will receive the same value. It prevents situations where simultaneous reads result in different values.
 
 3. **Isolation (I):**
-   - **Definition:** Isolation ensures that two transactions do not interfere with each other.
+   - **Definition:** Isolation ensures that two transactions do not interfere with each other and each transaction happens independently.
    - **Example:** If a read operation is happening on an account balance while a write operation is simultaneously updating the balance, isolation ensures that the read operation doesn't know about the ongoing write operation. It prevents one transaction from affecting the outcome of another.
+   - **Example**:
+Let’s say:
+
+You’re transferring ₹100 (Transaction 1)
+
+Someone else is checking your balance (Transaction 2)
+
+If Transaction 2 runs in the middle of Transaction 1, it might see the balance after ₹100 is deducted but before it’s added to the other account — leading to confusion.
 
 4. **Durability (D):**
    - **Definition:** Durability ensures that once a transaction is committed, the changes are permanent and will survive any subsequent failures.
