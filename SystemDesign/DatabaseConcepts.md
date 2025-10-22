@@ -137,6 +137,15 @@ then it goes to the actual table (clustered index) to get the full row.
 * Most databases automatically make the **primary key** a clustered index.
 * Use **non-clustered indexes** for columns often used in `WHERE`, `JOIN`, or `ORDER BY` clauses.
 * Too many indexes can **slow down INSERT/UPDATE/DELETE** operations — because each index must also be updated.
+* Tip: Measure Selectivity and Frequency
+
+Before creating an index, always ask:
+
+Is this column frequently queried in WHERE, JOIN, or ORDER BY?
+→ If yes, consider indexing.
+
+Is this column frequently updated?
+→ If yes, avoid indexing it.
 
 
 
