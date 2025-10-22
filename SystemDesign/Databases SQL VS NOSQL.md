@@ -51,7 +51,13 @@ The term "Basically Available" signifies the high availability of data . Unlike 
 
 **Soft State**
 
+Soft State refers that The system’s data can change over time, even without new input.
+
+That’s because in distributed systems, data is often being replicated (copied) across multiple servers — and updates might reach different servers at different times.
+
 The concept of "Soft State" in BASE implies that the state of data can change without requiring an explicit interaction from the user. In a distributed environment, where data is stored across various nodes or servers, each node maintains its version of the data. Through mechanisms like Vector Clocks, nodes automatically synchronize and update themselves. This enables the system to adapt and change data states without direct user interaction, contributing to a dynamic and flexible environment.
+
+
 
 **Eventual Consistency**
 
