@@ -182,6 +182,32 @@ Let’s break down the **difference between `CHAR` and `VARCHAR`** step-by-step 
 * Useful when data values **vary in length**.
 
 
+---
+
+**Understanding Constraints**
+
+🧠 What Are Constraints?
+
+Constraints are rules defined on a table to enforce data integrity — i.e., they ensure that only valid data gets stored in the database.
+
+Common constraints include:
+
+PRIMARY KEY – ensures uniqueness and non-null
+
+UNIQUE – ensures no duplicates
+
+NOT NULL – ensures a column can’t be empty
+
+CHECK – enforces a logical condition
+
+FOREIGN KEY – enforces relationship consistency between tables
+
+<img width="992" height="758" alt="image" src="https://github.com/user-attachments/assets/6a5dd8b2-d47d-4a65-b5c8-14624586faee" />
+
+
+<img width="1017" height="848" alt="image" src="https://github.com/user-attachments/assets/5f719a62-7bb3-4307-882d-69fc1948ffd4" />
+
+
 
 
 
