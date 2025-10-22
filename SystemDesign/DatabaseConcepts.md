@@ -9,7 +9,7 @@ But databases are forever.
 
 Every system eventually fails or scales at its data layer first, not its API or cache. That's why strong database design, indexing, and query optimization are the real foundations of scalability.
 
-Anyone can name-drop 'Kafka' or 'Redis.' But the candidates who can have a deep conversation about index trade-offs (e.g., 'read-heavy vs. write-heavy'), isolation levels, and sharding strategies are the ones who can actually be trusted to build a robust system. 
+Anyone can name-drop 'Kafka' or 'Redis.' But the candidates who can have a deep conversation about index trade-offs (e.g., 'read-heavy vs. write-heavy'), isolation levels, and sharding strategies are the ones who can actually be trusted to build a robust system. It does'nt make sense if your algorithmn is o(1) but your query is still scanning the entire table.
 
 
 ### Understanding indexes
