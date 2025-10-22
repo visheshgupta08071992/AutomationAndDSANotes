@@ -26,7 +26,7 @@ There are two types of indexes -
 **Clustered Index** - Data is physically sorted based on the Clustered Index. Each table can have only one clustered index because data can only be physically ordered in one way. Most databases automatically make the primary key a clustered index. eg. Dictonary where word are sorted in Alphabetically.
 
 
-**Non Clustered Index** - Data is not physically sorted instead a separate reference that helps you find the data quickly, Think of it as a book’s index page — it lists the topic and the page number where the topic appears. We can have many non clustered index on a table.
+**Non Clustered Index** - Data is not physically sorted instead a separate reference that helps you find the data quickly, Think of it as a book’s index page — it lists the topic and the page number where the topic appears. We can have many non clustered index on a table. Non-clustered indexes for columns that are frequently searched or filtered and are not a Primary key. In our project we had PortfolioID as a clustered Index but generally client used to search Portfolios based on PortfolioName, So we created Non Clustered index on PortfolioName. 
 
 
 
