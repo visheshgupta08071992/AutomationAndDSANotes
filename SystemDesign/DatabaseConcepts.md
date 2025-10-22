@@ -14,7 +14,7 @@ Anyone can name-drop 'Kafka' or 'Redis.' But the candidates who can have a deep 
 
 ### Understanding indexes
 
-Index helps you to find the data faster without scanning the entire table
+Index helps you to find the data faster without scanning the entire table. Indexes make reads faster but writes(Insert/Update/Delete) slower as Indexes also needs to be updated.
 
 
 There are two types of indexes -
