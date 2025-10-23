@@ -1037,9 +1037,79 @@ ON AllCustomers.CustomerID = Orders.CustomerID;
 
 ---
 
-Would you like me to include a **visual diagram** (side-by-side arrows and stacked blocks) showing JOIN vs UNION? It makes the difference instantly clear.
+# Important Queries
+
+**Query to find 2nd Highest Salary**
+
+```sql
+SELECT MAX(Salary) AS SecondHighestSalary
+FROM Employees
+WHERE Salary < (SELECT MAX(Salary) FROM Employees);
+
+);
+```
+
+**Query to find 2nd Highest Salary and Employee Name**
+
+```sql
+SELECT Name, Salary
+FROM Employees
+WHERE Salary = (
+    SELECT MAX(Salary)
+    FROM Employees
+    WHERE Salary < (
+        SELECT MAX(Salary) FROM Employees
+    )
+);
 
 
+```
+
+**Query to find nth highest salary using top**
 
 
+```sql
+SELECT * FROM Employee Emp1 
+WHERE (N-1) = ( 
+    SELECT COUNT(DISTINCT(Emp2.Salary)) 
+    FROM  Employee Emp2 
+    WHERE Emp2.Salary > Emp1.Salary)
+
+
+```
+
+For a given row `Emp1` with salary `S`:
+
+* The subquery counts how many **distinct** salary values are **greater than `S`**.
+* If that count equals `N-1`, then there are exactly `N-1` distinct salaries higher than `S` — so `S` is the **Nᵗʰ distinct highest salary**.
+* The outer query returns all rows whose salary equals that Nᵗʰ highest value (so it naturally returns ties).
+
+---
+
+## 🔎 Concrete example
+
+Table `Employee`:
+
+| EmpID | Name    | Salary |
+| ----- | ------- | ------ |
+| 1     | Alice   | 50,000 |
+| 2     | Bob     | 60,000 |
+| 3     | Charlie | 70,000 |
+| 4     | David   | 80,000 |
+| 5     | Emma    | 80,000 |
+| 6     | Frank   | 90,000 |
+
+Let `N = 3` (3rd highest distinct salary).
+
+For `Emp1 = Charlie` (Salary = 70,000):
+
+* Subquery counts distinct salaries > 70,000 → {80,000, 90,000} → count = 2 = N-1 → Charlie qualifies.
+
+For `Emp1 = Emma` (Salary = 80,000):
+
+* Distinct salaries > 80,000 → {90,000} → count = 1 ≠ 2 → Emma does not qualify.
+
+**Result of the query**: rows for EmpID 3 (Charlie) — the single person with the 3rd distinct highest salary (70,000).
+
+If multiple employees share the 3rd-highest salary, the query returns all of them.
 
