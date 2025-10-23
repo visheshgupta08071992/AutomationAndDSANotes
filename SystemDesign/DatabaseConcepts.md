@@ -1113,3 +1113,133 @@ For `Emp1 = Emma` (Salary = 80,000):
 
 If multiple employees share the 3rd-highest salary, the query returns all of them.
 
+
+---------
+**Query to find EmployeeID and its ManagerID from Employee Table using Self Join**
+
+```sql
+
+SELECT 
+    e.EmpID AS EmployeeID,
+    e.EmpName AS EmployeeName,
+    m.EmpID AS ManagerID,
+    m.EmpName AS ManagerName
+FROM Employee e
+LEFT JOIN Employee m
+    ON e.ManagerID = m.EmpID;
+
+
+```
+
+
+## 🧩 1. Example Table — `Employee`
+
+Here’s a sample structure:
+
+| EmpID | EmpName | ManagerID |
+| ----- | ------- | --------- |
+| 1     | Alice   | NULL      |
+| 2     | Bob     | 1         |
+| 3     | Charlie | 1         |
+| 4     | David   | 2         |
+| 5     | Emma    | 2         |
+
+🧠 Here:
+
+* `EmpID` → unique employee ID
+* `ManagerID` → references another employee’s `EmpID` (the manager’s ID)
+* `NULL` → top-level manager (e.g., CEO)
+
+---
+
+## 🧩 2. Query Using Self Join
+
+A **self join** means you’re joining a table **to itself**.
+Here we join `Employee` (as employee) to `Employee` (as manager).
+
+```sql
+SELECT 
+    e.EmpID AS EmployeeID,
+    e.EmpName AS EmployeeName,
+    m.EmpID AS ManagerID,
+    m.EmpName AS ManagerName
+FROM Employee e
+LEFT JOIN Employee m
+    ON e.ManagerID = m.EmpID;
+```
+
+---
+
+### 🧾 Explanation
+
+* `Employee e` → alias for employee data
+* `Employee m` → alias for manager data
+* `e.ManagerID = m.EmpID` → join condition: the employee’s manager is another employee
+* `LEFT JOIN` → ensures even top-level employees (with no manager) appear with `NULL` manager columns
+
+---
+
+### ✅ Output
+
+| EmployeeID | EmployeeName | ManagerID | ManagerName |
+| ---------- | ------------ | --------- | ----------- |
+| 1          | Alice        | NULL      | NULL        |
+| 2          | Bob          | 1         | Alice       |
+| 3          | Charlie      | 1         | Alice       |
+| 4          | David        | 2         | Bob         |
+| 5          | Emma         | 2         | Bob         |
+
+---
+
+## 🧠 3. Why Use `LEFT JOIN` Instead of `INNER JOIN`
+
+* `INNER JOIN` → excludes employees who have no manager (`ManagerID IS NULL`)
+* `LEFT JOIN` → includes all employees, even top-level ones
+
+✅ So prefer `LEFT JOIN` if you want to see everyone (including top-level managers).
+
+---
+
+## 🧩 4. Optional: Filter for Specific Cases
+
+### 🔹 Only Employees Who Have Managers
+
+```sql
+SELECT e.EmpID, e.EmpName, m.EmpName AS ManagerName
+FROM Employee e
+JOIN Employee m
+  ON e.ManagerID = m.EmpID;
+```
+
+### 🔹 Employees Without Managers (Top-Level)
+
+```sql
+SELECT e.EmpID, e.EmpName
+FROM Employee e
+WHERE e.ManagerID IS NULL;
+```
+
+---
+
+## 🧩 5. Real-Life Analogy
+
+Think of it like:
+
+> The “Employee” table is both a **staff list** and a **manager list**.
+> When you join it to itself, you’re matching each person to their boss.
+
+---
+
+✅ **Summary**
+
+| Goal                         | Query                              | Join Type    |
+| ---------------------------- | ---------------------------------- | ------------ |
+| Employee + Manager info      | `LEFT JOIN` on `ManagerID = EmpID` | `LEFT JOIN`  |
+| Only employees with managers | same, but use `INNER JOIN`         | `INNER JOIN` |
+| Top-level managers (no boss) | `WHERE ManagerID IS NULL`          | N/A          |
+
+---
+
+
+
+
