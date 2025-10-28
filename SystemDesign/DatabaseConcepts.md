@@ -1240,6 +1240,85 @@ Think of it like:
 
 ---
 
+There is a Table Transaction having below rows
+
+
+ID   TransactionDate
+1    01-01-2024 
+1    01-05-2024
+1    01-01-2025   
+2    01-01-2025
+2    01-05-2025
+3    01-01-2025
+3    01-02-2025
+
+
+**Could you please help me with a query to all IDs and Transaction where year is 2024**
+
+**Query works with MysSql,SQLServer**
+```
+SELECT ID, TransactionDate
+FROM Transaction
+WHERE YEAR(TransactionDate) = 2024;
+
+##Output
+ID   TransactionDate
+1    01-01-2024 
+1    01-05-2024
+
+##Query for PostGre
+
+SELECT ID, TransactionDate
+FROM Transaction
+WHERE EXTRACT(YEAR FROM TransactionDate) = 2024;
+
+
+```
+
+**Could you please help me with query to get ID and its Minimum TransactionDate**
+
+**Query**
+
+```
+SELECT 
+    ID, 
+    MIN(TransactionDate) AS MinTransactionDate
+FROM 
+    Transaction
+GROUP BY 
+    ID;
+
+##Output
+
+
+ID   TransactionDate
+1    01-01-2024 
+2    01-01-2025
+3    01-01-2025
+
+```
+
+**Wihout using GroupBY but using SubQuery**
+
+```
+SELECT 
+    ID, 
+    TransactionDate
+FROM 
+    Transaction T1
+Where TransactionDate = (Select MIN(TransactionDate) from Transaction T2 where T1.ID=T2.ID )
+
+
+##Output
+
+
+ID   TransactionDate
+1    01-01-2024 
+2    01-01-2025
+3    01-01-2025
+
+
+```
 
 
 
