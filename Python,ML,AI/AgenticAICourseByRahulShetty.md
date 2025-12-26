@@ -89,7 +89,9 @@ To build a successful app, you start with an **LLM**, wrap it in a **Framework**
 
 ## Understanding MCP
 
-**Different MCP Servers can be found here** - https://github.com/modelcontextprotocol/servers
+**Different MCP Servers can be found here** - 
+https://github.com/modelcontextprotocol/servers
+https://mcpservers.org
 
 **MCP Server implementation example** - https://modelcontextprotocol.io/examples
 
