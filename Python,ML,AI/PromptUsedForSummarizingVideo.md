@@ -1,0 +1,1 @@
+Summarize this YouTube video into structured study notes using short sections and bullet points; for each major concept, clearly define it, explain why it matters, describe how it connects to other concepts in the video, clarify any jargon or complex ideas in simple language, and include at least one simple real-world example where applicable.
