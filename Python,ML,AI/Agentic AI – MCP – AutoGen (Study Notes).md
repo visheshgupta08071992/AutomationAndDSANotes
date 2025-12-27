@@ -1,3 +1,14 @@
+# Agentic AI – MCP – AutoGen (Study Notes)
+
+## 📌 Index
+1. [Agentic AI](#agentic-ai)
+2. [Model Context Protocol (MCP)](#model-context-protocol-mcp)
+3. [Microsoft AutoGen Framework](#microsoft-autogen-framework)
+
+---
+
+# Agentic AI
+
 # AI Agents with AutoGen
 
 **Course Link** : https://www.udemy.com/course/agentic-ai-for-automation-multi-agent-autogen
@@ -85,6 +96,7 @@ To build a successful app, you start with an **LLM**, wrap it in a **Framework**
 ---
 
 
+# Model Context Protocol (MCP)
 
 
 ## Understanding MCP
@@ -451,6 +463,7 @@ from fastmcp import FastMCP
 
 ---
 
+
 ## 6. Key Takeaway
 
 * **MCP** defines the protocol
@@ -462,9 +475,202 @@ from fastmcp import FastMCP
 👉 If you want **new features and faster innovation**, use standalone FastMCP 2.0.
 
 
+---
 
+Good catch 👍 — that’s an important missing step.
+Below is the **updated version**, with **`uv` installation commands added**, cleanly integrated into the document.
 
 ---
+
+# Creating an MCP Server Locally (FastMCP + Python)
+
+This guide walks through the steps to create, test, and register a **local MCP (Model Context Protocol) server** using **FastMCP** and **Python**.
+
+
+## Prerequisites
+
+* Python **3.9+**
+* **uv** (Python package & environment manager)
+* Node.js (required for MCP Inspector via `npx`)
+* Cursor editor (or any IDE)
+
+---
+
+## Step 0: Install `uv`
+
+If `uv` is not already installed, use one of the following commands based on your operating system.
+
+### macOS / Linux
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+### Windows (PowerShell)
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+or 
+
+```
+pip install uv
+```
+### Verify Installation
+
+```bash
+uv --version
+```
+
+You should see the installed version printed.
+
+---
+
+## Step 1: Create a Project Directory
+
+1. Create a new folder for your MCP server project.
+2. Open the folder in **Cursor** (or your preferred editor).
+
+---
+
+## Step 2: Initialize the Python Environment
+
+Run the following commands in the terminal from your project directory.
+
+```bash
+# Initialize a high-performance Python project using uv
+uv init
+
+# Add FastMCP (core MCP server framework)
+# The [cli] extra installs the `mcp` CLI for debugging and inspection
+uv add "mcp[cli]"
+```
+
+This sets up:
+
+* A virtual environment managed by `uv`
+* The FastMCP server framework
+* MCP CLI utilities
+
+---
+
+## Step 3: Create a Demo MCP Server
+
+Create a Python file (for example: `Demo.py`) with the following content:
+
+```python
+import random
+from mcp.server.fastmcp import FastMCP
+
+# Create a FastMCP server instance
+mcp = FastMCP(name="Demo")
+
+@mcp.tool()
+def roll_dice(n_dice: int = 1) -> list[int]:
+    """Roll n_dice 6-sided dice and return the results."""
+    return [random.randint(1, 6) for _ in range(n_dice)]
+
+@mcp.tool()
+def add_numbers(a: float, b: float) -> float:
+    """Add two numbers together."""
+    return a + b
+
+if __name__ == "__main__":
+    mcp.run()
+```
+
+### What this does
+
+* Creates an MCP server named **Demo**
+* Exposes two tools:
+
+  * `roll_dice`: Rolls one or more dice
+  * `add_numbers`: Adds two numbers
+* Runs the server using the default **STDIO transport**
+
+---
+
+## Step 4: Test the MCP Server Using MCP Inspector
+
+Before connecting your server to a client (like Cursor), validate it using **MCP Inspector**.
+
+```bash
+npx @modelcontextprotocol/inspector uv run Demo.py
+```
+
+This will:
+
+* Launch the MCP Inspector UI
+* Start your MCP server
+* Allow you to manually invoke tools and verify responses
+
+---
+
+## Step 5: Generate MCP JSON Configuration
+
+```bash
+uv run fastmcp install mcp-json "Demo.py"
+```
+
+This command:
+
+* Inspects your FastMCP server
+* Generates the MCP JSON definition required by MCP clients
+
+---
+
+## Step 6: Add MCP JSON to Cursor
+
+1. Locate the generated MCP JSON output.
+2. Copy the configuration.
+3. Paste it into the **MCP configuration file** in Cursor.
+
+After this step, Cursor can discover and invoke your MCP tools.
+
+---
+
+# MCP Server Anatomy
+
+## A. Tools (`@mcp.tool()`)
+
+Tools represent **actions** the LLM can perform.
+
+* Accept parameters
+* Return structured data
+* Used for computation and automation
+
+---
+
+## B. Resources (`@mcp.resource()`)
+
+Resources are **read-only data sources**.
+
+* Similar to files or API endpoints
+* Accessed via URI schemes (e.g., `system://logs`)
+* Used for lookups, not execution
+
+---
+
+## C. Prompts (`@mcp.prompt()`)
+
+Prompts are reusable, predefined templates.
+
+* Provided by the server
+* Injected into client context
+* Optional but useful for standard workflows
+
+---
+
+## Transports in MCP
+
+* **STDIO** – Local / desktop apps (default)
+* **HTTP** – Network-accessible MCP servers (SSE / streaming)
+* **Others** – Custom transports if needed
+
+---
+
+# Microsoft AutoGen Framework
 
 # Understanding Microsoft Autogen Framework
 
