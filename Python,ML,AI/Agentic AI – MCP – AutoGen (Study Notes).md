@@ -593,7 +593,7 @@ if __name__ == "__main__":
 
 ## Step 4: Test the MCP Server Using MCP Inspector
 
-Before connecting your server to a client (like Cursor), validate it using **MCP Inspector**.
+Before connecting your server to a client (like Cursor), validate it using **MCP Inspector**. Ensure that before running the server in inspector the created python file is saved using ctrl + s
 
 ```bash
 npx @modelcontextprotocol/inspector uv run Demo.py
@@ -608,6 +608,9 @@ This will:
 ---
 
 ## Step 5: Generate MCP JSON Configuration
+
+Ensure that before creating the json for your mcps server, the created python file is saved using ctrl + s.
+
 
 ```bash
 uv run fastmcp install mcp-json "Demo.py"
