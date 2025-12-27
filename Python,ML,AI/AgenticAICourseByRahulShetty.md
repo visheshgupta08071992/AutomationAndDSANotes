@@ -341,6 +341,128 @@ The Excel MCP server can be used for:
 
 
 ```
+---
+Below is a **review + corrected and rephrased study note** in **Markdown**.
+I’ve **fixed typos, clarified history, corrected a few inaccuracies, and added missing but important context**, while keeping your original intent intact.
+
+---
+
+# FastMCP – Study Notes
+
+## 1. Background: MCP
+
+* **MCP (Model Context Protocol)** was developed by **Anthropic**.
+* MCP defines a **standard protocol** for building tools (servers) that LLMs can interact with in a structured and secure way.
+* The **official MCP SDK** provides low-level primitives to implement the protocol.
+
+### Challenges with the Official MCP SDK
+
+* Early adopters found the MCP SDK to be:
+
+  * **Boilerplate-heavy**
+  * Requiring **a large amount of repetitive code**
+  * Focused more on **protocol plumbing** than on actual tool logic
+* As a result, simple tools required significant setup and ceremony.
+
+---
+
+## 2. Emergence of FastMCP
+
+* To address these issues, **FastMCP** emerged.
+* It was inspired by:
+
+  * **FastAPI** (for web APIs)
+  * **Click** (for CLI applications)
+
+### Goals of FastMCP
+
+* **Lower the barrier to entry** for MCP server development
+* Allow developers to:
+
+  * Focus on **business/tool logic**
+  * Avoid dealing directly with MCP protocol internals
+* Provide a **clean, declarative, and minimal-code API**
+
+👉 In short, **FastMCP drastically reduces the amount of code required** to build an MCP server compared to using the MCP SDK directly.
+
+---
+
+## 3. FastMCP and the MCP SDK (FastMCP 1.x)
+
+* Due to its popularity and usefulness:
+
+  * **FastMCP was integrated into the official MCP SDK**
+* The version bundled with the MCP SDK is commonly referred to as **FastMCP 1.x**
+
+### Installing MCP SDK (with FastMCP included)
+
+```bash
+pip install mcp[cli]
+```
+
+### Importing FastMCP from MCP SDK
+
+```python
+from mcp.server.fastmcp import FastMCP
+```
+
+* This version is:
+
+  * Stable
+  * Officially supported
+  * Designed to cover core MCP use cases
+
+---
+
+## 4. FastMCP 2.0 (Standalone Project)
+
+* Later, the **original FastMCP author** decided that:
+
+  * FastMCP needed **faster iteration**
+  * More **advanced features and experimentation**
+  * Independence from MCP SDK release cycles
+* As a result, **FastMCP 2.0** was created as a **standalone package**
+* **FastMCP 2.0 is NOT bundled with the MCP SDK**
+
+### Installing FastMCP 2.0 Separately
+
+```bash
+pip install fastmcp
+```
+
+### Importing FastMCP 2.0
+
+```python
+from fastmcp import FastMCP
+```
+
+---
+
+## 5. Summary Comparison
+
+| Aspect              | MCP SDK (FastMCP 1.x)  | FastMCP 2.0                   |
+| ------------------- | ---------------------- | ----------------------------- |
+| Included in MCP SDK | ✅ Yes                  | ❌ No                          |
+| Installation        | `pip install mcp[cli]` | `pip install fastmcp`         |
+| Boilerplate         | Low                    | Very Low                      |
+| Feature Velocity    | Moderate               | High                          |
+| Experimentation     | Limited                | Extensive                     |
+| Recommended for     | Stable production use  | Advanced / evolving use cases |
+
+---
+
+## 6. Key Takeaway
+
+* **MCP** defines the protocol
+* **FastMCP** simplifies MCP server creation
+* **FastMCP 1.x** is bundled inside the MCP SDK
+* **FastMCP 2.0** is a standalone, more rapidly evolving framework
+
+👉 If you want **stability and official support**, use FastMCP via MCP SDK.
+👉 If you want **new features and faster innovation**, use standalone FastMCP 2.0.
+
+
+
 
 ---
 
