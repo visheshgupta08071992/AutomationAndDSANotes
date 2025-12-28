@@ -353,9 +353,6 @@ The Excel MCP server can be used for:
 
 
 ```
----
-Below is a **review + corrected and rephrased study note** in **Markdown**.
-I’ve **fixed typos, clarified history, corrected a few inaccuracies, and added missing but important context**, while keeping your original intent intact.
 
 ---
 
@@ -477,11 +474,6 @@ from fastmcp import FastMCP
 
 ---
 
-Good catch 👍 — that’s an important missing step.
-Below is the **updated version**, with **`uv` installation commands added**, cleanly integrated into the document.
-
----
-
 # Creating an MCP Server Locally (FastMCP + Python)
 
 This guide walks through the steps to create, test, and register a **local MCP (Model Context Protocol) server** using **FastMCP** and **Python**.
@@ -524,6 +516,11 @@ uv --version
 ```
 
 You should see the installed version printed.
+
+```bash
+where uv
+```
+You should see the path where uv is installed
 
 ---
 
@@ -672,6 +669,52 @@ Prompts are reusable, predefined templates.
 * **Others** – Custom transports if needed
 
 ---
+# Understanding code to run MCP server with STDIO and HTTP Transport
+
+**When MCP Server is executed locally with STDIO**
+
+```python
+
+
+if __name__ == "__main__":
+    """
+    Entry point when running the script directly.
+    
+    This starts the MCP server, making it available for AI assistants to use.
+    The server will communicate via stdio (standard input/output) when run
+    through an MCP client like Cursor or other IDE integrations.
+    """
+    mcp.run()
+
+```
+
+**When MCP Server is exceuted with HTTP**
+```python
+
+# Entry point check:
+# Ensures this block runs ONLY when this file is executed directly
+# (and not when imported as a module in another file)
+if __name__ == "__main__":
+
+    # Start the MCP server
+    # transport="http"  -> Runs the server using HTTP transport
+    # host="0.0.0.0"    -> Binds the server to all network interfaces
+    #                     (accessible from localhost and other machines)
+    # port=8000         -> Port on which the MCP server will listen
+    mcp.run(
+        transport="http",
+        host="0.0.0.0",
+        port=8000
+    )
+
+    # Alternative default run option (commented out):
+    # mcp.run()
+    # This would start the server with default settings
+    # (typically stdio transport for local MCP usage)
+
+
+```
+
 
 # Microsoft AutoGen Framework
 
