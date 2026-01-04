@@ -766,6 +766,24 @@ https://ai.google.dev/gemini-api/docs/openai#python
 
 
 
+## Autogen Concpets
+
+AutoGen is a Framework provided by Microsoft to create Agentic AI applications. Complete AutoGen code is Async in nature so we need to create Async functions in python,Check below code systx to create Async function
+and call async function in python
+
+```python
+# importing library asyncio for creating async function in python
+import asyncio
+
+# async keyword is used for creating an async function
+async def main1():
+    print("I am inside function")
+
+# calling async function with the help of asyncio.run
+asyncio.run(main1())
+
+```
+
 
 
 
