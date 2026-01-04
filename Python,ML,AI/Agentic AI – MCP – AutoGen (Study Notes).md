@@ -756,6 +756,14 @@ You can check the installed packages by going to **settings -> project -> Python
 <img width="1217" height="897" alt="image" src="https://github.com/user-attachments/assets/152fdf27-4a71-4a63-8b5d-f895b2128390" />
 
 
+**Note:**
+
+For Practise, We can use Key from Google AI Studio as Gemini models are accessible using the OpenAI libraries (Python and TypeScript / Javascript)
+
+https://ai.google.dev/gemini-api/docs/openai#python
+
+<img width="1444" height="995" alt="image" src="https://github.com/user-attachments/assets/92b5c254-eb65-40fa-96b6-eb80fd208eeb" />
+
 
 
 
