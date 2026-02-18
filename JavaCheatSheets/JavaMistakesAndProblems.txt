@@ -92,6 +92,27 @@ String s ="a good   example";
 		}
 	}
 
+10.Converting Array to ArrayList
+
+@Test
+	public void convertArrayofIntToArrayList(){
+		int[] ints = {1, 2, 3};
+		List<Integer> intList = new ArrayList<Integer>(ints.length);
+		for (int i : ints)
+		{
+			intList.add(i);
+		}
+		System.out.println(intList);
+	}
+
+	@Test
+	public void convertArrayofIntToArrayListUsingJava8(){
+		int[] ints = {1, 2, 3};
+		List<Integer> intList = Arrays.stream(ints).boxed().collect(Collectors.toList());
+		System.out.println(intList);
+	}
+
+
 
 ---------------------------------------------------------------------------------------
 
@@ -1166,5 +1187,6 @@ class Solution {
     }
 
 }
+
 
 
