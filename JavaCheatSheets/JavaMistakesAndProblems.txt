@@ -61,7 +61,11 @@ String s ="a good   example";
 [a, good, , , example]
 [a, good, example]
  
+//Remove duplicate values from list using Java8
 
+ List<Integer> list = new ArrayList<Integer>(Arrays.asList(1,1,2,3,2,4,4,3));
+ List<Integer> listWithoutDuplicated=list.stream().distinct().collect(Collectors.toList());
+ System.out.println(listWithoutDuplicated);
 
 
 ---------------------------------------------------------------------------------------
@@ -1137,3 +1141,4 @@ class Solution {
     }
 
 }
+
