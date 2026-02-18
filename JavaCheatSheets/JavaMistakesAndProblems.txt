@@ -346,7 +346,6 @@ class Solution {
         // code here
         S=replace(S,m);
         S=replace(S,n);
-        S=replace(S,n);
         if(S.equals("")){
             return "-1";
         }
@@ -363,6 +362,33 @@ class Solution {
             s=s.replace(s,"");
         }
         return s;
+    }
+};
+
+// User function Template for Java
+
+class Solution {
+    static String demonitize(String S, String m, String n) {
+        // code here
+        S=replaceString(S,m);
+        S=replaceString(S,n);
+        
+        if(S.isEmpty()){
+            return "-1";
+        }
+        return S;
+    }
+    
+    public static String replaceString(String S, String m){
+        if(S.length() <m.length()){
+            if(m.contains(S)){
+                S = S.replace(S,"");
+            }
+        }
+        else{
+            S = S.replace(m,"");
+        }
+        return S;
     }
 };
 
@@ -1187,6 +1213,7 @@ class Solution {
     }
 
 }
+
 
 
 
