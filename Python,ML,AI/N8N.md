@@ -35,5 +35,10 @@ The above process enables you to run N8N on your local machine.
 
 <img width="1513" height="923" alt="image" src="https://github.com/user-attachments/assets/21b59717-0a03-440e-8976-6540cb60450f" />
 
+6. You can get paid features of N8N by navigating to settings -> usage and plans and enter your emailID. On your emailId you would get your activation key which you can use to get your paid plan.
+
+<img width="1362" height="989" alt="image" src="https://github.com/user-attachments/assets/f276d574-aecf-46fb-92de-33f3850c186c" />
+
+
 
 
