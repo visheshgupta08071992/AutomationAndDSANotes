@@ -40,5 +40,10 @@ The above process enables you to run N8N on your local machine.
 <img width="1362" height="989" alt="image" src="https://github.com/user-attachments/assets/f276d574-aecf-46fb-92de-33f3850c186c" />
 
 
+**Piece Of Advise while using N8N**
+
+1. Whenever you try to create a workflow in N8N, Ensure to create a workflow on a piece of paper rather then directly creating on N8N
+2. N8N does not have autosave, so always keep on saving your work whenver you finish some small steps.
+
 
 
