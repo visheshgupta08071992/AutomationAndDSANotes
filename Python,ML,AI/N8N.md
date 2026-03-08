@@ -48,7 +48,7 @@ The above process enables you to run N8N on your local machine.
 2. N8N does not have autosave, so always keep on saving your work whenver you finish some small steps.
 
 
-**Different Types of Nodes in N8N**
+**N8N Expore**
 
 1.**Trigger Nodes** - Trigger Nodes are used to Trigger a workflow. Below image shows some of the Trigger Nodes
 
@@ -59,6 +59,11 @@ The above process enables you to run N8N on your local machine.
 Using pin command,we can pin the output of a node so that we can use it as an  input for following node without executing the node.If we dont pin the output then we might need to execute node again and again.
 
 <img width="1868" height="893" alt="image" src="https://github.com/user-attachments/assets/51373951-6b6b-4415-b650-c043f5130eb7" />
+
+
+2.**Sticky Notes** - N8N provides sticky notes for maintaining notes.
+
+<img width="1910" height="867" alt="image" src="https://github.com/user-attachments/assets/f46a8eae-4ecf-4e07-b93f-046fd5ac0a78" />
 
 
 
