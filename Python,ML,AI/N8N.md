@@ -13,19 +13,19 @@ N8N is used for Business Workflow Automation. It helps us to automate workflows 
 **Link** - https://docs.n8n.io/hosting/installation/docker/#prerequisites
 
 1. Install Docker Desktop.</br>
-2. Create a volume for storing n8n data by running below command in cmd
+2. Create a volume for storing n8n data by running below command in cmd. It is important to create volume so that n8n data like workflows is stored on your hardisk as well.If you dont create volumne whenever you close docker container all your n8n workflows would be lost.
 
    ```
    docker volume create n8n_data
    ```
 
-3. Pull the image of N8N by running below command in cmd
+4. Pull the image of N8N by running below command in cmd
 
    ```
     docker pull docker.n8n.io/n8nio/n8n
    ```
 
- 4. Run the N8N container using below command
+ 5. Run the N8N container using below command
 
     ```
      docker run -it --rm --name n8n -p 5678:5678 -e GENERIC_TIMEZONE="Asia/Kolkata" -e TZ="Asia/Kolkata" -e   N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true -e N8N_RUNNERS_ENABLED=true -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
