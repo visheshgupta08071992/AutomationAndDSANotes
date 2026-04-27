@@ -68,6 +68,9 @@ List<Integer> arrayList=new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
 //toArray Method returns an Object array
 int [] intArray=arrayList.stream().mapToInt(e -> e).toArray();
 
+//Similarly we can convert Set to array
+int [] intArray=set.stream().mapToInt(e -> e).toArray();
+
 8.Converting Array to ArrayList
 
 int[] ints = {1, 2, 3};
