@@ -1314,7 +1314,7 @@ class Solution {
 }
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-26. SubArray Sum equal K (https://leetcode.com/problems/subarray-sum-equals-k/description/)
+26. SubArray Sum equal K (https://leetcode.com/problems/subarray-sum-equals-k/description/) .Problem no 1 is of similar pattern done with sliding window. The below program would not work with sliding window as sliding window fails with negative no.
 
 Initution: I keep a running sum.For each position, I check how many previous sums can pair with me to make k.
 
