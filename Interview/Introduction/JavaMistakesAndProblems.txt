@@ -1282,6 +1282,35 @@ class Solution {
 }
 
 -------------------------------------------------------------------------------------------------------------------------------------------
+25. Squares of a Sorted Array (https://leetcode.com/problems/squares-of-a-sorted-array/description/)
 
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        int [] result = new int[nums.length];
+
+        int i=0;
+        int j= nums.length - 1;
+        int producti=1;
+        int productj=1;
+        int k= nums.length -1;
+        while(i<=j){
+           producti= nums[i] * nums[i];
+           productj= nums[j] * nums[j];
+
+           if(producti>productj){
+
+            result[k] = producti;
+            i++;
+            k--;
+           }
+           else{
+            result[k] = productj;
+            j--;
+            k--;
+           }
+        }
+        return result;
+    }
+}
 
 
