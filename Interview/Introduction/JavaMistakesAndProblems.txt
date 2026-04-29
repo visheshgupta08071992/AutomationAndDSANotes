@@ -1175,3 +1175,113 @@ class Solution {
     }
 }
 
+--------------------------------------------------------------------------------------------------------------------------------------
+24. Sort Colors(https://leetcode.com/problems/sort-colors/description/)
+
+Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
+
+We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
+
+You must solve this problem without using the library's sort function.
+
+ 
+
+Example 1:
+
+Input: nums = [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
+
+
+Complexity of below program is O(N).
+
+Initution: “0 → left, 1 → skip, 2 → right (but recheck)”
+
+| Value | Action          | Move low | Move mid | Move high |
+| ----- | --------------- | -------- | -------- | --------- |
+| 0     | swap(low, mid)  | ✅        | ✅        | ❌         |
+| 1     | skip            | ❌        | ✅        | ❌         |
+| 2     | swap(mid, high) | ❌        | ❌        | ✅         |
+
+
+class Solution {
+    public void sortColors(int[] nums) {
+
+        int low=0;
+        int mid=0;
+        int high=nums.length - 1;
+
+        while(mid<=high){
+            if(nums[mid]==0){
+               swap(nums,low,mid);
+               low++;
+               mid++;
+            }
+            else if(nums[mid]==1){
+               mid++;
+            }
+            else if(nums[mid]==2){
+               swap(nums,mid,high);
+               high--;
+            }
+        }
+        
+    }
+
+    public void swap(int [] arr,int i,int j){
+        int temp;
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+
+    }
+}
+
+
+Below approach solves the program with complexity O(2N)
+
+class Solution {
+    public void sortColors(int[] nums) {
+
+        int countZero=0;
+        int countOne=0;
+        int countTwo=0;
+
+        int k=0;
+
+        for(int i=0;i<nums.length;i++){
+
+            if(nums[i]==0){
+               countZero++;
+            }
+            
+            else if(nums[i]==1){
+               countOne++;
+            }
+
+            
+            else if(nums[i]==2){
+               countTwo++;
+            }
+        }
+
+        for(int i=1;i<=countZero;i++){
+             nums[k]=0;
+             k++;
+        }
+        
+        for(int i=1;i<=countOne;i++){
+             nums[k]=1;
+             k++;
+        }
+        
+        for(int i=1;i<=countTwo;i++){
+             nums[k]=2;
+             k++;
+        }
+}
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
