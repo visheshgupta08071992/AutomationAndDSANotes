@@ -1144,6 +1144,13 @@ Intution: Binary search doesn’t just find elements—it finds the boundary whe
 
 And that boundary is exactly start.
 
+If n = 1,000,000:
+
+Linear search → up to 1,000,000 checks
+Binary search → about 20 checks (log₂(1,000,000) ≈ 20)
+
+That’s why binary search is so powerful.
+
 
 class Solution {
     public int searchInsert(int[] nums, int target) {
