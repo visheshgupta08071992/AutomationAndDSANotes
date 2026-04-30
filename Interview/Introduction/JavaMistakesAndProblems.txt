@@ -1545,6 +1545,43 @@ class Solution {
     }
 }
 
+----------------------------------------------------------------------------------------------------------------------------------------
+33.Longest Consecutive Sequence(https://leetcode.com/problems/longest-consecutive-sequence/)
+
+class Solution {
+    public int longestConsecutive(int[] nums) {
+        Map<Integer,Boolean> map = new HashMap<>();
+
+        for(int i:nums){
+            map.put(i,true);
+        }
+
+        for(int i:map.keySet()){
+            if(map.containsKey(i-1)){
+                map.put(i,false);
+            }
+
+        }
+        int count=0;
+        int max=0;
+        for(int i:map.keySet()){
+            if(map.get(i)==true){
+                count = 1;
+                int j=1;
+                while(map.containsKey(i+j)){
+                  count++;
+                  j++;
+                }
+                if(count > max){
+                     max= count;
+                }
+            }
+
+        }
+        return max;
+    }
+}
+
 
 
 
