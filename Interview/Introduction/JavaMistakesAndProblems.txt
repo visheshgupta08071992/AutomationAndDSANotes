@@ -115,6 +115,8 @@ System.out.println(intList);
 
 list.toArray(new int[list.size()][]);
 
+11.Some of the useful Math function: Math.max(no1,no2), Math.abs(a-b): To get aboolute difference.
+
 
 ---------------------------------------------------------------------------------------
 
@@ -1414,6 +1416,42 @@ class Solution {
     }
 }
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+29.Insert Interval (https://leetcode.com/problems/insert-interval/description/)
+
+class Solution {
+    public int[][] insert(int[][] intervals, int[] newInterval) {
+        
+       List<int []> list = new ArrayList<>();
+       list.add(newInterval);
+
+       for(int [] interval:intervals){
+          list.add(interval);
+       }
+
+       Collections.sort(list,(a,b) -> {
+           return a[0] - b[0];
+       });
+
+       List<int []> result = new ArrayList<>();
+       for(int [] interval:list){
+           if(result.isEmpty()){
+               result.add(interval);
+           }
+           else{
+             int [] prevInterval = result.get(result.size() - 1);
+             if(interval[0]<=prevInterval[1]){
+                prevInterval[1] = Math.max(prevInterval[1],interval[1]);
+             }
+             else{
+                result.add(interval);
+             }
+           }
+       }
+
+        return result.toArray(new int[result.size()][]);
+    }
+}
 
 
 
