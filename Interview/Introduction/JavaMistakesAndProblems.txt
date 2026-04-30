@@ -1348,8 +1348,32 @@ class Solution {
     }
 }
 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+27.Maximum Subarray (https://leetcode.com/problems/maximum-subarray/description/)
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+
+        int max=Integer.MIN_VALUE;
+        int sum=0;
+
+        for(int i=0;i<nums.length;i++){
+
+            sum = sum+nums[i];
+            if(sum > max){
+              max= sum;
+            }
+            if(sum < 0){
+               sum=0;
+            }
+        }
+        return max;
+    }
+}
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-27. Merge Interval (https://leetcode.com/problems/merge-intervals/description/)
+28. Merge Interval (https://leetcode.com/problems/merge-intervals/description/)
 
 Intution:
 Sort by column 0
@@ -1384,7 +1408,7 @@ class Solution {
 }
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-28. Non Overlapping Intervals (https://leetcode.com/problems/non-overlapping-intervals/description/)
+29. Non Overlapping Intervals (https://leetcode.com/problems/non-overlapping-intervals/description/)
 
 class Solution {
     public int eraseOverlapIntervals(int[][] intervals) {
@@ -1415,7 +1439,7 @@ class Solution {
 }
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
-29.Insert Interval (https://leetcode.com/problems/insert-interval/description/)
+30.Insert Interval (https://leetcode.com/problems/insert-interval/description/)
 
 class Solution {
     public int[][] insert(int[][] intervals, int[] newInterval) {
@@ -1452,7 +1476,7 @@ class Solution {
 }
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-30.Find Duplicate No(https://leetcode.com/problems/find-the-duplicate-number/description/)
+31.Find Duplicate No(https://leetcode.com/problems/find-the-duplicate-number/description/)
 
 Approach 1 using Hashset
 
@@ -1486,6 +1510,33 @@ class Solution {
         for(int i:map.keySet()){
             if(map.get(i) > 1){
                 return i;
+            }
+        }
+        return -1;
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+32.Majority Element(https://leetcode.com/problems/majority-element/description/)
+
+
+class Solution {
+    public int majorityElement(int[] nums) {
+
+        Map<Integer,Integer> map = new HashMap<>();
+
+        for(int i:nums){
+            if(map.containsKey(i)){
+               map.put(i,map.get(i)+1);
+            }
+            else{
+                map.put(i,1);
+            }
+        }
+        int n=nums.length;
+        for(int key:map.keySet()){
+            if(map.get(key) > n/2){
+                 return key;
             }
         }
         return -1;
