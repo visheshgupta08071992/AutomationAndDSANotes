@@ -1383,5 +1383,37 @@ class Solution {
     }
 }
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+28. Non Overlapping Intervals (https://leetcode.com/problems/non-overlapping-intervals/description/)
+
+class Solution {
+    public int eraseOverlapIntervals(int[][] intervals) {
+        Arrays.sort(intervals,(a,b) -> {
+            return a[0] - b[0];
+        });
+
+        List<int []> list = new ArrayList<>();
+        int count=0;
+
+        for(int [] interval : intervals){
+           if(list.isEmpty()){
+               list.add(interval);
+           }
+           else{
+              int [] prevInterval = list.get(list.size() - 1);
+              if(interval[0] < prevInterval[1]){
+                  count++;
+                  prevInterval[1] = Math.min(prevInterval[1],interval[1]);
+              }
+              else{
+                list.add(interval);
+              }
+           }
+        }
+        return count;
+    }
+}
+
+
 
 
