@@ -135,7 +135,21 @@ def db_connection():
 ```
 
 ## 5. Parameterized Tests
-You can use `@pytest.mark.parametrize` to run tests with multiple inputs.
+You can use `@pytest.mark.parametrize` to run tests with multiple inputs. @pytest.mark.parametrize is one of the most powerful features in pytest because it allows you to run the same test multiple times with different input values, avoiding duplicate test code.
+
+**Syntax**
+
+```python
+@pytest.mark.parametrize(
+    "parameter_names",
+    [
+        tuple1,
+        tuple2,
+        tuple3
+    ]
+)
+```
+
 ```python
 import pytest
 
