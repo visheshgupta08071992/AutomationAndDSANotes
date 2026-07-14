@@ -135,7 +135,7 @@ def db_connection():
 ```
 
 ## 5. Parameterized Tests
-You can use `@pytest.mark.parametrize` to run tests with multiple inputs. @pytest.mark.parametrize is one of the most powerful features in pytest because it allows you to run the same test multiple times with different input values, avoiding duplicate test code.
+You can use `@pytest.mark.parametrize` to run tests with multiple inputs. @pytest.mark.parametrize is one of the most powerful features in pytest because it allows you to run the same test multiple times with different input values, avoiding duplicate test code. For someone with your automation testing background, you can think of @pytest.mark.parametrize as pytest's built-in equivalent of a DataProvider in TestNG
 
 **Syntax**
 
@@ -192,6 +192,43 @@ def test_is_divisible(a, b, expected):
 
 ```
 
+
+# What happens if one test fails?
+
+Suppose
+
+```python
+@pytest.mark.parametrize("a,b,expected", [
+    (1,1,2),
+    (2,3,6),    # Wrong expected
+    (4,5,9)
+])
+def test_addition(a,b,expected):
+    assert a+b == expected
+```
+
+Execution
+
+```
+Run 1 -> PASS
+
+Run 2 -> FAIL
+
+Run 3 -> PASS
+```
+
+Pytest reports exactly which parameter set failed.
+
+Example output
+
+```
+test_addition[2-3-6] FAILED
+
+assert 5 == 6
+```
+
+The other test cases still run.
+
 ## 6. Using `conftest.py` for Shared Fixtures
 Fixtures can be placed in `conftest.py` to be available across multiple test files.
 
@@ -224,6 +261,10 @@ def test_not_ready():
 def test_expected_failure():
     assert False
 ```
+
+
+
+
 
 ## 8. Parameterized Fixtures
 Fixtures can also be parameterized to run tests with multiple values.
