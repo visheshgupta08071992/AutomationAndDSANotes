@@ -39,6 +39,34 @@ where python
 3.Install Pytest playwright plugin - **pip install pytest-playwright** </br>
 4.Install required browsers supported by playwright - **playwright install** </br>
 
+Install specific browser
+
+```bash
+playwright install chromium
+```
+
+or
+
+```bash
+playwright install firefox
+```
+
+or
+
+```bash
+playwright install webkit
+```
+
+---
+
+Verify installation
+
+```bash
+playwright --version
+```
+
+---
+
 ---
 ## Playwright Python API Modes
 
