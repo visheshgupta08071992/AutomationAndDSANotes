@@ -159,6 +159,8 @@ def test_playwrightShortCut(page: Page):            # page is the instrance of P
 - `page.get_by_label("Username:").fill("rahulshettyacademy")`
 - `page.locator("//input[@type='password']").fill("learning")`  **-** **Using XPATH**
 - `page.get_by_role("combobox").select_option("teach")`
+- <img width="756" height="286" alt="image" src="https://github.com/user-attachments/assets/f3c267c6-ee1e-477e-8e35-75174e505931" />
+
 - `page.locator("#terms").check()`  **-** **Using CSS**
 - `page.get_by_role("button", name="Sign In").click()`
 - `page.locator("app-card").filter(has_text="iphone X")`
