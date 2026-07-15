@@ -156,7 +156,9 @@ def test_playwrightShortCut(page: Page):            # page is the instrance of P
 - `page.goto("https://www.linkedin.com/feed/")`
 - `page.screenshot(path="example.png")`
 - `page.screenshot(path="fullpage.png", full_page=True)`
-- `page.get_by_label("Username:").fill("rahulshettyacademy")`
+- `page.get_by_label("Username:").fill("rahulshettyacademy")` : **-** **Matches a form control by its associated <label>**.
+
+
 - `page.locator("//input[@type='password']").fill("learning")`  **-** **Using XPATH**
 - `page.get_by_role("combobox").select_option("teach")`
 - <img width="756" height="286" alt="image" src="https://github.com/user-attachments/assets/f3c267c6-ee1e-477e-8e35-75174e505931" />
