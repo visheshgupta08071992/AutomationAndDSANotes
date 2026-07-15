@@ -171,6 +171,11 @@ def test_playwrightShortCut(page: Page):            # page is the instrance of P
 - `page.get_by_text("Hide/Show Example").click()`
 - `page.click("text='Login'")`  **- Clicking directly by passing locater**
 - `page.fill('input[name="username"]', 'my_user')` **- filling directly by passing locater and value**
+-  `page.get_by_role("listitem").filter(has_text="Product A")` **-** **Filter by visible text**
+-  `page.get_by_role("listitem").filter(has=page.get_by_role("button", name="Out of stock"))` **-** **Filter by presence of a nested locator**
+-  `page.get_by_role("listitem").filter(has_not=page.get_by_role("button", name="Out of stock"))`  **-** **Filter by ABSENCE of a nested locator**
+-  `page.get_by_role("listitem").filter(has_not_text="Sold out")`  **-** **Filter by NOT having certain text**
+
 
 ---
 
