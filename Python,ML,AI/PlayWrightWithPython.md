@@ -23,6 +23,39 @@ In the Python ecosystem,pytest serves as a testing framework that allows us to e
 
 ---
 
+## 1.2 Playwright Architecture vs. Selenium Architecture
+
+To truly understand Playwright's speed and reliability, we have to look under the hood.
+
+### The Old Way: Selenium (HTTP Webdriver Protocol)
+
+Selenium operates on a **request-response model** via the W3C WebDriver standard.
+
+* Every single command you write (e.g., `page.click()`) is serialized into an HTTP REST request.
+* It is sent across a network port to a browser-specific driver executable (like `chromedriver.exe`).
+* The driver translates it for the browser, executes it, and sends an HTTP response back.
+
+This overhead introduces latency. More importantly, it is **stateless and unidirectional**. Selenium sends a command and hopes the browser is ready. If the browser is in the middle of a JavaScript rerender, Selenium throws an exception unless you have manually littered your code with explicit waits.
+
+### The Modern Way: Playwright (WebSocket over CDP/BiDi)
+
+Playwright completely bypasses the HTTP request-response bottleneck. It establishes a single, persistent **WebSocket connection** directly to the browser’s native debugging engine:
+
+* **Chromium:** Chrome DevTools Protocol (CDP)
+* **Firefox:** Firefox DevTools Protocol
+* **WebKit:** WebKit's internal debugging protocol
+
+```
+[ Your Python Test Script ]
+          │
+          ▼ (Playwright Library)
+   [ Node.js Driver Process ] 
+          │
+          ▼ ◄─── (Single, Persistent WebSocket Connection)
+[ Browser Debug Engine (CDP / Firefox / WebKit) ]
+
+```
+
 ## Steps to Install Playwright with Python
 
 1.Install python
