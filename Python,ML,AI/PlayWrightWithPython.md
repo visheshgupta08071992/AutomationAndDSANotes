@@ -190,6 +190,10 @@ def test_playwrightShortCut(page: Page):            # page is the instrance of P
  assert email == "mentor@rahulshettyacademy.com"
 
 ```
+
+<img width="700" height="639" alt="image" src="https://github.com/user-attachments/assets/67ba3920-c851-4fff-a593-33a0f4978822" />
+
+
 ---
 
 # Playwright Methods on Selectors - Quick Reference
