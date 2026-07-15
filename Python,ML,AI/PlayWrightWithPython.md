@@ -117,6 +117,9 @@ playwright --version
 
 ## 🔹 Example 1: Manual Browser and Context Creation
 
+<img width="994" height="877" alt="image" src="https://github.com/user-attachments/assets/36bfcc9a-78eb-4a9a-992a-3b5eb4a3054d" />
+
+
 ```python
 from playwright.sync_api import Playwright                # Playwright is class in playwright.sync_api package
 
