@@ -33,6 +33,7 @@ So to solve the above problem, we would be using **Builder Pattern**.
 2. **Create a Static Nested Builder Class:**
    - Include Fields identical to the Outer class.
    - Include a constructor for **mandatory attributes**.
+   - We make the Builder class static because it doesn't require an existing instance of the outer class to create a new object. A non-static inner class always needs an instance of the outer class, which would create a circular dependency—we'd need a Car object just to create a CarBuilder, even though the builder's job is to create the Car itself. Making it static also avoids an unnecessary hidden reference to the outer object, making it more memory-efficient while still allowing access to the outer class's private constructor.
 
 3. **Set Mandatory Attributes in Builder Constructor:**
    - Validate them (e.g., null checks) inside the builder.
