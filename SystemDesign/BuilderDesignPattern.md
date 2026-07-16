@@ -136,6 +136,8 @@ public class Main {
 
 # Using Lombok to Create a Builder Class
 
+Lombok reduces boilerplate Java code by generating methods like getters, setters, constructors, builders, equals(), hashCode(), and toString() at compile time using annotations.
+
 Using Lombok, you can significantly simplify the implementation of the Builder Pattern by leveraging its annotations. Here's how to implement the same example with **Lombok**:
 
 
