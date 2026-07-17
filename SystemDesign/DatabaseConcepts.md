@@ -499,6 +499,25 @@ Think of it like:
 
 ---
 
+```sql
+LEFT JOIN
+---------
+Keep everything from the LEFT table.
+
+RIGHT JOIN
+----------
+Keep everything from the RIGHT table.
+
+INNER JOIN
+----------
+Keep only matching rows from both tables.
+
+FULL OUTER JOIN
+---------------
+Keep everything from both tables.
+
+```
+
 ## 🧩 2. Sample Tables
 
 Let’s use these two simple tables for all our examples 👇
