@@ -624,26 +624,4 @@ Each class has one job, can be extended easily, depends on interfaces, and is ea
 | **I**     | Interface Segregation | Don't force unnecessary methods            |
 | **D**     | Dependency Inversion  | Depend on interfaces, not implementations  |
 
-## A simple mnemonic
 
-Remember the phrase:
-
-**"Single Objects Like Intelligent Design."**
-
-* **S** → **Single** Responsibility
-* **O** → **Objects** should be Open for extension, Closed for modification
-* **L** → **Like** (child classes should behave like their parents)
-* **I** → **Intelligent** interfaces (small and focused)
-* **D** → **Design** with abstractions (interfaces), not concrete classes
-
----
-
-Since you already work with **Java, Spring Boot, and design patterns like Builder**, the next step is to see how SOLID is applied in real projects. For example:
-
-* **SRP** → `UserService`, `UserRepository`, `EmailService`
-* **OCP** → Strategy Pattern for payment or discount calculation
-* **LSP** → Proper inheritance hierarchies (e.g., `Bird`/`FlyingBird`)
-* **ISP** → Small interfaces like `JpaRepository`, `CrudRepository`
-* **DIP** → Spring's Dependency Injection using `@Autowired` or constructor injection with interfaces
-
-This connection between SOLID, design patterns, and Spring is what you'll encounter most often in production Java applications.
