@@ -1,5 +1,4 @@
-SOLID is one of the most important concepts in Object-Oriented Programming (OOP). It helps us write code that is:
-
+Solid Prinicipals are design rules that helps software engineer to write code that is -
 * ✅ Easy to understand
 * ✅ Easy to maintain
 * ✅ Easy to test
@@ -23,6 +22,17 @@ A well-designed car has:
 Software should also be designed this way.
 
 That's exactly what SOLID teaches.
+
+---
+| **SOLID Principle**                           | **Meaning**                                                                      | **Simple Explanation**                                                          | **Java Example**                                                                                                                                                                                    | **Real-Life Example**                                                                                                         | **Memory Trick**                              |
+| --------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| **S – Single Responsibility Principle (SRP)** | A class should have **only one responsibility** (one reason to change).          | Don't put multiple jobs in one class. Keep each class focused on one task.      | `Employee` stores employee data.<br>`SalaryCalculator` calculates salary.<br>`EmployeeRepository` saves employee.<br>`EmailService` sends emails.                                                   | In a hospital, the **Doctor** treats patients, the **Receptionist** books appointments, and the **Cashier** handles payments. | **One Class = One Job**                       |
+| **O – Open/Closed Principle (OCP)**           | Software should be **open for extension but closed for modification**.           | Add new features by creating new classes instead of changing existing code.     | `Discount` interface with implementations like `RegularDiscount`, `PremiumDiscount`, `VIPDiscount`, `GoldDiscount`. Adding a new discount means creating a new class instead of modifying old code. | You can plug a new USB device into your computer without changing the motherboard.                                            | **Add New, Don't Modify Old**                 |
+| **L – Liskov Substitution Principle (LSP)**   | A child class should be able to replace its parent without breaking the program. | If a subclass can't behave like its parent, the inheritance hierarchy is wrong. | `Sparrow extends FlyingBird` works because sparrows can fly. `Penguin` should extend `Bird`, not `FlyingBird`, because penguins can't fly.                                                          | If you rent a car, every vehicle provided should actually be drivable. Giving a bicycle would violate expectations.           | **Child Must Behave Like Parent**             |
+| **I – Interface Segregation Principle (ISP)** | Don't force a class to implement methods it doesn't need.                        | Create small, focused interfaces instead of one large interface.                | `Workable`, `Eatable`, and `Sleepable` interfaces. `Human` implements all three, while `Robot` implements only `Workable`.                                                                          | A TV remote shouldn't have buttons for a washing machine or refrigerator.                                                     | **Small Interfaces Are Better**               |
+| **D – Dependency Inversion Principle (DIP)**  | Depend on **interfaces (abstractions)** instead of concrete classes.             | High-level classes shouldn't depend directly on specific implementations.       | `Computer` depends on the `Keyboard` interface. You can pass a `WiredKeyboard`, `WirelessKeyboard`, or `BluetoothKeyboard` without changing `Computer`.                                             | A wall power socket works with many devices because they all follow the same plug standard.                                   | **Depend on Interfaces, Not Implementations** |
+
+
 
 ---
 
