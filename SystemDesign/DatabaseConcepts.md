@@ -778,6 +778,7 @@ ON e.ManagerID = m.EmpID;
 
 * The same table is used twice (aliased as `e` and `m`).
 * Lets you pair each employee with their manager.
+* LEFT JOIN guarantees that every employee is returned, even if they don't have a manager or the manager record is missing.
 
 ---
 
