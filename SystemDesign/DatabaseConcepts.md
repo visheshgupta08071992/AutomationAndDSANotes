@@ -214,7 +214,7 @@ FOREIGN KEY – enforces relationship consistency between tables
 ## 🧠 1. What is a View?
 
 A **View** in a database is a **virtual table** — it doesn’t store data physically like a real table.
-Instead, it’s a **saved SQL query** that dynamically fetches data from one or more tables whenever you access it.
+Instead, it’s a **saved SQL query** that dynamically fetches data from one or more tables whenever you access it.Views are created for abstraction and restricting access to sensitive columns
 
 Think of it like:
 
