@@ -1,4 +1,4 @@
-# Claude Code Slash Commands
+# Claude Code
 
 ## What are Slash Commands?
 
