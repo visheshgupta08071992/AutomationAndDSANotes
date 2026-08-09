@@ -14,23 +14,23 @@
 
 A session is one conversation with Claude Code - everything from when you run claude to when you type /exit. Sessions are saved automatically to !!/.claude/projects/ and can be resumed at any time even after closing the terminal.
 
-Best practices one should follow while working in a session -
+Best practices one should follow while working in a session -</br>
 
-1.Name your session immediately - Use /rename command to rename a session. Whenever you start some work name your session using /rename command.
-2.One session = one task
-3.use /btw for  quick question: Used for quick question agar kuch develop krte waqt kuch out of context question aagya toh /btw use krna and wo question context ka part nhi banega and context pollute nhi.
-4.Export a session before a big refactor : Session export we can do with command /export fileName.md. The same can be used for reference to other context.
+1.Name your session immediately - Use /rename command to rename a session. Whenever you start some work name your session using /rename command.</br>
+2.One session = one task </br>
+3.use /btw for  quick question: Used for quick question agar kuch develop krte waqt kuch out of context question aagya toh /btw use krna and wo question context ka part nhi banega and context pollute nhi.</br>
+4.Export a session before a big refactor : Session export we can do with command /export fileName.md. The same can be used for reference to other context.</br>
 
 
 A common power-user pattern is to use Opus for the planning phase — where you're thinking through architecture, writing specs, making decisions — then switch to Sonnet for the implementation phase where the thinking is done and you just need reliable code generation.
 
-/model - Command is used to switch between models.
+**/model** - Command is used to switch between models.
 
-/usage- Used to check the usage.
+**/usage**- Used to check the usage.
 
-/voice- To enable voice command
+**/voice**- To enable voice command
 
-/- Use / command to find all the commands available
+**/**- Use / command to find all the commands available
 
 ## What are Slash Commands?
 
