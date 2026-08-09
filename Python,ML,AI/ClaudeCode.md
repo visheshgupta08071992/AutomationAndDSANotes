@@ -32,6 +32,160 @@ A common power-user pattern is to use Opus for the planning phase — where you'
 
 **/**- Use / command to find all the commands available
 
+---
+
+Here’s a cleaner, reference-friendly version in Markdown:
+
+# Claude Session Workflow
+
+This document summarizes the basic Claude CLI workflow for creating, managing, resuming, and exporting sessions.
+
+## 1. Start a New Claude Session
+
+Start Claude using:
+
+```bash
+claude
+```
+
+Once the session starts, rename it to something meaningful using:
+
+```text
+/rename <session-name>
+```
+
+**Example:**
+
+```text
+/rename playwright-automation
+```
+
+Using descriptive session names makes it easier to identify and resume sessions later.
+
+---
+
+## 2. Resume an Existing Session from the CLI
+
+If you want to start Claude by resuming an existing session instead of creating a new one, use:
+
+```bash
+claude -r
+```
+
+Claude will display the available sessions. Select the appropriate session from the list to continue working from where you left off.
+
+---
+
+## 3. Switch to Another Session
+
+If you are already inside a Claude session and want to resume a different session, use:
+
+```text
+/resume
+```
+
+Select the appropriate session from the displayed list.
+
+This allows you to switch sessions without first exiting Claude.
+
+---
+
+## 4. Ask an Unrelated Question Without Affecting the Session
+
+Sometimes you may want to ask Claude a question that is unrelated to the current session's work.
+
+Use:
+
+```text
+/btw <your-query>
+```
+
+**Example:**
+
+```text
+/btw What is the difference between TCP and UDP?
+```
+
+The `/btw` command is useful for side questions because the conversation is kept separate from the main session context.
+
+---
+
+## 5. Exit a Session
+
+To exit the current Claude session, use:
+
+```text
+/exit
+```
+
+Your session can be resumed later when needed.
+
+---
+
+## 6. Export a Session
+
+To export the current session to a Markdown file, use:
+
+```text
+/export <filename>.md
+```
+
+**Example:**
+
+```text
+/export playwright-session.md
+```
+
+This creates a Markdown file containing the exported session.
+
+The exported file can also be referenced from another Claude session when you want to provide context from previous work.
+
+---
+
+## Quick Reference
+
+| Requirement                               | Command                  |
+| ----------------------------------------- | ------------------------ |
+| Start a new Claude session                | `claude`                 |
+| Rename the current session                | `/rename <session-name>` |
+| Start Claude and resume a session         | `claude -r`              |
+| Resume another session from within Claude | `/resume`                |
+| Ask a side/unrelated question             | `/btw <query>`           |
+| Export the current session                | `/export <filename>.md`  |
+| Exit the current session                  | `/exit`                  |
+
+## Typical Workflow
+
+```text
+claude
+   │
+   ├──> /rename my-project
+   │
+   ├──> Work with Claude...
+   │
+   ├──> /btw <unrelated-question>     # Ask a side question
+   │
+   ├──> /export my-project.md         # Export if required
+   │
+   └──> /exit
+
+Later...
+
+claude -r
+   │
+   └──> Select "my-project"           # Continue previous work
+
+OR, from an active session...
+
+/resume
+   │
+   └──> Select another session        # Switch/resume another session
+```
+
+I’ve kept this focused on the commands in your original flow while making it suitable as a quick-reference document.
+
+
+
 ## What are Slash Commands?
 
 **Slash commands** are shortcuts that you type inside a Claude Code session. They begin with a forward slash (`/`) and execute a predefined action or workflow immediately, eliminating the need to write a complete prompt.
