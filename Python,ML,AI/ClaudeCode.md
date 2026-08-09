@@ -241,4 +241,25 @@ hoga. Phir answer milne ke baad space daba do toh phir wo aapke context window k
 /export fileName.md : Ye kya karega na aapke session ka export lega and md file banadega so that it can be used as a context
 
 
+---
+
+## Context Window
+
+A context window is the amount of information that a model can see and remember at one time while generating a response. Think of it as the models working memory
+
+
+Use /context command to see kitna context window consume hogya
+
+<img width="1334" height="454" alt="image" src="https://github.com/user-attachments/assets/489e02d6-698f-4f17-aa6e-f9613ba6c848" />
+
+
+Jub bhi 75% context use hogya, Better to switch context or use /compact command to shrink context
+
+
+
+**Best Practices to while using context**
+<img width="1273" height="572" alt="image" src="https://github.com/user-attachments/assets/8924666b-4283-40e6-9c6d-b57bd032fdc6" />
+
+
+
 
