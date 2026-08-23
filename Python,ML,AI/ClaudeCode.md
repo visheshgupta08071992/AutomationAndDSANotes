@@ -328,8 +328,17 @@ Claude Code features **Auto Memory**, where it silently observes and records pat
 <img width="1139" height="537" alt="image" src="https://github.com/user-attachments/assets/f96c66e5-9f60-455f-953e-b90b65cbb45b" />
 
 
+---
 
-**Understaning .Claude folder**
+## SPEC Driven Development
+
+
+<img width="1237" height="766" alt="image" src="https://github.com/user-attachments/assets/79570ddc-bf3e-4d52-9be2-e4630f1230a1" />
+
+<img width="1694" height="593" alt="image" src="https://github.com/user-attachments/assets/02d26b3c-ec91-4112-b76e-2ff58313c159" />
+
+<img width="1067" height="744" alt="image" src="https://github.com/user-attachments/assets/37ea2ea6-59bf-465f-8ce2-79810b7c3dd0" />
+
 
 
 
