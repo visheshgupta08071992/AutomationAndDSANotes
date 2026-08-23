@@ -36,6 +36,8 @@ A common power-user pattern is to use Opus for the planning phase — where you'
 
 **/config** - Type /config command and update the config. One of the config is thinking mode. We can set thinking mode to true.
 
+**/mcp** - To find different mcps configured within your Claude Code
+
 **/**- Use / command to find all the commands available
 
 ---
