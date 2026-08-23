@@ -347,6 +347,62 @@ Claude Code features **Auto Memory**, where it silently observes and records pat
 
 <img width="907" height="500" alt="image" src="https://github.com/user-attachments/assets/21271984-cf00-48dc-b350-d890fce90ee3" />
 
+---
+
+## Claude Code Custom Slash Commands 
+
+
+1. Overview of Custom Slash Commands
+
+Custom slash commands in Claude Code are user-defined, pre-saved prompts that automate repeatable workflows. They are triggered using the / notation within the Claude Code interface.
+
+Purpose and Benefits
+
+* Automation: Executes complex, multi-step developer tasks with a single command.
+* Standardization: Ensures consistent results across a team or project by following predefined instructions.
+* Efficiency: Prevents the need for manual prompt repetition, saving time during the development lifecycle.
+
+Practical Use Cases
+
+Developers can implement various commands to streamline their workflow, such as:
+
+* /review: Runs a code review on the most recently modified files.
+* /commit: Analyzes code changes to generate descriptive Git commit messages.
+* /test: Automatically executes the project's test suites.
+* /security-scan: Scans the codebase for potential vulnerabilities.
+
+2. Scopes of Custom Slash Commands
+
+Claude Code supports two distinct scopes for custom commands, determining where they can be accessed.
+
+Scope	Storage Location	Accessibility
+Project-Scoped	.claude/commands/ within the project directory.	Only accessible within the specific project where the folder resides.
+User-Scoped	~/.claude/commands/ in the user's home directory.	Accessible globally across all projects on the user's machine.
+
+3. Creating a Custom Slash Command
+
+Creating a command involves defining logic within a Markdown file. Claude Code automatically identifies these files as executable commands.
+
+Step-by-Step Instructions
+
+1. Directory Setup: Navigate to the .claude/commands/ directory (create it if it doesn't exist).
+2. File Creation: Create a Markdown (.md) file. The filename becomes the command name. For example, seed-user.md becomes the /seed-user command.
+3. Define Command Structure: The Markdown file must contain specific sections:
+  * Description: A high-level summary that Claude displays in the command list.
+  * Allowed Tools: Specifies which tools Claude is permitted to use (e.g., bash restricted to python3).
+  * Detailed Instructions: Step-by-step logic in plain English guiding Claude’s behavior.
+4. Discovery: Restart or refresh the Claude Code session to allow the environment to discover and register the new command.
+
+to iteratively update the logic to redirect authenticated users away from those routes.
+
+6. Guidelines for Developers
+
+* Personas: When writing instructions for complex commands like /create-spec, instruct Claude to act as a "Senior Developer."
+* Tool Restrictions: Limit the tools in the Allowed Tools section to maintain security and prevent the AI from executing unintended shell commands.
+* Input Validation: Use the $ARGUMENTS variable to make commands flexible, but include logic to prompt the user if required arguments are missing.
+* Absolute Fidelity to Specs: Always review the generated spec document and implementation plan before allowing Claude to write code to ensure it aligns with project standards.
+
+
 
 
 
