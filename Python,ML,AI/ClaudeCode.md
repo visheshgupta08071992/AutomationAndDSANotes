@@ -34,6 +34,8 @@ A common power-user pattern is to use Opus for the planning phase — where you'
 
 **/ultraplan** - To enable ultra plan mode.
 
+**/config** - Type /config command and update the config. One of the config is thinking mode. We can set thinking mode to true.
+
 **/**- Use / command to find all the commands available
 
 ---
@@ -342,6 +344,9 @@ Claude Code features **Auto Memory**, where it silently observes and records pat
 <img width="1694" height="593" alt="image" src="https://github.com/user-attachments/assets/02d26b3c-ec91-4112-b76e-2ff58313c159" />
 
 <img width="1067" height="744" alt="image" src="https://github.com/user-attachments/assets/37ea2ea6-59bf-465f-8ce2-79810b7c3dd0" />
+
+<img width="907" height="500" alt="image" src="https://github.com/user-attachments/assets/21271984-cf00-48dc-b350-d890fce90ee3" />
+
 
 
 
