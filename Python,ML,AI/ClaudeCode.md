@@ -30,6 +30,10 @@ A common power-user pattern is to use Opus for the planning phase — where you'
 
 **/voice**- To enable voice command
 
+**/plan** - To enable plan mode. It is suggested for developing plan using Opus model with extended thinking so that Plan is nicely developed.Once plan is developed we can use Sonnet model for coding
+
+**/ultraplan** - To enable ultra plan mode.
+
 **/**- Use / command to find all the commands available
 
 ---
