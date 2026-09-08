@@ -273,7 +273,7 @@ Jub bhi 75% context use hogya, Better to switch context or use /compact command 
 ---
 
 ## CLAUDE.md
-This video lecture provides a comprehensive guide to **CLAUDE.md**, which is considered the most important file in **Claude Code**. It serves as the project's "memory," allowing the AI to understand the context, rules, and structure of a codebase without needing repeated explanations in every session.
+This video lecture provides a comprehensive guide to **CLAUDE.md**, which is considered the most important file in **Claude Code**. It serves as the project's "memory," allowing the AI to understand the context, rules, and structure of a codebase without needing repeated explanations in every session. CLAUDE.md is onboarding guide for the AI developer working in this repository.
 
 ### 1. The Problem: LLM Memory Constraints
 LLMs, by nature, do not have long-term memory of past conversations. For developers using Claude Code, this presents two main issues:
@@ -315,6 +315,14 @@ The `.claude` folder acts as a configuration directory for skills, custom comman
 *   **User-level `CLAUDE.md`:** Located in the global home directory for personal coding styles applied across all projects.
 *   **Sub-directory `CLAUDE.md`:** Useful for massive repositories; a specific folder (like `/backend`) can have its own instruction file that Claude reads only when working in that directory.
 
+
+**Sample CLAUDE.md file**
+
+<img width="615" height="800" alt="image" src="https://github.com/user-attachments/assets/2e83db9a-1efe-44bd-9bbd-8cd734431da4" />
+
+
+
+
 ### 7. Best Practices and Maintenance
 *   **Line Limit:** Keep the file under **200–300 lines**. LLM performance and instruction-following quality degrade as the context gets too large.
 *   **Splitting Files:** If instructions exceed 200 lines, split them into topic-specific files (e.g., `testing.md`, `security.md`) inside a **`/rules` folder** within the `.claude` directory. These are "lazy loaded" only when needed.
@@ -334,6 +342,19 @@ Claude Code features **Auto Memory**, where it silently observes and records pat
 <img width="1018" height="524" alt="image" src="https://github.com/user-attachments/assets/f9203712-bc4b-448f-8dc5-cb5797bec3c9" />
 
 <img width="1139" height="537" alt="image" src="https://github.com/user-attachments/assets/f96c66e5-9f60-455f-953e-b90b65cbb45b" />
+
+
+**Note**
+
+Cursor also loads skills from Claude's .claude/skills/ directory for compatibility.
+
+
+<img width="1066" height="746" alt="image" src="https://github.com/user-attachments/assets/67e631ab-8d57-4f92-bd20-98426efae63b" />
+
+
+CLAUDE.md is not autoloaded by cursor, Instead we should create AGENTS.md with all instructions present within CLAUDE.md file and just import AGENTS.md file within CLAUDE.md file
+
+<img width="892" height="827" alt="image" src="https://github.com/user-attachments/assets/0a3931d8-0138-4c7d-b299-c834d968fe90" />
 
 
 ---
