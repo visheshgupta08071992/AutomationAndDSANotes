@@ -38,6 +38,8 @@ A common power-user pattern is to use Opus for the planning phase — where you'
 
 **/mcp** - To find different mcps configured within your Claude Code
 
+**/memory** - Command is used to determine what files are loaded in memory during new session start.
+
 **/**- Use / command to find all the commands available
 
 ---
