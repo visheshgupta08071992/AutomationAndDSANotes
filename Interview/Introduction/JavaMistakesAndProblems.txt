@@ -374,7 +374,7 @@ class Solution {
 
 ----------------------------------------------------------------------------------------------------------------
 
-3. Return second largest element https://www.geeksforgeeks.org/problems/second-largest3735/1
+4. Return second largest element https://www.geeksforgeeks.org/problems/second-largest3735/1
 
 // User function Template for Java
 
@@ -402,7 +402,7 @@ class Solution {
 }
 
 -----------------------------------------------------------------------------------------------------------------------------------
-4.Intersection of Array 1 - https://leetcode.com/problems/intersection-of-two-arrays/description/
+5.Intersection of Array 1 - https://leetcode.com/problems/intersection-of-two-arrays/description/
 
 Input: nums1 = [1,2,2,1], nums2 = [2,2]
 Output: [2]
@@ -427,10 +427,25 @@ class Solution {
 
     }
 }
+----------------------------
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> result = new HashSet<>();
 
+        for(int i:nums1){
+            set1.add(i);
+        }
+        for(int i:nums2){
+            if(set1.contains(i)){
+               result.add(i);
+            }
+        }
+      return result.stream().mapToInt(e->e).toArray();
+    }
+}
 
-
-4.Intersection of Array 2 - https://leetcode.com/problems/intersection-of-two-arrays-ii/
+5.Intersection of Array 2 - https://leetcode.com/problems/intersection-of-two-arrays-ii/
 
 
 Input: nums1 = [1,2,2,1], nums2 = [2,2]
@@ -467,7 +482,7 @@ class Solution {
 
 ------------------
 
-5. Reverse String using recursion
+6. Reverse String using recursion
 
 class ReverseString {
     
@@ -490,8 +505,19 @@ class ReverseString {
         System.out.println("Reversed string: " + reversed);
     }
 }
+------
+public void recur(){
+        String s = "Hello";
+        s=reverse(s);
+        System.out.println(s.trim());
+    }
 
-
+    String reverse(String s){
+        if(s.isEmpty()){
+            return "";
+        }
+        return s.charAt(s.length() - 1) + reverse(s.substring(0,s.length()-1));
+    }
 --------------------------------
 6. Remove all Characters of string2 from string1 - https://www.geeksforgeeks.org/problems/remove-character3815/1
 
