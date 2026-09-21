@@ -238,6 +238,37 @@ class Solution {
     }
 };
 
+---------------------------------------------------------------------------------------------------------------
+3.https://www.geeksforgeeks.org/problems/demonitisation0013/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
+
+Given two strings, txt and pat, repeatedly perform the following operation until pat no longer appears in txt:
+
+Find the leftmost occurrence of the substring pat in txt.
+Remove that occurrence from txt.
+Concatenate the remaining parts of the string.
+Return the resulting string after all occurrences of pat have been removed.
+
+Examples:
+
+Input: txt = "aba", pat = "a"
+Output: "b"
+Explanation: Remove "a" from the leftmost occurrence in "aba" to get "ba". Removing "a" again results in "b".
+Input: txt = "aabababa", pat = "aba"
+Output: "ba"
+Explanation: Removing the leftmost occurrence of "aba" from "aabababa" gives "ababa". Removing it again gives "ba".
+Input: txt = "geeksgeeks", pat = "geeks"
+Output: ""
+Explanation: The substring "geeks" is removed twice, resulting in an empty string.
+
+class Solution {
+    public String finalStr(String txt, String pat) {
+        while (txt.contains(pat)) {
+            txt = txt.replaceFirst(pat, "");
+        }
+
+        return txt;
+    }
+}
 
 ----------------------------------------------------------------------------------------------------------------
 
