@@ -509,7 +509,7 @@ class ReverseString {
 public void recur(){
         String s = "Hello";
         s=reverse(s);
-        System.out.println(s.trim());
+        System.out.println(s);
     }
 
     String reverse(String s){
@@ -518,6 +518,16 @@ public void recur(){
         }
         return s.charAt(s.length() - 1) + reverse(s.substring(0,s.length()-1));
     }
+
+
+reverse("Hello")
+= 'o' + reverse("Hell")
+= 'o' + 'l' + reverse("Hel")
+= 'o' + 'l' + 'l' + reverse("He")
+= 'o' + 'l' + 'l' + 'e' + reverse("H")
+= 'o' + 'l' + 'l' + 'e' + 'H' + reverse("")
+= "olleH"
+
 --------------------------------
 6. Remove all Characters of string2 from string1 - https://www.geeksforgeeks.org/problems/remove-character3815/1
 
