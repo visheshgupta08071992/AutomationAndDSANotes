@@ -116,6 +116,108 @@ System.out.println(intList);
 list.toArray(new int[list.size()][]);
 
 11.Some of the useful Math function: Math.max(no1,no2), Math.abs(a-b): To get aboolute difference.
+
+12.Understanding  **Java's `String.replace()` and `String.replaceFirst()`** and `String.replaceAll()`, the main difference is:
+
+| Method           | Replaces                 | Uses Regex? |
+| ---------------- | ------------------------ | ----------- |
+| `replace()`      | **All occurrences**      | ❌ No        |
+| `replaceFirst()` | **Only the first match** | ✅ Yes       |
+
+### 1. `replace()` — replaces all occurrences
+
+```java
+String str = "apple banana apple mango";
+
+String result = str.replace("apple", "orange");
+
+System.out.println(result);
+```
+
+Output:
+
+```text
+orange banana orange mango
+```
+
+Every occurrence of `"apple"` is replaced.
+
+The common signature is:
+
+```java
+replace(CharSequence target, CharSequence replacement)
+```
+
+It treats the target as **literal text**, not as a regular expression.
+
+### 2. `replaceFirst()` — replaces only the first regex match
+
+```java
+String str = "apple banana apple mango";
+
+String result = str.replaceFirst("apple", "orange");
+
+System.out.println(result);
+```
+
+Output:
+
+```text
+orange banana apple mango
+```
+
+Only the **first** matching `"apple"` is replaced.
+
+Its signature is:
+
+```java
+replaceFirst(String regex, String replacement)
+```
+
+An important difference is that `replaceFirst()` accepts a **regular expression**:
+
+```java
+String str = "abc123def456";
+
+String result = str.replaceFirst("\\d+", "NUMBER");
+
+System.out.println(result);
+```
+
+Output:
+
+```text
+abcNUMBERdef456
+```
+
+Here `\\d+` means "one or more digits", and only the first matching group (`123`) is replaced.
+
+### Also remember `replaceAll()`
+
+Java actually has three commonly confused methods:
+
+```java
+replace()       // all occurrences, literal text
+replaceFirst()  // first occurrence, regex
+replaceAll()    // all occurrences, regex
+```
+
+For example:
+
+```java
+String str = "abc123def456";
+
+str.replace("123", "X");          // abcXdef456
+str.replaceFirst("\\d+", "X");    // abcXdef456
+str.replaceAll("\\d+", "X");      // abcXdefX
+```
+
+A good rule to remember:
+
+**`replace` → literal + all**
+**`replaceFirst` → regex + first**
+**`replaceAll` → regex + all**
+
 ---------------------------------------------------------------------------------------
 
 Problems -
