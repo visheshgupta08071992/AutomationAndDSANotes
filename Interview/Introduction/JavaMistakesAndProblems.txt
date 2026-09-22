@@ -1,4 +1,12 @@
 Mistakes:
+0. String contains() function accepts a CharSequence, not a char.
+
+// contains() — String works
+s.contains("e");           // true
+
+// contains() — char does NOT work
+s.contains('e');           // ❌ compilation error
+
 
 1.Armostrong mai need to initalize product to before every unit NoSQL
 2.If key of map is chaarcter then char c: map.keySet()
