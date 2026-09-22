@@ -529,7 +529,7 @@ reverse("Hello")
 = "olleH"
 
 --------------------------------
-6. Remove all Characters of string2 from string1 - https://www.geeksforgeeks.org/problems/remove-character3815/1
+7. Remove all Characters of string2 from string1 - https://www.geeksforgeeks.org/problems/remove-character3815/1
 
 Input: str1 = "computer", str2= "cat"
 Output: "ompuer"
@@ -555,6 +555,23 @@ class Solution {
         }
         
     }
+
+-----------------------
+
+class Solution {
+    public String removeChars(String s1, String s2) {
+      
+        char [] s1Arr = s1.toCharArray();
+        
+        for(char c:s1Arr){
+            if(s2.contains(String.valueOf(c))){
+                s1 = s1.replace(String.valueOf(c),"");
+            }
+            
+        }
+        return s1;
+    }
+}
 
 -------------------------
 
