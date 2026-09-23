@@ -125,7 +125,24 @@ list.toArray(new int[list.size()][]);
 
 11.Some of the useful Math function: Math.max(no1,no2), Math.abs(a-b): To get aboolute difference.
 
-12.Understanding  **Java's `String.replace()` and `String.replaceFirst()`** and `String.replaceAll()`, the main difference is:
+12.Sort the String in Descending Order - https://www.geeksforgeeks.org/problems/sort-the-string-in-descending-order3542/1
+
+Input: s = "geeks"
+Output: "skgee"
+
+// User function Template for Java
+class Solution {
+    String ReverseSort(String s) {
+        // code here
+        char [] sArr = s.toCharArray();
+        Arrays.sort(sArr);
+        
+        StringBuilder sb = new StringBuilder(String.valueOf(sArr));
+        return sb.reverse().toString();
+    }
+}
+
+13.Understanding  **Java's `String.replace()` and `String.replaceFirst()`** and `String.replaceAll()`, the main difference is:
 
 | Method           | Replaces                 | Uses Regex? |
 | ---------------- | ------------------------ | ----------- |
