@@ -142,7 +142,10 @@ class Solution {
     }
 }
 
-13.Understanding  **Java's `String.replace()` and `String.replaceFirst()`** and `String.replaceAll()`, the main difference is:
+13.Remember to use Hashmap when problem asks to find duplicate or missing No in an Array. As in HashMap we can store frequency.Check Problem No 22.
+
+
+14.Understanding  **Java's `String.replace()` and `String.replaceFirst()`** and `String.replaceAll()`, the main difference is:
 
 | Method           | Replaces                 | Uses Regex? |
 | ---------------- | ------------------------ | ----------- |
@@ -1274,27 +1277,26 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 
 public class BestTimeToBuyAndSellStock {
 
-    @Test
+ 
     //The Time complexity of given program is o(n2) and space complexity is o(1)
-    public void bruteForce(){
-        int [] prices ={7,1,5,3,6,4};
+   class Solution {
+    public int maxProfit(int[] prices) {
 
-        int maxProfit=0;
-
+        int profit;
+        int max=0;
         for(int i=0;i<prices.length;i++){
-            // j<=prices.length as for scenario where array size is only 2 i.e {1,2}
-            for(int j=i+1;j<=prices.length-1;j++){
-                if(prices[j] > prices[i]){
-                    int profit = prices[j] - prices[i];
-                    if(profit > maxProfit){
-                        maxProfit = profit;
-                    }
-                }
-            }
+          for(int j=i+1;j<prices.length;j++){
+               profit = prices[j] - prices[i];
+               if(profit > max){
+                    max = profit;
+               }
+          }
         }
-        System.out.println(maxProfit);
+       
+        return max;
     }
-
+}
+----------------------------------------------------------------------
     @Test
     //The Time complexity of given program is o(n) and space complexity is o(n)
     public void Optimized(){
@@ -1386,7 +1388,7 @@ class Solution {
 
 ----------------------------------
 
-20. Maximum Subarray - https://leetcode.com/problems/maximum-subarray/description/
+21. Maximum Subarray - https://leetcode.com/problems/maximum-subarray/description/
 
 Example 1:
 
@@ -1427,7 +1429,7 @@ class Solution {
 
 -------------------------------------------------------------------------------------------------------------
 
-21.https://leetcode.com/problems/find-missing-and-repeated-values/description/
+22.https://leetcode.com/problems/find-missing-and-repeated-values/description/
 
 Input: grid = [[9,1,7],[8,9,2],[3,4,6]]
 Output: [9,5]
@@ -1476,7 +1478,7 @@ class Solution {
 
 ----------------------------------------------------------------------------------------------------------
 
-22.Product of Array Except itself (https://leetcode.com/problems/product-of-array-except-self/description/)
+23.Product of Array Except itself (https://leetcode.com/problems/product-of-array-except-self/description/)
 
 class Solution {
     public int[] productExceptSelf(int[] nums) {
