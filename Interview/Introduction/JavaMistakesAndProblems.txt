@@ -1504,7 +1504,7 @@ class Solution {
 
 ------------------------------------------------------------------------------------------------------------
 
-23.Search Insert Position (https://leetcode.com/problems/search-insert-position/)
+24.Search Insert Position (https://leetcode.com/problems/search-insert-position/)
 
 Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
@@ -1546,7 +1546,7 @@ class Solution {
 }
 
 --------------------------------------------------------------------------------------------------------------------------------------
-24. Sort Colors(https://leetcode.com/problems/sort-colors/description/)
+25. Sort Colors(https://leetcode.com/problems/sort-colors/description/)
 
 Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
 
@@ -1652,7 +1652,7 @@ class Solution {
 }
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-25. Squares of a Sorted Array (https://leetcode.com/problems/squares-of-a-sorted-array/description/)
+26. Squares of a Sorted Array (https://leetcode.com/problems/squares-of-a-sorted-array/description/)
 
 class Solution {
     public int[] sortedSquares(int[] nums) {
@@ -1686,7 +1686,7 @@ class Solution {
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 Problem 1,26 and 27 are similar type of problems
 
-26. SubArray Sum equal K (https://leetcode.com/problems/subarray-sum-equals-k/description/) .Problem no 1 is of similar pattern done with sliding window. The below program would not work with sliding window as sliding window fails with negative no.
+27. SubArray Sum equal K (https://leetcode.com/problems/subarray-sum-equals-k/description/) .Problem no 1 is of similar pattern done with sliding window. The below program would not work with sliding window as sliding window fails with negative no.
 
 Initution: I keep a running sum.For each position, I check how many previous sums can pair with me to make k.
 
