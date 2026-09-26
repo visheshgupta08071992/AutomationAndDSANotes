@@ -151,7 +151,23 @@ https://leetcode.com/problems/maximum-subarray/description/ : Find Subarray with
 https://leetcode.com/problems/subarray-sum-equals-k/ : Find total Subarrays whose sum is equal to K. Maintain a map of sum and for each element in array check whether sum-k is present as key within Map.Check problem 27
 
 
-14.Understanding  **Java's `String.replace()` and `String.replaceFirst()`** and `String.replaceAll()`, the main difference is:
+15.Below three similar intervals problem
+
+29. Merge Interval (https://leetcode.com/problems/merge-intervals/description/).
+Main  Intution:
+Sort by column 0
+Compare with previous
+Merge if overlap else add
+
+30. Non Overlapping Intervals (https://leetcode.com/problems/non-overlapping-intervals/description/)
+
+31.Insert Interval (https://leetcode.com/problems/insert-interval/description/)
+
+Main Intution:
+Insert the interval and then sort list and then merge interval list
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+16.Understanding  **Java's `String.replace()` and `String.replaceFirst()`** and `String.replaceAll()`, the main difference is:
 
 | Method           | Replaces                 | Uses Regex? |
 | ---------------- | ------------------------ | ----------- |
@@ -1752,7 +1768,7 @@ class Solution {
 }
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-28. Merge Interval (https://leetcode.com/problems/merge-intervals/description/)
+29. Merge Interval (https://leetcode.com/problems/merge-intervals/description/)
 
 Intution:
 Sort by column 0
@@ -1787,7 +1803,7 @@ class Solution {
 }
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-29. Non Overlapping Intervals (https://leetcode.com/problems/non-overlapping-intervals/description/)
+30. Non Overlapping Intervals (https://leetcode.com/problems/non-overlapping-intervals/description/)
 
 class Solution {
     public int eraseOverlapIntervals(int[][] intervals) {
@@ -1818,7 +1834,7 @@ class Solution {
 }
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
-30.Insert Interval (https://leetcode.com/problems/insert-interval/description/)
+31.Insert Interval (https://leetcode.com/problems/insert-interval/description/)
 
 class Solution {
     public int[][] insert(int[][] intervals, int[] newInterval) {
@@ -1855,7 +1871,7 @@ class Solution {
 }
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-31.Find Duplicate No(https://leetcode.com/problems/find-the-duplicate-number/description/)
+32.Find Duplicate No(https://leetcode.com/problems/find-the-duplicate-number/description/)
 
 Approach 1 using Hashset
 
@@ -1896,7 +1912,7 @@ class Solution {
 }
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-32.Majority Element(https://leetcode.com/problems/majority-element/description/)
+33.Majority Element(https://leetcode.com/problems/majority-element/description/)
 
 
 class Solution {
@@ -1923,7 +1939,7 @@ class Solution {
 }
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-33.Longest Consecutive Sequence(https://leetcode.com/problems/longest-consecutive-sequence/)
+34.Longest Consecutive Sequence(https://leetcode.com/problems/longest-consecutive-sequence/)
 
 class Solution {
     public int longestConsecutive(int[] nums) {
@@ -1960,7 +1976,7 @@ class Solution {
 }
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-34. Find First and Last Position of Element in Sorted Array (https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
+35. Find First and Last Position of Element in Sorted Array (https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
 
 Intitution: 
 Find firstoccurencnce (end = mid - 1)
@@ -2026,7 +2042,7 @@ class Solution {
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-35.Find Minimum in Rotated Sorted Array where all elements are distinct(https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/)
+36.Find Minimum in Rotated Sorted Array where all elements are distinct(https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/)
 
 Instinct:
 1.Minimum element is less then both previous and next element.
