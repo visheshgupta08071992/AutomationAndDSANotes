@@ -148,7 +148,7 @@ class Solution {
 
 https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1  : Find SubArray whose sum is equal to K. Two pointer strategy works. Check problem 1
 https://leetcode.com/problems/maximum-subarray/description/ : Find Subarray with largest sum, Reset sum to zero when sum is negative. Check problem 28
-https://leetcode.com/problems/subarray-sum-equals-k/ : Find total Subarrays whose sum is equal to K. Maintain a map of sum and for each element in array check whether sum-k is present.Check problem 27
+https://leetcode.com/problems/subarray-sum-equals-k/ : Find total Subarrays whose sum is equal to K. Maintain a map of sum and for each element in array check whether sum-k is present as key within Map.Check problem 27
 
 
 14.Understanding  **Java's `String.replace()` and `String.replaceFirst()`** and `String.replaceAll()`, the main difference is:
