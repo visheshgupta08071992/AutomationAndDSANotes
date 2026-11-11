@@ -60,7 +60,7 @@ public class ImmutableTest {
         System.out.println("Pancard Number: " + emp.getPancardNumber());
         System.out.println("Attributes: " + emp.getAttributes());
 
-        // Attempting to modify attributes will throw an exception
+        // Attempting to modify attributes will result changes in returned map and not in original map
         // emp.getAttributes().put("Role", "Manager"); // This will not compile
 
         // Original map remains unchanged
