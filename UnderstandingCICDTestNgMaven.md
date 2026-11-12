@@ -375,6 +375,24 @@ public class GroupingExample {
   }
   ```
 
+What if you want dependentMethod() to execute even when method1() fails?
+
+Use alwaysRun = true. - alwaysRun = true: Allows the dependent method to execute even if its dependency fails or is skipped.
+One more important point: alwaysRun = true is particularly useful when you want cleanup or teardown logic to execute regardless of test failures.
+
+```java
+@Test(dependsOnMethods = {"method1"})
+public void method1() {
+    Assert.fail("Test failed");
+}
+
+@Test(dependsOnMethods = {"method1"}, alwaysRun = true)
+public void dependentMethod() {
+    System.out.println("Executing dependentMethod");
+}
+
+```
+
 - `invocationCount` - specifies the number of times a test method should be invoked
 - `threadPoolSize` - controls how many threads TestNG will use to execute the invocations of a test method Ex: @Test(threadPoolSize = 3, invocationCount = 6) public void testMethod() { // Test logic }
 
