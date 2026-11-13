@@ -1,3 +1,10 @@
+
+<img width="1141" height="508" alt="image" src="https://github.com/user-attachments/assets/aae4c627-6efc-492c-af4b-a771e31e73de" />
+
+<img width="618" height="379" alt="image" src="https://github.com/user-attachments/assets/63b0663f-4f97-41f6-a963-62c9cee5b5ba" />
+
+
+
 | Method | Description |
 | ------ | ----------- |
 | `StringBuilder()` | Constructs a StringBuilder with no characters in it and an initial capacity of 16 characters. |
