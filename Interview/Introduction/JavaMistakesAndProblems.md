@@ -402,7 +402,7 @@ class Solution {
                 sum = sum - arr[j];
                 j++;
             }
-            if(sum==target){
+            if(sum==target && j<=i){
                 list.add(j+1);
                 list.add(i+1);
                 return list;
