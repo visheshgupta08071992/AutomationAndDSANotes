@@ -706,6 +706,33 @@ class Solution {
     }
 }
 
+-------------------------------------------------------------------------
+
+import java.util.*;
+class Solution {
+    public String removeChars(String s1, String s2) {
+        // code here
+        
+        char [] cArr=s2.toCharArray();
+        
+        Map<Character,Character> map = new HashMap<>();
+        
+        for(char c:cArr){
+            map.put(c,c);
+        }
+        
+        StringBuilder sb= new StringBuilder();
+        
+        for(int i=0;i<s1.length();i++){
+            
+            if(!map.containsKey(s1.charAt(i))){
+                sb.append(s1.charAt(i));
+            }
+        }
+        return sb.toString();
+    }
+}
+
 -------------------------
 
 8./*	Write a java program to reverse a string with preserving the position of spaces. For example, if “I Am Not String” is the given string then the reverse of this string with preserving the position of spaces is “g ni rtS toNmAI”. Notice that the position of spaces in the original string are maintained in the reversed string also. That means, if the given string has a space at index 3, then there should be also a space in the reversed string at index 3.*/
