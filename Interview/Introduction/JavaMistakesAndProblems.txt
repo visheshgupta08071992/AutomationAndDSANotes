@@ -155,6 +155,10 @@ https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1  : F
 https://leetcode.com/problems/maximum-subarray/description/ : Find Subarray with largest sum, Reset sum to zero when sum is negative. Check problem 28
 https://leetcode.com/problems/subarray-sum-equals-k/ : Find total Subarrays whose sum is equal to K. Maintain a map of sum and for each element in array check whether sum-k is present as key within Map.Check problem 27
 
+SubArray Problem String:
+13.Longest Substring Without Repeating Characters (https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+
+
 
 16.Below three similar intervals problem
 
