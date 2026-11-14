@@ -88,6 +88,8 @@ System.out.println(intList);
 
 9.Sorting 2D array
 
+Understanding 2D Array: https://github.com/visheshgupta08071992/JavaPractise/blob/master/src/main/java/Understanding2DArray/Understanding2DArray.md
+
 //Sorting based on column
 @Test
     public void sortOnColumn0Ascending(){
