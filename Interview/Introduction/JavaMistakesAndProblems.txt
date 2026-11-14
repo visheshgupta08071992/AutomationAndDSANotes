@@ -146,14 +146,17 @@ class Solution {
 
 13.Remember to use Hashmap when problem asks to find duplicate or missing No in an Array. As in HashMap we can store frequency.Check Problem No 22.
 
-14.Similar SubArray problems:
+14.Whenever an interviewer asks you to solve a subarray sum problem, first clarify whether the array contains negative numbers. This determines whether Sliding Window is appropriate. Sliding window approach works for non-negative elements, including zero.
+If the array contains negative numbers, this sliding window approach is not reliable. Use Prefix Sum + HashMap instead.
+
+15.Similar SubArray problems:
 
 https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1  : Find SubArray whose sum is equal to K. Two pointer strategy works. Check problem 1
 https://leetcode.com/problems/maximum-subarray/description/ : Find Subarray with largest sum, Reset sum to zero when sum is negative. Check problem 28
 https://leetcode.com/problems/subarray-sum-equals-k/ : Find total Subarrays whose sum is equal to K. Maintain a map of sum and for each element in array check whether sum-k is present as key within Map.Check problem 27
 
 
-15.Below three similar intervals problem
+16.Below three similar intervals problem
 
 29. Merge Interval (https://leetcode.com/problems/merge-intervals/description/).
 Main  Intution:
@@ -350,7 +353,10 @@ Problems -
 
 1.continuous sub array of the given array whose sum is equal to given number, Given the staring and ending index building sum or print the list building sum (https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1)
 int [] arr={12, 5, 31, 9, 21, 8};
-int inputNumber=45;
+int target=45;
+
+int [] arr={2, 3, 0, 5};
+int target=0
 
 o(n2) approach
 
@@ -396,12 +402,13 @@ class Solution {
         for(int i=0;i<arr.length;i++){
             
             sum = sum + arr[i];
-            
             while(sum >target && j<=i){
                 
                 sum = sum - arr[j];
                 j++;
             }
+            //Sum should be in window hence j<=i if j<=i condition is not added then
+            // Test would fail for input [2,3,0,5] and target 0
             if(sum==target && j<=i){
                 list.add(j+1);
                 list.add(i+1);
