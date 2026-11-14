@@ -274,6 +274,80 @@ A good rule to remember:
 
 Problems -
 
+
+0.Program to reverse each word of String
+
+ String s = "Java Concept Of The Day";
+ Output: avaJ tpecnoC fO ehT yaD
+
+
+  @Test
+    public void reverseEachWordOfString() {
+        String s = "Java Concept Of The Day";
+
+        String [] sArr = s.split(" ");
+
+        StringBuilder result = new StringBuilder();
+
+        for(String s1:sArr){
+            StringBuilder sb = new StringBuilder(s1);
+            result.append(sb.reverse());
+            result.append(" ");
+        }
+        System.out.println(result.toString());
+
+    }
+
+    @Test
+    public void reverseEachWordOfString1() {
+        String s = "Java Concept Of The Day";
+
+        String [] sArr = s.split(" ");
+
+        StringBuilder result = new StringBuilder();
+
+        for(String s1:sArr){
+
+            String reverse="";
+            for(int i=s1.length()-1;i>=0;i--){
+
+                reverse= reverse + s1.charAt(i);
+
+            }
+            result.append(reverse);
+            result.append(" ");
+        }
+        System.out.println(result.toString());
+
+    }
+
+    @Test
+    public void reverseEachWordOfString2() {
+        String s = "Java Concept Of The Day";
+
+        String [] sArr = s.split(" ");
+
+        StringBuilder result = new StringBuilder();
+
+        for(String s1:sArr){
+
+            int i=0;
+            int j=s1.length() - 1;
+            char [] cArr= s1.toCharArray();
+            while(i<=j){
+                char temp=cArr[i];
+                cArr[i]=cArr[j];
+                cArr[j]=temp;
+                i++;
+                j--;
+            }
+            result.append(String.valueOf(cArr));
+            result.append(" ");
+        }
+        System.out.println(result.toString());
+
+    }
+
 1.continuous sub array of the given array whose sum is equal to given number, Given the staring and ending index building sum or print the list building sum (https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1)
 int [] arr={12, 5, 31, 9, 21, 8};
 int inputNumber=45;
