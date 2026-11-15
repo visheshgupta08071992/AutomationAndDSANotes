@@ -2355,3 +2355,28 @@ class Solution {
     }
 }
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+39.Find all pairs of element whose multiplication is equal to given No
+
+
+ @Test
+    public void bruteForce() {
+        int[] arr = {2, 4, 6, 8, 9, 5, 3, 12};
+        int target = 24;
+
+        Map<Integer,Integer> map = new HashMap<>();
+
+        for(int i=0;i<arr.length;i++){
+            if((target%arr[i]==0) && map.containsKey(target/arr[i])){
+                System.out.println(target + "=" + target/arr[i] + "*" + arr[i]);
+            }
+            else{
+                map.put(arr[i],i);
+            }
+        }
+    }
+
+Output:
+24=4*6
+24=8*3
+24=2*12
