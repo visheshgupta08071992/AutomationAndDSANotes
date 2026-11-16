@@ -15,6 +15,8 @@ With regards to Manual Testing I am very comfortable with Requirement Gathering,
 
 Beyond Testing, I have an exposure to Devops Technologies like Docker,Kubernetes and Microsoft Azure.
 
+From more then a year and half I have been following AI Assisted Engineering practices and have HandsOn Experience with AI tools like Cursor,Claude along with MCP Integration to streamlimne Testing and Automation.
+
 Some of the Domains which I have worked on are Investment Banking, Payment Domain and Ecommerce Domain.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 What Exposure do you have with Docker,Kubernetes and Microsoft Azure?
