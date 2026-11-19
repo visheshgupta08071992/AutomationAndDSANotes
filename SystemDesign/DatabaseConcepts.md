@@ -1104,6 +1104,96 @@ For a given row `Emp1` with salary `S`:
 * If that count equals `N-1`, then there are exactly `N-1` distinct salaries higher than `S` — so `S` is the **Nᵗʰ distinct highest salary**.
 * The outer query returns all rows whose salary equals that Nᵗʰ highest value (so it naturally returns ties).
 
+You can find the **second-highest salary** using `TOP` in SQL Server.
+
+### **1. Using&#x20;**`TOP`**&#x20;with&#x20;**`ORDER BY`
+
+Assume we have an `Employees` table:
+
+| employee_id | name  | salary |
+| ----------- | ----- | ------ |
+| 101         | Rahul | 50000  |
+| 102         | Amit  | 80000  |
+| 103         | Priya | 90000  |
+| 104         | Sneha | 70000  |
+| 105         | Rohan | 80000  |
+
+### **Query**
+
+```
+SELECT TOP 1 salary
+FROM Employees
+WHERE salary < (
+    SELECT MAX(salary)
+    FROM Employees
+)
+ORDER BY salary DESC;
+```
+
+**Output:**
+
+| salary |
+| ------ |
+| 80000  |
+
+### **2. Using&#x20;**`TOP`**&#x20;twice (common interview approach)**
+
+```
+SELECT TOP 1 salary
+FROM (
+    SELECT TOP 2 salary
+    FROM Employees
+    ORDER BY salary DESC
+) AS temp
+ORDER BY salary ASC;
+```
+
+**How it works:**
+
+**Inner query:**
+
+```
+SELECT TOP 2 salary
+FROM Employees
+ORDER BY salary DESC;
+```
+
+Returns the two highest salaries:
+
+| salary |
+| ------ |
+| 90000  |
+| 80000  |
+
+**Outer query:**
+
+```
+SELECT TOP 1 salary
+FROM temp
+ORDER BY salary ASC;
+```
+
+Sorts these two salaries in ascending order and returns the lowest one, which is the second-highest salary overall.
+
+### **3. To find the second-highest distinct salary**
+
+If multiple employees have the same highest salary, and you want the second **unique salary**, use `DISTINCT`:
+
+```
+SELECT TOP 1 salary
+FROM (
+    SELECT DISTINCT TOP 2 salary
+    FROM Employees
+    ORDER BY salary DESC
+) AS temp
+ORDER BY salary ASC;
+```
+
+For example, if salaries are `90000, 90000, 80000, 70000`, this query returns `80000`.
+
+**Interview tip:** The `TOP 2` nested query approach is frequently asked in SQL Server interviews. Make sure you understand why the inner query uses descending order and the outer query uses ascending order.
+  
+
 ---
 
 ## 🔎 Concrete example
