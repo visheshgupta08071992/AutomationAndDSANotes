@@ -1250,6 +1250,10 @@ Think of it like:
 
 ---
 
+
+
+
+
 ✅ **Summary**
 
 | Goal                         | Query                              | Join Type    |
@@ -1257,6 +1261,42 @@ Think of it like:
 | Employee + Manager info      | `LEFT JOIN` on `ManagerID = EmpID` | `LEFT JOIN`  |
 | Only employees with managers | same, but use `INNER JOIN`         | `INNER JOIN` |
 | Top-level managers (no boss) | `WHERE ManagerID IS NULL`          | N/A          |
+
+---
+
+**Query to find records present in table B that is not present in Table A**
+
+```sql
+SELECT *
+FROM TableB B
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM TableA A
+    WHERE A.id = B.id
+);
+
+```
+
+How it works:
+- For every record in Table B, SQL checks whether a matching id exists in Table A.
+- If no matching record exists in Table A, that record is returned.
+- SELECT 1 is used because we only need to check whether a matching record exists, not retrieve any data from it.
+
+
+2. Using LEFT JOIN
+
+```sql
+SELECT B.*
+FROM TableB B
+LEFT JOIN TableA A
+    ON B.id = A.id
+WHERE A.id IS NULL;
+```
+
+How it works:
+- LEFT JOIN returns all records from Table B and matching records from Table A.
+- If there is no match in Table A, columns from Table A will contain NULL.
+- WHERE A.id IS NULL filters out the matching records and returns only records that exist in B but not A.
 
 ---
 
